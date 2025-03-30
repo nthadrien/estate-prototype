@@ -1,0 +1,108 @@
+---
+import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
+import { languages } from "../../../i18n/ui";
+
+import ClientLayout from "@layouts/ClientLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+
+export const getStaticPaths = (() => {
+    const langs = Object.keys(languages)
+
+    return langs.map( lang => {
+        return { params : { lang }}
+    }) ;
+}) satisfies GetStaticPaths;
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+const { lang } = Astro.params as Params;
+
+const info = {
+    "en" : {
+        title: "Contact Us",
+        description:"In case you need help or any feedback get to us",
+        keywords: []
+    },
+    "fr" : {
+        title: "Contactez Nous",
+        description:"En cas de besion Urgent ou Pas nous sommes disposer a repondre a tout vos question.",
+        keywords: []
+    }
+}
+
+const context = lang == "en" ? info.en : info.fr;
+
+
+
+---
+<ClientLayout title={context.title} description={context.description} keywords={context.keywords}>
+    
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.5386433761005!2d9.7112959!3d4.0673698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061126de506f927%3A0x1e59b74d6f97f357!2sDe%C3%AFdo%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sus!4v1737423844047!5m2!1sfr!2sus" 
+        width="100%" height="560" style="border:0;" allowfullscreen={true} 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <h1 class="my-3 text-center">Contact Us </h1>
+
+    <section class="container row mx-auto my-3 justify-content-between my-5">
+
+        <div class="col-lg-8 lh-lg">
+            <h3 class="">Let's get in touch</h3>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Doloremque quisquam neque id dolorum, tempora animi enim suscipit aut nesciunt repudiandae. 
+            Eaque quos nesciunt consequatur facere totam eveniet perspiciatis praesentium similique?
+        </div>
+
+        <ul class="col-lg-4 lh-lg nav flex-column gap-1">
+
+            <li class="text-muted nav-item">
+                <i class="bi bi-phone-fill me-2"></i>
+                + 237 839894XXXX
+            </li>
+
+            <li class="text-muted nav-item">
+                <i class="bi bi-phone-fill me-2"></i>
+                website.domain.name
+            </li>
+
+            <li class="text-muted nav-item">
+                <i class="bi bi-phone-fill me-2"></i>
+                social media links
+            </li>
+
+        </ul>
+
+
+        <form class="row g-3 p-1 lh-lg g-2" action="">
+
+            <div class="col-lg-6">
+                <label for="name" class="form-label">Full Name</label>
+                <input name="name" type="text" placeholder="Name" class="form-control" required/>
+
+                <label for="email" class="form-label">Email Address</label>
+                <input name="email" type="email" placeholder="example@mailbox.do" class="form-control" required/>
+
+                <label for="subject" class="form-label">Subject</label>
+                <textarea class="form-control" name="subject" cols="30"></textarea>
+            </div>
+
+            <div class="col-lg-6">
+                <label for="message" class="form-label">Message</label>
+                <textarea style={"height: 90%;"} placeholder="Write your message her" class="form-control" name="message"  cols="30"></textarea>
+            </div>
+
+
+            <div class="pt-3">
+                <button type="submit" class="btn btn-primary">
+                <i class="bi bi-send-slash me-3"></i>
+                    Send Message
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+</ClientLayout>

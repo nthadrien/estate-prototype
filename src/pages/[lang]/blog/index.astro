@@ -1,0 +1,80 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { languages } from "../../../i18n/ui";
+
+import ClientLayout from "@layouts/ClientLayout.astro";
+import BlogPostCard from "@components/cards/BlogPostCard.astro";
+import BlogPostHCard from "@components/cards/BlogPostHCard.astro";
+
+const { lang } = Astro.params;
+
+export const getStaticPaths = (() => {
+    return Object.keys(languages).map( item => {
+        return {
+            params: { lang : item }
+        }
+    });
+}) satisfies GetStaticPaths;
+
+const posts = await getCollection("blog",({ id }) => {
+  return id.startsWith(lang);
+});
+
+---
+<ClientLayout 
+    title="blogs-estate" 
+    description="this is the description of blog pages"
+    keywords={["all"]}
+>
+
+    <h3 class="container my-2 mx-auto">Lastest Posts</h3>
+
+    <header class="container-xxl row g-1 my-2 mx-auto">
+        <div style="max-height: max(450px,60vh);" class="col-lg-8">
+            <BlogPostHCard post={posts[1]} />
+        </div>
+
+        <div class="col-lg-4 d-flex flex-column justify-content-between gap-1">
+            
+            <div>
+                <BlogPostHCard post={posts[0]} />
+            </div>
+            <div class="h5 p-2">
+                Keep in check to be informed of the hostest blog post. With alot of tips and advices for hosts and clents around the world.
+            </div>
+        </div>
+    </header>
+
+
+    
+
+    <main class="container-xxl my-4 mx-auto row gap-1">
+
+        <h4 class="col-12 my-2 mx-auto border-bottom">Explore Other Posts</h4>
+
+        <ul class="col-12 col-lg-10 col-xl-9 row row-cols-2 row-cols-lg-3  justify-content-evenly g-2 g-lg-4 list-unstyled">
+            
+            {[1,2,3,4,5,6,7,8,9].map( post => <li style="max-width:23rem;" class="col">
+                <BlogPostCard post={posts[2]} />
+            </li>)}
+        </ul>
+
+        <div style="top:2rem" class="col-12 col-lg-2 col-xl-3 p-2 d-flex flex-column gap-3 position-sticky">
+            <h5>Search</h5>
+            <form class="input-group border mb-3">
+                <input type="text" class="form-control border-0" placeholder="keywords, mot cles" aria-label="search" aria-describedby="basic-addon1">
+                <button type="submit" class="input-group-text smaller border-0 bi bi-search"></button>
+            </form>
+            <h5>Tags: </h5>
+
+            <div class="d-flex flex-wrap gap-2">
+                {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="rounded-0 badge text-bg-info text-white">tag name {tag}</a>)}
+                {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="rounded-0 badge text-bg-info text-white">tag name 2{tag}</a>)}
+            </div>
+        </div>
+
+
+    </main>
+
+</ClientLayout>

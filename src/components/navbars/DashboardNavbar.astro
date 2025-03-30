@@ -1,0 +1,33 @@
+---
+import { getLangFromUrl } from '../../i18n/utils.ts';
+
+interface Props {
+    pages : {
+        en: string, fr: string, link:string, icon:string
+    }[]
+}
+
+const lang:string = getLangFromUrl(Astro.url);
+const { pages } = Astro.props;
+---
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="dashboardMenu" aria-labelledby="dashboardMenuLabel">
+
+    <div class="offcanvas-header">
+      <!-- <h5 class="offcanvas-title" id="dashboardMenuLabel">Offcanvas</h5> -->
+      <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="p-3 postion-sticky top-0">
+        <p class="fs-3 fw-bold">Dashboard Menu</p>
+        <div id="linkos" class="nav flex-column gap-2 border-0">
+            {pages.map( page => <a href={page.link} class="nav-item p-1">
+                <i class={`bi bi-${page.icon} me-3`} />
+                <span>{lang == "en" ? page.en : page.fr }</span>
+            </a>)}
+        </div>
+        <slot name="side-bar" />
+    </div>
+</div>

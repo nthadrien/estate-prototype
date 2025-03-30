@@ -1,0 +1,33 @@
+---
+import ClientLayout from "@layouts/ClientLayout.astro";
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( lang => ({
+        params: { lang }
+    }))
+}) satisfies GetStaticPaths; 
+---
+<ClientLayout title="pricing" description="dscription" keywords={["unknown"]} >
+
+<div style="max-width: 16rem;" class="card estate-card mx-auto">
+    <img src="placeholder-property-image.jpg" class="card-img-top" alt="Property Image">
+    <div class="card-body">
+      <h5 class="card-title">Luxury Villa in Beverly Hills</h5>
+      <p class="card-text">
+        <i class="bi bi-geo-alt"></i> 123 Main St, Beverly Hills, CA
+      </p>
+      <ul class="list-unstyled estate-details">
+        <li><i class="bi bi-house"></i> 5 Bedrooms</li>
+        <li><i class="bi bi-shower"></i> 4 Bathrooms</li>
+        <li><i class="bi bi-ruler"></i> 3,500 sq ft</li>
+      </ul>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="estate-price">$2,500,000</span>
+        <a href="#" class="btn btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+</ClientLayout>

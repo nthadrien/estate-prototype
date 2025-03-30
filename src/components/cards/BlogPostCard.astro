@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    post : CollectionEntry<"blog">
+}
+
+const { 
+    post 
+} = Astro.props;
+
+const date = new Date(post.data.publishedDate).toDateString();
+---
+
+<aside class="card border-0">
+
+    <section class="position-relative">
+
+        <img class="card-img-top rounded-0" style="min-height: 220px;" loading="lazy" src={post.data.image?.src} alt={post.data.image?.alt}>
+
+        <div style="bottom: 0.2rem;left:0.4rem;" class="position-absolute">
+            <p class="small">{post.data.tags.map(
+                tag => <small class="badge text-bg-light me-1 rounded-0">
+                    {tag}
+                </small>
+            )}</p>
+        </div> 
+
+    </section>
+    
+
+    <a href={"/"+post.id.replace("/","/blog/")} class="card-body p-2">
+        <h5 class="card-title fw-bold">{post.data.title}</h5>
+        <span class="smaller card-subtitle my-0"> 
+            <i class="bi bi-calendar-event me-2"></i> {date}
+        </span>
+        <p class="card-text mt-0">
+            <p class="line-clamp small overflow-y-hidden">{post.data.description} </p>
+            <h6 class="small">
+                Read blog 
+                <i class="bi bi-arrow-right"></i>    
+            </h6>
+        </p>
+    </a>
+    
+</aside>
+
+

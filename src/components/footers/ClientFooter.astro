@@ -1,0 +1,73 @@
+---
+import Logo from "@components/navbars/Logo.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+import NewsLetter from "@components/utils/NewsLetter.astro";
+
+const lang:string = getLangFromUrl(Astro.url);
+
+const pages = [
+    {en: "home", fr:"acceuil", link: "/"+lang+"/about-us" },
+    {en: "about us", fr:"a propos de nous", link: "/"+lang+"/about-us" },
+    {en: "Pricing", fr:"Prix", link: "/"+lang+"/pricing" },
+    {en: "contact us", fr:"Contacts", link: "/"+lang+"/contact-us" },
+    {en: "terms & conditions", fr:"termes et condition", link: "/"+lang+"/terms-and-conditions" },
+    {en: "privacy policy", fr:"politique de ...", link: "/"+lang+"/privacy" },
+    {en: "Need help?", fr:"besoin d'aide?", link: "/"+lang+"/privacy" },
+    
+];
+
+---
+
+<div class="container-fluid">
+    
+    <footer class="container-xxl py-4 row mx-auto">
+
+        <div class="col-12 col-md-4 mb-3">
+           <Logo />
+            <ul class="nav flex-column">
+            <li class="nav-item small mb-2">
+                Mollitia in, ipsa omnis iste similique, vitae vero voluptates error recusandae temporibus dolorum necessitatibus sapiente nam distinctio doloribus quibusdam, aperiam culpa reprehenderit?
+            </li>
+            </ul>
+        </div>
+
+        <div class="d-none d-md-inline col-md-4 col-lg-2 mb-3">
+            <h5>Useful Links</h5>
+            <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="d-none d-md-inline col-md-4 col-lg-2 mb-3">
+            <h5>Features</h5>
+            <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Houses</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Estates</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Rooms</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Appartments</a></li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 mb-3">
+            <NewsLetter />
+        </div>
+        
+    </footer>
+
+    {/* <footer class="container-xl d-flex flex-wrap justify-content-between"> */}
+    <footer class="container-xxl row row-cols-1 row-cols-lg-2 justify-content-center mx-auto text-capitalize">
+
+        <div class="col nav">
+            {pages.slice(0,4).map( item =>  <a class="nav-link small" href={item.link}>{ lang == "en" ? item.en : item.fr }</a>)}
+        </div>
+
+
+        <div class="col nav justify-content-lg-end gap-2 small">
+            {pages.slice(4).map( item =>  <a class="nav-link small" href={item.link}>{ lang == "en" ? item.en : item.fr }</a>)}
+        </div>
+
+    </footer>
+</div>

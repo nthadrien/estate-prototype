@@ -1,0 +1,41 @@
+---
+import type { GetStaticPaths } from "astro";
+import DashboardLayout from "@layouts/DashboardLayout.astro"
+import { languages } from "src/i18n/ui";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( 
+        lang => ({ params: { lang }})
+    );
+}) satisfies GetStaticPaths;
+
+const {lang} = Astro.params;
+
+const pageInfo = {
+	title : "host board",
+	description:"hosts dashboards for analytics and more",
+	keywords : ["rent","booking","rent houses","book room","villa","appartment"],
+    pages : [
+        { en: "Dasboard", fr:"Dashboard", link:`/${lang}/dashboard/host#home` , icon:"columns-gap"},
+        { en: "History", fr:"Historique", link:`/${lang}/dashboard/host#calender` , icon:"calendar4-week"},
+        { en: "Inbox", fr:"Boîte", link:`/${lang}/dashboard/host#inbox` , icon:"inbox"},
+        { en: "Settings", fr:"Paramètres", link:`/${lang}/dashboard/host#settings`  , icon:"wrench-adjustable"},
+    ]
+}
+
+const tableFields:string[] = ["name","status","price","date","exp"];
+
+const btnOpts = [
+    { name:'modify', icon:'folder-plus'},
+    { name:'taken', icon:'journal-bookmark-fill'},
+    { name:'available', icon:'house-check'},
+    { name:'add', icon:'archive'}
+]
+
+---
+
+<DashboardLayout {...pageInfo}>
+
+    <h4>Guest dashboard</h4>
+</DashboardLayout>

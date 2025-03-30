@@ -1,0 +1,211 @@
+---
+import type { GetStaticPaths } from "astro";
+import Team from "@components/reusables/Team.astro";
+import Partners from "@components/reusables/Partners.astro";
+import NeedHelp from "@components/reusables/NeedHelp.astro";
+
+import ClientLayout from "@layouts/ClientLayout.astro";
+import { languages } from "../../../i18n/ui";
+
+export const getStaticPaths = (() => {
+    const langs = Object.keys(languages);
+    return langs.map( lang => {
+        return { params : { lang }}
+    })
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params;
+
+interface RealEstateQuestion {
+    question: string;
+    answer: string;
+    href?: string; // Optional link for further details
+}
+
+const realEstateFAQs: RealEstateQuestion[] = [
+    {
+        question: "What is the booking process?",
+        answer: "You can browse properties on our platform, filter by your preferences, and book directly with the host.",
+        href: "/help/booking-process",
+    },
+    {
+        question: "How do I pay for my reservation?",
+        answer: "We offer secure online payment options, including credit card and debit card payments.",
+        href: "/help/payment-options",
+    },
+    {
+        question: "What is the cancellation policy?",
+        answer: "Cancellation policies vary depending on the host. Please review the cancellation policy before booking.",
+        href: "/help/cancellation-policy",
+    },
+    {
+        question: "How do I contact the host?",
+        answer: "You can contact the host through our secure messaging platform within the platform.",
+        href: "/help/contact-host",
+    },
+    {
+        question: "What are the check-in and check-out times?",
+        answer: "Check-in and check-out times vary depending on the property. Please check the property details for specific times.",
+    },
+    {
+        question: "What amenities are typically included?",
+        answer: "Amenities vary depending on the property, but common amenities include Wi-Fi, kitchen, linens, and towels.",
+    },
+    {
+        question: "How do I leave a review for my stay?",
+        answer: "You can leave a review for your host and the property after your stay is complete.",
+        href: "/help/leave-a-review",
+    },
+    {
+        question: "What if I have a problem during my stay?",
+        answer: "Please contact our customer support team immediately. We are available 24/7 to assist you.",
+        href: "/help/contact-support",
+    },
+];
+---
+
+<ClientLayout>
+    <main
+        class="container-fluid p-0 bg-body-tertiary d-flex flex-column gap-4 align-items-center"
+    >
+        <section class="container py-3 row g-4">
+            <aside id="about-us" class="col-12 py-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere quis iure consequuntur sequi perspiciatis similique
+                    corrupti quas culpa eveniet maxime quidem corporis, tempore
+                    incidunt, amet iusto dolores non cum deleniti. 
+                    Ducimus eum alias corporis, voluptatum nostrum repudiandae
+                    unde distinctio voluptates maxime molestias quod, a
+                    officiis. Culpa iste deleniti at sed?
+                </p>
+            </aside>
+
+            <h2 class="text-center">Services</h2>
+
+            <aside id="services" class="col-md-6">
+                <h4 class="fw-bold text-body-emphasis">
+                    Competitive Advantage & <br/> Market Opportunity
+                </h4>
+                <p>
+                    Ready to go beyond the starter design? Check out these
+                    open source projects that you can quickly duplicate.
+                </p>
+                <ul
+                    class="w-100 list-unstyled ps-0 row row-cols-2 g-3 order-4 order-md-3"
+                >
+                    {
+                        [1, 2, 3, 4].map((item) => (
+                            <div class="col d-flex flex-column flex-lg-row gap-2">
+                                <i
+                                    style={
+                                        "max-height: 42px;max-width: 42px;"
+                                    }
+                                    class="text-bg-secondary bi bi-collection p-2 rounded-circle"
+                                />
+                                <div>
+                                    <p class="fw-semibold mb-0 text-body-emphasis">
+                                        {item} Featured title
+                                    </p>
+                                    <p class="text-body-secondary small">
+                                        Paragraph of text beneath the heading to
+                                        explain the heading.
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </ul>
+            </aside>
+
+            <aside class="col-md-6">
+                <img
+                    class="object-fit-cover border rounded"
+                    style={{ "max-width": "100%", "min-height": "50vh" }}
+                    src="/images/img-2x1.png"
+                    loading="lazy"
+                />
+                <p class="text-body-secondary">
+                    Paragraph of text beneath the heading to explain the
+                    heading. We'll add onto it with another sentence and
+                    probably just keep going until we run out of words.
+                </p>
+            </aside>
+        </section>
+
+        <section class="container-fluid bg-body p-4">
+            <ul
+                class="container g-3 row justify-content-center align-items-center list-unstyled text-center mx-auto"
+            >
+                <li class="col lh-sm">
+                    <span class="h2">10K+</span>
+                    <hr class="border-2 w-25 mx-auto" />
+                    <span>Clients</span>
+                </li>
+
+                <li class="col lh-sm">
+                    <span class="h2">100+</span>
+                    <hr class="border-2 w-25 mx-auto" />
+                    <span>Agents</span>
+                </li>
+
+                <li class="col lh-sm">
+                    <span class="h2">23K+</span>
+                    <hr class="border-2 w-25 mx-auto" />
+                    <span>Estates</span>
+                </li>
+
+                <li class="col lh-sm">
+                    <span class="h2">12+</span>
+                    <hr class="border-2 w-25 mx-auto" />
+                    <span>Employees</span>
+                </li>
+            </ul>
+        </section>
+
+        <section data-iobs="up" id="FAQ" class="container-xl py-5 px-2 row g-2">
+
+            <aside class="col-md-12 col-lg-5">
+                <h2>Do you have any Question ? Please check the FAQ</h2>
+                <p>
+                    Itaque consequatur at neque, numquam facere, ratione cum sed
+                    architecto nobis cumque, porro dolorem quidem. Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Possimus
+                    excepturi magnam debitis officia rem aperiam.
+                </p>
+            </aside>
+
+            <ul class="col nav flex-column gap-3 accordion accordion-flush" id="accordionFAQ">
+                {
+                    realEstateFAQs.map((item, index) => (
+                        <li class="accordion-item bg-body rounded-4 p-1">
+
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${index}`} aria-expanded="false" aria-controls="flush-collapseOne">
+                                    {item.question}
+                                </button>
+                            </h2>
+                            <div id={`flush-collapse${index}`} class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    {item.answer}
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+
+        <section id="team" class="container-fluid bg-body py-2">
+            <h2 class="text-center">Our Team</h2>
+            <Team />
+        </section>
+
+        <section id="team" class="container-fluid py-2">
+            <h2 class="text-center">Partners</h2>
+            <Partners />
+        </section>
+
+        <NeedHelp />
+    </main>
+</ClientLayout>

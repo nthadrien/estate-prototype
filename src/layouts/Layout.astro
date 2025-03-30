@@ -1,0 +1,35 @@
+---
+import "../styles/website.css";
+
+interface Props {
+	title: string;
+	description: string;
+	keywords: string[];
+}
+
+const {
+	title = "estate-develop",
+	description="page description",
+	keywords = ["rent","booking","rent houses","book room","villa","appartment"]
+} = Astro.props;
+
+const { lang } = Astro.params;
+---
+
+<!doctype html>
+<html lang={lang} dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description}>
+		<meta name="keywords" content={keywords.join(",")}>
+		<title> {title} | Prototype Estate </title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	</head>
+	<body>
+		<slot />
+	</body>
+	<script src="../js/main.ts"></script>	
+</html>

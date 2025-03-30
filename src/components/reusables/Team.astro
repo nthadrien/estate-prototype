@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+const team = await getCollection("authors");
+---
+
+<ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 py-3">
+
+    {team.map( (staff) => <li style="max-width: 200px;" class="card border-0">
+        <img 
+        style="height: 220px;"
+            decoding="async"
+            loading="lazy" 
+            src={staff.data.image?.src} 
+            alt={staff.data.image?.alt} 
+            class="card-img-top object-fit-cover rounded-3" 
+        />
+        <div class="card-body text-center lh-sm">
+            <p class="card-title">{staff.data.name}</p>
+            <p class="card-subtitle">{staff.data.post}</p>
+        </div>
+    </li>)}
+
+</ul>

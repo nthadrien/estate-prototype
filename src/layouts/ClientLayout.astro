@@ -1,0 +1,28 @@
+---
+import ClientFooter from "@components/footers/ClientFooter.astro";
+import Layout from "./Layout.astro";
+import BaseFooter from "@components/footers/BaseFooter.astro";
+
+interface Props {
+	title: string;
+	description: string;
+	keywords: string[];
+}
+
+const {
+	title = "estate-develop",
+	description="page description",
+	keywords = ["rent","booking","rent houses","book room","villa","appartment"]
+} = Astro.props
+---
+
+
+<Layout 
+    title={title} 
+    description={description} 
+    keywords={keywords}
+>
+    <slot />
+    <ClientFooter />
+    <BaseFooter />
+</Layout>

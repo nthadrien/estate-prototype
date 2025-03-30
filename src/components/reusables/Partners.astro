@@ -1,0 +1,130 @@
+---
+
+type Pat = {
+    name: string;
+    url: string;
+    logo: string;
+};
+
+const partners: Pat[] = [
+    { name: "Nzenda-Group", url: "nzenda-group.com", logo: "" },
+    { name: "Nti Business Consulting", url: "btn", logo: "" },
+    {
+        name: "WWF Cameroon",
+        url: "https://wwf.cm/",
+        logo: "wwf_logo.png",
+    },
+    {
+        name: "BirdLife International",
+        url: "https://www.birdlife.org/",
+        logo: "birdlife_logo.png",
+    },
+    {
+        name: "IUCN",
+        url: "https://www.iucn.org/",
+        logo: "iucn_logo.png",
+    },
+    {
+        name: "UNESCO",
+        url: "https://www.unesco.org/",
+        logo: "unesco_logo.png",
+    },
+    {
+        name: "USAID",
+        url: "https://www.usaid.gov/",
+        logo: "usaid_logo.png",
+    },
+    {
+        name: "GIZ",
+        url: "https://www.giz.de/",
+        logo: "giz_logo.png",
+    },
+    {
+        name: "Conservation International",
+        url: "https://www.conservation.org/",
+        logo: "conservation_international_logo.png",
+    },
+    {
+        name: "Wildlife Conservation Society",
+        url: "https://www.wcs.org/",
+        logo: "wcs_logo.png",
+    },
+    {
+        name: "The Nature Conservancy",
+        url: "https://www.nature.org/",
+        logo: "nature_conservancy_logo.png",
+    },
+    {
+        name: "World Bank",
+        url: "https://www.worldbank.org/",
+        logo: "world_bank_logo.png",
+    },
+    {
+        name: "African Development Bank",
+        url: "https://www.afdb.org/",
+        logo: "afdb_logo.png",
+    },
+    {
+        name: "European Union",
+        url: "https://www.europa.eu/",
+        logo: "european_union_logo.png",
+    },
+    {
+        name: "Global Environment Facility (GEF)",
+        url: "https://www.thegef.org/",
+        logo: "gef_logo.png",
+    },
+    {
+        name: "Greenpeace",
+        url: "https://www.greenpeace.org/",
+        logo: "greenpeace_logo.png",
+    },
+];
+---
+
+
+<div id="carouselPatnersCaptions" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselPatnersCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselPatnersCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselPatnersCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div style="min-height: 140px;" class="carousel-inner">
+
+      <aside class="carousel-item active"  data-bs-interval="3000">
+        <div class="text-secondary text-center">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </aside>
+
+      <aside class="carousel-item"  data-bs-interval="6000">
+        <div class="text-secondary text-center">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </aside>
+
+      <aside class="carousel-item"  data-bs-interval="9000">
+        <div class="text-muted text-center">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </aside>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPatnersCaptions" data-bs-slide="prev">
+        <i class="bi bi-chevron-compact-left text-warning h2"></i>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPatnersCaptions" data-bs-slide="next">
+      <i class="bi bi-chevron-compact-right text-warning h2"></i>
+    </button>
+  </div>
+
+  <style>
+
+  </style>

@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui";
+
+import IndexPage from "./_indexPage.tsx"
+import Layout from "@layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( 
+        lang => ({ params: { lang }})
+    );
+}) satisfies GetStaticPaths;
+
+const {lang} = Astro.params;
+
+const pageInfo = {
+	title : "host board",
+	description:"hosts dashboards for analytics and more",
+	keywords : ["rent","booking","rent houses","book room","villa","appartment"],
+}
+
+const tableFields:string[] = ["name","status","price","date","exp"];
+
+const btnOpts = [
+    { name:'modify', icon:'folder-plus'},
+    { name:'taken', icon:'journal-bookmark-fill'},
+    { name:'available', icon:'house-check'},
+    { name:'add', icon:'archive'}
+];
+
+---
+<Layout title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
+    <IndexPage client:load lang={lang} />
+</Layout>

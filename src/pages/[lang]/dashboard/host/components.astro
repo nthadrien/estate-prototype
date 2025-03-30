@@ -1,0 +1,266 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui";
+import Layout from "@layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( 
+        lang => ({ params: { lang }})
+    );
+}) satisfies GetStaticPaths;
+
+const {lang} = Astro.params;
+
+const pageInfo = {
+	title : "host board",
+	description:"hosts dashboards for analytics and more",
+	keywords : ["rent","booking","rent houses","book room","villa","appartment"],
+    pages : [
+        { en: "Dasboard", fr:"Dashboard", link:`/${lang}/dashboard/host#home` , icon:"columns-gap"},
+        { en: "Estates", fr:"Immobilier", link:`/${lang}/dashboard/host#estates` , icon:"journal-bookmark"},
+        { en: "Calendar", fr:"Calendrier", link:`/${lang}/dashboard/host#calender` , icon:"calendar4-week"},
+        { en: "Analytics & Reports", fr:"Analyses & Rapports", link:`/${lang}/dashboard/host#reports` , icon:"easel2"},
+        { en: "Inbox", fr:"Boîte", link:`/${lang}/dashboard/host#inbox` , icon:"inbox"},
+        { en: "Settings", fr:"Paramètres", link:`/${lang}/dashboard/host#settings`  , icon:"wrench-adjustable"},
+    ]
+}
+
+const tableFields:string[] = ["name","status","price","date","exp"];
+
+const btnOpts = [
+    { name:'modify', icon:'folder-plus'},
+    { name:'taken', icon:'journal-bookmark-fill'},
+    { name:'available', icon:'house-check'},
+    { name:'add', icon:'archive'}
+]
+
+---
+
+<Layout {...pageInfo}>
+
+    <h1>Hello this is the host dashboards</h1>
+
+    <h4>Calendars</h4>
+
+    <section style="max-width: 768px;" class="calendar border rounded-3">
+
+        <header class="calendar-months border-bottom bg-text-danger">
+            <button class="btn"> &lt; </button>
+            <span class="fw-bold fs-3 mx-4">
+                October
+            </span>
+            <button class="btn"> &gt; </button>
+        </header>
+
+        <aside class="calendar-header border-bottom">
+            {["mon","tue","wed","thurs","fri","sat","sun"].map(
+                (day,i) => <button class="btn btn-outline-primary text-capitalize text-center" onclick="alert(i)">
+                    {day}
+                </button>
+            )}
+        </aside>
+
+        <aside class="calendar-body">
+            {[...Array.from(Array(4).keys())].map(
+                (week,i) => <div class="col">
+                    {[...Array.from(Array(7).keys())].map( day => <button class="btn btn btn-outline-primary text-center">
+                        {week+1 + day}
+                    </button>)}
+                </div>
+            )}
+        </aside>
+    </section>
+
+
+    <h4>Boxes</h4>
+
+    <section class="row row-cols-2 row-cols-lg-3 rows-cols-xl-4 g-3">
+
+        {[0,1,2,3,4,5,26,31,6,16,7,17].map( item => <div class="col">
+                <div class="border p-3 rounded-3 bg-gradient">
+
+                    <header class="d-flex justify-content-between align-items-center">
+
+                        <div class="fs-5 d-flex gap-1">
+                            <i class="bi bi-wallet"></i>
+                        </div>
+
+                        <div class="lh-1 col-8">
+                            <b>Content {item}</b> <br/>
+                            <small>mini details</small>
+                        </div>
+
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                    </header>
+
+                    <p>
+                        <span class="fw-bold fs-2">100</span> users
+                    </p>
+
+                    <p>
+                        Pariatur voluptates in ipsam corporis dolor
+                        voluptatum delectus sapiente similique ullam obcaecati.
+                    </p>
+
+                    <a class="icon-link icon-link-hover fw-bold" href="#boxes">
+                        Go to Service 
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+        )}
+
+    </section>
+
+
+
+    <h4>Analytics</h4>
+
+    <p>Bar charts / curve charts / donut setc</p>
+
+
+    <!-- All cards according to roles and statusand etc -->
+    <h4>Cards</h4>
+
+    <section class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-3">
+
+        {[0,1,2,3,4,5,26,31,6,16,7,17].map( item => <div class="col">
+                <div class="p-1 border rounded-2 ">
+
+                    <div style="height: 21rem;" class="img-fluid img-thumbnail rounded-4">
+                        <img src=""  alt="estate" />
+                    </div>
+
+                    <div class="row row-cols-2 p-2">
+                        <h5 class="col">
+                            Appartment <span class="vr mx-2"/> Guest house
+                        </h5>
+                        <p class="col text-end">
+                            XAF 200
+                        </p>
+                        <p class="col">   
+                             <i class="bi bi-geo-alt"></i> Yaounde
+                        </p>
+
+                        <p class="col-12 d-flex justify-content-between align-items-center">
+                            <span>rooms: 3 </span>
+                            <span>parlor: 3 </span>
+                            <span>baths: 2 </span>
+                            <span>size: {item + 12 } sqm</span>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        )}
+
+    </section>
+
+
+    <!-- table componenets design -->
+
+
+    <h4>Tables Name Here</h4>
+
+    <nav class="nav gap-2 justify-content-between align-items-center">
+
+        <select style="max-width: 160px;" class="form-select" name="" id="">
+            <option value="" disabled>20 per page</option>
+            {[20,30,50,100].map(item => <option value={item.toString()}> {item} per page</option>)}
+        </select>
+
+        <div class="d-flex gap-2 align-items-center">
+
+            <div class="input-group border rounded">
+                <input type="search" class="input-group-text border-0 bg-body" name="keyword" required/>
+                <select class="form-select border-0" name="search-field" aria-label="search field">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <button class="btn btn-outline-secondary border-0" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+
+
+            <button class="btn btn-outline-danger">
+                <i class="bi bi-file-earmark-pdf"></i>
+            </button>
+
+            <button class="btn btn-outline-primary">
+                <i class="bi bi-filetype-csv"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <div class="table-responsive postion-relative p-2 ">
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th class="position-sticky left-0 top-0">
+                        <input type="checkbox" class="form-check-input me-3" name="check-all"/>
+                        #
+                    </th>
+                    {tableFields.map( (fld, i) => <th>
+                        <i class="bi bi-caret-up"></i>
+                        <i class="bi bi-caret-down"></i>
+                        <span>{fld}</span>
+                    </th>)}
+                    <th>...</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {[0,1,2,3,4,5,6].map( (row, i) => <tr>
+                    <td class="position-sticky left-0 top-0">
+                        <input type="checkbox" class="form-check-input me-3" name={`check-box=${i}`} />
+                        {i + 1}
+                    </td>
+                    {tableFields.map( item => <td>{item}</td>)}
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                options
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end p-2">
+                                {btnOpts.map(opt => <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class={`bi bi-${opt.icon}`}></i>
+                                        <span class="ms-3">{opt.name}</span>
+                                    </a>
+                                </li>)}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>)}
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- pagination component -->
+
+    <section class="px-3 nav align-items-center justify-content-evenly justify-content-lg-between gap-3 text-muted">
+
+        <p>Showing 3 out of 45 users</p>
+
+        <p class="">
+             {[1,2,3,4,5,6,7,8].map( item => <button class={`btn mx-1 rounded-circle ${item == 3 && "btn-outline-secondary"}`}>
+                 {item}
+             </button>)}
+        </p>
+    </section>
+
+
+
+
+
+</Layout>
