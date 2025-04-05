@@ -9,25 +9,136 @@ export const getStaticPaths = (() => {
         params: { lang }
     }))
 }) satisfies GetStaticPaths; 
+
+
+const { lang } = Astro.params;
+
+const pricingPlan = {
+  guest: [
+    {
+      price: "10,0",
+      name: "Basic Plan",
+      desc: "This plan is meant for people who are just need to find rooms quickly and get access or book the room, apparts they need for a limited peroid",
+      services: [
+        "Basic and Predefined messaging between hosts client","Users are allowed to give reviews and ratings."
+      ]
+    },
+    {
+      price: "19,0",
+      name: "Pro Plan",
+      desc: "This plan is meant for people who like luxury services added to their booking and reservations for free during for a limited peroid.",
+      services: [
+        "Fully editable messages between hosts client",
+        "Users are allowed to give reviews and ratings.",
+        "User has priority customer support services.",
+        "No forced ads during browsing",
+        "Advances search options and informations are provided."
+      ],
+      color: "success"
+    }
+  ],
+  host : [
+    {
+      price: "20,0",
+      name: "Basic Plan",
+      desc: "This plan is meant for people who are just need to find rooms quickly and get access or book the room, apparts they need for a limited peroid",
+      services: [
+        "Basic and Predefined messaging between hosts client","Users are allowed to give reviews and ratings."
+      ]
+    },
+    {
+      price: "40",
+      name: "Pro Plan",
+      desc: "This plan is meant for people who like luxury services added to their booking and reservations for free during for a limited peroid.",
+      services: [
+        "Fully editable messages between hosts client",
+        "Users are allowed to give reviews and ratings.",
+        "User has priority customer support services.",
+        "No forced ads during browsing",
+        "Advances search options and informations are provided."
+      ],
+      color:"primary"
+    },
+    {
+      price: "120",
+      name: "Premuim Plan / Partnership Plan",
+      desc: "This plan is meant for Real estate firms who are willing to maximize thier profits on this plaform their booking and reservations for free during for a limited peroid.",
+      services: [
+        "Fully editable messages between hosts client",
+        "Users are allowed to give reviews and ratings.",
+        "User has priority customer support services.",
+        "No forced ads during browsing",
+        "Advances search options and informations are provided."
+      ],
+      color: "danger"
+    },
+
+  ]
+}
 ---
 <ClientLayout title="pricing" description="dscription" keywords={["unknown"]} >
 
-<div style="max-width: 16rem;" class="card estate-card mx-auto">
-    <img src="placeholder-property-image.jpg" class="card-img-top" alt="Property Image">
-    <div class="card-body">
-      <h5 class="card-title">Luxury Villa in Beverly Hills</h5>
-      <p class="card-text">
-        <i class="bi bi-geo-alt"></i> 123 Main St, Beverly Hills, CA
+
+<main class="container-sm py-4">
+  <!-- plans Tabs switcher -->
+  <ul class="nav nav-underline" id="pricingTab" role="tablist">
+    {Object.keys(pricingPlan).map( (item,i) =>  <li class="nav-item" role="presentation">
+      <button class={`nav-link text-capitalize ${ i == 0 && "active"}`} id={item+"-tab"} data-bs-toggle="tab" data-bs-target={`#${item}-tab-pane`} type="button" role="tab" aria-controls={`${item}-tab-pane`} aria-selected="true">
+        {item}
+      </button>
+    </li>)}
+  </ul>
+
+  <!-- Plans options displays -->
+  <div class="tab-content my-4" id="pricingTabContent">
+
+    { Object.keys(pricingPlan).map( (item,i) => <section class={`tab-pane fade show ${i == 0 && "active"}`}id={`${item}-tab-pane`} role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+      <h3 class="text-center my-4 text-capitalize">{item} Plan</h3>
+      <p class="p-3 text-center">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, 
+        error qui dicta natus fugit nemo vitae, reiciendis provident delectus culpa fugiat. 
+        Dolorem ea quas accusamus nesciunt vero magni eum tempore.
       </p>
-      <ul class="list-unstyled estate-details">
-        <li><i class="bi bi-house"></i> 5 Bedrooms</li>
-        <li><i class="bi bi-shower"></i> 4 Bathrooms</li>
-        <li><i class="bi bi-ruler"></i> 3,500 sq ft</li>
-      </ul>
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="estate-price">$2,500,000</span>
-        <a href="#" class="btn btn-primary">View Details</a>
-      </div>
-    </div>
+
+      <aside class="nav justify-content-center gap-3 gap-lg-4 ">
+
+      {["guest","host"].includes(item) && pricingPlan[item].map( plan => <div style="max-width:24rem" class={`p-4 rounded-4 shadow`}>
+          <p>
+            <span class="fs-1 fw-semibold">${plan.price} </span>  / months
+          </p>
+          <p class={`fw-bold text-${ plan.color ?? ""}`}>{plan.name}</p>
+          <p class="mb-3">{plan.desc}</p>
+
+          <hr class="mb-3 w-50"/>
+          
+          <ul class="list-group mb-3">
+            {plan.services.map( service => <li class="d-flex gap-3 align-tiems-center mb-3">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span>{service}</span>
+            </li>)}
+          </ul>
+
+          <button class={`btn btn-outline-${plan.color ?? "success"}`}>
+              Get {plan.name}
+          </button>
+
+      </div>)}
+
+    
+    </aside>
+ 
+
+    </section>)}
   </div>
+
+
+
+
+
+
+</main>
+
+
+
 </ClientLayout>

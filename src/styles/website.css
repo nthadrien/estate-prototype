@@ -10197,4 +10197,43 @@ a, .nav-link {
   grid-template-columns: repeat(7, 1fr);
 }
 
+.message-row .message-options {
+  display: none;
+  right: 1.2rem;
+}
+.message-row:hover {
+  background-color: var(--bs-tertiary-bg);
+}
+.message-row:hover .message-options {
+  display: block;
+}
+.message-row:has(input:checked) {
+  background-color: var(--bs-success-bg-subtle);
+}
+
+.bg-inherit {
+  background-color: inherit;
+}
+
+.mytoast {
+  border-width: 0.7rem !important;
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  height: 5rem;
+  animation: growWidth 1s ease 1 forwards;
+}
+
+@keyframes growWidth {
+  0% {
+    width: 0;
+  }
+  75% {
+    width: 50%;
+  }
+  100% {
+    width: fit-content;
+  }
+}
+
 /*# sourceMappingURL=website.css.map */

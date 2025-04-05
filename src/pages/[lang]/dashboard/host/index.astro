@@ -1,8 +1,10 @@
 ---
+export const prerender = false;
+
 import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui";
 
-import IndexPage from "./_indexPage.tsx"
+import IndexPage from "./_indexPage.tsx";
 import Layout from "@layouts/Layout.astro";
 
 export const getStaticPaths = (() => {
@@ -31,5 +33,5 @@ const btnOpts = [
 
 ---
 <Layout title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
-    <IndexPage client:load lang={lang} />
+    <IndexPage client:only="solid" lang={lang} />
 </Layout>

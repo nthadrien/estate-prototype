@@ -1,10 +1,9 @@
-import { onMount } from "solid-js/types/server/reactive.js"
+import { onMount } from "solid-js"
 
 
 
 export default function ThemeSwitcherBtn() {
 
-    onMount
   return (
     <label>
       
