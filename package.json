@@ -15,7 +15,7 @@
     "@popperjs/core": "^2.11.8",
     "astro": "^5.5.4",
     "astro-purgecss": "^5.2.2",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.5",
     "mdast-util-to-string": "^4.0.0",
     "nanostores": "^0.11.4",
     "purgecss": "^7.0.2",

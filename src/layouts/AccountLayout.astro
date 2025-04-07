@@ -1,0 +1,46 @@
+---
+import ClientFooter from "@components/footers/ClientFooter.astro";
+import Layout from "./Layout.astro";
+import BaseFooter from "@components/footers/BaseFooter.astro";
+import ClientNavbar from "@components/navbars/ClientNavbar.astro";
+
+interface Props {
+	title: string;
+	description: string;
+	keywords: string[];
+}
+
+const {
+	title = "estate-develop",
+	description="page description",
+	keywords = ["rent","booking","rent houses","book room","villa","appartment"]
+} = Astro.props
+---
+
+
+<Layout 
+    title={title} 
+    description={description} 
+    keywords={keywords}
+>
+    <main class="container-fluid d-flex justify-content-between vh-100 p-0 m-0">
+
+        <aside class="h-100 col-md-6 d-none d-md-flex d-flex flex-column align-items-center justify-content-center text-white bg-primary-subtle p-3">
+            <h1>Hello Welcome</h1>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Iure, esse. Nihil delectus quo rerum numquam, 
+                rem ipsa dicta labore quidem iusto molestias commodi 
+                eum asperiores corrupti harum expedita corporis praesentium?
+            </p>
+        </aside>
+
+
+        <aside class="col-md-6 d-flex flex-column gap-3 justify-content-center align-items-center">
+            <slot />
+        </aside>
+
+        
+    </main>
+</Layout>

@@ -5,33 +5,54 @@ import { createMemo, For, Show, type JSX } from "solid-js";
 
 
 interface Props {
-    headings: string[];
     list: any[];
     idField: string | number;
     options: {
         icon: string;
         name: string;
     }[];
+    sendAction?: () => {}
 }
 
 interface OptionsProps {
-    id:string|number;
-    sendAction : () => {}
+    sendAction?: () => {}
     options: Props["options"]
 
 }
 
-const tableOptionsDropdown = (props:OptionsProps) => {
+const TableOptionsDropdown = (props:OptionsProps):JSX.Element => {
+
+    const handleAction = () => {
+        alert("Action : Clicked recently ");
+    }
 
     return (
-      <div>
-  
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <For each={props.options}>
+                    { item => <li>
+                        <button onClick={handleAction} class="dropdown-item">
+                            <i class={`bi bi-${item.icon} me-2`}></i>
+                            <span>{item.name}</span>
+                        </button>
+                    </li>}
+                </For>
+            </ul>
       </div>
     );
   }
   
 
 function ResponsiveTable(props: Props): JSX.Element {
+
+
+    const Headings = () => {
+        const obj0 = props.list[0];
+        return Object.keys(obj0).filter( head => head !== props.idField );
+    }
 
 
     const list = createMemo(()=>{
@@ -50,7 +71,7 @@ function ResponsiveTable(props: Props): JSX.Element {
                         <th>
                             <input type="checkbox" name="all" class="form-check-input" title="select all visible" />
                         </th>
-                        <For each={props.headings}>
+                        <For each={Headings()}>
                             {head => (<th>
                                 {head}
                             </th>)}
@@ -66,13 +87,14 @@ function ResponsiveTable(props: Props): JSX.Element {
                                 <input type="checkbox" name={i.toString()} class="form-check-input" />
                             </td>
 
-                            <For each={props.headings}>
+                            <For each={Headings()}>
                                 {head => <td>
                                     {row[head]}
                                 </td>}
                             </For>
 
                             <td>
+                                <TableOptionsDropdown options={props.options} sendAction={props.sendAction} />
 
                             </td>
                         </tr>}

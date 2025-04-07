@@ -1,3 +1,61 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui.ts";;
+import Layout from "@layouts/AccountLayout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( 
+        lang => ({ params: { lang }})
+    );
+}) satisfies GetStaticPaths;
 
 
-<h2>Logins Now</h2>
+const { lang } = Astro.props;
+const title = () => lang == "en" ? "login": "comptes"; 
+const description = () => lang == "en" ? "description in english":"description en francais";
+const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
+---
+
+<Layout title={title()} description={description()} keywords={keywords()}>
+
+    <form style="max-width: 568px;" class="d-flex flex-column align-items-center gap-3 p-3" action="">
+
+        <h3>Signin</h3>
+
+        <label class="w-100">
+            <b class="mb-3">Username</b>
+            <input class="form-control" type="text" placeholder="username / profile name" name="username" required/>
+        </label>
+
+
+        <label class="w-100">
+            <b class="mb-3">Password</b>
+            <input class="form-control" type="password" placeholder="******" name="password" required/>
+        </label>
+
+
+        <p>
+            Please if you do not have an account <a>click here</a> to get to the signin page.
+        </p>
+        
+        <button class="btn btn-lg btn-primary">
+            Sign in 
+        </button>
+
+        <p>OR</p>
+
+        <button class="btn btn-tertiary">
+            Google Account
+        </button>
+
+        <button class="btn btn-tertiary">
+            Google Account
+        </button>
+
+        
+
+    </form>
+
+</Layout>
+
