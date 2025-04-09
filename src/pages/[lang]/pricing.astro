@@ -20,7 +20,8 @@ const pricingPlan = {
       name: "Basic Plan",
       desc: "This plan is meant for people who are just need to find rooms quickly and get access or book the room, apparts they need for a limited peroid",
       services: [
-        "Basic and Predefined messaging between hosts client","Users are allowed to give reviews and ratings."
+        "Basic and Predefined messaging between hosts client",
+        "Users are allowed to give reviews and ratings."
       ]
     },
     {
@@ -43,7 +44,8 @@ const pricingPlan = {
       name: "Basic Plan",
       desc: "This plan is meant for people who are just need to find rooms quickly and get access or book the room, apparts they need for a limited peroid",
       services: [
-        "Basic and Predefined messaging between hosts client","Users are allowed to give reviews and ratings."
+        "Basic and Predefined messaging between hosts client",
+        "Users are allowed to give reviews and ratings."
       ]
     },
     {
@@ -103,9 +105,9 @@ const pricingPlan = {
 
       <aside class="nav justify-content-center gap-3 gap-lg-4 ">
 
-      {["guest","host"].includes(item) && pricingPlan[item].map( plan => <div style="max-width:24rem" class={`p-4 rounded-4 shadow`}>
-          <p>
-            <span class="fs-1 fw-semibold">${plan.price} </span>  / months
+      {["guest","host"].includes(item) && pricingPlan[item].map( (plan:any) => <div style="max-width:24rem" class={`p-4 rounded-4 shadow`}>
+          <p> 
+            <span class="fs-1 fw-semibold">${plan.price}</span>  / months
           </p>
           <p class={`fw-bold text-${ plan.color ?? ""}`}>{plan.name}</p>
           <p class="mb-3">{plan.desc}</p>
@@ -113,7 +115,7 @@ const pricingPlan = {
           <hr class="mb-3 w-50"/>
           
           <ul class="list-group mb-3">
-            {plan.services.map( service => <li class="d-flex gap-3 align-tiems-center mb-3">
+            {plan.services.map( (service:string) => <li class="d-flex gap-3 align-tiems-center mb-3">
               <i class="bi bi-check-circle-fill text-success"></i>
               <span>{service}</span>
             </li>)}
@@ -131,11 +133,6 @@ const pricingPlan = {
 
     </section>)}
   </div>
-
-
-
-
-
 
 </main>
 

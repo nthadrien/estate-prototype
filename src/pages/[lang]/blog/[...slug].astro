@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, getEntry , getEntries, render } from 'astro:content';
 
 import ClientLayout from "@layouts/ClientLayout.astro";
-import BlogPostHCard from "@components/cards/BlogPostHCard.astro";
+import BlogPostCard from "@components/cards/BlogPostCard.astro";
 
 export const getStaticPaths = (async () => {
     const blogPages = await getCollection("blog");
@@ -22,7 +22,7 @@ export const getStaticPaths = (async () => {
 const { lang, slug } = Astro.params;
 
 const {page} = Astro.props;
-const { Content, remarkPluginFrontmatter } = await render(page);
+const { Content, remarkPluginFrontmatter, headings } = await render(page);
 
 const author = await getEntry(page.data.author.collection,page.data.author.id);
 const relatedPosts = await getEntries(page.data.relatedPosts);
@@ -35,54 +35,46 @@ const info = {
     description: page.data.description,
     keywords: page.data.tags,
 }
-
-
-console.log(relatedPosts);
-
 ---
 
 <ClientLayout title={info.title} description={info.description} keywords={info.keywords}>
+
+
+    <section class="container mx-auto mb-3">
+        <h3>{page.data.title}</h3>
+        <p>Written by {author.data.name} {remarkPluginFrontmatter.minutesRead}</p>
+        <img style="max-height: max(380px,40vh);max-width:1096px;" src={page.data.image?.src}  alt={page.data.image?.src} class="object-fit-cover ratio ratio-16x9 rounded-3 w-100 mx-auto"/>
+    </section>
     
-    <main style="max-width: 768px;" class="container-sm mx-auto">
-        <img src={page.data.image?.src}  alt={page.data.image?.src} class="w-100"/>
-        <p>by {author.data.name} {remarkPluginFrontmatter.minutesRead}</p>
-        <section class="content-section d-flex flex-column gap-3">
+    <main style="max-width: 1080px;" class="container row mx-auto g-3 p-3">
+        
+        <section class="col-12 col-lg-8 content-section d-flex flex-column gap-2">
+            <!-- <p>Written by {author.data.name} <br/> {remarkPluginFrontmatter.minutesRead}</p> -->
             <Content />
         </section>
+
+        <aside class="col-12 col-lg-4">
+            <nav style="top:3rem;" class="p-2 sticky-lg-top">
+                <h5 class="border-bottom pb-3">Table of Content</h5>
+                {headings.map( head => <p class="mb-3 ps-2">
+                    <a class="d-block" href={"#"+head.slug}>
+                        {head.text}
+                    </a>
+                </p>)}
+            </nav>
+        </aside>
     </main>
 
-    <section style="max-width: 960px;" class="container-md d-flex justify-content-between my-2 mx-auto">
+    <section class="container mx-auto py-3">
 
-        <a href={`/${lang}/blog`} class="btn btn-outline-secondary btn-sm">
-            <i class="bi bi-arrow-left"></i>  Return list to Posts
-        </a>
+        <h5>Relateds Blog Posts</h5> 
 
-    </section>
-
-    <section class="container-xxl d-flex flex-column gap-2 mx-auto py-3">
-
-        <h4>Relateds Blog Posts</h4>
-
-
-        <ul class="list-unstyled row row-cols-md-2 row-cols-xl-3 g-3">
-        {relatedPosts[0] && relatedPosts.map( item => <li style="height: 200px;" class="col">
-                <BlogPostHCard post={item} />
-        </li>)}
-        </ul>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-3">
+            {relatedPosts[0] && relatedPosts.map( item => <div style=";" class="col">
+                <BlogPostCard display={1} post={item} />
+            </div>)}
+        </div>
 
     </section>
+
 </ClientLayout> 
-
-<style is:inline>
-
-    .content-section {
-        & h1 {
-            font-size: 1.5em;
-        }
-
-        & h2 {
-            font-size: 1.2em;
-        }
-    }
-
-</style>

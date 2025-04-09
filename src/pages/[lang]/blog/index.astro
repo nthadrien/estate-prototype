@@ -30,18 +30,30 @@ const posts = await getCollection("blog",({ id }) => {
 
     <h3 class="container my-2 mx-auto">Lastest Posts</h3>
 
-    <header class="container-xxl row g-1 my-2 mx-auto">
-        <div style="max-height: max(450px,60vh);" class="col-lg-8">
+    <header class="container-xxl row g-3 my-2 mx-auto p-0">
+
+        <div style="max-height: max(450px,60vh);" class="col-lg-7">
             <BlogPostHCard post={posts[1]} />
         </div>
 
-        <div class="col-lg-4 d-flex flex-column justify-content-between gap-1">
+        <div class="col-lg-5">
             
             <div>
                 <BlogPostHCard post={posts[0]} />
             </div>
-            <div class="h5 p-2">
-                Keep in check to be informed of the hostest blog post. With alot of tips and advices for hosts and clents around the world.
+
+            <div class="w-100 p-3">
+
+                <form class="input-group border mb-3">
+                    <input type="text" class="form-control border-0" placeholder="keywords, mot cles" aria-label="search" aria-describedby="basic-addon1">
+                    <button type="submit" class="input-group-text smaller border-0 bi bi-search"></button>
+                </form>
+
+                <h5>Tags: </h5>
+    
+                <div class="d-flex flex-wrap gap-2">
+                    {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="text-capitalize rounded-1 p-1 text-bg-secondary">tag name {tag}</a>)}
+                </div>
             </div>
         </div>
     </header>
@@ -49,31 +61,19 @@ const posts = await getCollection("blog",({ id }) => {
 
     
 
-    <main class="container-xxl my-4 mx-auto row gap-1">
+    <main class="container-xxl my-4 mx-auto">
 
-        <h4 class="col-12 my-2 mx-auto border-bottom">Explore Other Posts</h4>
+        <h4 class="my-2 mx-auto border-bottom pb-3">Explore Other Posts</h4>
 
-        <ul class="col-12 col-lg-10 col-xl-9 row row-cols-2 row-cols-lg-3  justify-content-evenly g-2 g-lg-4 list-unstyled">
-            
-            {[1,2,3,4,5,6,7,8,9].map( post => <li style="max-width:23rem;" class="col">
+        <ul class="nav gap-2 justify-content-evenly">
+            {[1,2,3,4,5,6,7,8,9].map( post => <li>
                 <BlogPostCard post={posts[2]} />
             </li>)}
         </ul>
 
-        <div style="top:2rem" class="col-12 col-lg-2 col-xl-3 p-2 d-flex flex-column gap-3 position-sticky">
-            <h5>Search</h5>
-            <form class="input-group border mb-3">
-                <input type="text" class="form-control border-0" placeholder="keywords, mot cles" aria-label="search" aria-describedby="basic-addon1">
-                <button type="submit" class="input-group-text smaller border-0 bi bi-search"></button>
-            </form>
-            <h5>Tags: </h5>
 
-            <div class="d-flex flex-wrap gap-2">
-                {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="rounded-0 badge text-bg-info text-white">tag name {tag}</a>)}
-                {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="rounded-0 badge text-bg-info text-white">tag name 2{tag}</a>)}
-            </div>
-        </div>
-
+        <section class="nav my-3 gap-xl-2 gap-1 justify-content-between">
+        </section>
 
     </main>
 

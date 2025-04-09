@@ -1,46 +1,54 @@
 ---
 import type { CollectionEntry } from "astro:content";
 interface Props {
+    display? : 1|2;
     post : CollectionEntry<"blog">
 }
 
 const { 
+    display =2 ,
     post 
 } = Astro.props;
 
 const date = new Date(post.data.publishedDate).toDateString();
 ---
 
-<aside class="card border-0">
+<aside class={`d-flex ${display == 1 && "flex-column position-relative"} gap-2 p-1`}>
 
-    <section class="position-relative">
+    <img class={`rounded-3 object-fit-cover ${display == 1 ? "w-100" : "d-none d-lg-inline col-4"}`} style="height: 20rem;" loading="lazy" src={post.data.image?.src} alt={post.data.image?.alt}>
+    
 
-        <img class="card-img-top rounded-0" style="min-height: 220px;" loading="lazy" src={post.data.image?.src} alt={post.data.image?.alt}>
+    <section class="w-100 p-2">
 
-        <div style="bottom: 0.2rem;left:0.4rem;" class="position-absolute">
+        <div style="top: 17rem;left: .5rem;" class={`${display == 1 ?  "position-absolute" : ""}`}>
             <p class="small">{post.data.tags.map(
-                tag => <small class="badge text-bg-light me-1 rounded-0">
+                tag => <small class="px-1 shadow-sm bg-body text-capitalize me-1 rounded-0">
                     {tag}
                 </small>
             )}</p>
         </div> 
 
-    </section>
-    
+        <h5 class="fw-bold">{post.data.title}</h5>
 
-    <a href={"/"+post.id.replace("/","/blog/")} class="card-body p-2">
-        <h5 class="card-title fw-bold">{post.data.title}</h5>
-        <span class="smaller card-subtitle my-0"> 
-            <i class="bi bi-calendar-event me-2"></i> {date}
-        </span>
-        <p class="card-text mt-0">
+        <div class="nav justify-content-between"> 
+            <span>
+                <i class="bi bi-calendar-event me-2"></i> {date}
+            </span>
+
+            <span>
+                <i title="4+ comments" class="bi bi-hand-thumbs-up"> </i>
+                <i title="2+ likes" class="bi bi-chat-square-text ms-2"> </i>
+            </span>
+        </div>
+
+        <p>
             <p class="line-clamp small overflow-y-hidden">{post.data.description} </p>
-            <h6 class="small">
+            <a href={"/"+post.id.replace("/","/blog/")} class="small fw-bold icon-link icon-link-hover">
                 Read blog 
                 <i class="bi bi-arrow-right"></i>    
-            </h6>
+            </a>
         </p>
-    </a>
+    </section>
     
 </aside>
 
