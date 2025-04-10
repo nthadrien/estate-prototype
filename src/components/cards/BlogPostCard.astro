@@ -15,7 +15,7 @@ const date = new Date(post.data.publishedDate).toDateString();
 
 <aside class={`d-flex ${display == 1 && "flex-column position-relative"} gap-2 p-1`}>
 
-    <img class={`rounded-3 object-fit-cover ${display == 1 ? "w-100" : "d-none d-lg-inline col-4"}`} style="height: 20rem;" loading="lazy" src={post.data.image?.src} alt={post.data.image?.alt}>
+    <img class={`rounded-3 object-fit-cover ${display == 1 ? "w-100" : "d-none d-lg-inline col-4"}`} style={display !== 1 ? "height: 12rem" :"height: 20rem;"} loading="lazy" src={post.data.image?.src} alt={post.data.image?.alt}>
     
 
     <section class="w-100 p-2">

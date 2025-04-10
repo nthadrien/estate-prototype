@@ -5,7 +5,7 @@ import Partners from "@components/reusables/Partners.astro";
 import NeedHelp from "@components/reusables/NeedHelp.astro";
 
 import ClientLayout from "@layouts/ClientLayout.astro";
-import { languages } from "../../../i18n/ui";
+import { languages } from "../../i18n/ui.ts";
 
 export const getStaticPaths = (() => {
     const langs = Object.keys(languages);
@@ -62,61 +62,37 @@ const realEstateFAQs: RealEstateQuestion[] = [
         href: "/help/contact-support",
     },
 ];
+
+const heading = {
+    title: lang == "en" ? "about-us" : "A propos",
+    description : lang == "en" ? "Who we are , why us,what we do better ?":"Qui nous sommes, Pourquoi travailler avec nous?",
+    keywords:  lang == "en" ?["Best seo optimization"] : ["Nous"]
+}
 ---
 
-<ClientLayout>
+<ClientLayout title={heading.title} description={heading.description} keywords={heading.keywords} >
+    
     <main
         class="container-fluid p-0 bg-body-tertiary d-flex flex-column gap-4 align-items-center"
     >
-        <section class="container py-3 row g-4">
-            <aside id="about-us" class="col-12 py-4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Facere quis iure consequuntur sequi perspiciatis similique
-                    corrupti quas culpa eveniet maxime quidem corporis, tempore
-                    incidunt, amet iusto dolores non cum deleniti. 
-                    Ducimus eum alias corporis, voluptatum nostrum repudiandae
-                    unde distinctio voluptates maxime molestias quod, a
-                    officiis. Culpa iste deleniti at sed?
-                </p>
-            </aside>
 
-            <h2 class="text-center">Services</h2>
+        <section class="container-sm row row-cols-1 row-cols-md-2 justify-content-center align-items-center py-4">
+            
+            <h1 data-iobs="slide-up">Our StoRy</h1>
+            <p>
+                Reiciendis dignissimos commodi inventore nisi, 
+                error sint animi illo expedita veniam libero possimus tempora 
+                ipsam iste doloribus sequi cumque ullam delectus autem!
+                Ducimus eum alias corporis, voluptatum nostrum repudiandae
+                unde distinctio voluptates maxime molestias quod, a
+                officiis. Culpa iste deleniti at sed?
+            </p>
 
-            <aside id="services" class="col-md-6">
-                <h4 class="fw-bold text-body-emphasis">
-                    Competitive Advantage & <br/> Market Opportunity
-                </h4>
-                <p>
-                    Ready to go beyond the starter design? Check out these
-                    open source projects that you can quickly duplicate.
-                </p>
-                <ul
-                    class="w-100 list-unstyled ps-0 row row-cols-2 g-3 order-4 order-md-3"
-                >
-                    {
-                        [1, 2, 3, 4].map((item) => (
-                            <div class="col d-flex flex-column flex-lg-row gap-2">
-                                <i
-                                    style={
-                                        "max-height: 42px;max-width: 42px;"
-                                    }
-                                    class="text-bg-secondary bi bi-collection p-2 rounded-circle"
-                                />
-                                <div>
-                                    <p class="fw-semibold mb-0 text-body-emphasis">
-                                        {item} Featured title
-                                    </p>
-                                    <p class="text-body-secondary small">
-                                        Paragraph of text beneath the heading to
-                                        explain the heading.
-                                    </p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </ul>
-            </aside>
+        </section>
+
+
+
+        <section class="container-sm py-3 row g-4">
 
             <aside class="col-md-6">
                 <img
@@ -125,42 +101,77 @@ const realEstateFAQs: RealEstateQuestion[] = [
                     src="/images/img-2x1.png"
                     loading="lazy"
                 />
-                <p class="text-body-secondary">
-                    Paragraph of text beneath the heading to explain the
-                    heading. We'll add onto it with another sentence and
-                    probably just keep going until we run out of words.
-                </p>
             </aside>
+
+            <aside id="services" class="col-md-6">
+
+                <h2>Services</h2>
+                <h4 class="fw-bold text-body-emphasis">
+                    Competitive Advantage & <br/> Market Opportunity
+                </h4>
+
+                <p>
+                    Ready to go beyond the starter design? Check out these
+                    open source projects that you can quickly duplicate.
+                </p>
+
+                <ul
+                    class="w-100 list-unstyled ps-0 row row-cols-1 g-3"
+                >
+                    {
+                        [1, 2, 3, 4].map((item) => (
+                            <div data-iobs="slide-right" class="col d-flex flex-column flex-lg-row gap-2">
+                                <i
+                                    style={
+                                        "max-height: 42px;max-width: 42px;"
+                                    }
+                                    class={`fs-4 bi bi-${item}-circle-fill`}
+                                />
+                                <details>
+                                    <summary class="fs-5 fw-bold">service {item} Epcot Center</summary>
+                                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+                                </details>
+                            </div>
+                        ))
+                    }
+                </ul>
+            </aside>
+
+            
         </section>
 
         <section class="container-fluid bg-body p-4">
-            <ul
-                class="container g-3 row justify-content-center align-items-center list-unstyled text-center mx-auto"
+            <div
+                class="container g-3 nav justify-content-center align-items-center text-center mx-auto"
             >
-                <li class="col lh-sm">
-                    <span class="h2">10K+</span>
-                    <hr class="border-2 w-25 mx-auto" />
+                <p class="col fw-bold lh-sm">
+                    <strong class="fs-2"> 
+                        <span data-increment="10">10</span>  k+
+                    </strong> <br/>
                     <span>Clients</span>
-                </li>
+                </p>
 
-                <li class="col lh-sm">
-                    <span class="h2">100+</span>
-                    <hr class="border-2 w-25 mx-auto" />
+                <p data-iobs="" class="col lh-sm">
+                    <strong class="fs-2"> 
+                        <span data-increment="100">10</span>+
+                    </strong> <br/>
                     <span>Agents</span>
-                </li>
+                </p>
 
-                <li class="col lh-sm">
-                    <span class="h2">23K+</span>
-                    <hr class="border-2 w-25 mx-auto" />
+                <p class="col lh-sm">
+                    <strong class="fs-2"> 
+                        <span data-increment="23">0</span>+
+                    </strong> <br/>
                     <span>Estates</span>
-                </li>
+                </p>
 
-                <li class="col lh-sm">
-                    <span class="h2">12+</span>
-                    <hr class="border-2 w-25 mx-auto" />
+                <p class="col lh-sm">
+                    <strong class="fs-2"> 
+                        <span data-increment="12">0</span>
+                    </strong> <br/>
                     <span>Employees</span>
-                </li>
-            </ul>
+                </p>
+            </div>
         </section>
 
         <section data-iobs="up" id="FAQ" class="container-xl py-5 px-2 row g-2">
@@ -209,3 +220,36 @@ const realEstateFAQs: RealEstateQuestion[] = [
         <NeedHelp />
     </main>
 </ClientLayout>
+
+
+<script>
+
+    const all: NodeListOf<Element> = document?.querySelectorAll("[data-increment]");
+
+    const increase = (e: IntersectionObserverEntry["target"] ) => {
+        let target: number = parseInt(e.getAttribute("data-increment") ?? "0") ?? 0;
+        let number = 0;
+        var interval = setInterval(function() {
+            e.innerHTML = number?.toString() ;
+            if (number >= target) clearInterval(interval);
+            number++;
+        }, 100);
+    }
+
+    const dOpts = {
+        threshold: 0.1, // Adjust threshold as needed (0 to 1)
+    }
+
+    const displayObserver:IntersectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            increase(entry.target);
+            displayObserver.unobserve(entry.target); // Optional: Stop observing after entering view
+          }
+        });
+    }, dOpts );
+
+    
+    all.forEach( element => displayObserver.observe(element) );
+
+</script>

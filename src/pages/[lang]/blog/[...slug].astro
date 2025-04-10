@@ -40,17 +40,25 @@ const info = {
 <ClientLayout title={info.title} description={info.description} keywords={info.keywords}>
 
 
-    <section class="container mx-auto mb-3">
-        <h3>{page.data.title}</h3>
-        <p>Written by {author.data.name} {remarkPluginFrontmatter.minutesRead}</p>
-        <img style="max-height: max(380px,40vh);max-width:1096px;" src={page.data.image?.src}  alt={page.data.image?.src} class="object-fit-cover ratio ratio-16x9 rounded-3 w-100 mx-auto"/>
-    </section>
     
-    <main style="max-width: 1080px;" class="container row mx-auto g-3 p-3">
+    
+    <main class="container-sm row mx-auto g-3">
+
+        <section class="col-12 mx-auto mb-3">
+            <h3>{page.data.title}</h3>
+            <p>Written by {author.data.name} {remarkPluginFrontmatter.minutesRead}</p>
+            <img style="max-height: max(380px,40vh);max-width:1096px;" src={page.data.image?.src}  alt={page.data.image?.src} class="object-fit-cover ratio ratio-16x9 rounded-3 w-100 mx-auto"/>
+        </section>
         
         <section class="col-12 col-lg-8 content-section d-flex flex-column gap-2">
             <!-- <p>Written by {author.data.name} <br/> {remarkPluginFrontmatter.minutesRead}</p> -->
             <Content />
+
+            <p>
+                <a id="back" href="#" class="btn btn-sm rounded-0 btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Return
+                </a>
+            </p>
         </section>
 
         <aside class="col-12 col-lg-4">
@@ -65,9 +73,9 @@ const info = {
         </aside>
     </main>
 
-    <section class="container mx-auto py-3">
+    <section class="container-sm mx-auto py-3">
 
-        <h5>Relateds Blog Posts</h5> 
+        <h5 class="pb-3 border-bottom">Relateds Blog Posts</h5> 
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-3">
             {relatedPosts[0] && relatedPosts.map( item => <div style=";" class="col">
