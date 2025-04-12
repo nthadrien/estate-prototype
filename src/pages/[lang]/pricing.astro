@@ -94,7 +94,7 @@ const pricingPlan = {
   <!-- Plans options displays -->
   <div class="tab-content my-4" id="pricingTabContent">
 
-    { Object.keys(pricingPlan).map( (item,i) => <section class={`tab-pane fade show ${i == 0 && "active"}`}id={`${item}-tab-pane`} role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    { Object.keys(pricingPlan).map( (item:string,i) => <section class={`tab-pane fade show ${i == 0 && "active"}`}id={`${item}-tab-pane`} role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
       <h3 class="text-center my-4 text-capitalize">{item} Plan</h3>
       <p class="p-3 text-center">
@@ -103,9 +103,9 @@ const pricingPlan = {
         Dolorem ea quas accusamus nesciunt vero magni eum tempore.
       </p>
 
-      <aside class="nav justify-content-center gap-3 gap-lg-4 ">
+      <aside class="nav justify-content-center gap-2 gap-lg-3">
 
-      {["guest","host"].includes(item) && pricingPlan[item].map( (plan:any) => <div style="max-width:24rem" class={`p-4 rounded-4 shadow`}>
+      {item == "guest" || item == "host"? pricingPlan[item].map( (plan:any) => <div style="max-width: 20rem" class={`p-4 rounded-2 shadow`}>
           <p> 
             <span class="fs-1 fw-semibold">${plan.price}</span>  / months
           </p>
@@ -121,11 +121,11 @@ const pricingPlan = {
             </li>)}
           </ul>
 
-          <button class={`btn btn-outline-${plan.color ?? "success"}`}>
-              Get {plan.name}
+          <button class={`btn btn-sm btn-outline-${plan.color ?? "success"}`}>
+              Get Plan
           </button>
 
-      </div>)}
+      </div>):""}
 
     
     </aside>

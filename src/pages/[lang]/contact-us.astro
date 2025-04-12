@@ -39,7 +39,7 @@ const context = lang == "en" ? info.en : info.fr;
     
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.5386433761005!2d9.7112959!3d4.0673698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061126de506f927%3A0x1e59b74d6f97f357!2sDe%C3%AFdo%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sus!4v1737423844047!5m2!1sfr!2sus" 
-        width="100%" height="560" style="border:0;" allowfullscreen={true} 
+        width="100%" height="480" style="border:0;" allowfullscreen={true} 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
@@ -78,19 +78,26 @@ const context = lang == "en" ? info.en : info.fr;
         <form class="row g-3 p-1 lh-lg g-2" action="">
 
             <div class="col-lg-6">
-                <label for="name" class="form-label">Full Name</label>
-                <input name="name" type="text" placeholder="Name" class="form-control" required/>
 
-                <label for="email" class="form-label">Email Address</label>
-                <input name="email" type="email" placeholder="example@mailbox.do" class="form-control" required/>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" required>
+                    <label for="name">Username / Name </label>
+                </div>
 
-                <label for="subject" class="form-label">Subject</label>
-                <textarea class="form-control" name="subject" cols="30"></textarea>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="subject"></textarea>
+                    <label for="subject">subject</label>
+                </div>
             </div>
 
-            <div class="col-lg-6">
-                <label for="message" class="form-label">Message</label>
-                <textarea style={"height: 90%;"} placeholder="Write your message her" class="form-control" name="message"  cols="30"></textarea>
+            <div class="col-lg-6 form-floating">
+                <textarea style={"height: 100%;"} class="form-control" placeholder="Leave a comment" name="message" required></textarea>
+                <label>Leave a message here please</label>
             </div>
 
 

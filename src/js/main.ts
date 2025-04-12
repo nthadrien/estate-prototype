@@ -34,6 +34,6 @@ window.addEventListener('DOMContentLoaded', (ev:Event ) => {
           }
         });
     }, dOpts );
-
++
     elementsToObserve.forEach( element => displayObserver.observe(element) );
 });

@@ -36,7 +36,7 @@
 // @import "./node_modules/bootstrap/scss/pagination";
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/alert";
-// @import "./node_modules/bootstrap/scss/progress";
+@import "./node_modules/bootstrap/scss/progress";
 @import "./node_modules/bootstrap/scss/list-group";
 // @import "./node_modules/bootstrap/scss/close";
 @import "./node_modules/bootstrap/scss/toasts";
@@ -142,8 +142,27 @@ a, .nav-link {
     animation: growWidth 1s ease 1 forwards;
 }
 
+.container-xs {
+    max-width: 568px;
+    width: 100%;
+}
+
 .container-sm {
     max-width: 1080px !important;
+}
+
+.form-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form-step {
+    flex: 0 0 100%;
+}
+
+.stepo {
+    height: 2rem;
+    width: 2rem;
 }
 
 @keyframes growWidth {

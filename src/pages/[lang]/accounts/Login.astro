@@ -19,41 +19,40 @@ const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
 
 <Layout title={title()} description={description()} keywords={keywords()}>
 
-    <form style="max-width: 568px;" class="d-flex flex-column align-items-center gap-3 p-3" action="">
+    <form style="max-width: 568px;" class="p-3 mt-4">
 
-        <h3>Signin</h3>
+        <h2 class="mb-3 text-center">Signin</h2>
 
-        <label class="w-100">
-            <b class="mb-3">Username</b>
-            <input class="form-control" type="text" placeholder="username / profile name" name="username" required/>
-        </label>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
 
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
 
-        <label class="w-100">
-            <b class="mb-3">Password</b>
-            <input class="form-control" type="password" placeholder="******" name="password" required/>
-        </label>
-
-
-        <p>
-            Please if you do not have an account <a>click here</a> to get to the signin page.
+        <p class="mb-3">
+            Please if you do not have an account <a class="fw-semibold text-primary" href="/en/accounts/register">click here</a> to get to the register page.
+            If you have any other problems please <a class="fw-semibold text-primary" href="/en/contact-us">click here</a> to get to us.
         </p>
         
-        <button class="btn btn-lg btn-primary">
+        <button class="btn btn-primary mb-3 w-100">
             Sign in 
         </button>
 
-        <p>OR</p>
+        <p class="my-4 text-center">
+            OR
+        </p>
 
-        <button class="btn btn-tertiary">
+        <button class="btn btn-dark w-100 mb-3">
             Google Account
         </button>
 
-        <button class="btn btn-tertiary">
-            Google Account
+        <button class="btn btn-light border w-100 mb-3">
+            Facebook Account
         </button>
-
-        
 
     </form>
 
