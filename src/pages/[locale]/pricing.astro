@@ -5,13 +5,13 @@ import { languages } from "src/i18n/ui";
 
 export const getStaticPaths = (() => {
     
-    return Object.keys(languages).map( lang => ({
-        params: { lang }
+    return Object.keys(languages).map( locale => ({
+        params: { locale }
     }))
 }) satisfies GetStaticPaths; 
 
 
-const { lang } = Astro.params;
+const { locale } = Astro.params;
 
 const pricingPlan = {
   guest: [

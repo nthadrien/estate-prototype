@@ -2,7 +2,7 @@
 import { createEffect, createSignal, For, lazy, Match, onCleanup, Suspense, Switch, type JSX } from "solid-js";
 
 import ErrorPage from "@components/redirects/ErrorPage";
-import DashboardHeader from "@components/navbars/DashboardHeader";
+import DashboardHeader from "@components/headers/DashboardHeader";
 
 // pages:
 const Settings = lazy(() => import("@components/dashboardPages/_SettingsPage.tsx"));

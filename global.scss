@@ -161,8 +161,11 @@ a, .nav-link {
 }
 
 .stepo {
-    height: 2rem;
-    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.7rem;
+    width: 1.7rem;
 }
 
 @keyframes growWidth {

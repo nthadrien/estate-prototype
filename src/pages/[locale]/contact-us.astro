@@ -9,13 +9,13 @@ import { getLangFromUrl } from "../../i18n/utils";
 export const getStaticPaths = (() => {
     const langs = Object.keys(languages)
 
-    return langs.map( lang => {
-        return { params : { lang }}
+    return langs.map( locale => {
+        return { params : { locale }}
     }) ;
 }) satisfies GetStaticPaths;
 
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
-const { lang } = Astro.params as Params;
+const { locale } = Astro.params as Params;
 
 const info = {
     "en" : {
@@ -30,8 +30,7 @@ const info = {
     }
 }
 
-const context = lang == "en" ? info.en : info.fr;
-
+const context = locale == "en" ? info.en : info.fr;
 
 
 ---

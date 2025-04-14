@@ -9,12 +9,12 @@ import { languages } from "../../i18n/ui.ts";
 
 export const getStaticPaths = (() => {
     const langs = Object.keys(languages);
-    return langs.map( lang => {
-        return { params : { lang }}
+    return langs.map( locale => {
+        return { params : { locale }}
     })
 }) satisfies GetStaticPaths;
 
-const { lang } = Astro.params;
+const { locale } = Astro.params;
 
 interface RealEstateQuestion {
     question: string;
@@ -64,9 +64,9 @@ const realEstateFAQs: RealEstateQuestion[] = [
 ];
 
 const heading = {
-    title: lang == "en" ? "about-us" : "A propos",
-    description : lang == "en" ? "Who we are , why us,what we do better ?":"Qui nous sommes, Pourquoi travailler avec nous?",
-    keywords:  lang == "en" ?["Best seo optimization"] : ["Nous"]
+    title: locale == "en" ? "about-us" : "A propos",
+    description : locale == "en" ? "Who we are , why us,what we do better ?":"Qui nous sommes, Pourquoi travailler avec nous?",
+    keywords:  locale == "en" ?["Best seo optimization"] : ["Nous"]
 }
 ---
 

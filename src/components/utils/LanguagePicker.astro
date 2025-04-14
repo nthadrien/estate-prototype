@@ -1,0 +1,21 @@
+---
+
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
+import { languages } from "src/i18n/ui.ts";
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
+<div class="btn-group">
+    <button type="button" class="nav-link text-uppercase dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      {t("lang")}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end border-0 border-top border-3 border-primary">
+        {Object.entries(languages).map(([lang, label]) => ( <a  class={`dropdown-item ${currentLang == lang && "active"}`} href={`/${lang}/`}>
+            {label}
+        </a>
+        ))}
+    </ul>
+  </div>
+<div>

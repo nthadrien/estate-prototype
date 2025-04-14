@@ -1,0 +1,117 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui.ts";;
+import Layout from "@layouts/AccountLayout.astro";
+import RegisterStepOne from "@components/accounts/RegisterStepOne.astro";
+import RegisterStepTwo from "@components/accounts/RegisterStepTwo.astro";
+import RegisterStepThree from "@components/accounts/RegisterStepThree.astro";
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( 
+        locale => ({ params: { locale }})
+    );
+}) satisfies GetStaticPaths;
+
+
+const { locale } = Astro.props;
+const title = () => lang == "en" ? "login": "comptes"; 
+const description = () => lang == "en" ? "description in english":"description en francais";
+const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
+---
+
+<Layout title={title()} description={description()} keywords={keywords()}>
+
+    <main class="container page-wrapper">    
+
+        <h4 class="text-center"> 
+            Register        
+        </h4>
+
+        <section class="my-3">
+            <div class="container-xs mx-auto position-relative">
+
+                <div id="bar" style="height: 2px;" role="progressbar" aria-label="Progress" class="bg-primary"></div>
+
+                <button type="button" class="btn-1 position-absolute top-0 start-0 translate-middle btn btn-sm rounded-pill stepo">1</button>
+                <button type="button" class="btn-2 position-absolute top-0 start-50 translate-middle btn btn-sm rounded-pill stepo">2</button>
+                <button type="button" class="btn-3 position-absolute top-0 start-100 translate-middle btn btn-sm rounded-pill stepo">3</button>
+            </div>
+        </section>
+
+        <form class="container-xs overflow-x-hidden mx-auto">
+            
+            <section style="height: fit-content;" class="form-carousel w-100">
+                <!-- step1 -->
+                <RegisterStepOne />
+                <!-- step 2 -->
+                <RegisterStepTwo />
+                <!-- step 3 -->
+                <RegisterStepThree />
+            </section>
+            
+        </form>
+
+        <section class="d-flex justify-content-between align-items-center">
+           
+
+        </section>
+
+        <input id="nexto1" type="checkbox" class="opacity-0" name="next1"> 
+        <input id="nexto2" type="checkbox" class="opacity-0" name="next2"> 
+    </main>
+
+    
+
+</Layout>
+
+<!-- <script src="src/js/register.ts"></script> -->
+
+<style>
+
+    .page-wrapper {
+
+        & #bar {
+            width: 10%;
+            transition: all .5s linear;
+        }
+
+        & .btn-1, .btn-2 , .btn-3 {
+            background-color: var(--bs-secondary);
+            color: white;
+        }
+
+        & .btn-1 {
+            background-color: var(--bs-primary);
+        }
+        
+        &:has( input[name="next1"]:checked ) {
+            & .form-carousel {
+                transform: translateX(-100%);
+            }
+
+            & #bar {
+                width: 58%;
+            }
+
+            & .btn-1, .btn-2 {
+                background-color: var(--bs-primary);
+            }
+        }
+
+        &:has( input[name="next1"]:checked ~ input[name="next2"]:checked ) {
+            & .form-carousel {
+                transform: translateX(-200%);
+            } 
+            
+            & #bar {
+                width: 100%;
+            }
+
+            & .btn-3 {
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+
+</style>

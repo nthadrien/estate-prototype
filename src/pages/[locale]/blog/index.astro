@@ -7,18 +7,18 @@ import ClientLayout from "@layouts/ClientLayout.astro";
 import BlogPostCard from "@components/cards/BlogPostCard.astro";
 import BlogPostHCard from "@components/cards/BlogPostHCard.astro";
 
-const { lang } = Astro.params;
+const { locale } = Astro.params;
 
 export const getStaticPaths = (() => {
     return Object.keys(languages).map( item => {
         return {
-            params: { lang : item }
+            params: { locale : item }
         }
     });
 }) satisfies GetStaticPaths;
 
 const posts = await getCollection("blog",({ id }) => {
-  return id.startsWith(lang);
+  return id.startsWith(locale);
 });
 
 ---
@@ -52,7 +52,7 @@ const posts = await getCollection("blog",({ id }) => {
                 <h5>Tags: </h5>
     
                 <div class="d-flex flex-wrap gap-2">
-                    {[1,2,3].map( tag => <a href={`/${lang}/blog/${tag}-${1}-${"none"}`} class="text-capitalize rounded-1 p-1 text-bg-secondary">tag name {tag}</a>)}
+                    {[1,2,3].map( tag => <a href={`/${locale}/blog/${tag}-${1}-${"none"}`} class="text-capitalize rounded-1 p-1 text-bg-secondary">tag name {tag}</a>)}
                 </div>
             </div>
         </div>

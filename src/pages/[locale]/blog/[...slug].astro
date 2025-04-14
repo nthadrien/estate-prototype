@@ -9,9 +9,9 @@ export const getStaticPaths = (async () => {
     const blogPages = await getCollection("blog");
     const allRoutes:any[] = [];
     blogPages.forEach((page) => {
-        const [lang, ...slug] = page.id.split('/');
+        const [locale, ...slug] = page.id.split('/');
         allRoutes.push( { 
-            params : { lang  , slug : slug.join("/") || undefined },
+            params : { locale  , slug : slug.join("/") || undefined },
             props: { page } 
         });
     });
@@ -19,7 +19,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 
-const { lang, slug } = Astro.params;
+const { locale, slug } = Astro.params;
 
 const {page} = Astro.props;
 const { Content, remarkPluginFrontmatter, headings } = await render(page);
