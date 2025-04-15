@@ -1,16 +1,21 @@
+---
+import SocialMedia from "@components/utils/SocialMedia.astro";
+import { useTranslations , getLangFromUrl } from "src/i18n/utils.ts";
 
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale)
+
+const year =  new Date().getFullYear();
+---
 
 
 <footer class="container mx-auto border-top d-flex flex-wrap justify-content-center justify-content-sm-between gap-2 p-2 text-body-muted">
-    <p>
-      <a class="bi bi-linkedin me-2" href="/contact-us"></a>
-      <a class="bi bi-facebook me-2" href="/contact-us"></a>
-      <a class="bi bi-whatsapp" href="/contact-us"></a>
+    <p class="nav gap-2">
+     <SocialMedia />
     </p>
     
     <small>
-      &copy 2024 <b>Company,</b> Inc. All rights reserved 
-      <strong class="text-success">Designed</strong> and Coded By <strong class="text-success">nthadrien</strong>
+      &copy; {year}  { t("base.footer")}
     </small>
       
 </footer>

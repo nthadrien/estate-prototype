@@ -1,6 +1,9 @@
+---
+import { getLangFromUrl } from "src/i18n/utils.ts";
 
+const locale = `/${getLangFromUrl(Astro.url)}/`;
+---
 
-
-<span class="fs-2 fw-bold">
+<a href={locale} class="navbar-brand fw-bold">
     Comp.Inc Logo
-</span>
+</a>

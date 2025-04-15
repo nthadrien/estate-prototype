@@ -1,20 +1,19 @@
 ---
+import { useTranslations , getLangFromUrl } from "src/i18n/utils.ts";
 import Logo from "@components/navbars/Logo.astro";
-import { getLangFromUrl } from "../../i18n/utils";
 import NewsLetter from "@components/utils/NewsLetter.astro";
 
-const lang:string = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale)
 
 const pages = [
-    {en: "home", fr:"acceuil", link: "/"+lang+"/about-us" },
-    {en: "about us", fr:"a propos de nous", link: "/"+lang+"/about-us" },
-    {en: "Pricing", fr:"Grilles des Prix", link: "/"+lang+"/pricing" },
-    {en: "Blog", fr:"Blog", link: "/"+lang+"/blog" },
-    {en: "contact us", fr:"Contacts", link: "/"+lang+"/contact-us" },
-    {en: "terms & conditions", fr:"termes et condition", link: "/"+lang+"/terms-and-conditions" },
-    {en: "privacy policy", fr:"politique de ...", link: "/"+lang+"/privacy" },
-    {en: "Need help?", fr:"besoin d'aide?", link: "/"+lang+"/privacy" },
-    
+    {name: t('nav.home') , link: "/"+locale+"/" },
+    { name: t('nav.about'), link: "/"+locale+"/about-us" },
+    { name: t('nav.pricing'), link: "/"+locale+"/pricing" },
+    { name: t('nav.blog'), link: "/"+locale+"/blog" },
+    { name: t('nav.contactus') , link: "/"+locale+"/contact-us" },
+    { name: t('nav.help'), link: "/"+locale+"/terms-and-conditions" },
+    { name : t('nav.privacy'), link: "/"+locale+"/privacy" },
 ];
 
 ---
@@ -62,12 +61,12 @@ const pages = [
     <footer class="container-xxl row row-cols-1 row-cols-lg-2 justify-content-center mx-auto text-capitalize">
 
         <div class="col nav">
-            {pages.slice(0,4).map( item =>  <a class="nav-link small" href={item.link}>{ lang == "en" ? item.en : item.fr }</a>)}
+            {pages.slice(0,4).map( item =>  <a class="nav-link small" href={item.link}>{ item.name }</a>)}
         </div>
 
 
         <div class="col nav justify-content-lg-end gap-2 small">
-            {pages.slice(4).map( item =>  <a class="nav-link small" href={item.link}>{ lang == "en" ? item.en : item.fr }</a>)}
+            {pages.slice(4).map( item =>  <a class="nav-link small" href={item.link}>{ item.name}</a>)}
         </div>
 
     </footer>

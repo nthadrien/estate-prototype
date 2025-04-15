@@ -1,40 +1,31 @@
 ---
-import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
+import type { GetStaticPaths } from "astro";
 import { languages } from "../../i18n/ui";
 
 import ClientLayout from "@layouts/ClientLayout.astro";
-import { getLangFromUrl } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations, type LangType } from "src/i18n/utils";
 
 
 export const getStaticPaths = (() => {
     const langs = Object.keys(languages)
 
-    return langs.map( locale => {
+    return langs.map( (locale ) => {
         return { params : { locale }}
     }) ;
 }) satisfies GetStaticPaths;
 
-type Params = InferGetStaticParamsType<typeof getStaticPaths>;
-const { locale } = Astro.params as Params;
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
-const info = {
-    "en" : {
-        title: "Contact Us",
-        description:"In case you need help or any feedback get to us",
-        keywords: []
-    },
-    "fr" : {
-        title: "Contactez Nous",
-        description:"En cas de besion Urgent ou Pas nous sommes disposer a repondre a tout vos question.",
-        keywords: []
-    }
+const pageInfo = {
+    title: t('nav.contactus'),
+    description: t('contact.desc'),
+    keywords: []
 }
-
-const context = locale == "en" ? info.en : info.fr;
 
 
 ---
-<ClientLayout title={context.title} description={context.description} keywords={context.keywords}>
+<ClientLayout title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
     
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.5386433761005!2d9.7112959!3d4.0673698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061126de506f927%3A0x1e59b74d6f97f357!2sDe%C3%AFdo%2C%20Douala%2C%20Cameroun!5e0!3m2!1sfr!2sus!4v1737423844047!5m2!1sfr!2sus" 
@@ -43,18 +34,17 @@ const context = locale == "en" ? info.en : info.fr;
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 
-    <h1 class="my-3 text-center">Contact Us </h1>
+    <h1 class="my-3 text-center">{pageInfo.title}</h1>
 
     <section class="container row mx-auto my-3 justify-content-between my-5">
 
         <div class="col-lg-8 lh-lg">
-            <h3 class="">Let's get in touch</h3>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Doloremque quisquam neque id dolorum, tempora animi enim suscipit aut nesciunt repudiandae. 
-            Eaque quos nesciunt consequatur facere totam eveniet perspiciatis praesentium similique?
+            <h3 class="">{t('contact.touch')}</h3>
+            <p>{t('contact.desc')}. {t('contact.get')}</p>
+            <p>{t('contact.working')}</p>
         </div>
 
-        <ul class="col-lg-4 lh-lg nav flex-column gap-1">
+        <ul class="col-lg-4 lh-lg nav flex-lg-column justify-content-lg-center gap-1">
 
             <li class="text-muted nav-item">
                 <i class="bi bi-phone-fill me-2"></i>
@@ -76,34 +66,29 @@ const context = locale == "en" ? info.en : info.fr;
 
         <form class="row g-3 p-1 lh-lg g-2" action="">
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 nav flex-column gap-3 justify-content-between">
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" required>
-                    <label for="name">Username / Name </label>
-                </div>
-
-                <div class="form-floating mb-3">
+                <div class="form-floating">
                     <input type="email" class="form-control" id="email" placeholder="name@example.com">
                     <label for="email">Email address</label>
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class="form-floating">
                     <textarea class="form-control" id="subject"></textarea>
-                    <label for="subject">subject</label>
+                    <label for="subject">Subject</label>
                 </div>
             </div>
 
             <div class="col-lg-6 form-floating">
                 <textarea style={"height: 100%;"} class="form-control" placeholder="Leave a comment" name="message" required></textarea>
-                <label>Leave a message here please</label>
+                <label>Message</label>
             </div>
 
 
             <div class="pt-3">
-                <button type="submit" class="btn btn-primary">
-                <i class="bi bi-send-slash me-3"></i>
-                    Send Message
+                <button type="submit" class="btn btn-outline-secondary">
+                    <i class="bi bi-send-slash me-1"></i>
+                    {t('submit')}
                 </button>
             </div>
 

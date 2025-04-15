@@ -15,9 +15,9 @@ export const getStaticPaths = (() => {
 
 
 const { locale } = Astro.props;
-const title = () => lang == "en" ? "login": "comptes"; 
-const description = () => lang == "en" ? "description in english":"description en francais";
-const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
+const title = () => locale == "en" ? "login": "comptes"; 
+const description = () => locale == "en" ? "description in english":"description en francais";
+const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 ---
 
 <Layout title={title()} description={description()} keywords={keywords()}>

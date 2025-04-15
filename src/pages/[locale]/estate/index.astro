@@ -1,6 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui.ts";
+import ClientLayout from "@layouts/ClientLayout.astro";
+import SearchApp from "./_searchApp.tsx";
+
+
+export const prerender = false;
 
 export const getStaticPaths = (() => {
     
@@ -8,4 +13,16 @@ export const getStaticPaths = (() => {
         params: { locale }
     }))
 }) satisfies GetStaticPaths; 
+
+const pageInfo = {
+    title: "Estate",
+    description:"search places to rent",
+    keywords:["rent","buy"]
+}
 ---
+
+<ClientLayout {...pageInfo}>
+
+    <SearchApp client:only="solid"/>
+
+</ClientLayout>

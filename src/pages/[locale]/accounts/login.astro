@@ -6,15 +6,15 @@ import Layout from "@layouts/AccountLayout.astro";
 export const getStaticPaths = (() => {
     
     return Object.keys(languages).map( 
-        lang => ({ params: { lang }})
+        locale => ({ params: { locale }})
     );
 }) satisfies GetStaticPaths;
 
 
-const { lang } = Astro.props;
-const title = () => lang == "en" ? "login": "comptes"; 
-const description = () => lang == "en" ? "description in english":"description en francais";
-const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
+const { locale } = Astro.props;
+const title = () => locale == "en" ? "login": "comptes"; 
+const description = () => locale == "en" ? "description in english":"description en francais";
+const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 ---
 
 <Layout title={title()} description={description()} keywords={keywords()}>
@@ -24,13 +24,13 @@ const keywords = () => lang == "en" ? ["one","two"] : ["un","deux"];
         <h2 class="mb-3 text-center">Signin</h2>
 
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="email" class="form-control" autocomplete="name" id="email" placeholder="name@example.com">
+            <label for="email">Email address</label>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="new-password">
+            <label for="password">Password</label>
         </div>
 
         <p class="mb-3">

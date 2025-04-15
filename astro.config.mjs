@@ -23,6 +23,9 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
+  redirects: {
+      "/en/estate/*":"/en/estate/"
+  },
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
