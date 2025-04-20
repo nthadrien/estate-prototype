@@ -41,3 +41,6 @@ export const notifications = (msg:messageType) => {
         body?.removeChild(toaster);
     }, 2000);
 }
+
+
+// toaster 2

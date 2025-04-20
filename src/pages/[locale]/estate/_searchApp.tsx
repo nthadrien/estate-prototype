@@ -1,14 +1,10 @@
 
-import { Router, Route } from "@solidjs/router";
-import  {type JSX, createSignal } from "solid-js";
+import { CustomRouterSwitch, type RouterProps } from "src/js/router.tsx";
+import  {type JSX, Switch, Match, createSignal, onMount, lazy } from "solid-js";
 
-const Home = ():JSX.Element => {
-    return ( 
-        <main>
-            <h2>Home Page</h2>
-        </main>
-    )
-}
+
+const Home = lazy( ()=> import("@components/estates/Home"));
+
 
 const About = ():JSX.Element  => {
     return ( 
@@ -19,16 +15,30 @@ const About = ():JSX.Element  => {
 }
 
 
-
 export default function SearchApp ( ) {
-    console.log("Search app launched!!")
-    return (<Router>
 
-        <Route path={"/en/estate"}>
-            <Route path="/" component={Home} />
-            <Route path="#/hello-world" component={() => <h1>Hello World!</h1>} />
-            <Route path="/about" component={About} />
-        </Route>
-        
-    </Router>);
+    const routes : RouterProps['routes'] = [
+        {
+            href: "#",
+            component : Home()
+            
+        },
+        {
+            href: "#search",
+            component : Home()
+            
+        },
+        {
+            href: "#about",
+            component : About()
+        },
+        {
+            href: "#hello",
+            component : <h2>Welcome Page Here</h2>
+        }
+    ]
+
+    return (<>
+        <CustomRouterSwitch routes={routes} fallback={<h3>Opps fallback Error</h3>} />
+    </>);
 }

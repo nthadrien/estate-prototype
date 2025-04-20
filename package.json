@@ -15,6 +15,7 @@
     "@popperjs/core": "^2.11.8",
     "@solidjs/router": "^0.15.3",
     "astro": "^5.5.4",
+    "astro-icon": "^1.1.5",
     "astro-purgecss": "^5.2.2",
     "bootstrap": "^5.3.5",
     "mdast-util-to-string": "^4.0.0",
