@@ -1,7 +1,14 @@
 import { type JSX } from "solid-js";
 import { notifications } from "src/stores/user.ts";
+import { useTranslations } from "src/i18n/utils";
+import { lang } from "src/stores/user";
+
+
+
 
 const EstateCard = (): JSX.Element => {
+
+    const t = useTranslations(lang.get());
 
     const handleBookmark = () => {
         notifications({
@@ -14,65 +21,88 @@ const EstateCard = (): JSX.Element => {
            code: 200 , type:"success",message:"thanks for liking"
         });
     }
-  return (
-    <div>
+    return (
+        <div class="">
 
-        <section class="position-relative rounded-4">
+            <section class="position-relative rounded-4">
 
-            <img style="height: 12rem;" src="/images/estates/garden-2.jpg" class="ratio ratio-19x9 w-100"  alt="estate" />
+                <div style={"top:.5rem;right:.5rem;z-index:1;font-size:smaller;"} class="position-absolute p-1 text-bg-primary">
+                    {t("estate.rent")}
+                </div>
 
-            <aside class="position-absolute bottom-0 start-0 px-1 w-100 text-bg-dark bg-opacity-50">
+                <img style="height: 14rem;" src="/images/estates/garden-2.jpg" class="ratio ratio-19x9 w-100 rounded-2"  alt="estate" />
 
-                <small class="p-1 rounded-2 text-bg-primary">
-                    For Rent
-                </small>
+                <aside class="position-absolute bottom-0 start-0 px-1 w-100 d-flex justify-content-between align-items-center px-2">
 
-                <div class="d-flex justify-content-between align-items-center px-2">
-
-                    <span class="fw-bolder">Appartement</span>
+                    <span class="fw-bolder text-white">Appartement</span>
 
                     <span>
                         <button onClick={handleLiked} class="btn btn-sm text-white">
-                            <i class="fa fa-heart" arial-hidden="true"></i>
+                            128  <i class="fa fa-heart" aria-hidden="true"></i>
                         </button>
 
                         <button onClick={handleBookmark} class="btn btn-sm text-white">
-                            <i class="fa fa-bookmark-o" arial-hidden="true"></i>
+                            <i class="fa fa-bookmark-o" aria-hidden="true"></i>
                         </button>
                     </span>
-                </div>
 
-            </aside>
+                </aside>
 
-        </section>
+            </section>
 
-        <section class="row row-cols-1 row-cols-md-2 p-2">
+            <section class="d-flex flex-column gap-2 p-2">
 
-            <p class="col text-start">
-                <b class="text-primary">
-                    XAF 200 <span class="vr" /> 300 <span class="vr" /> 1200 
-                </b> <br/>
-                <i class="fa fa-map-marker" arial-hidden="true" ></i> Yaounde , Nkoabang
-            </p>
+                <div class="fs-6 fw-semibold">Appart 3 - 4  personnes spacieux</div>
 
-            <aside class="col d-flex justify-content-between align-items-center">
                 <div>
-                    Rooms <br/> <i class="fa fa-bed" arial-hidden="true"></i> 2
+                    <i class="fa fa-map-marker me-2" aria-hidden="true"  /> 
+                    Cameroun , Yaounde
                 </div>
 
                 <div>
-                    Bath <br/> <i class="fa fa-bath" arial-hidden="true"></i> 2
+                   Price : $ 20 / hr <span class="vr mx-1" /> 30 / jr <span class="vr mx-1" /> 120 / mois              
                 </div>
 
-                <div>
-                    Space <br/> <i class="fa fa-square" arial-hidden="true"></i> 24 sqm
+                <ul  class="nav align-items-start">
+
+                    <li class="col-4"> 
+                        <strong>Bedrooms</strong> <br/>
+                        <i class="fa fa-bed" aria-hidden="true"></i> 2 
+                    </li>
+
+                    <li class="col-4">
+                        <strong>Baths</strong> <br/>
+                        <i class="fa fa-bath" aria-hidden="true"></i> 2
+                    </li>
+
+                    <li class="col-4">
+                        <strong>Size</strong> <br/>
+                        <i class="fa fa-square" aria-hidden="true"></i> 4 sqm 
+                    </li>
+
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <b class="btn btn-sm btn-primary fw-bold">
+                        3.8
+                    </b>
+                    <div class="text-secondary">
+                        Best Place in town  <br/>
+                        <b>12 reviews</b>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between">
+
+                    <a class="fw-bold text-success" href="#room">
+                        Voir Plus
+                    </a>
+
                 </div>
 
-            </aside>
-
-        </section>
-      
-    </div>
+            </section>
+        
+        </div>
   )
 }
 

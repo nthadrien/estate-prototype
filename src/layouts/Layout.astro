@@ -36,8 +36,7 @@ const { locale } = Astro.params;
 	</head>
 	<body class="position-relative" data-bs-theme="auto">
 		<slot />
-		<aside id="notification-area" style="z-index: 4; width: 80%;max-width:580px;top:3rem;" class="position-fixed start-50  d-flex flex-column gap-3">
-		</aside>
+		<aside id="notification-area" class="d-flex flex-column gap-3"></aside>
 	</body>
 	<script src="../js/main.ts"></script>	
 </html>

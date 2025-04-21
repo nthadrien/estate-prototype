@@ -3,7 +3,8 @@ import { CustomRouterSwitch, type RouterProps } from "src/js/router.tsx";
 import  {type JSX, Switch, Match, createSignal, onMount, lazy } from "solid-js";
 
 
-const Home = lazy( ()=> import("@components/estates/Home"));
+const Home = lazy( ()=> import("@components/estatesPages/Home"));
+const Estate = lazy( () => import("@components/estatesPages/Estate") );
 
 
 const About = ():JSX.Element  => {
@@ -26,6 +27,11 @@ export default function SearchApp ( ) {
         {
             href: "#search",
             component : Home()
+            
+        },
+        {
+            href: "#room",
+            component : Estate()
             
         },
         {

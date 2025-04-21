@@ -29,7 +29,6 @@ export function CustomRouterSwitch(props:RouterProps) : JSX.Element {
 
     onMount(()=>{
         window.addEventListener('hashchange', (e) => hashchanged(e));
-        console.log(props.routes);
         onCleanup(()=>{
             window.addEventListener('hashchange', (e) => hashchanged(e));
         });

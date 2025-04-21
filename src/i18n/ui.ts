@@ -26,6 +26,8 @@ export const ui = {
         'contact.touch' : "Let's get in touch!",
         'contact.working':'We are working from monday - friday from 8 am - 5pm ',
         'contact.get':"We will get to you as soon as possible. Feel free to use other means to contact us.",
+        // estate:
+        "estate.rent":"For Rent",
     },
     fr: {
         'lang':'Français',
@@ -44,5 +46,7 @@ export const ui = {
         'contact.touch' : "Prenons contact!",
         'contact.working':'Nous travaillons du lundi au vendredi de 8h à 17h',
         'contact.get':"Nous vous répondrons dans les plus brefs délais. N'hésitez pas à utiliser d'autres moyens pour nous contacter.",
+        // estate:
+        "estate.rent":"À louer",
     },
 } as const;
