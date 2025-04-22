@@ -1,8 +1,13 @@
 import EstateCard from "@components/cards/EstateCard";
-import { type JSX} from "solid-js";
+import { For, type JSX} from "solid-js";
+
+import { estates } from "src/api/generatedData.json";
 
 
 const Home = ():JSX.Element => {
+
+    const data = estates;
+
     return ( 
     <>
 
@@ -84,21 +89,25 @@ const Home = ():JSX.Element => {
                         Accordion Item #1
                     </button>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
-                        {[1,2,3,4,5].map( item =>  
-                            <label class="form-check-label d-block p-2">
-                                <input class="form-check-input me-3" type="checkbox" value="" id="checkDefault"></input>
-                                Default checkbox
-                            </label>
-                        )}
+                        <For each={[1,2,3,4]}>
+                            { (item) => 
+                                <label class="form-check-label d-block p-2">
+                                    <input class="form-check-input me-3" type="checkbox" value="" id="checkDefault"></input>
+                                    Default checkbox
+                                </label>
+                            }
+                        </For>  
                     </div>
                 </div>
 
             </section>
 
             <section class="col-lg-9 row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
-                {[1,2,3,4,5,6,7,8].map( item => <div style={"max-width: 26rem;"} class="col">
-                    <EstateCard />
-                </div>)}
+                <For each={data}>
+                    { (item) => <div style={"max-width: 26rem;"} class="col">
+                        <EstateCard data={item} />
+                    </div>}
+                </For>
             </section>
 
         </main>

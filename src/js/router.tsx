@@ -24,13 +24,13 @@ export function CustomRouterSwitch(props:RouterProps) : JSX.Element {
         const prms = window.location.hash;
         $urlHashing.set(prms);
         // changeEstateParameters(s);
-        console.warn(" newurl: "+e.newURL)
+        console.warn(" newurl: "+ prms )
     }
 
     onMount(()=>{
         window.addEventListener('hashchange', (e) => hashchanged(e));
         onCleanup(()=>{
-            window.addEventListener('hashchange', (e) => hashchanged(e));
+            window.removeEventListener('hashchange', (e) => hashchanged(e));
         });
     });
 

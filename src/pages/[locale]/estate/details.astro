@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "src/i18n/ui.ts";
+import ClientLayout from "@layouts/ClientLayout.astro";
+import SearchApp from "./_searchApp.tsx";
+
+export const prerender = false;
+
+export const getStaticPaths = (() => {
+    
+    return Object.keys(languages).map( locale => ({
+        params: { locale , paths: "/*" }
+    }))
+}) satisfies GetStaticPaths; 
+
+const pageInfo = {
+    title: "Estate",
+    description:"search places to rent",
+    keywords:["rent","buy"]
+}
+---
+
+<ClientLayout {...pageInfo}>
+
+    <SearchApp client:only="solid"/>
+
+    <a href="#" class="">home</a> 
+    <a href="#about" class="">about</a>
+    <a href="#hollo" class="">hello</a>
+
+</ClientLayout>
+
+<script>
+    console.log("page rendered");
+</script>

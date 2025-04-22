@@ -2,11 +2,13 @@ import { type JSX } from "solid-js";
 import { notifications } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils";
 import { lang } from "src/stores/user";
+import { type Estate } from "src/api/dataTypes.ts";
 
+interface Props {
+    data: Estate
+}
 
-
-
-const EstateCard = (): JSX.Element => {
+const EstateCard = (prop:Props): JSX.Element => {
 
     const t = useTranslations(lang.get());
 
@@ -34,7 +36,7 @@ const EstateCard = (): JSX.Element => {
 
                 <aside class="position-absolute bottom-0 start-0 px-1 w-100 d-flex justify-content-between align-items-center px-2">
 
-                    <span class="fw-bolder text-white">Appartement</span>
+                    <span class="fw-bolder text-white">{prop.data.type}</span>
 
                     <span>
                         <button onClick={handleLiked} class="btn btn-sm text-white">
@@ -52,7 +54,7 @@ const EstateCard = (): JSX.Element => {
 
             <section class="d-flex flex-column gap-2 p-2">
 
-                <div class="fs-6 fw-semibold">Appart 3 - 4  personnes spacieux</div>
+                <div class="fs-6 fw-semibold">{}</div>
 
                 <div>
                     <i class="fa fa-map-marker me-2" aria-hidden="true"  /> 
