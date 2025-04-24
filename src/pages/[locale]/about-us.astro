@@ -76,10 +76,14 @@ const heading = {
         class="container-fluid p-0 bg-body-tertiary d-flex flex-column gap-4 align-items-center"
     >
 
-        <section class="container-sm row row-cols-1 row-cols-md-2 justify-content-center align-items-center py-4">
-            
-            <h1 data-iobs="slide-up text-lg-end">Our StoRy</h1>
-            <p>
+
+
+
+        <section class="container-sm py-3 row align-items-center g-4">
+
+
+            <h1 class="col-md-6" data-iobs="slide-up text-lg-end">Our StoRy</h1>
+            <p class="col-md-6">
                 Reiciendis dignissimos commodi inventore nisi, 
                 error sint animi illo expedita veniam libero possimus tempora 
                 ipsam iste doloribus sequi cumque ullam delectus autem!
@@ -88,20 +92,17 @@ const heading = {
                 officiis. Culpa iste deleniti at sed?
             </p>
 
-        </section>
-
-
-
-        <section class="container-sm py-3 row g-4">
 
             <aside class="col-md-6">
                 <img
                     class="object-fit-cover border rounded"
-                    style={{ "max-width": "100%", "min-height": "50vh" }}
+                    style={{ "max-width": "100%", "min-height": "20vh" }}
                     src="/images/img-2x1.png"
                     loading="lazy"
                 />
             </aside>
+
+           
 
             <aside id="services" class="col-md-6">
 
@@ -120,13 +121,10 @@ const heading = {
                 >
                     {
                         [1, 2, 3, 4].map((item) => (
-                            <div data-iobs="slide-right" class="col d-flex flex-column flex-lg-row gap-2">
+                            <div data-iobs="slide-right" class="col d-flex gap-2">
                                 <i
-                                    style={
-                                        "max-height: 42px;max-width: 42px;"
-                                    }
-                                    class={`fs-4 bi bi-${item}-circle-fill`}
-                                />
+                                    class="btn border-end border-2 rounded-pill"
+                                >{item}</i>
                                 <details>
                                     <summary class="fw-bold">service {item} Epcot Center</summary>
                                     <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>

@@ -13,7 +13,6 @@
     "@astrojs/solid-js": "^5.0.5",
     "@nanostores/solid": "^0.5.0",
     "@popperjs/core": "^2.11.8",
-    "@solidjs/router": "^0.15.3",
     "astro": "^5.5.4",
     "astro-icon": "^1.1.5",
     "astro-purgecss": "^5.2.2",

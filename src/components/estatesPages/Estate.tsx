@@ -1,9 +1,47 @@
-import { onMount } from "solid-js";
+import type { EstateType } from "src/api/dataTypes.ts";
+import { createResource, createSignal, onMount, Suspense, type JSX } from "solid-js";
+import data from "/api/generatedData.json";
 
-function Estate() {
+interface srch {
+  type: string;
+  id: string;
+  add: string;
+  added: string;
+  specs: string;
+}
+
+const initSrch = {
+  type: "",
+  id: "",
+  add: "",
+  added: "",
+  specs: "",
+}
+
+const fetchEstate = (id:string) => {
+
+}
+
+function Estate():JSX.Element {
+
+  const [estateId, setEstateId ] = createSignal<string>('');
+  const [estateInfo] = createResource(estateId,fetchEstate);
+ 
+  onMount(()=>{
+    const obj:any = new Object(initSrch);
+    const parms = window.location.search.split("&");
+    parms.forEach( pp => {
+      const keyp:string = pp.split("=")[0];
+      const valp:string = pp.split("=")[1];
+      obj[keyp] = valp;
+    })
+    if ( obj.id ) setEstateId(obj.id);
+  });
 
   return (
+    
     <main class="container-xl">
+      <Suspense fallback={<h3>Loading ...........</h3>}>
 
         <header class="nav gap-2 justify-content-between align-items-start">
 
@@ -68,7 +106,7 @@ function Estate() {
         <section>
 
         </section>
-      
+      </Suspense>
     </main>
   )
 }

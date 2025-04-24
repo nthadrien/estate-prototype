@@ -2,15 +2,23 @@ import { type JSX } from "solid-js";
 import { notifications } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils";
 import { lang } from "src/stores/user";
-import { type Estate } from "src/api/dataTypes.ts";
+import { type EstateType } from "src/api/dataTypes.ts";
 
 interface Props {
-    data: Estate
+    data: EstateType
 }
 
-const EstateCard = (prop:Props): JSX.Element => {
+const EstateCard = (props:Props): JSX.Element => {
 
     const t = useTranslations(lang.get());
+
+    const searchParams = new URLSearchParams({
+        type: props.data.type,
+        id: props.data.type,
+        add: props.data.address,
+        added: (props.data.numOfGuest).toString(),
+        specs: (props.data.pricePerMonth).toString()
+    });
 
     const handleBookmark = () => {
         notifications({
@@ -36,11 +44,11 @@ const EstateCard = (prop:Props): JSX.Element => {
 
                 <aside class="position-absolute bottom-0 start-0 px-1 w-100 d-flex justify-content-between align-items-center px-2">
 
-                    <span class="fw-bolder text-white">{prop.data.type}</span>
+                    <span class="fw-bolder text-white">{props.data.type}</span>
 
                     <span>
                         <button onClick={handleLiked} class="btn btn-sm text-white">
-                            128  <i class="fa fa-heart" aria-hidden="true"></i>
+                            {props.data.reviews.length}  <i class="fa fa-heart" aria-hidden="true"></i>
                         </button>
 
                         <button onClick={handleBookmark} class="btn btn-sm text-white">
@@ -54,32 +62,37 @@ const EstateCard = (prop:Props): JSX.Element => {
 
             <section class="d-flex flex-column gap-2 p-2">
 
-                <div class="fs-6 fw-semibold">{}</div>
+                <div class="fs-6 fw-semibold">{props.data.type} for {props.data.numOfGuest} guests </div>
 
                 <div>
                     <i class="fa fa-map-marker me-2" aria-hidden="true"  /> 
-                    Cameroun , Yaounde
+                    {props.data.address}
                 </div>
 
                 <div>
-                   Price : $ 20 / hr <span class="vr mx-1" /> 30 / jr <span class="vr mx-1" /> 120 / mois              
+                   Price : $ {props.data.pricePerHour} / hr 
+                   <span class="vr mx-1" /> $ {props.data.pricePerDay} / jr 
+                   <span class="vr mx-1" /> $ {props.data.pricePerMonth} / mois              
                 </div>
 
                 <ul  class="nav align-items-start">
 
                     <li class="col-4"> 
                         <strong>Bedrooms</strong> <br/>
-                        <i class="fa fa-bed" aria-hidden="true"></i> 2 
+                        <i class="fa fa-bed me-1" aria-hidden="true"></i> 
+                        {props.data.numOfRooms}
                     </li>
 
                     <li class="col-4">
                         <strong>Baths</strong> <br/>
-                        <i class="fa fa-bath" aria-hidden="true"></i> 2
+                        <i class="fa fa-bath me-1" aria-hidden="true"></i>
+                        {props.data.numOfBaths}
                     </li>
 
                     <li class="col-4">
                         <strong>Size</strong> <br/>
-                        <i class="fa fa-square" aria-hidden="true"></i> 4 sqm 
+                        <i class="fa fa-square me-1" aria-hidden="true"></i> 
+                        {props.data.numOfRooms + 120 } sqm 
                     </li>
 
                 </ul>
@@ -96,7 +109,7 @@ const EstateCard = (prop:Props): JSX.Element => {
                 
                 <div class="d-flex justify-content-between">
 
-                    <a class="fw-bold text-success" href="#room">
+                    <a class="fw-bold text-success" href={"/"+ lang.get()+"/estate/details?"+searchParams}>
                         Voir Plus
                     </a>
 

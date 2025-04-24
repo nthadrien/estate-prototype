@@ -68,6 +68,16 @@ a, .nav-link {
     color: inherit;
     text-decoration: none;
 }
+// theme switcher
+[data-bs-theme="dark"] {
+    .sun { display: none;}
+    .moon { display: inline; }
+}
+[data-bs-theme="light"] {
+    .sun { display: inline; }
+    .moon { display: none; }
+}
+
 // intersection observer classes:
 
 *[data-iobs] {

@@ -105,7 +105,7 @@ const pricingPlan = {
 
       <aside class="nav justify-content-center gap-2 gap-lg-3">
 
-      {item == "guest" || item == "host"? pricingPlan[item].map( (plan:any) => <div style="max-width: 20rem" class={`p-4 rounded-2 shadow`}>
+      {item == "guest" || item == "host"? pricingPlan[item].map( (plan:any) => <div style="max-width: 20rem" class={`p-4 rounded-2 shadow border border-secondary-subtle`}>
           <p> 
             <span class="fs-1 fw-semibold">${plan.price}</span>  / months
           </p>
@@ -114,9 +114,9 @@ const pricingPlan = {
 
           <hr class="mb-3 w-50"/>
           
-          <ul class="list-group mb-3">
-            {plan.services.map( (service:string) => <li class="d-flex gap-3 align-tiems-center mb-3">
-              <i class="bi bi-check-circle-fill text-success"></i>
+          <ul class="nav flex-column mb-3">
+            {plan.services.map( (service:string) => <li class="d-flex gap-3 align-items-center mb-3">
+              <i class="fa fa-check-circle fs-5 text-success"></i>
               <span>{service}</span>
             </li>)}
           </ul>

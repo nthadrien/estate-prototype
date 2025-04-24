@@ -4,6 +4,7 @@ import Layout from "./Layout.astro";
 import BaseFooter from "@components/footers/BaseFooter.astro";
 import ClientNavbar from "@components/navbars/ClientNavbar.astro";
 import ClientHeader from "@components/headers/ClientHeader.astro";
+import BreadCrumb from "@components/headers/BreadCrumb.astro";
 
 interface Props {
 	title: string;
@@ -26,6 +27,7 @@ const {
 >
     <ClientHeader/>
     <ClientNavbar />
+    <BreadCrumb />
     <slot />
     <ClientFooter />
     <BaseFooter />

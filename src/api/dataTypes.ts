@@ -1,5 +1,5 @@
 
-export type Reservation = {
+export type ReservationType = {
   reservation_id: string; // Assuming guid is a string representation of a UUID
   guest: {
     guest_id: string;
@@ -16,7 +16,7 @@ export type Reservation = {
 
 export type guid = string;
 
-export type Estate = {
+export type EstateType = {
   id: guid;
   type: string;
   desc: string;
@@ -35,7 +35,7 @@ export type Estate = {
   pricePerMonth: number;
 };
 
-export type Review = {
+export type ReviewType = {
   id: guid;
   createdAt: string;
   username: string;
@@ -48,7 +48,7 @@ export type Review = {
   };
 };
 
-export type Building = {
+export type BuildingType = {
   id: guid;
   name: string;
   address: string;

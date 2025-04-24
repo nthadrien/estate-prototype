@@ -10454,6 +10454,20 @@ a, .nav-link {
   text-decoration: none;
 }
 
+[data-bs-theme=dark] .sun {
+  display: none;
+}
+[data-bs-theme=dark] .moon {
+  display: inline;
+}
+
+[data-bs-theme=light] .sun {
+  display: inline;
+}
+[data-bs-theme=light] .moon {
+  display: none;
+}
+
 *[data-iobs] {
   opacity: 0;
   transition: all 0.8s ease-out;

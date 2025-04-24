@@ -1,273 +1,155 @@
 {
     "estates": [
         {
-            "id": "JSrM97TE",
-            "type": "Apartment",
-            "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2020",
-            "amenities": [
-                "Garden",
-                "Parking"
-            ],
-            "building_id": "23B4O5dr",
-            "reviews": [
-                "vMtxBEyy"
-            ],
-            "reservations": [
-                "9YYp5IXg"
-            ],
-            "lastRenovations": "2021"
-        },
-        {
-            "id": "kU04YAPx",
-            "type": "Apartment",
-            "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2019",
-            "amenities": [
-                "Balcony",
-                "Elevator"
-            ],
-            "building_id": "bjyGG7q7",
-            "reviews": [
-                "mWRsuhx0"
-            ],
-            "reservations": [],
-            "lastRenovations": "2022"
-        },
-        {
-            "id": "LEl7JyeM",
-            "type": "Townhouse",
-            "desc": "A lovely Townhouse in a great location.",
-            "madeIn": "2023",
-            "amenities": [
-                "Balcony",
-                "Elevator"
-            ],
-            "building_id": "Wx6RWmu5",
-            "reviews": [],
-            "reservations": [],
-            "lastRenovations": "2023"
-        },
-        {
-            "id": "kocGkJi0",
-            "type": "Villa",
-            "desc": "A lovely Villa in a great location.",
-            "madeIn": "2020",
-            "amenities": [
-                "Fireplace",
-                "Security System"
-            ],
-            "building_id": "SfeKVlfo",
-            "reviews": [
-                "WyJSPSAw",
-                "LzL1IIFN"
-            ],
-            "reservations": [
-                "pcS2RFAE"
-            ],
-            "lastRenovations": "Never"
-        },
-        {
-            "id": "HzbNxySp",
-            "type": "Apartment",
-            "desc": "A lovely Apartment in a great location.",
+            "id": "jHpUEZg9",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
             "madeIn": "2023",
             "amenities": [
                 "Fireplace",
                 "Security System"
             ],
-            "building_id": "jhdvqvmM",
+            "buildingId": "fH3djdut",
             "reviews": [
-                "YfaHMZZS",
-                "IJmO3Azf"
+                "5YwQIRxY"
             ],
             "reservations": [],
-            "lastRenovations": "2022"
+            "lastRenovations": "Never",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Democratic Republic of the Congo,  Avenue de l'Unité",
+            "pricePerHour": 2,
+            "pricePerDay": 6,
+            "pricePerMonth": 49
         },
         {
-            "id": "4Cgzb6tK",
-            "type": "Villa",
-            "desc": "A lovely Villa in a great location.",
-            "madeIn": "2021",
-            "amenities": [
-                "Fireplace",
-                "Security System"
-            ],
-            "building_id": "YrdIOnIZ",
-            "reviews": [
-                "zrCQorkJ",
-                "3BXUO3ES"
-            ],
-            "reservations": [
-                "vYRQykpK"
-            ],
-            "lastRenovations": "2023"
-        },
-        {
-            "id": "AEzY5o0S",
+            "id": "iBcQEOZR",
             "type": "Apartment",
             "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2019",
+            "madeIn": "2023",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "bW0WbPxX",
+            "reviews": [
+                "2aLyfUwh"
+            ],
+            "reservations": [
+                "XUy0EiEl"
+            ],
+            "lastRenovations": "2022",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Central African Republic,  Chemin de l'Espoir",
+            "pricePerHour": 2,
+            "pricePerDay": 9,
+            "pricePerMonth": 8
+        },
+        {
+            "id": "L0xh7lQP",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2023",
             "amenities": [
                 "Pool",
                 "Gym"
             ],
-            "building_id": "vHEsyfmK",
-            "reviews": [],
-            "reservations": [],
-            "lastRenovations": "2021"
-        },
-        {
-            "id": "KGLUDEHs",
-            "type": "Villa",
-            "desc": "A lovely Villa in a great location.",
-            "madeIn": "Never",
-            "amenities": [
-                "Pet-friendly"
-            ],
-            "building_id": "7ctZmPmD",
+            "buildingId": "F5MYoqgT",
             "reviews": [
-                "N5sp4PVb",
-                "nhBIwgmQ"
+                "Ei1Na6jk",
+                "zHG2DFWh"
             ],
             "reservations": [],
-            "lastRenovations": "2022"
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Angola,  Route de l'Avenir",
+            "pricePerHour": 0,
+            "pricePerDay": 11,
+            "pricePerMonth": 75
         },
         {
-            "id": "loHH0OSa",
-            "type": "Apartment",
-            "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2019",
-            "amenities": [
-                "Garden",
-                "Parking"
-            ],
-            "building_id": "Tqv3RKQ5",
-            "reviews": [],
-            "reservations": [],
-            "lastRenovations": "2022"
-        },
-        {
-            "id": "KmCCFFOd",
-            "type": "Townhouse",
-            "desc": "A lovely Townhouse in a great location.",
-            "madeIn": "2019",
-            "amenities": [
-                "Fireplace",
-                "Security System"
-            ],
-            "building_id": "3yNfAop1",
-            "reviews": [
-                "ziNoMZAL"
-            ],
-            "reservations": [
-                "voCrGaLa"
-            ],
-            "lastRenovations": "2022"
-        },
-        {
-            "id": "ftWPVP5u",
-            "type": "Townhouse",
-            "desc": "A lovely Townhouse in a great location.",
-            "madeIn": "2022",
-            "amenities": [
-                "Fireplace",
-                "Security System"
-            ],
-            "building_id": "2VJaTG2X",
-            "reviews": [
-                "71wzfsyk",
-                "Wpq6ot4D"
-            ],
-            "reservations": [
-                "2vofDDT4"
-            ],
-            "lastRenovations": "2020"
-        },
-        {
-            "id": "vRVu7kgZ",
+            "id": "i7HDmJde",
             "type": "House",
             "desc": "A lovely House in a great location.",
             "madeIn": "Never",
             "amenities": [
-                "Fireplace",
-                "Security System"
+                "Garden",
+                "Parking"
             ],
-            "building_id": "WuMBD5oH",
-            "reviews": [],
-            "reservations": [],
-            "lastRenovations": "2019"
+            "buildingId": "LibNREMw",
+            "reviews": [
+                "TTFsxnIR",
+                "6Ld02Q5s"
+            ],
+            "reservations": [
+                "2nPvqE9j"
+            ],
+            "lastRenovations": "2021",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Boulevard du 20 Mai",
+            "pricePerHour": 1,
+            "pricePerDay": 18,
+            "pricePerMonth": 103
         },
         {
-            "id": "hQ2sYISR",
+            "id": "D9gzAVrC",
             "type": "Apartment",
             "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2023",
+            "madeIn": "2021",
             "amenities": [
                 "Balcony",
                 "Elevator"
             ],
-            "building_id": "RQFV5Ixg",
+            "buildingId": "dYxbA8E8",
             "reviews": [
-                "vEjTXR4n"
-            ],
-            "reservations": [],
-            "lastRenovations": "2019"
-        },
-        {
-            "id": "gf4aFsHO",
-            "type": "Townhouse",
-            "desc": "A lovely Townhouse in a great location.",
-            "madeIn": "2019",
-            "amenities": [
-                "Fireplace",
-                "Security System"
-            ],
-            "building_id": "VHxu42Wk",
-            "reviews": [
-                "UORzBFF7"
+                "Osn44CAP",
+                "kIVcgWRK"
             ],
             "reservations": [
-                "hP7xnmdX"
+                "IfkAPkqF"
             ],
-            "lastRenovations": "2022"
+            "lastRenovations": "2022",
+            "numOfGuest": 1,
+            "numOfRooms": 1,
+            "numOfBaths": 1,
+            "address": "Nigeria,  Route de l'Avenir",
+            "pricePerHour": 1,
+            "pricePerDay": 12,
+            "pricePerMonth": 78
         },
         {
-            "id": "gm5T0dM4",
-            "type": "Apartment",
-            "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2022",
-            "amenities": [
-                "Garden",
-                "Parking"
-            ],
-            "building_id": "AW1fpXEi",
-            "reviews": [
-                "EWy3aL06"
-            ],
-            "reservations": [
-                "6977JRSI"
-            ],
-            "lastRenovations": "Never"
-        },
-        {
-            "id": "L8YRNQg1",
+            "id": "zMbQjg2S",
             "type": "Villa",
             "desc": "A lovely Villa in a great location.",
-            "madeIn": "2019",
+            "madeIn": "2022",
             "amenities": [
-                "Fireplace",
-                "Security System"
+                "Pool",
+                "Gym"
             ],
-            "building_id": "ldGkmXwb",
-            "reviews": [],
+            "buildingId": "WcOc07mS",
+            "reviews": [
+                "6iDs8qE9"
+            ],
             "reservations": [
-                "LaQ5tliU"
+                "kZbYaD1s"
             ],
-            "lastRenovations": "2020"
+            "lastRenovations": "2021",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Central African Republic,  Rue de la Paix",
+            "pricePerHour": 2,
+            "pricePerDay": 17,
+            "pricePerMonth": 96
         },
         {
-            "id": "EvvggYsW",
+            "id": "BJCJcO0I",
             "type": "Condo",
             "desc": "A lovely Condo in a great location.",
             "madeIn": "2022",
@@ -275,77 +157,462 @@
                 "Pool",
                 "Gym"
             ],
-            "building_id": "GG6H0Ua9",
+            "buildingId": "ofwJFoQ9",
             "reviews": [
-                "Gq6ctcsi",
-                "tSFQVzgE"
+                "MiIuVvme",
+                "Q3pMkCzq"
             ],
             "reservations": [],
-            "lastRenovations": "2022"
+            "lastRenovations": "2021",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Democratic Republic of the Congo,  Avenue de l'Unité",
+            "pricePerHour": 1,
+            "pricePerDay": 4,
+            "pricePerMonth": 65
         },
         {
-            "id": "FOYH4EIC",
+            "id": "HfRrg6fe",
             "type": "House",
             "desc": "A lovely House in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "U6qTDV2B",
+            "reviews": [
+                "HEYCSMQA"
+            ],
+            "reservations": [
+                "DL6SWjeT"
+            ],
+            "lastRenovations": "2021",
+            "numOfGuest": 3,
+            "numOfRooms": 3,
+            "numOfBaths": 3,
+            "address": "Central African Republic,  Rue de la Paix",
+            "pricePerHour": 3,
+            "pricePerDay": 6,
+            "pricePerMonth": 117
+        },
+        {
+            "id": "X8SkK94y",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "09DrA8Pv",
+            "reviews": [
+                "ESd3RbYi"
+            ],
+            "reservations": [
+                "MROuGUPl"
+            ],
+            "lastRenovations": "2023",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Rue de la Paix",
+            "pricePerHour": 2,
+            "pricePerDay": 15,
+            "pricePerMonth": 131
+        },
+        {
+            "id": "EIH37sq2",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2019",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "5Q7veLZV",
+            "reviews": [
+                "rGCLKiUZ",
+                "Xf8p2wPh"
+            ],
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Cameroon,  Avenue de l'Unité",
+            "pricePerHour": 2,
+            "pricePerDay": 17,
+            "pricePerMonth": 96
+        },
+        {
+            "id": "S0acuBEK",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
             "madeIn": "2022",
             "amenities": [
-                "Balcony",
-                "Elevator"
+                "Pet-friendly"
             ],
-            "building_id": "lVO2xx9l",
-            "reviews": [],
+            "buildingId": "Q5N5IPg2",
+            "reviews": [
+                "POhAzBLy"
+            ],
             "reservations": [
-                "rBra1Bpw"
+                "eRHoXN14"
             ],
-            "lastRenovations": "2023"
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Cameroon,  Avenue de l'Unité",
+            "pricePerHour": 1,
+            "pricePerDay": 14,
+            "pricePerMonth": 14
         },
         {
-            "id": "wj9xKdBh",
+            "id": "ptE40mqp",
             "type": "Apartment",
             "desc": "A lovely Apartment in a great location.",
-            "madeIn": "2021",
+            "madeIn": "2019",
             "amenities": [
-                "Balcony",
-                "Elevator"
+                "Garden",
+                "Parking"
             ],
-            "building_id": "fLD0sYSY",
-            "reviews": [],
+            "buildingId": "FaKcZkAh",
+            "reviews": [
+                "scR18vQK",
+                "E4rlvquZ"
+            ],
             "reservations": [
-                "hWXI3W88"
+                "c7mESZEP"
             ],
-            "lastRenovations": "2021"
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Chad,  Chemin de l'Espoir",
+            "pricePerHour": 2,
+            "pricePerDay": 4,
+            "pricePerMonth": 0
         },
         {
-            "id": "hcfeTuQy",
-            "type": "House",
-            "desc": "A lovely House in a great location.",
+            "id": "dduIKDE1",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "XdXrTRu3",
+            "reviews": [
+                "uw8UAQwj",
+                "WW8NnWeB"
+            ],
+            "reservations": [
+                "ypvq4bPS"
+            ],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Equatorial Guinea,  Rue de la Paix",
+            "pricePerHour": 0,
+            "pricePerDay": 1,
+            "pricePerMonth": 38
+        },
+        {
+            "id": "vKrYeW06",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "27zDzKg9",
+            "reviews": [
+                "1oaellzf",
+                "LDVVPaDe"
+            ],
+            "reservations": [],
+            "lastRenovations": "2023",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Nigeria,  Rue de la Paix",
+            "pricePerHour": 0,
+            "pricePerDay": 7,
+            "pricePerMonth": 99
+        },
+        {
+            "id": "Sq7pGv6h",
+            "type": "Townhouse",
+            "desc": "A lovely Townhouse in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "zZ6BDhQw",
+            "reviews": [
+                "lox4vKp4",
+                "MRsbezbh"
+            ],
+            "reservations": [
+                "EPxeKuZ1"
+            ],
+            "lastRenovations": "2022",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Angola,  Boulevard du 20 Mai",
+            "pricePerHour": 2,
+            "pricePerDay": 15,
+            "pricePerMonth": 136
+        },
+        {
+            "id": "83ZTIaqP",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "W1NU0Vs6",
+            "reviews": [],
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Chad,  Boulevard du 20 Mai",
+            "pricePerHour": 2,
+            "pricePerDay": 10,
+            "pricePerMonth": 13
+        },
+        {
+            "id": "2nJ7ugmz",
+            "type": "Townhouse",
+            "desc": "A lovely Townhouse in a great location.",
             "madeIn": "2020",
             "amenities": [
                 "Garden",
                 "Parking"
             ],
-            "building_id": "EtcMoLvH",
+            "buildingId": "qR01qaCW",
             "reviews": [
-                "K5ZgyUOE",
-                "gY97RBX3"
+                "rj0Twlz0",
+                "thlfbiMs"
             ],
             "reservations": [
-                "r25D2dPD"
+                "P2oElYGl"
             ],
-            "lastRenovations": "2020"
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Equatorial Guinea,  Rue de la Paix",
+            "pricePerHour": 3,
+            "pricePerDay": 13,
+            "pricePerMonth": 103
+        },
+        {
+            "id": "985bXmSo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2021",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "2HUajhZp",
+            "reviews": [
+                "iS4qup8y",
+                "Cy4JjMqV"
+            ],
+            "reservations": [
+                "5OSzlTTW"
+            ],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Burundi,  Route de l'Avenir",
+            "pricePerHour": 2,
+            "pricePerDay": 16,
+            "pricePerMonth": 45
+        },
+        {
+            "id": "BTGDRIh5",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2021",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "DGyTXxai",
+            "reviews": [
+                "jB4U4sIV",
+                "lxFjMBpm"
+            ],
+            "reservations": [
+                "SJcBBLIz"
+            ],
+            "lastRenovations": "Never",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Cameroon,  Rue de la Paix",
+            "pricePerHour": 0,
+            "pricePerDay": 1,
+            "pricePerMonth": 134
+        },
+        {
+            "id": "WwDQlzFL",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Fireplace",
+                "Security System"
+            ],
+            "buildingId": "bpcD90ht",
+            "reviews": [],
+            "reservations": [
+                "z5cjipFo"
+            ],
+            "lastRenovations": "2022",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Equatorial Guinea,  Avenue de l'Unité",
+            "pricePerHour": 2,
+            "pricePerDay": 5,
+            "pricePerMonth": 124
         }
     ],
     "buildings": [
         {
-            "id": "23B4O5dr",
+            "id": "fH3djdut",
             "name": "Hilton Palace",
-            "address": "25 Chemin de l'Espoir, Bamenda",
-            "geo_address": "2.754597081091539, 2.727185118989628",
+            "address": "Democratic Republic of the Congo, Avenue de l'Unité, Bafoussam",
+            "geoAddress": "1.7776588430125728, 5.396752480702299",
             "estates": [
-                "0AU1vWpL",
-                "pGNq5BGH",
-                "CNdCkHL6",
-                "3C3oFoFz"
+                "o6T3nXYo",
+                "btS5i3sh",
+                "xjCAlEbL",
+                "NPRNGWLA",
+                "ZlAvGloq",
+                "aWYfJZxZ",
+                "khgSKfvk"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "bW0WbPxX",
+            "name": "The Grand Tower",
+            "address": "Central African Republic, Chemin de l'Espoir, Douala",
+            "geoAddress": "8.42092929279281, 2.026690868653551",
+            "estates": [
+                "PeIb6Fjf",
+                "BJ1jpFNG",
+                "kjwV1Rrg",
+                "g3Q8Sw7I",
+                "pvZmMR8M"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2015",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "F5MYoqgT",
+            "name": "Sunset Villas",
+            "address": "Angola, Route de l'Avenir, Douala",
+            "geoAddress": "9.64776294141821, 6.440440427083436",
+            "estates": [
+                "hq7Cd7dY",
+                "S2X9lWvW",
+                "Cmy0lfuS",
+                "ZA3cYXZb"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2018",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "LibNREMw",
+            "name": "Oakwood Residences",
+            "address": "Congo, Boulevard du 20 Mai, Yaoundé",
+            "geoAddress": "9.678543488487437, 2.731708830151207",
+            "estates": [
+                "T7W5a7uX",
+                "7EA0f1SX",
+                "U2ivQgRG",
+                "GyDkXMPO",
+                "YtCOQrJs",
+                "fQzpD92c",
+                "BMHBwXl9"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "dYxbA8E8",
+            "name": "Oakwood Residences",
+            "address": "Nigeria, Route de l'Avenir, Bamenda",
+            "geoAddress": "0.8813703030953102, 3.206237253203741",
+            "estates": [
+                "REnmP1pm",
+                "lc5F3T1r",
+                "HlSh7NZg",
+                "YCb6vzkZ",
+                "VYru2tmB",
+                "lfQOvpSP",
+                "rXhZdxwf",
+                "ZSEfY5rV"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Kids Play Area",
+                "Business Center",
+                "Pet-friendly"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "WcOc07mS",
+            "name": "Sunset Villas",
+            "address": "Central African Republic, Rue de la Paix, Bamenda",
+            "geoAddress": "2.7323419737554078, 4.180797809245909",
+            "estates": [
+                "R95MHhIJ",
+                "DWbEG1mG",
+                "Uft5rY2j",
+                "QLXNARuQ",
+                "DUbdmjGW"
             ],
             "desc": "A modern building located in Bamenda.",
             "building_amenities": [
@@ -354,385 +621,222 @@
                 "Parking"
             ],
             "constructedIn": "2018",
-            "createdAt": "Tue Apr 22 2025"
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "bjyGG7q7",
-            "name": "Oakwood Residences",
-            "address": "23 Chemin de l'Espoir, Douala",
-            "geo_address": "4.12696383669503, 0.5751994986207576",
-            "estates": [
-                "KCbFnAcf",
-                "RJazWVMG",
-                "liat7q7I",
-                "abq9vDno",
-                "yzv7gIDR",
-                "DSDnIUwN",
-                "1fSSF6Ud",
-                "AuQpQI7y",
-                "UZzIftru"
-            ],
-            "desc": "A modern building located in Douala.",
-            "building_amenities": [
-                "Elevator",
-                "Security",
-                "Parking"
-            ],
-            "constructedIn": "2013",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "Wx6RWmu5",
-            "name": "Sunset Villas",
-            "address": "81 Rue de la Paix, Bafoussam",
-            "geo_address": "9.225749682264697, 0.22236946436630767",
-            "estates": [
-                "2cxRTxB2",
-                "09NHJmPW",
-                "xwwRXt5H",
-                "T55asBN1",
-                "ABpIXInf",
-                "9oRZPGyf",
-                "wBrMgtf9",
-                "QZDGZpAa",
-                "MMTKsUED",
-                "THItnb3e"
-            ],
-            "desc": "A modern building located in Bafoussam.",
-            "building_amenities": [
-                "Gym",
-                "Pool",
-                "Common Area"
-            ],
-            "constructedIn": "2013",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "SfeKVlfo",
-            "name": "The Grand Tower",
-            "address": "14 Rue de la Paix, Bamenda",
-            "geo_address": "7.078495761897548, 2.3014881035298718",
-            "estates": [
-                "jRhfqNfQ",
-                "YXVE5JBs",
-                "hrOukW9m",
-                "DoP9xOJF",
-                "TvyzaCQ7",
-                "ogHd0IIQ",
-                "aNvwFT89",
-                "yeneCY3m",
-                "wCtHaNyf"
-            ],
-            "desc": "A modern building located in Bamenda.",
-            "building_amenities": [
-                "Kids Play Area",
-                "Business Center",
-                "Pet-friendly"
-            ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "jhdvqvmM",
-            "name": "Hilton Palace",
-            "address": "18 Boulevard du 20 Mai, Bafoussam",
-            "geo_address": "9.190057837374352, 0.017086083494024518",
-            "estates": [
-                "npl5VxBQ",
-                "NfY6YKZF"
-            ],
-            "desc": "A modern building located in Bafoussam.",
-            "building_amenities": [
-                "Elevator",
-                "Security",
-                "Parking"
-            ],
-            "constructedIn": "2012",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "YrdIOnIZ",
-            "name": "Oakwood Residences",
-            "address": "60 Chemin de l'Espoir, Bamenda",
-            "geo_address": "2.916911852365063, 1.3587796757731563",
-            "estates": [
-                "3P5foJq4",
-                "ZxTmn05g",
-                "lXGXubKN",
-                "NGqvJKel",
-                "mxOiDDeZ",
-                "46rllYSy",
-                "9OcPnCin",
-                "cFJwedb4",
-                "VsJ5DmQ1",
-                "WEw9F1cY"
-            ],
-            "desc": "A modern building located in Bamenda.",
-            "building_amenities": [
-                "Rooftop Terrace",
-                "Concierge",
-                "Garden"
-            ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "vHEsyfmK",
-            "name": "Hilton Palace",
-            "address": "65 Boulevard du 20 Mai, Bafoussam",
-            "geo_address": "3.5612808855470357, 6.161643173663025",
-            "estates": [
-                "nZh8BT33",
-                "wsv06dDE",
-                "uIXqvnRD",
-                "p5rG6SwU",
-                "dQLSSdPT"
-            ],
-            "desc": "A modern building located in Bafoussam.",
-            "building_amenities": [
-                "Kids Play Area",
-                "Business Center",
-                "Pet-friendly"
-            ],
-            "constructedIn": "2014",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "7ctZmPmD",
-            "name": "Central Plaza",
-            "address": "69 Boulevard du 20 Mai, Maroua",
-            "geo_address": "9.03725181262179, 7.712761369449586",
-            "estates": [
-                "RTdfcBw7",
-                "PYGPglLu",
-                "QQxMzLWb",
-                "CU1evK72",
-                "tbTlTgUZ"
-            ],
-            "desc": "A modern building located in Maroua.",
-            "building_amenities": [
-                "Rooftop Terrace",
-                "Concierge",
-                "Garden"
-            ],
-            "constructedIn": "2014",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "Tqv3RKQ5",
-            "name": "Oakwood Residences",
-            "address": "9 Chemin de l'Espoir, Yaoundé",
-            "geo_address": "5.961884514851481, 6.4948497112173875",
-            "estates": [
-                "8yVZ8zkt",
-                "UtmYeUyg",
-                "M0yQ8btm",
-                "q5BKsNUL",
-                "qVddRYKq",
-                "vGuFAExy",
-                "kDSNWi21",
-                "50KS4van",
-                "4mChMsKA"
-            ],
-            "desc": "A modern building located in Yaoundé.",
-            "building_amenities": [
-                "Gym",
-                "Pool",
-                "Common Area"
-            ],
-            "constructedIn": "2014",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "3yNfAop1",
-            "name": "Sunset Villas",
-            "address": "31 Chemin de l'Espoir, Bamenda",
-            "geo_address": "3.5127033816494246, 6.153477575267104",
-            "estates": [
-                "aUzlHkaQ",
-                "Wp2h6ycK",
-                "m9xTg5F9",
-                "0m8YTjby"
-            ],
-            "desc": "A modern building located in Bamenda.",
-            "building_amenities": [
-                "Rooftop Terrace",
-                "Concierge",
-                "Garden"
-            ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "2VJaTG2X",
+            "id": "ofwJFoQ9",
             "name": "Riverview Apartments",
-            "address": "46 Boulevard du 20 Mai, Maroua",
-            "geo_address": "6.364554327825829, 3.3404023438620944",
+            "address": "Democratic Republic of the Congo, Avenue de l'Unité, Maroua",
+            "geoAddress": "7.6940005869158075, 9.492133595629046",
             "estates": [
-                "BaNuF2h3",
-                "Bg5fA29m",
-                "Vtqqmw1R",
-                "3q0iCcYs",
-                "DYXlRYzj",
-                "IYfFAh2Z"
+                "PDgW6Tpx",
+                "MGYAyhSh",
+                "lBBfNba9",
+                "tDsZsRxo",
+                "1M5MSgcM",
+                "BDER60ls",
+                "Hfx9DQek",
+                "kzgBnw6c",
+                "nrZKO2Ft",
+                "0JgyO6dQ"
             ],
             "desc": "A modern building located in Maroua.",
             "building_amenities": [
-                "Rooftop Terrace",
-                "Concierge",
-                "Garden"
+                "Kids Play Area",
+                "Business Center",
+                "Pet-friendly"
             ],
-            "constructedIn": "2012",
-            "createdAt": "Tue Apr 22 2025"
+            "constructedIn": "2014",
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "WuMBD5oH",
-            "name": "Central Plaza",
-            "address": "80 Rue de la Paix, Maroua",
-            "geo_address": "9.055923673315732, 1.8949520168934009",
+            "id": "U6qTDV2B",
+            "name": "Riverview Apartments",
+            "address": "Central African Republic, Rue de la Paix, Maroua",
+            "geoAddress": "0.8651375757909263, 7.072020373668462",
             "estates": [
-                "1s6LIk6b"
-            ],
-            "desc": "A modern building located in Maroua.",
-            "building_amenities": [
-                "Gym",
-                "Pool",
-                "Common Area"
-            ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "RQFV5Ixg",
-            "name": "Sunset Villas",
-            "address": "79 Chemin de l'Espoir, Maroua",
-            "geo_address": "0.5186370338296076, 7.704252367111102",
-            "estates": [
-                "pdSVZMQN"
+                "zsJVvYKC",
+                "Yxf6kjLQ",
+                "YDudp1vz",
+                "5B99yCcH",
+                "A0boEYrv",
+                "gXjIc7Yt",
+                "z2iwEL4k"
             ],
             "desc": "A modern building located in Maroua.",
             "building_amenities": [
                 "Bike Storage",
                 "Laundry Facilities"
             ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
+            "constructedIn": "2012",
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "VHxu42Wk",
+            "id": "09DrA8Pv",
             "name": "Hilton Palace",
-            "address": "56 Rue de la Paix, Douala",
-            "geo_address": "5.124390492454105, 6.263799315166631",
+            "address": "Congo, Rue de la Paix, Bamenda",
+            "geoAddress": "8.015232313646488, 1.059807634790506",
             "estates": [
-                "litEnVye",
-                "2OO7vjtR",
-                "ZiTnwMIn",
-                "KiqBYaNP",
-                "d4lcH03z"
+                "VShbb7LS",
+                "Dk7DyKdx",
+                "bqfv9fgu",
+                "D2SWJP98",
+                "DCxqLYhF",
+                "m2YyrH75",
+                "2AH8Y5t8",
+                "xjEOqYt3"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2015",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "5Q7veLZV",
+            "name": "Riverview Apartments",
+            "address": "Cameroon, Avenue de l'Unité, Douala",
+            "geoAddress": "2.552573014828028, 2.070653652535328",
+            "estates": [
+                "IUJMNta9",
+                "c5T2Ae2x",
+                "1yuU3Usd",
+                "tTnGuMBM",
+                "fznytyIr",
+                "im7bRJN3",
+                "0tDY5aVi",
+                "kHtkwQyq",
+                "SVUPR44k"
             ],
             "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "Q5N5IPg2",
+            "name": "Central Plaza",
+            "address": "Cameroon, Avenue de l'Unité, Maroua",
+            "geoAddress": "3.9360761803019084, 5.940058365848562",
+            "estates": [
+                "fflAmwu9",
+                "AWRSeipY",
+                "7OqBnT1R",
+                "H8JhSa7v",
+                "CTNyOAQq",
+                "AiMkTXcC",
+                "hALekzc4"
+            ],
+            "desc": "A modern building located in Maroua.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "FaKcZkAh",
+            "name": "Riverview Apartments",
+            "address": "Chad, Chemin de l'Espoir, Bafoussam",
+            "geoAddress": "1.309328869508355, 7.356035806452683",
+            "estates": [
+                "xZfZVbTF",
+                "ZvfdXQvw"
+            ],
+            "desc": "A modern building located in Bafoussam.",
             "building_amenities": [
                 "Gym",
                 "Pool",
                 "Common Area"
             ],
             "constructedIn": "2012",
-            "createdAt": "Tue Apr 22 2025"
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "AW1fpXEi",
-            "name": "Riverview Apartments",
-            "address": "50 Avenue de l'Unité, Bamenda",
-            "geo_address": "5.117282869578183, 9.919756569579015",
+            "id": "XdXrTRu3",
+            "name": "Hilton Palace",
+            "address": "Equatorial Guinea, Rue de la Paix, Yaoundé",
+            "geoAddress": "0.42105577156472007, 9.86212977757994",
             "estates": [
-                "D5HCdPRu",
-                "h5UjgusU",
-                "OPmx011V",
-                "WMeyKoaA",
-                "O09DyUdA",
-                "o411XAwZ",
-                "IMTq5PiB"
-            ],
-            "desc": "A modern building located in Bamenda.",
-            "building_amenities": [
-                "Elevator",
-                "Security",
-                "Parking"
-            ],
-            "constructedIn": "2013",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "ldGkmXwb",
-            "name": "The Grand Tower",
-            "address": "55 Boulevard du 20 Mai, Yaoundé",
-            "geo_address": "9.032891179547837, 3.4379432211115213",
-            "estates": [
-                "6QhaPaQq",
-                "fwsGDBdq",
-                "ewmcV1JV",
-                "ah2VUUIL",
-                "lBjaljEx",
-                "Dcbu4KhH"
+                "pr7plFdu",
+                "7i2vDTpg",
+                "eCmY2csA",
+                "KTGzvhJr"
             ],
             "desc": "A modern building located in Yaoundé.",
             "building_amenities": [
                 "Bike Storage",
                 "Laundry Facilities"
             ],
-            "constructedIn": "2012",
-            "createdAt": "Tue Apr 22 2025"
+            "constructedIn": "2015",
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "GG6H0Ua9",
-            "name": "Central Plaza",
-            "address": "18 Avenue de l'Unité, Douala",
-            "geo_address": "1.2715324076390266, 2.6319737572353685",
+            "id": "27zDzKg9",
+            "name": "Hilton Palace",
+            "address": "Nigeria, Rue de la Paix, Douala",
+            "geoAddress": "3.25242539864091, 4.46175082055036",
             "estates": [
-                "FMsazcTF",
-                "8ih1jb3c",
-                "mfWkFEwI",
-                "Fe4l8a5J",
-                "tdP3jMOV",
-                "r2a7NWaQ"
+                "kzAf0V9K",
+                "uc3ynHp5",
+                "tjrCZl9s",
+                "hAc2V5U6",
+                "HMqi2pxq",
+                "UFHc3BsP",
+                "QEs7OHNI",
+                "41oPaK2G",
+                "u9p1c3pe"
             ],
             "desc": "A modern building located in Douala.",
             "building_amenities": [
-                "Kids Play Area",
-                "Business Center",
-                "Pet-friendly"
+                "Bike Storage",
+                "Laundry Facilities"
             ],
             "constructedIn": "2014",
-            "createdAt": "Tue Apr 22 2025"
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "lVO2xx9l",
-            "name": "Hilton Palace",
-            "address": "64 Chemin de l'Espoir, Bamenda",
-            "geo_address": "4.304148015469423, 8.765809623572249",
-            "estates": [
-                "Rml7rojS",
-                "y7gwS2KO",
-                "W6NL75tS"
-            ],
-            "desc": "A modern building located in Bamenda.",
-            "building_amenities": [
-                "Rooftop Terrace",
-                "Concierge",
-                "Garden"
-            ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
-        },
-        {
-            "id": "fLD0sYSY",
+            "id": "zZ6BDhQw",
             "name": "Central Plaza",
-            "address": "18 Chemin de l'Espoir, Yaoundé",
-            "geo_address": "6.38298100640567, 4.384989367677774",
+            "address": "Angola, Boulevard du 20 Mai, Douala",
+            "geoAddress": "5.5916416990642155, 6.4227388868738",
             "estates": [
-                "wNBpDHNd",
-                "QAxZNB9M",
-                "APwZdoRW"
+                "wmleLzx1",
+                "rtKlngwN",
+                "uu7gK5o4",
+                "N4rPCh3f",
+                "DwLcJKjQ",
+                "dnSohtDi",
+                "AGL7uRs3"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "W1NU0Vs6",
+            "name": "Oakwood Residences",
+            "address": "Chad, Boulevard du 20 Mai, Yaoundé",
+            "geoAddress": "4.616645867580078, 0.8881027319182877",
+            "estates": [
+                "i2oSFE52",
+                "12ntkO21",
+                "efteJQAT",
+                "qcOssD3g",
+                "52F8ipU3",
+                "ubJauRDi",
+                "HyB2oyuy"
             ],
             "desc": "A modern building located in Yaoundé.",
             "building_amenities": [
@@ -740,50 +844,115 @@
                 "Security",
                 "Parking"
             ],
-            "constructedIn": "2015",
-            "createdAt": "Tue Apr 22 2025"
+            "constructedIn": "2014",
+            "createdAt": "Wed Apr 23 2025"
         },
         {
-            "id": "EtcMoLvH",
+            "id": "qR01qaCW",
             "name": "Oakwood Residences",
-            "address": "49 Chemin de l'Espoir, Yaoundé",
-            "geo_address": "9.357748286091091, 8.539269159000511",
+            "address": "Equatorial Guinea, Rue de la Paix, Bafoussam",
+            "geoAddress": "9.931298118478232, 2.7933965734310218",
             "estates": [
-                "dWhuYBvx",
-                "w1pul9iY",
-                "gghyDgsK",
-                "lsFMUJlG",
-                "awNa5Lce",
-                "nz9jRFgO"
+                "UD4JHIMl",
+                "A9oHrU9F",
+                "h8LEP9Y5",
+                "nbcOMuuW",
+                "qti3DeP7",
+                "XjtqV8ry",
+                "AjjPsypR",
+                "r5fXIlXs",
+                "ntce15Y4"
             ],
-            "desc": "A modern building located in Yaoundé.",
+            "desc": "A modern building located in Bafoussam.",
             "building_amenities": [
-                "Gym",
-                "Pool",
-                "Common Area"
+                "Bike Storage",
+                "Laundry Facilities"
             ],
-            "constructedIn": "2013",
-            "createdAt": "Tue Apr 22 2025"
+            "constructedIn": "2018",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "2HUajhZp",
+            "name": "The Grand Tower",
+            "address": "Burundi, Route de l'Avenir, Bafoussam",
+            "geoAddress": "7.2178857966475185, 1.6685822284853136",
+            "estates": [
+                "XMRp47gF",
+                "SxFF7CGW",
+                "SEpePM0f"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "DGyTXxai",
+            "name": "Sunset Villas",
+            "address": "Cameroon, Rue de la Paix, Bamenda",
+            "geoAddress": "6.736951234386335, 7.68683898941468",
+            "estates": [
+                "TBGOOC8R",
+                "OXcYmBs2",
+                "93HuAhuj",
+                "9ABwp0io"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Wed Apr 23 2025"
+        },
+        {
+            "id": "bpcD90ht",
+            "name": "Hilton Palace",
+            "address": "Equatorial Guinea, Avenue de l'Unité, Bafoussam",
+            "geoAddress": "7.2854930648077065, 7.730023584925318",
+            "estates": [
+                "y3uw2Nw0",
+                "O2NUs1Tb",
+                "qLBfQPTY",
+                "TEwC5jVZ",
+                "MIo1odLr",
+                "AJxAC3bW",
+                "Y2NlTe9E",
+                "rmx3Ztwq"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Wed Apr 23 2025"
         }
     ],
     "reviews": [
         {
-            "id": "vMtxBEyy",
-            "createdAt": "2025-03-23T21:54:52.517Z",
-            "username": "Grace",
-            "message": "Clean and well-maintained.",
+            "id": "5YwQIRxY",
+            "createdAt": "2025-04-06T19:32:20.382Z",
+            "username": "David",
+            "message": "Highly recommended!",
             "rate": {
-                "agent": 4,
-                "enviroment": 1,
-                "sanitation": 1,
-                "comparism": 5
+                "agent": 3,
+                "enviroment": 3,
+                "sanitation": 5,
+                "comparism": 1
             }
         },
         {
-            "id": "mWRsuhx0",
-            "createdAt": "2025-03-24T15:52:14.563Z",
-            "username": "Ivy",
-            "message": "The agent was very helpful.",
+            "id": "2aLyfUwh",
+            "createdAt": "2025-04-06T22:11:00.512Z",
+            "username": "Alice",
+            "message": "Great experience!",
             "rate": {
                 "agent": 1,
                 "enviroment": 5,
@@ -792,219 +961,339 @@
             }
         },
         {
-            "id": "WyJSPSAw",
-            "createdAt": "2025-03-27T22:37:19.642Z",
-            "username": "David",
-            "message": "Clean and well-maintained.",
+            "id": "Ei1Na6jk",
+            "createdAt": "2025-04-06T00:05:47.132Z",
+            "username": "Henry",
+            "message": "Great experience!",
             "rate": {
                 "agent": 4,
-                "enviroment": 4,
-                "sanitation": 3,
-                "comparism": 5
-            }
-        },
-        {
-            "id": "LzL1IIFN",
-            "createdAt": "2025-04-02T08:38:35.656Z",
-            "username": "Charlie",
-            "message": "Highly recommended!",
-            "rate": {
-                "agent": 5,
-                "enviroment": 5,
+                "enviroment": 2,
                 "sanitation": 4,
                 "comparism": 5
             }
         },
         {
-            "id": "YfaHMZZS",
-            "createdAt": "2025-04-11T22:01:17.746Z",
-            "username": "Grace",
-            "message": "Good value for the price.",
+            "id": "zHG2DFWh",
+            "createdAt": "2025-03-31T18:20:58.995Z",
+            "username": "Alice",
+            "message": "Clean and well-maintained.",
             "rate": {
-                "agent": 2,
-                "enviroment": 3,
-                "sanitation": 2,
-                "comparism": 3
+                "agent": 3,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 5
             }
         },
         {
-            "id": "IJmO3Azf",
-            "createdAt": "2025-03-29T20:48:29.847Z",
-            "username": "Ivy",
-            "message": "Clean and well-maintained.",
+            "id": "TTFsxnIR",
+            "createdAt": "2025-03-25T11:34:02.907Z",
+            "username": "Bob",
+            "message": "Highly recommended!",
             "rate": {
-                "agent": 2,
+                "agent": 3,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "6Ld02Q5s",
+            "createdAt": "2025-04-20T04:37:41.082Z",
+            "username": "Grace",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 4,
                 "enviroment": 2,
                 "sanitation": 1,
                 "comparism": 4
             }
         },
         {
-            "id": "zrCQorkJ",
-            "createdAt": "2025-04-05T12:02:03.634Z",
-            "username": "Henry",
-            "message": "Could have been better.",
+            "id": "Osn44CAP",
+            "createdAt": "2025-04-18T13:20:25.249Z",
+            "username": "Alice",
+            "message": "Clean and well-maintained.",
             "rate": {
-                "agent": 1,
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "kIVcgWRK",
+            "createdAt": "2025-04-11T21:03:48.978Z",
+            "username": "Bob",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 2,
+                "sanitation": 2,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "6iDs8qE9",
+            "createdAt": "2025-03-26T20:22:13.559Z",
+            "username": "Bob",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 5,
                 "enviroment": 3,
-                "sanitation": 4,
+                "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "MiIuVvme",
+            "createdAt": "2025-04-10T09:23:58.316Z",
+            "username": "Ivy",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 1,
+                "sanitation": 5,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "Q3pMkCzq",
+            "createdAt": "2025-04-18T14:42:35.001Z",
+            "username": "Bob",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 3,
+                "sanitation": 5,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "HEYCSMQA",
+            "createdAt": "2025-04-14T19:51:53.177Z",
+            "username": "Charlie",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 4,
+                "sanitation": 1,
                 "comparism": 1
             }
         },
         {
-            "id": "3BXUO3ES",
-            "createdAt": "2025-04-04T14:24:45.715Z",
-            "username": "Ivy",
+            "id": "ESd3RbYi",
+            "createdAt": "2025-04-14T15:04:17.379Z",
+            "username": "Grace",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "rGCLKiUZ",
+            "createdAt": "2025-04-04T04:17:49.557Z",
+            "username": "Henry",
             "message": "Great experience!",
             "rate": {
                 "agent": 3,
-                "enviroment": 2,
-                "sanitation": 4,
-                "comparism": 5
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 4
             }
         },
         {
-            "id": "N5sp4PVb",
-            "createdAt": "2025-04-12T09:14:05.924Z",
+            "id": "Xf8p2wPh",
+            "createdAt": "2025-04-11T05:41:45.390Z",
             "username": "David",
-            "message": "The agent was very helpful.",
+            "message": "Highly recommended!",
             "rate": {
                 "agent": 5,
-                "enviroment": 1,
-                "sanitation": 5,
-                "comparism": 3
-            }
-        },
-        {
-            "id": "nhBIwgmQ",
-            "createdAt": "2025-04-10T07:04:52.507Z",
-            "username": "David",
-            "message": "Loved the environment.",
-            "rate": {
-                "agent": 1,
-                "enviroment": 3,
-                "sanitation": 5,
-                "comparism": 4
-            }
-        },
-        {
-            "id": "ziNoMZAL",
-            "createdAt": "2025-04-08T04:59:53.297Z",
-            "username": "Alice",
-            "message": "Good value for the price.",
-            "rate": {
-                "agent": 4,
-                "enviroment": 1,
+                "enviroment": 2,
                 "sanitation": 2,
-                "comparism": 4
-            }
-        },
-        {
-            "id": "71wzfsyk",
-            "createdAt": "2025-04-13T15:37:08.000Z",
-            "username": "Bob",
-            "message": "Could have been better.",
-            "rate": {
-                "agent": 2,
-                "enviroment": 1,
-                "sanitation": 5,
                 "comparism": 1
             }
         },
         {
-            "id": "Wpq6ot4D",
-            "createdAt": "2025-03-26T09:50:08.648Z",
-            "username": "Ivy",
-            "message": "Loved the environment.",
-            "rate": {
-                "agent": 1,
-                "enviroment": 2,
-                "sanitation": 3,
-                "comparism": 5
-            }
-        },
-        {
-            "id": "vEjTXR4n",
-            "createdAt": "2025-03-25T13:11:49.439Z",
-            "username": "Alice",
-            "message": "Not what I expected.",
-            "rate": {
-                "agent": 5,
-                "enviroment": 4,
-                "sanitation": 2,
-                "comparism": 5
-            }
-        },
-        {
-            "id": "UORzBFF7",
-            "createdAt": "2025-04-06T22:36:58.131Z",
-            "username": "Eve",
-            "message": "Not what I expected.",
-            "rate": {
-                "agent": 4,
-                "enviroment": 2,
-                "sanitation": 3,
-                "comparism": 5
-            }
-        },
-        {
-            "id": "EWy3aL06",
-            "createdAt": "2025-04-06T06:35:54.972Z",
-            "username": "Alice",
-            "message": "The agent was very helpful.",
-            "rate": {
-                "agent": 1,
-                "enviroment": 3,
-                "sanitation": 2,
-                "comparism": 3
-            }
-        },
-        {
-            "id": "Gq6ctcsi",
-            "createdAt": "2025-04-03T17:31:04.274Z",
+            "id": "POhAzBLy",
+            "createdAt": "2025-04-03T19:28:52.694Z",
             "username": "Grace",
             "message": "Highly recommended!",
             "rate": {
                 "agent": 4,
-                "enviroment": 1,
-                "sanitation": 3,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "scR18vQK",
+            "createdAt": "2025-04-04T01:09:50.220Z",
+            "username": "Henry",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 2,
+                "sanitation": 2,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "E4rlvquZ",
+            "createdAt": "2025-04-13T22:33:17.133Z",
+            "username": "Bob",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 1,
                 "comparism": 2
             }
         },
         {
-            "id": "tSFQVzgE",
-            "createdAt": "2025-03-26T21:20:41.545Z",
-            "username": "Alice",
-            "message": "Highly recommended!",
+            "id": "uw8UAQwj",
+            "createdAt": "2025-04-18T03:05:37.930Z",
+            "username": "Ivy",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 3,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "WW8NnWeB",
+            "createdAt": "2025-04-09T17:35:11.565Z",
+            "username": "Bob",
+            "message": "Could have been better.",
             "rate": {
                 "agent": 1,
-                "enviroment": 1,
+                "enviroment": 3,
+                "sanitation": 4,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "1oaellzf",
+            "createdAt": "2025-04-09T20:07:46.349Z",
+            "username": "Bob",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 4,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "LDVVPaDe",
+            "createdAt": "2025-04-18T16:29:56.161Z",
+            "username": "Charlie",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 2,
                 "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "lox4vKp4",
+            "createdAt": "2025-04-04T11:34:10.529Z",
+            "username": "Ivy",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "MRsbezbh",
+            "createdAt": "2025-04-04T12:33:03.529Z",
+            "username": "Ivy",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "rj0Twlz0",
+            "createdAt": "2025-03-26T22:58:50.074Z",
+            "username": "Bob",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 1,
+                "sanitation": 3,
                 "comparism": 1
             }
         },
         {
-            "id": "K5ZgyUOE",
-            "createdAt": "2025-04-06T10:07:25.609Z",
+            "id": "thlfbiMs",
+            "createdAt": "2025-04-09T20:02:36.721Z",
             "username": "Alice",
-            "message": "Not what I expected.",
+            "message": "Good value for the price.",
             "rate": {
-                "agent": 3,
-                "enviroment": 1,
+                "agent": 1,
+                "enviroment": 4,
                 "sanitation": 4,
                 "comparism": 2
             }
         },
         {
-            "id": "gY97RBX3",
-            "createdAt": "2025-03-26T11:05:49.696Z",
-            "username": "Henry",
-            "message": "Highly recommended!",
+            "id": "iS4qup8y",
+            "createdAt": "2025-04-20T17:15:54.233Z",
+            "username": "David",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 3,
+                "enviroment": 4,
+                "sanitation": 4,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "Cy4JjMqV",
+            "createdAt": "2025-04-09T09:31:13.550Z",
+            "username": "Bob",
+            "message": "Could have been better.",
             "rate": {
                 "agent": 1,
-                "enviroment": 1,
-                "sanitation": 2,
-                "comparism": 5
+                "enviroment": 4,
+                "sanitation": 5,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "jB4U4sIV",
+            "createdAt": "2025-04-16T01:24:01.632Z",
+            "username": "David",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "lxFjMBpm",
+            "createdAt": "2025-04-15T10:20:55.624Z",
+            "username": "David",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 3,
+                "sanitation": 4,
+                "comparism": 1
             }
         }
     ]
