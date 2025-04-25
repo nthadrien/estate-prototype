@@ -18,12 +18,13 @@ export type guid = string;
 
 export type EstateType = {
   id: guid;
+  name: string;
   type: string;
   desc: string;
   madeIn: string;
   amenities: string[];
   buildingId: guid;
-  reviews: guid[];
+  reviews: guid;
   reservations: guid[];
   lastRenovations: string;
   numOfGuest: number;
@@ -34,6 +35,13 @@ export type EstateType = {
   pricePerDay: number;
   pricePerMonth: number;
 };
+
+export type EstateReviewType = {
+  id: guid;
+  generalRate : number;
+  lastReview: string;
+  reviews: guid[];
+} 
 
 export type ReviewType = {
   id: guid;

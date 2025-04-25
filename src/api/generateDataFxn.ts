@@ -1,5 +1,5 @@
 
-import type { ReviewType , EstateType , BuildingType , ReservationType } from "./dataTypes.ts";
+import type { ReviewType , EstateType , BuildingType , ReservationType, EstateReviewType } from "./dataTypes.ts";
 
 //   this function generates uuids:
 function generateShortUUID():string {
@@ -18,6 +18,7 @@ export function generateAllData (count:number) {
     const estates: EstateType[] = [];
     const reviews : ReviewType[] = [];
     const buildings : BuildingType[] = [];
+    const estateReviews : EstateReviewType[] = [];
 
     const possibleTypes = ["Apartment", "House", "Condo", "Villa", "Townhouse"];
     const possibleConstructedIn = ["2012","2013", "2014", "2015", "2018","2016"]
@@ -103,12 +104,13 @@ export function generateAllData (count:number) {
 
         const estate: EstateType = {
             id: generateShortUUID(), 
+            name: x.name+" "+ type,
             type,
             desc: `A lovely ${type} in a great location.`,
             madeIn,
             amenities: randomAmenities,
             buildingId: x.id,
-            reviews: Array.from({ length: Math.floor(Math.random() * 3) }).map(() => generateShortUUID()), // Array of 0-2 random UUIDs
+            reviews: generateShortUUID(), // Array of 0-2 random UUIDs
             reservations: Array.from({ length: Math.floor(Math.random() * 2) }).map(() => generateShortUUID()), // Array of 0-1 random UUIDs
             lastRenovations,
             numOfGuest,
@@ -122,31 +124,56 @@ export function generateAllData (count:number) {
         estates.push(estate);
     }
 
-    // generate reviews 
+    // generateEstate Reviews:
+
     for ( let estate of estates ) {
-
-        const eachReviews = estate.reviews;
-
-        for(let j of eachReviews ) {
-            const randomUsername = usernames[Math.floor(Math.random() * usernames.length)];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            const createdAt = new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(); // Random date within the last 30 days
-
-            const review: ReviewType = {
-                id: j ,
-                createdAt: createdAt,
-                username: randomUsername,
-                message: randomMessage,
-                rate: {
-                    agent: Math.floor(Math.random() * 5) + 1, // Random rating from 1 to 5
-                    enviroment: Math.floor(Math.random() * 5) + 1,
-                    sanitation: Math.floor(Math.random() * 5) + 1,
-                    comparism: Math.floor(Math.random() * 5) + 1,
-                },
-            };
-            reviews.push(review);
+        const estaRev:EstateReviewType = {
+            id : estate.reviews,
+            generalRate: 1,
+            lastReview: "",
+            reviews :  Array.from({ length: Math.floor(Math.random() * 10) }).map(() => generateShortUUID()),
         }
 
+        estateReviews.push(estaRev);
+    }
+
+    // generate reviews 
+    for ( let review of estateReviews ) {
+        
+        let sum : number = 0
+
+        if ( review.reviews.length < 1 ) {
+            continue;
+        } else {
+
+            const eachReviews = review.reviews;
+
+            for(let j of eachReviews ) {
+                const randomUsername = usernames[Math.floor(Math.random() * usernames.length)];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                const createdAt = new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(); // Random date within the last 30 days
+                const agent = Math.floor(Math.random() * 5) + 1;
+                const enviroment = Math.floor(Math.random() * 5) + 1;
+                const sanitation = Math.floor(Math.random() * 5) + 1;
+                const comparism = Math.floor(Math.random() * 5) + 1;
+                const guestReview: ReviewType = {
+                    id: j ,
+                    createdAt: createdAt,
+                    username: randomUsername,
+                    message: randomMessage,
+                    rate: {
+                        agent, // Random rating from 1 to 5
+                        enviroment,
+                        sanitation,
+                        comparism,
+                    },
+                };
+                reviews.push(guestReview);
+                sum += ( agent + enviroment + comparism + sanitation )/4
+            }
+        }
+        review.generalRate = sum/review.reviews.length;
+        review.lastReview = reviews[reviews.length - 1].message;
     }
 
     return {estates , buildings , reviews };

@@ -1,6 +1,6 @@
 ---
-import "src/styles/website.css";
-import "src/styles/font-awesome.min.css"
+import "src/styles/font-awesome.css"; // font awesome icons import
+import "src/styles/website.css"; // compiled scss file
 
 interface Props {
 	title: string;
@@ -32,7 +32,6 @@ const { locale } = Astro.params;
 		<!-- {alternateLangs.map((alternate) => (
 			<link rel="alternate" hreflang={alternate.lang} href={alternate.url} />
 		))} -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	</head>
 	<body class="position-relative" data-bs-theme="blue">
 		<slot />

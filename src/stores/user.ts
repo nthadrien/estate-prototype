@@ -1,6 +1,9 @@
 
 import { atom } from "nanostores";
 
+import { persistentAtom } from '@nanostores/persistent'
+import type { EstateType } from "src/api/dataTypes.ts";
+
 export type messageType = {
     code?:number;
     message:string;
@@ -10,7 +13,10 @@ export type messageType = {
 const init_lang = window.location.pathname.includes("/en/")? "en" : "fr";
 export const lang = atom<"en"|"fr">(init_lang );
 
-
+export const $EstatesList = persistentAtom<EstateType[]>('cart', [], {
+  encode: JSON.stringify,
+  decode: JSON.parse,
+});
 
 // toaster updated
 

@@ -14,7 +14,7 @@ const EstateCard = (props:Props): JSX.Element => {
 
     const searchParams = new URLSearchParams({
         type: props.data.type,
-        id: props.data.type,
+        id: props.data.id,
         add: props.data.address,
         added: (props.data.numOfGuest).toString(),
         specs: (props.data.pricePerMonth).toString()

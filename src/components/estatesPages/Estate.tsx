@@ -1,6 +1,6 @@
-import type { EstateType } from "src/api/dataTypes.ts";
-import { createResource, createSignal, onMount, Suspense, type JSX } from "solid-js";
-import data from "/api/generatedData.json";
+import { generateAllData, output } from "src/api/generateDataFxn";
+import { createResource, createSignal, onMount, Show, type JSX } from "solid-js";
+
 
 interface srch {
   type: string;
@@ -18,8 +18,10 @@ const initSrch = {
   specs: "",
 }
 
-const fetchEstate = (id:string) => {
 
+
+const fetchEstate = async (id:string) => {
+  return (await fetch("http://localhost:8000/estates/"+id)).json();
 }
 
 function Estate():JSX.Element {
@@ -28,6 +30,7 @@ function Estate():JSX.Element {
   const [estateInfo] = createResource(estateId,fetchEstate);
  
   onMount(()=>{
+    output();
     const obj:any = new Object(initSrch);
     const parms = window.location.search.split("&");
     parms.forEach( pp => {
@@ -41,13 +44,20 @@ function Estate():JSX.Element {
   return (
     
     <main class="container-xl">
-      <Suspense fallback={<h3>Loading ...........</h3>}>
+
+      <Show when={estateInfo.error}>
+          <p>Loading: {estateInfo.loading}</p>
+          <p>Error: {estateInfo.error}</p>
+          <p>State: {estateInfo.state}</p>
+      </Show>
+      
+      <Show when={!estateInfo.loading && !estateInfo.error && estateInfo.state === "ready" }>
 
         <header class="nav gap-2 justify-content-between align-items-start">
 
           <div>
-            <h3>The Modest Lovely Suite</h3>
-            <p>Room | Appartment | Suite | Studio ... of 2 people</p>
+            <h3>{estateInfo()?.name}</h3>
+            <p>{estateInfo()?.type} for {estateInfo()?.numOfGuest} guest(s)</p>
           </div>
 
           <div class="d-flex gap-3 align-items-center">
@@ -106,9 +116,14 @@ function Estate():JSX.Element {
         <section>
 
         </section>
-      </Suspense>
-    </main>
-  )
+
+
+      </Show>
+
+
+     
+
+  </main>);
 }
 
 export default Estate

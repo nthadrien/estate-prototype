@@ -1,0 +1,1924 @@
+{
+    "estates": [
+        {
+            "id": "WlI6JVDn",
+            "name": "Riverview Apartments Villa",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "qoVTisHn",
+            "reviews": "n6vvbpiC",
+            "reservations": [
+                "08YIOY4h"
+            ],
+            "lastRenovations": "Never",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Cameroon,  Avenue de l'Unité",
+            "pricePerHour": 0,
+            "pricePerDay": 7,
+            "pricePerMonth": 67
+        },
+        {
+            "id": "HZEa5IkD",
+            "name": "Hilton Palace Villa",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "2021",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "cPv0W9C6",
+            "reviews": "xevEOF4R",
+            "reservations": [
+                "e4dUTLhn"
+            ],
+            "lastRenovations": "2021",
+            "numOfGuest": 1,
+            "numOfRooms": 1,
+            "numOfBaths": 1,
+            "address": "Rwanda,  Route de l'Avenir",
+            "pricePerHour": 1,
+            "pricePerDay": 13,
+            "pricePerMonth": 90
+        },
+        {
+            "id": "ZHNRZbNc",
+            "name": "Central Plaza Apartment",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Fireplace",
+                "Security System"
+            ],
+            "buildingId": "5lK8S3J8",
+            "reviews": "4bDTxTVS",
+            "reservations": [
+                "x2iCr6dH"
+            ],
+            "lastRenovations": "2022",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Sao Tome and Principe,  Route de l'Avenir",
+            "pricePerHour": 3,
+            "pricePerDay": 10,
+            "pricePerMonth": 59
+        },
+        {
+            "id": "tWd4Hn8G",
+            "name": "Riverview Apartments House",
+            "type": "House",
+            "desc": "A lovely House in a great location.",
+            "madeIn": "2020",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "0KYLACHd",
+            "reviews": "tJlAlHsR",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Boulevard du 20 Mai",
+            "pricePerHour": 1,
+            "pricePerDay": 1,
+            "pricePerMonth": 70
+        },
+        {
+            "id": "Cz6AagCd",
+            "name": "The Grand Tower House",
+            "type": "House",
+            "desc": "A lovely House in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Balcony",
+                "Elevator"
+            ],
+            "buildingId": "u5LOkDTV",
+            "reviews": "i0MkpQOS",
+            "reservations": [
+                "Fh7lITva"
+            ],
+            "lastRenovations": "2021",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Rue de la Paix",
+            "pricePerHour": 0,
+            "pricePerDay": 6,
+            "pricePerMonth": 43
+        },
+        {
+            "id": "KrSn0D1q",
+            "name": "The Grand Tower Apartment",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2019",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "1n91IWv4",
+            "reviews": "TbIsdBQS",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Gabon,  Route de l'Avenir",
+            "pricePerHour": 2,
+            "pricePerDay": 4,
+            "pricePerMonth": 18
+        },
+        {
+            "id": "hkyxNmcp",
+            "name": "Riverview Apartments Villa",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "2020",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "1LnRtbMN",
+            "reviews": "NOj7tGO8",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Nigeria,  Avenue de l'Unité",
+            "pricePerHour": 0,
+            "pricePerDay": 18,
+            "pricePerMonth": 107
+        },
+        {
+            "id": "hOpDQqVn",
+            "name": "Oakwood Residences Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "aG7tcyXP",
+            "reviews": "LWCO20hg",
+            "reservations": [],
+            "lastRenovations": "2022",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Equatorial Guinea,  Route de l'Avenir",
+            "pricePerHour": 0,
+            "pricePerDay": 12,
+            "pricePerMonth": 107
+        },
+        {
+            "id": "CBxhOk1F",
+            "name": "Hilton Palace Apartment",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "OcSvloUD",
+            "reviews": "0mMtzn6Z",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Democratic Republic of the Congo,  Boulevard du 20 Mai",
+            "pricePerHour": 0,
+            "pricePerDay": 19,
+            "pricePerMonth": 86
+        },
+        {
+            "id": "VRO2cB9l",
+            "name": "The Grand Tower Villa",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "ZH95qR17",
+            "reviews": "CYqvfl4m",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Sao Tome and Principe,  Route de l'Avenir",
+            "pricePerHour": 3,
+            "pricePerDay": 9,
+            "pricePerMonth": 11
+        },
+        {
+            "id": "WvgE3odX",
+            "name": "Sunset Villas Villa",
+            "type": "Villa",
+            "desc": "A lovely Villa in a great location.",
+            "madeIn": "2022",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "wy9JJwgl",
+            "reviews": "1CjmEQye",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Nigeria,  Chemin de l'Espoir",
+            "pricePerHour": 2,
+            "pricePerDay": 1,
+            "pricePerMonth": 136
+        },
+        {
+            "id": "UpHgrAtr",
+            "name": "Sunset Villas Apartment",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "nr9zVldl",
+            "reviews": "HRzRP3YA",
+            "reservations": [],
+            "lastRenovations": "2021",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Cameroon,  Boulevard du 20 Mai",
+            "pricePerHour": 2,
+            "pricePerDay": 18,
+            "pricePerMonth": 15
+        },
+        {
+            "id": "xxJFBnUZ",
+            "name": "Sunset Villas Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Fireplace",
+                "Security System"
+            ],
+            "buildingId": "PJdmdbHn",
+            "reviews": "hbH3O6wm",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Nigeria,  Rue de la Paix",
+            "pricePerHour": 0,
+            "pricePerDay": 8,
+            "pricePerMonth": 114
+        },
+        {
+            "id": "h7yd0nGa",
+            "name": "Central Plaza Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "9JjtMBU4",
+            "reviews": "shu4lYqH",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Nigeria,  Boulevard du 20 Mai",
+            "pricePerHour": 3,
+            "pricePerDay": 18,
+            "pricePerMonth": 15
+        },
+        {
+            "id": "0jdFTTkO",
+            "name": "Oakwood Residences Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2020",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "euKpH1S6",
+            "reviews": "S8sgKXzR",
+            "reservations": [],
+            "lastRenovations": "2019",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Boulevard du 20 Mai",
+            "pricePerHour": 2,
+            "pricePerDay": 16,
+            "pricePerMonth": 5
+        },
+        {
+            "id": "J4YfOWtJ",
+            "name": "Hilton Palace Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2019",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "TAxh9dHS",
+            "reviews": "dfI99bPV",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Sao Tome and Principe,  Avenue de l'Unité",
+            "pricePerHour": 1,
+            "pricePerDay": 19,
+            "pricePerMonth": 41
+        },
+        {
+            "id": "lkNd67yN",
+            "name": "Hilton Palace Condo",
+            "type": "Condo",
+            "desc": "A lovely Condo in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "hOjTcq0M",
+            "reviews": "IHCzxdW6",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Burundi,  Route de l'Avenir",
+            "pricePerHour": 0,
+            "pricePerDay": 7,
+            "pricePerMonth": 96
+        },
+        {
+            "id": "9NjupvPd",
+            "name": "The Grand Tower Townhouse",
+            "type": "Townhouse",
+            "desc": "A lovely Townhouse in a great location.",
+            "madeIn": "Never",
+            "amenities": [
+                "Pool",
+                "Gym"
+            ],
+            "buildingId": "Z9ezTYVb",
+            "reviews": "8fOOjazF",
+            "reservations": [],
+            "lastRenovations": "2020",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Democratic Republic of the Congo,  Avenue de l'Unité",
+            "pricePerHour": 0,
+            "pricePerDay": 11,
+            "pricePerMonth": 120
+        },
+        {
+            "id": "gZH1kKab",
+            "name": "Sunset Villas Apartment",
+            "type": "Apartment",
+            "desc": "A lovely Apartment in a great location.",
+            "madeIn": "2020",
+            "amenities": [
+                "Pet-friendly"
+            ],
+            "buildingId": "RHtE5JgY",
+            "reviews": "YUhxuPRq",
+            "reservations": [],
+            "lastRenovations": "Never",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Congo,  Route de l'Avenir",
+            "pricePerHour": 3,
+            "pricePerDay": 13,
+            "pricePerMonth": 59
+        },
+        {
+            "id": "m5lQCMkA",
+            "name": "Sunset Villas Townhouse",
+            "type": "Townhouse",
+            "desc": "A lovely Townhouse in a great location.",
+            "madeIn": "2023",
+            "amenities": [
+                "Garden",
+                "Parking"
+            ],
+            "buildingId": "JhUQhjm1",
+            "reviews": "9hzvNEyB",
+            "reservations": [],
+            "lastRenovations": "2023",
+            "numOfGuest": 0,
+            "numOfRooms": 0,
+            "numOfBaths": 0,
+            "address": "Chad,  Rue de la Paix",
+            "pricePerHour": 1,
+            "pricePerDay": 15,
+            "pricePerMonth": 27
+        }
+    ],
+    "buildings": [
+        {
+            "id": "qoVTisHn",
+            "name": "Riverview Apartments",
+            "address": "Cameroon, Avenue de l'Unité, Yaoundé",
+            "geoAddress": "8.568590165631226, 8.479172741305776",
+            "estates": [
+                "kU7Hfs8v",
+                "m0kTpAck",
+                "ShdXjSk3",
+                "IcUYn3Eu",
+                "3CfHcYqV",
+                "yrNT4dZy"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "cPv0W9C6",
+            "name": "Hilton Palace",
+            "address": "Rwanda, Route de l'Avenir, Douala",
+            "geoAddress": "9.769676940858412, 4.168585989789744",
+            "estates": [
+                "zrZ4cb6w",
+                "JUOpngna",
+                "MAox7Tjo",
+                "6ThjAXDy"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Gym",
+                "Pool",
+                "Common Area"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "5lK8S3J8",
+            "name": "Central Plaza",
+            "address": "Sao Tome and Principe, Route de l'Avenir, Douala",
+            "geoAddress": "6.30315987559424, 1.6507823489153872",
+            "estates": [
+                "gBMHXENg",
+                "BugRuBst",
+                "rLSVEHRB",
+                "2yev4ytt",
+                "lal85EBA",
+                "vyEGW8od"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2018",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "0KYLACHd",
+            "name": "Riverview Apartments",
+            "address": "Congo, Boulevard du 20 Mai, Yaoundé",
+            "geoAddress": "9.29841721748667, 5.462803983928303",
+            "estates": [
+                "Qg5U6ZTN",
+                "V386HeNc",
+                "EljdubNc"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2018",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "u5LOkDTV",
+            "name": "The Grand Tower",
+            "address": "Congo, Rue de la Paix, Douala",
+            "geoAddress": "5.700548401775589, 5.315754779140653",
+            "estates": [
+                "rApHmrbJ",
+                "YZoyQfsK",
+                "PCEd74fa",
+                "lE6kLt64",
+                "KITf2kJ1",
+                "EiTKBgtl",
+                "7OITq3v0",
+                "jx3mv1pE",
+                "YYNPjRwY"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "1n91IWv4",
+            "name": "The Grand Tower",
+            "address": "Gabon, Route de l'Avenir, Yaoundé",
+            "geoAddress": "5.562513623341174, 5.2713607364549375",
+            "estates": [
+                "kYd6Xf2I"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "1LnRtbMN",
+            "name": "Riverview Apartments",
+            "address": "Nigeria, Avenue de l'Unité, Bamenda",
+            "geoAddress": "6.723572761131058, 1.6172918575323592",
+            "estates": [
+                "Cw5QRbth",
+                "k2POaaMl",
+                "JdlOeI6G",
+                "pZDmzYn7"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "aG7tcyXP",
+            "name": "Oakwood Residences",
+            "address": "Equatorial Guinea, Route de l'Avenir, Yaoundé",
+            "geoAddress": "6.4926540645963176, 1.2892707839021522",
+            "estates": [
+                "OJMPRvPd"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Gym",
+                "Pool",
+                "Common Area"
+            ],
+            "constructedIn": "2018",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "OcSvloUD",
+            "name": "Hilton Palace",
+            "address": "Democratic Republic of the Congo, Boulevard du 20 Mai, Yaoundé",
+            "geoAddress": "6.77928085653244, 1.8979091309612084",
+            "estates": [
+                "vBVn0swR"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "ZH95qR17",
+            "name": "The Grand Tower",
+            "address": "Sao Tome and Principe, Route de l'Avenir, Douala",
+            "geoAddress": "3.9233080289365274, 7.884683537511967",
+            "estates": [
+                "aMQ3bkgd",
+                "kvyMZsKp",
+                "9WCLsD5P"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "wy9JJwgl",
+            "name": "Sunset Villas",
+            "address": "Nigeria, Chemin de l'Espoir, Bafoussam",
+            "geoAddress": "5.73466606203727, 9.140205247379269",
+            "estates": [
+                "kEY9zP97"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Gym",
+                "Pool",
+                "Common Area"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "nr9zVldl",
+            "name": "Sunset Villas",
+            "address": "Cameroon, Boulevard du 20 Mai, Bamenda",
+            "geoAddress": "3.4591058265079866, 1.9074904200849008",
+            "estates": [
+                "KDWP87FU",
+                "NOdcXu8r",
+                "qbbkIFsq",
+                "PTcAuoMR",
+                "Vnvzwt26",
+                "7HI62F00",
+                "4tAf902W",
+                "VIHJsO1m",
+                "HvEswhJZ",
+                "WPQ7GCHi"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Kids Play Area",
+                "Business Center",
+                "Pet-friendly"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "PJdmdbHn",
+            "name": "Sunset Villas",
+            "address": "Nigeria, Rue de la Paix, Maroua",
+            "geoAddress": "7.560597058087395, 4.269567791354456",
+            "estates": [
+                "IKYKjmTy"
+            ],
+            "desc": "A modern building located in Maroua.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "9JjtMBU4",
+            "name": "Central Plaza",
+            "address": "Nigeria, Boulevard du 20 Mai, Bamenda",
+            "geoAddress": "5.769523589779357, 4.151060659672252",
+            "estates": [
+                "WgBam8M4",
+                "JIQ7trr0",
+                "x2AB6CFl",
+                "XuIf9Zbn",
+                "JRXq19U4",
+                "nK2Cia3r",
+                "iiGY3vNW",
+                "thSbItgB",
+                "yirUhbyE"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Rooftop Terrace",
+                "Concierge",
+                "Garden"
+            ],
+            "constructedIn": "2015",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "euKpH1S6",
+            "name": "Oakwood Residences",
+            "address": "Congo, Boulevard du 20 Mai, Bafoussam",
+            "geoAddress": "9.49789203416638, 1.5557576956571029",
+            "estates": [
+                "geSP3qF0",
+                "JLiuNF0f",
+                "qT1WvuBZ"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Kids Play Area",
+                "Business Center",
+                "Pet-friendly"
+            ],
+            "constructedIn": "2013",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "TAxh9dHS",
+            "name": "Hilton Palace",
+            "address": "Sao Tome and Principe, Avenue de l'Unité, Bafoussam",
+            "geoAddress": "9.445231714478995, 0.3585084849393372",
+            "estates": [
+                "FPleWl5u",
+                "5Wc7oH9p",
+                "XJEIiZcR",
+                "UNC2gxoU",
+                "MvBKZaVL",
+                "HOF1VazK",
+                "RjxVIvYA",
+                "Anpj6UFG",
+                "qUBVfTlU"
+            ],
+            "desc": "A modern building located in Bafoussam.",
+            "building_amenities": [
+                "Bike Storage",
+                "Laundry Facilities"
+            ],
+            "constructedIn": "2018",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "hOjTcq0M",
+            "name": "Hilton Palace",
+            "address": "Burundi, Route de l'Avenir, Bamenda",
+            "geoAddress": "0.252157341263215, 8.651398343233986",
+            "estates": [
+                "uUT1GDz8",
+                "ML4UH75Y",
+                "iCW2Z7DQ",
+                "rA2fxsxw",
+                "VU28qFZL",
+                "FNg2hsgU",
+                "rIX77cbh",
+                "LCroEClA",
+                "fRWlVYJp"
+            ],
+            "desc": "A modern building located in Bamenda.",
+            "building_amenities": [
+                "Gym",
+                "Pool",
+                "Common Area"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "Z9ezTYVb",
+            "name": "The Grand Tower",
+            "address": "Democratic Republic of the Congo, Avenue de l'Unité, Douala",
+            "geoAddress": "0.5542339911395344, 9.027759558860415",
+            "estates": [
+                "NHdX0KIQ",
+                "lsBoxzUa",
+                "0sTpLH2X",
+                "oiBmoBJR",
+                "29XzzAqM"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Gym",
+                "Pool",
+                "Common Area"
+            ],
+            "constructedIn": "2015",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "RHtE5JgY",
+            "name": "Sunset Villas",
+            "address": "Congo, Route de l'Avenir, Douala",
+            "geoAddress": "5.204554081341, 0.5104135668916387",
+            "estates": [
+                "TunAIcqO",
+                "hULiBNFT",
+                "dNvbSXlq",
+                "6XyXAHYH",
+                "n8ImxEsm",
+                "tGSGoTHQ",
+                "cvtnrJqB",
+                "pdpKLl2o"
+            ],
+            "desc": "A modern building located in Douala.",
+            "building_amenities": [
+                "Elevator",
+                "Security",
+                "Parking"
+            ],
+            "constructedIn": "2012",
+            "createdAt": "Fri Apr 25 2025"
+        },
+        {
+            "id": "JhUQhjm1",
+            "name": "Sunset Villas",
+            "address": "Chad, Rue de la Paix, Yaoundé",
+            "geoAddress": "1.1057882089190696, 0.3025362178581936",
+            "estates": [
+                "GaWeT6Xm",
+                "qXgYlqAJ",
+                "ydmqXTrJ",
+                "WOayWsVQ",
+                "wQpNB46E",
+                "T5K0kLpE",
+                "Db3F05Eo",
+                "d3FOpXtS",
+                "3w1dZTv3"
+            ],
+            "desc": "A modern building located in Yaoundé.",
+            "building_amenities": [
+                "Kids Play Area",
+                "Business Center",
+                "Pet-friendly"
+            ],
+            "constructedIn": "2014",
+            "createdAt": "Fri Apr 25 2025"
+        }
+    ],
+    "reviews": [
+        {
+            "id": "wz4VxI6o",
+            "createdAt": "2025-03-31T19:32:00.772Z",
+            "username": "Henry",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "dUii8iSO",
+            "createdAt": "2025-04-08T11:33:15.436Z",
+            "username": "Charlie",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "ZOWVANE6",
+            "createdAt": "2025-04-19T21:28:39.186Z",
+            "username": "Ivy",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "gl7ysGne",
+            "createdAt": "2025-04-23T05:22:42.071Z",
+            "username": "Grace",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "B1M3EK96",
+            "createdAt": "2025-03-31T15:14:28.167Z",
+            "username": "David",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 5,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "wRdpJiV4",
+            "createdAt": "2025-03-28T01:30:27.773Z",
+            "username": "Alice",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 2,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "Lh0iQuJa",
+            "createdAt": "2025-03-29T09:24:18.603Z",
+            "username": "Grace",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "DVzBI5ME",
+            "createdAt": "2025-04-03T06:27:46.285Z",
+            "username": "David",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "VqS19BwW",
+            "createdAt": "2025-03-29T15:42:01.461Z",
+            "username": "Alice",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "5VxflWKS",
+            "createdAt": "2025-04-12T01:43:01.125Z",
+            "username": "Grace",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 2,
+                "sanitation": 1,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "nHYSkSD2",
+            "createdAt": "2025-04-20T18:07:16.777Z",
+            "username": "Ivy",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "Lcf0JsTU",
+            "createdAt": "2025-03-29T20:42:43.643Z",
+            "username": "Charlie",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "yut0JnQO",
+            "createdAt": "2025-04-23T10:21:13.674Z",
+            "username": "Grace",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "bNQ9wtrd",
+            "createdAt": "2025-04-20T12:43:46.292Z",
+            "username": "Eve",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "4rqnze2b",
+            "createdAt": "2025-03-30T05:32:55.771Z",
+            "username": "Henry",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 2,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "bS4XsO8C",
+            "createdAt": "2025-03-26T22:43:16.284Z",
+            "username": "Alice",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 4,
+                "sanitation": 5,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "Y3kfFsnF",
+            "createdAt": "2025-04-03T00:16:05.242Z",
+            "username": "Alice",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "qIgs2GEe",
+            "createdAt": "2025-04-06T20:32:02.402Z",
+            "username": "David",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "KsqzV0Ny",
+            "createdAt": "2025-04-23T15:43:43.336Z",
+            "username": "Ivy",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "XjhCyI8u",
+            "createdAt": "2025-04-23T10:55:32.894Z",
+            "username": "Eve",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "ob2cYupy",
+            "createdAt": "2025-04-15T08:08:35.598Z",
+            "username": "Henry",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "yzzSTwjY",
+            "createdAt": "2025-04-21T01:53:32.780Z",
+            "username": "Henry",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 3,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "24KYcHuB",
+            "createdAt": "2025-04-22T00:47:11.312Z",
+            "username": "Ivy",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 4,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "vjT6sLH6",
+            "createdAt": "2025-03-31T04:53:06.101Z",
+            "username": "Grace",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 2,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "Ajm4vxPC",
+            "createdAt": "2025-04-12T18:47:01.911Z",
+            "username": "David",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 1,
+                "enviroment": 5,
+                "sanitation": 4,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "3F2hCO9u",
+            "createdAt": "2025-04-04T07:14:18.445Z",
+            "username": "Ivy",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 4,
+                "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "3wwCXDSP",
+            "createdAt": "2025-03-30T13:25:29.052Z",
+            "username": "David",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "PC8qWdEK",
+            "createdAt": "2025-04-07T10:54:51.300Z",
+            "username": "Bob",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "NMIz8yFy",
+            "createdAt": "2025-03-27T06:31:12.024Z",
+            "username": "Eve",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "Gs5nDPve",
+            "createdAt": "2025-03-28T12:02:50.848Z",
+            "username": "Henry",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 5,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "ZFolkmtl",
+            "createdAt": "2025-04-22T02:24:15.905Z",
+            "username": "David",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "pTtSivOs",
+            "createdAt": "2025-04-24T15:35:06.902Z",
+            "username": "Grace",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "OZr5gLGb",
+            "createdAt": "2025-04-05T06:12:35.383Z",
+            "username": "Alice",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 4,
+                "sanitation": 5,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "aNujRew4",
+            "createdAt": "2025-03-29T22:36:49.624Z",
+            "username": "Bob",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 1,
+                "sanitation": 5,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "8QAaEKyz",
+            "createdAt": "2025-04-01T16:20:39.311Z",
+            "username": "Henry",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "30bhjpGy",
+            "createdAt": "2025-04-08T23:04:38.563Z",
+            "username": "Grace",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 2,
+                "sanitation": 3,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "Tflmr1JO",
+            "createdAt": "2025-04-16T16:12:17.652Z",
+            "username": "David",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 3,
+                "sanitation": 4,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "EeQIQuPB",
+            "createdAt": "2025-03-28T15:05:59.151Z",
+            "username": "Ivy",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "pJxZbdi8",
+            "createdAt": "2025-04-08T06:48:36.748Z",
+            "username": "Henry",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 3,
+                "enviroment": 4,
+                "sanitation": 5,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "p8X2YnGk",
+            "createdAt": "2025-04-11T03:03:30.908Z",
+            "username": "David",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "kL66Ya7t",
+            "createdAt": "2025-04-17T11:53:03.343Z",
+            "username": "David",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 1,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "aDvjwLwF",
+            "createdAt": "2025-04-02T06:22:00.510Z",
+            "username": "Alice",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 3,
+                "sanitation": 4,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "bDtI9z1a",
+            "createdAt": "2025-04-17T13:35:27.348Z",
+            "username": "Eve",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "hhczks3v",
+            "createdAt": "2025-03-30T05:10:02.907Z",
+            "username": "Grace",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 2,
+                "sanitation": 4,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "cmoClTMt",
+            "createdAt": "2025-03-27T08:25:06.054Z",
+            "username": "Eve",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 2,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "Zfmj1DFt",
+            "createdAt": "2025-04-08T15:34:27.499Z",
+            "username": "Grace",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "9lx1rwG4",
+            "createdAt": "2025-04-09T05:20:44.101Z",
+            "username": "Eve",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "iKVjxJsS",
+            "createdAt": "2025-04-04T10:46:25.016Z",
+            "username": "Charlie",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 4,
+                "sanitation": 3,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "sWSYpzZ6",
+            "createdAt": "2025-04-15T12:35:33.149Z",
+            "username": "Eve",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 2,
+                "sanitation": 1,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "p5e5VwWD",
+            "createdAt": "2025-04-12T22:32:41.074Z",
+            "username": "Bob",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "qI9Q0DPy",
+            "createdAt": "2025-04-22T17:15:32.239Z",
+            "username": "Charlie",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "7ekfV1TS",
+            "createdAt": "2025-04-13T10:05:48.926Z",
+            "username": "Bob",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 4,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "wwYH9wmH",
+            "createdAt": "2025-04-24T15:13:16.590Z",
+            "username": "Grace",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 4,
+                "sanitation": 1,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "4GyoIMKi",
+            "createdAt": "2025-04-12T09:19:58.291Z",
+            "username": "Eve",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 4,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "hxydyfdD",
+            "createdAt": "2025-04-07T12:59:28.802Z",
+            "username": "Charlie",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 2,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "1Nnkg0kZ",
+            "createdAt": "2025-03-28T10:51:04.675Z",
+            "username": "Alice",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 2,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "LjC7Tkxu",
+            "createdAt": "2025-04-23T12:43:00.911Z",
+            "username": "Bob",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 2,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "a3SJfj8p",
+            "createdAt": "2025-04-14T13:14:37.371Z",
+            "username": "Ivy",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "WTjHmoDQ",
+            "createdAt": "2025-04-04T17:23:53.759Z",
+            "username": "Charlie",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 3,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "cZ133SaT",
+            "createdAt": "2025-03-30T22:22:05.540Z",
+            "username": "Ivy",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 3,
+                "enviroment": 2,
+                "sanitation": 3,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "iDpBpfFC",
+            "createdAt": "2025-04-07T22:02:43.160Z",
+            "username": "Alice",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 1,
+                "enviroment": 2,
+                "sanitation": 3,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "KRhszNYx",
+            "createdAt": "2025-04-23T22:19:09.761Z",
+            "username": "Henry",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 3,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "LbR9i7sE",
+            "createdAt": "2025-04-20T17:08:02.739Z",
+            "username": "Henry",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 2,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "NS0uxpxN",
+            "createdAt": "2025-04-20T01:32:32.181Z",
+            "username": "Ivy",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "CMuPwyDO",
+            "createdAt": "2025-04-02T08:27:58.729Z",
+            "username": "Eve",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 1,
+                "sanitation": 5,
+                "comparism": 2
+            }
+        },
+        {
+            "id": "JuDllG2E",
+            "createdAt": "2025-04-04T00:06:40.981Z",
+            "username": "Ivy",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 5,
+                "enviroment": 4,
+                "sanitation": 2,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "aX9mhja8",
+            "createdAt": "2025-04-04T15:40:29.767Z",
+            "username": "Henry",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "ytL0M0Cr",
+            "createdAt": "2025-04-23T00:39:55.921Z",
+            "username": "Bob",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "hKvJGeT4",
+            "createdAt": "2025-04-15T04:20:32.154Z",
+            "username": "Bob",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 4,
+                "sanitation": 1,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "fvZ7yHoW",
+            "createdAt": "2025-03-27T07:00:13.379Z",
+            "username": "Henry",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 3,
+                "sanitation": 1,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "TxlOqbjC",
+            "createdAt": "2025-04-09T00:56:26.309Z",
+            "username": "Bob",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 3,
+                "enviroment": 2,
+                "sanitation": 1,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "rv0yo0np",
+            "createdAt": "2025-03-29T23:13:05.246Z",
+            "username": "David",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "xfLMyd9N",
+            "createdAt": "2025-03-26T17:15:48.475Z",
+            "username": "Charlie",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "VM7MIOZE",
+            "createdAt": "2025-04-22T11:24:44.718Z",
+            "username": "Bob",
+            "message": "The agent was very helpful.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 2,
+                "sanitation": 3,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "E75Gmaf7",
+            "createdAt": "2025-04-06T21:24:32.687Z",
+            "username": "Ivy",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 1,
+                "sanitation": 2,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "7CaE8AgS",
+            "createdAt": "2025-03-29T18:47:00.207Z",
+            "username": "Charlie",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 1,
+                "enviroment": 3,
+                "sanitation": 2,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "tzDWSHD9",
+            "createdAt": "2025-03-29T08:27:17.378Z",
+            "username": "Bob",
+            "message": "Clean and well-maintained.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 3,
+                "sanitation": 2,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "4iJvXliU",
+            "createdAt": "2025-03-28T02:12:23.004Z",
+            "username": "David",
+            "message": "Great experience!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 2,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "9jWM80mi",
+            "createdAt": "2025-04-24T09:27:56.423Z",
+            "username": "Alice",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 5,
+                "sanitation": 5,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "rduP5Lpr",
+            "createdAt": "2025-04-15T19:09:44.868Z",
+            "username": "Ivy",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "0DE6vtY9",
+            "createdAt": "2025-03-31T20:56:23.080Z",
+            "username": "David",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 4,
+                "enviroment": 1,
+                "sanitation": 4,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "5jHL6mlj",
+            "createdAt": "2025-04-18T16:13:08.695Z",
+            "username": "Henry",
+            "message": "Could have been better.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 3
+            }
+        },
+        {
+            "id": "MdIxomwZ",
+            "createdAt": "2025-04-22T10:40:01.180Z",
+            "username": "Charlie",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 2,
+                "enviroment": 1,
+                "sanitation": 1,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "WLHZr1Ls",
+            "createdAt": "2025-03-30T17:42:40.680Z",
+            "username": "Grace",
+            "message": "Not what I expected.",
+            "rate": {
+                "agent": 5,
+                "enviroment": 2,
+                "sanitation": 5,
+                "comparism": 5
+            }
+        },
+        {
+            "id": "lsbMiI0a",
+            "createdAt": "2025-04-19T23:19:41.337Z",
+            "username": "Eve",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 1,
+                "sanitation": 3,
+                "comparism": 4
+            }
+        },
+        {
+            "id": "PQnuJEq7",
+            "createdAt": "2025-04-17T16:10:04.115Z",
+            "username": "Bob",
+            "message": "Good value for the price.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 5,
+                "sanitation": 1,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "9Ge2VzSY",
+            "createdAt": "2025-03-31T16:21:09.185Z",
+            "username": "Bob",
+            "message": "Highly recommended!",
+            "rate": {
+                "agent": 2,
+                "enviroment": 2,
+                "sanitation": 4,
+                "comparism": 1
+            }
+        },
+        {
+            "id": "EqbAWUjO",
+            "createdAt": "2025-04-19T05:22:17.106Z",
+            "username": "Alice",
+            "message": "Loved the environment.",
+            "rate": {
+                "agent": 4,
+                "enviroment": 3,
+                "sanitation": 5,
+                "comparism": 2
+            }
+        }
+    ]
+}

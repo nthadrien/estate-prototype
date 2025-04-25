@@ -1,12 +1,20 @@
 import EstateCard from "@components/cards/EstateCard";
-import { For, type JSX} from "solid-js";
+import type { EstateType } from "src/api/dataTypes.ts";
+import { createSignal, createResource, For, type JSX, Suspense, Show} from "solid-js";
+import { $EstatesList } from "src/stores/user.ts";
 
-import { estates } from "src/api/generatedData.json";
 
+const fetchData = async(id:string) => {
+    return (await fetch("http://localhost:8000/estates")).json();
+}
 
 const Home = ():JSX.Element => {
 
-    const data = estates;
+    // const data = estates;
+    const [query , setQuery ] = createSignal<string>("");
+    const [data] = createResource(query, fetchData);
+
+
 
     return ( 
     <>
@@ -97,13 +105,19 @@ const Home = ():JSX.Element => {
 
             </section>
 
-            <section class="col-lg-9 row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
-                <For each={data}>
-                    { (item) => <div style={"max-width: 26rem;"} class="col">
-                        <EstateCard data={item} />
-                    </div>}
-                </For>
-            </section>
+            <Show when={data.error}>
+                <p class="text-danger">Search QUery Error</p>
+            </Show>
+
+            <Suspense fallback="LoAdInG.....">
+                <section class="col-lg-9 row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
+                    <For each={data()}>
+                        { (item) => <div style={"max-width: 26rem;"} class="col">
+                            <EstateCard data={item} />
+                        </div>}
+                    </For>
+                </section>
+            </Suspense>
 
         </main>
 
