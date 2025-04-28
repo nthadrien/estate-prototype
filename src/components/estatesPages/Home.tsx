@@ -1,11 +1,10 @@
 import EstateCard from "@components/cards/EstateCard";
-import type { EstateType } from "src/api/dataTypes.ts";
-import { createSignal, createResource, For, type JSX, Suspense, Show} from "solid-js";
-import { $EstatesList } from "src/stores/user.ts";
+import { createSignal, createResource, For, type JSX, Suspense, Show, onMount} from "solid-js";
+// import { output } from "src/api/generateDataFxn";
 
 
 const fetchData = async(id:string) => {
-    return (await fetch("http://localhost:8000/estates")).json();
+    return (await fetch("http://localhost:8000/estates?_embed=estateReviews")).json();
 }
 
 const Home = ():JSX.Element => {
@@ -13,6 +12,10 @@ const Home = ():JSX.Element => {
     // const data = estates;
     const [query , setQuery ] = createSignal<string>("");
     const [data] = createResource(query, fetchData);
+
+    onMount(()=>{
+        // output()
+    })
 
 
 
@@ -110,7 +113,7 @@ const Home = ():JSX.Element => {
             </Show>
 
             <Suspense fallback="LoAdInG.....">
-                <section class="col-lg-9 row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
+                <section class="col-lg-9 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3">
                     <For each={data()}>
                         { (item) => <div style={"max-width: 26rem;"} class="col">
                             <EstateCard data={item} />

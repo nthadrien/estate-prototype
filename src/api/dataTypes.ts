@@ -34,6 +34,8 @@ export type EstateType = {
   pricePerHour: number;
   pricePerDay: number;
   pricePerMonth: number;
+  size: string;
+  estateReviews?:EstateReviewType[]
 };
 
 export type EstateReviewType = {
@@ -41,6 +43,7 @@ export type EstateReviewType = {
   generalRate : number;
   lastReview: string;
   reviews: guid[];
+  estateId: string;
 } 
 
 export type ReviewType = {
@@ -48,6 +51,7 @@ export type ReviewType = {
   createdAt: string;
   username: string;
   message: string;
+  estateReviewId: string;
   rate: {
     agent: number;
     enviroment: number;

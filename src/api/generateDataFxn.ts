@@ -21,7 +21,7 @@ export function generateAllData (count:number) {
     const estateReviews : EstateReviewType[] = [];
 
     const possibleTypes = ["Apartment", "House", "Condo", "Villa", "Townhouse"];
-    const possibleConstructedIn = ["2012","2013", "2014", "2015", "2018","2016"]
+    const possibleConstructedIn = ["2012","2013", "2014", "2015", "2018","2016"];
     const possibleMadeIn = ["2019","2020", "2021", "2022", "2023", "Never"];
     const possibleAmenitiesArrays = [
       ["Pool", "Gym"],
@@ -84,7 +84,7 @@ export function generateAllData (count:number) {
           name: randomName,
           address: `${randomCountry}, ${randomStreet}, ${randomCity}`,
           geoAddress: `${Math.random() * 10}, ${Math.random() * 10}`, // Simple random coordinates
-          estates: Array.from({ length: Math.floor(Math.random() * 10) + 1 }).map(() => generateShortUUID()), // 1-5 short UUIDs for estates
+          estates: Array.from({ length: Math.floor(Math.random() * 10) + 9 }).map(() => generateShortUUID()), // 1-5 short UUIDs for estates
           desc: `A modern building located in ${randomCity}.`,
           building_amenities: randomAmenities,
           constructedIn: randomConstructedIn,
@@ -117,6 +117,7 @@ export function generateAllData (count:number) {
             numOfRooms: numOfGuest,
             numOfBaths: numOfGuest,
             address,
+            size: `${Math.ceil(Math.random() * 12 + 1  ) } x ${Math.ceil(Math.random() * 10 + 1  ) }`,
             pricePerHour: Math.floor(Math.random() * 3.2),
             pricePerDay: Math.floor(Math.random() * 20),
             pricePerMonth: Math.floor(Math.random() * 140.5),
@@ -127,11 +128,15 @@ export function generateAllData (count:number) {
     // generateEstate Reviews:
 
     for ( let estate of estates ) {
+
+        const reviews = () => Array.from({ length: Math.floor(Math.random() * 10) }).map(() => generateShortUUID());
+
         const estaRev:EstateReviewType = {
             id : estate.reviews,
             generalRate: 1,
+            estateId: estate.id,
             lastReview: "",
-            reviews :  Array.from({ length: Math.floor(Math.random() * 10) }).map(() => generateShortUUID()),
+            reviews : reviews()
         }
 
         estateReviews.push(estaRev);
@@ -161,6 +166,7 @@ export function generateAllData (count:number) {
                     createdAt: createdAt,
                     username: randomUsername,
                     message: randomMessage,
+                    estateReviewId : review.id ,
                     rate: {
                         agent, // Random rating from 1 to 5
                         enviroment,
@@ -176,12 +182,12 @@ export function generateAllData (count:number) {
         review.lastReview = reviews[reviews.length - 1].message;
     }
 
-    return {estates , buildings , reviews };
+    return {estates , buildings ,estateReviews, reviews };
 }
   
 
 // Example of how to use the function:
 
 export const output = () => {
-    console.log(generateAllData(20));
+    console.log(generateAllData(50));
 }

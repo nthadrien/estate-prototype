@@ -2,7 +2,7 @@ import { type JSX } from "solid-js";
 import { notifications } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils";
 import { lang } from "src/stores/user";
-import { type EstateType } from "src/api/dataTypes.ts";
+import { type EstateReviewType, type EstateType } from "src/api/dataTypes.ts";
 
 interface Props {
     data: EstateType
@@ -20,19 +20,32 @@ const EstateCard = (props:Props): JSX.Element => {
         specs: (props.data.pricePerMonth).toString()
     });
 
-    const handleBookmark = () => {
+    const handleBookmark = ():void => {
         notifications({
             code: 300, type:"warning",message:"added to bookmarked list"
         });
     }
 
-    const handleLiked = () => {
+    const handleLiked = ():void => {
         notifications({
            code: 200 , type:"success",message:"thanks for liking"
         });
     }
+
+    const getColor = ():string => {
+        const roto = props.data.estateReviews ? props.data.estateReviews[0] : false;
+        if ( roto ) {
+            return  roto?.generalRate < 1.8 ? 'danger' : 
+                    roto?.generalRate < 2 ? 'warning' : 
+                    roto?.generalRate < 2.8 ? 'primary' : 
+                    'success'; 
+
+        }
+        return 'secondary';
+
+    }
     return (
-        <div class="">
+        <div class="text-capitalize">
 
             <section class="position-relative rounded-4">
 
@@ -40,7 +53,7 @@ const EstateCard = (props:Props): JSX.Element => {
                     {t("estate.rent")}
                 </div>
 
-                <img style="height: 14rem;" src="/images/estates/garden-2.jpg" class="ratio ratio-19x9 w-100 rounded-2"  alt="estate" />
+                <img loading="lazy" style="height: 14rem;" src="/images/estates/garden-2.jpg" class="ratio ratio-19x9 w-100 rounded-2"  alt="estate" />
 
                 <aside class="position-absolute bottom-0 start-0 px-1 w-100 d-flex justify-content-between align-items-center px-2">
 
@@ -64,53 +77,53 @@ const EstateCard = (props:Props): JSX.Element => {
 
                 <div class="fs-6 fw-semibold">{props.data.type} for {props.data.numOfGuest} guests </div>
 
-                <div>
+                <div class="text-truncate">
                     <i class="fa fa-map-marker me-2" aria-hidden="true"  /> 
                     {props.data.address}
                 </div>
 
-                <div>
-                   Price : $ {props.data.pricePerHour} / hr 
-                   <span class="vr mx-1" /> $ {props.data.pricePerDay} / jr 
-                   <span class="vr mx-1" /> $ {props.data.pricePerMonth} / mois              
-                </div>
+                <ul  class="nav justify-content-between align-items-start">
 
-                <ul  class="nav align-items-start">
-
-                    <li class="col-4"> 
-                        <strong>Bedrooms</strong> <br/>
+                    <li> 
+                        <strong>{t("bedrooms")}</strong> <br/>
                         <i class="fa fa-bed me-1" aria-hidden="true"></i> 
                         {props.data.numOfRooms}
                     </li>
 
-                    <li class="col-4">
-                        <strong>Baths</strong> <br/>
+                    <li>
+                        <strong>{t('bathrooms')}</strong> <br/>
                         <i class="fa fa-bath me-1" aria-hidden="true"></i>
                         {props.data.numOfBaths}
                     </li>
 
-                    <li class="col-4">
-                        <strong>Size</strong> <br/>
+                    <li>
+                        <strong>{t("size")}</strong> <br/>
                         <i class="fa fa-square me-1" aria-hidden="true"></i> 
-                        {props.data.numOfRooms + 120 } sqm 
+                        <span class="text-lowercase">{props.data.size} m² </span>
                     </li>
 
                 </ul>
 
-                <div class="d-flex align-items-center gap-3">
-                    <b class="btn btn-sm btn-primary fw-bold">
-                        3.8
+                <div class="d-flex align-items-center gap-2">
+                    <b class={`btn btn-sm btn-${getColor()} fw-bold`}>
+                        {props.data.estateReviews && props.data.estateReviews[0].generalRate.toPrecision(2)}
                     </b>
-                    <div class="text-secondary">
-                        Best Place in town  <br/>
-                        <b>12 reviews</b>
+                    <div class="text-secondary lh-sm">
+                        <span class="text-truncate">{props.data.estateReviews && props.data.estateReviews[0].lastReview} </span> <br/>
+                        <span>{props.data.estateReviews && props.data.estateReviews[0].reviews.length} reviews</span>
                     </div>
                 </div>
+
+                <div>
+                   {t("price")} : $ {props.data.pricePerHour} / hr 
+                   <span class="vr mx-1" /> $ {props.data.pricePerDay} / jr 
+                   <span class="vr mx-1" /> $ {props.data.pricePerMonth} / mois              
+                </div>
                 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between text-capitalize">
 
                     <a class="fw-bold text-success" href={"/"+ lang.get()+"/estate/details?"+searchParams}>
-                        Voir Plus
+                        {t("more")}
                     </a>
 
                 </div>

@@ -19,8 +19,7 @@ export const ui = {
         'nav.help':'Need Help?',
         'base.footer': 'Company, Inc. All rights reserved Designed and Coded By nthadrien',
         'contacts':'Contacts',
-        'send':'Send',
-        'submit':'Submit',
+        
         // pages :
         'contact.desc':'This page is meant to offer a streamlined way to ask questions, give feedback, and get the support you need',
         'contact.touch' : "Let's get in touch!",
@@ -28,6 +27,19 @@ export const ui = {
         'contact.get':"We will get to you as soon as possible. Feel free to use other means to contact us.",
         // estate:
         "estate.rent":"For Rent",
+        "estate.guest":"guest(s)",
+        "estate.host":"host(s)",
+
+        // general
+        'subscribe':'subcribe',
+        'send':'Send',
+        'submit':'Submit',
+        "price":"price",
+        "bedrooms":"bredrooms",
+        "bathrooms":"bathrooms",
+        "size":"size",
+        "more":"more details"
+
     },
     fr: {
         'lang':'Français',
@@ -39,8 +51,6 @@ export const ui = {
         'nav.privacy':'politique de confidentialité',
         'nav.help': "Besoin d'aide?",
         "base.footer": 'Company, Inc. Tous droits réservés Conçu et codé par nthadrien',
-        'send':'Envoyer',
-        'submit':'Soumettre',
         // pages :
         'contact.desc':"Cette page est destinée à offrir un moyen simplifié de poser des questions, de donner votre avis et d'obtenir l'assistance dont vous avez besoin.",
         'contact.touch' : "Prenons contact!",
@@ -48,5 +58,17 @@ export const ui = {
         'contact.get':"Nous vous répondrons dans les plus brefs délais. N'hésitez pas à utiliser d'autres moyens pour nous contacter.",
         // estate:
         "estate.rent":"À louer",
+        "estate.guest":"guest(s)",
+        "estate.host":"hôte(s)",
+
+        // general
+        'subscribe':"s'abonner",
+        'send':'Envoyer',
+        'submit':'Soumettre',
+        "price":"prix",
+        "bedrooms":"chambres",
+        "bathrooms":"salles de bains",
+        "size":"dimensions",
+        "more":"voir plus"
     },
 } as const;
