@@ -113,9 +113,7 @@ const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-
       <Show when={!estateInfo.loading && !estateInfo.error && estateInfo.state === "ready" }>
 
         <Gallery />
-
         <Header />
-
         <Navigation />
         
         <div class="tab-content" id="myTabContent">

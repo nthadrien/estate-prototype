@@ -10593,4 +10593,30 @@ a, .nav-link {
   padding: 0;
 }
 
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.132);
+  color: white;
+}
+
+.mytoast {
+  width: fit-content;
+  transition: all 0.3s linear;
+}
+
+.mytoast > div {
+  display: none;
+  width: 0;
+  animation: showingDiv 2s ease-out 0.5s infinite alternate forwards running;
+}
+
+@keyframes showingDiv {
+  from {
+    display: inline-block;
+    width: 100px;
+  }
+  to {
+    width: 300px;
+  }
+}
+
 /*# sourceMappingURL=website.css.map */

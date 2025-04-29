@@ -1,4 +1,6 @@
 ---
+import EstateCard from "@components/cards/EstateCard";
+import type { EstateType } from "src/api/dataTypes.ts";
 import ClientLayout from "@layouts/ClientLayout.astro";
 
 const headerInfo = {
@@ -6,49 +8,325 @@ const headerInfo = {
     description : "bref presentation of areas were hosts use our platform",
     keywords: ["real estate","properties","rent","rooms","appartment"]
 }
+
+
+const defaultEstates:EstateType[] = [
+{
+    "id": "ovifsKSF",
+    "name": "Central Plaza Condo",
+    "type": "Condo",
+    "desc": "A lovely Condo in a great location.",
+    "madeIn": "2020",
+    "amenities": [
+      "Pet-friendly"
+    ],
+    "buildingId": "duNLIGug",
+    "reviews": "1P81dwFt",
+    "reservations": [
+      "kmdOdUWr"
+    ],
+    "lastRenovations": "2021",
+    "numOfGuest": 0,
+    "numOfRooms": 0,
+    "numOfBaths": 0,
+    "address": "Chad,  Chemin de l'Espoir",
+    "size": "10 x 6",
+    "pricePerHour": 2,
+    "pricePerDay": 5,
+    "pricePerMonth": 90,
+    "estateReviews": [
+      {
+        "id": "1P81dwFt",
+        "generalRate": 3.107142857142857,
+        "estateId": "ovifsKmU",
+        "lastReview": "Good value for the price.",
+        "reviews": [
+          "gFgk5Zhn",
+          "5kyfFmon",
+          "hUGftesd",
+          "DUnXEijY",
+          "3gZbzPqN",
+          "zpeAio83",
+          "IZMsmaYb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovifsKmU",
+    "name": "Central Plaza Condo",
+    "type": "Condo",
+    "desc": "A lovely Condo in a great location.",
+    "madeIn": "2020",
+    "amenities": [
+      "Pet-friendly"
+    ],
+    "buildingId": "duNLIGug",
+    "reviews": "1P81dwFt",
+    "reservations": [
+      "kmdOdUWr"
+    ],
+    "lastRenovations": "2021",
+    "numOfGuest": 0,
+    "numOfRooms": 0,
+    "numOfBaths": 0,
+    "address": "Chad,  Chemin de l'Espoir",
+    "size": "10 x 6",
+    "pricePerHour": 2,
+    "pricePerDay": 5,
+    "pricePerMonth": 90,
+    "estateReviews": [
+      {
+        "id": "1P81dwFt",
+        "generalRate": 3.107142857142857,
+        "estateId": "ovifsKmU",
+        "lastReview": "Good value for the price.",
+        "reviews": [
+          "gFgk5Zhn",
+          "5kyfFmon",
+          "hUGftesd",
+          "DUnXEijY",
+          "3gZbzPqN",
+          "zpeAio83",
+          "IZMsmaYb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zUjV8yoK",
+    "name": "Central Plaza House",
+    "type": "House",
+    "desc": "A lovely House in a great location.",
+    "madeIn": "2019",
+    "amenities": [
+      "Fireplace",
+      "Security System"
+    ],
+    "buildingId": "MmFN7S2Y",
+    "reviews": "oVFD7hTU",
+    "reservations": [
+      "QDvCSfUK"
+    ],
+    "lastRenovations": "2022",
+    "numOfGuest": 0,
+    "numOfRooms": 0,
+    "numOfBaths": 0,
+    "address": "Congo,  Chemin de l'Espoir",
+    "size": "8 x 3",
+    "pricePerHour": 1,
+    "pricePerDay": 16,
+    "pricePerMonth": 94,
+    "estateReviews": [
+      {
+        "id": "oVFD7hTU",
+        "generalRate": 2.90625,
+        "estateId": "zUjV8yoK",
+        "lastReview": "Clean and well-maintained.",
+        "reviews": [
+          "yOEZkz0f",
+          "WYo5G4jN",
+          "B8ETJESc",
+          "y0QEZZST",
+          "kKlgdB51",
+          "LH1wqzpu",
+          "Q6b9zZXi",
+          "aBZGUTKq"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "37exua16",
+    "name": "Hilton Palace House",
+    "type": "House",
+    "desc": "A lovely House in a great location.",
+    "madeIn": "2022",
+    "amenities": [
+      "Pool",
+      "Gym"
+    ],
+    "buildingId": "0nDhCovf",
+    "reviews": "dB3ROLQr",
+    "reservations": [],
+    "lastRenovations": "2019",
+    "numOfGuest": 0,
+    "numOfRooms": 0,
+    "numOfBaths": 0,
+    "address": "Angola,  Rue de la Paix",
+    "size": "6 x 8",
+    "pricePerHour": 0,
+    "pricePerDay": 3,
+    "pricePerMonth": 38,
+    "estateReviews": [
+      {
+        "id": "dB3ROLQr",
+        "generalRate": 2.125,
+        "estateId": "37exua16",
+        "lastReview": "The agent was very helpful.",
+        "reviews": [
+          "5YnZR4Cb",
+          "BCKg4cUl"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "yCI9pqJ6",
+    "name": "Oakwood Residences Apartment",
+    "type": "Apartment",
+    "desc": "A lovely Apartment in a great location.",
+    "madeIn": "2021",
+    "amenities": [
+      "Balcony",
+      "Elevator"
+    ],
+    "buildingId": "xHg7ebub",
+    "reviews": "z6KJKzu3",
+    "reservations": [
+      "DnPyFk1p"
+    ],
+    "lastRenovations": "Never",
+    "numOfGuest": 0,
+    "numOfRooms": 0,
+    "numOfBaths": 0,
+    "address": "Gabon,  Avenue de l'Unité",
+    "size": "3 x 7",
+    "pricePerHour": 2,
+    "pricePerDay": 9,
+    "pricePerMonth": 17,
+    "estateReviews": [
+      {
+        "id": "z6KJKzu3",
+        "generalRate": 3.0357142857142856,
+        "estateId": "yCI9pqJ6",
+        "lastReview": "Great experience!",
+        "reviews": [
+          "CdLYjmNf",
+          "BxyxbPIE",
+          "kMG0E92k",
+          "hvaz4F8T",
+          "B4wTZ5tI",
+          "cX2BYamp",
+          "dkX3fvah"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "z8skBv5V",
+    "name": "Sunset Villas Villa",
+    "type": "Villa",
+    "desc": "A lovely Villa in a great location.",
+    "madeIn": "Never",
+    "amenities": [
+      "Balcony",
+      "Elevator"
+    ],
+    "buildingId": "uhhOlp91",
+    "reviews": "Bxs9RSZN",
+    "reservations": [],
+    "lastRenovations": "2021",
+    "numOfGuest": 2,
+    "numOfRooms": 2,
+    "numOfBaths": 2,
+    "address": "Equatorial Guinea,  Rue de la Paix",
+    "size": "12 x 7",
+    "pricePerHour": 0,
+    "pricePerDay": 10,
+    "pricePerMonth": 115,
+    "estateReviews": [
+      {
+        "id": "Bxs9RSZN",
+        "generalRate": 3.5833333333333335,
+        "estateId": "z8skBv5V",
+        "lastReview": "Good value for the price.",
+        "reviews": [
+          "9KwTmX7h",
+          "48PbPSkt",
+          "NUiPzEun"
+        ]
+      }
+    ]
+  }
+];
+
 ---
 
 
 <ClientLayout { ...headerInfo} >
-    <h1>Home Page</h1>
+
+    <header style="min-height: max(35vh,400px);" class="container-fluid d-flex p-3 bg-gray-100 border">
 
 
-    <section class="container mx-auto py-4">
 
-        <h4>
-            Good Offers Right Now
-        </h4>
-        <p>
-            Up to 20% discounts 
-        </p>
 
-        <div class="row g-3">
+    </header>
 
-            <div class="col-md-6">
-                <img src="/images/estates/tropical-2.jpg" alt="tokyo">
-            </div>
 
-            <aside class="col-md-6 row">
+    <section class="container py-4 mx-auto">
 
-            </aside>
+        <h4 class="text-center">FInd Properties in the Most Amazing Places</h4>
+        <p class="text-center text-secondary mb-4">Odio, Laborum, eligendi? Debitis, voluptates.</p>
 
+
+        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 align-items-center justify-content-center g-1 mb-3">
+
+            {[1,2,3].map( item => 
+                <div style="height: 280px;" class="position-relative rounded-3 overflow-hidden">
+
+                    <img class="h-100 w-100 object-fit-fill" src="/images/estates/tropical-2.jpg" alt="city" />
+
+                    <div class="bg-overlay h-100 w-100 position-absolute top-0 start-0 lh-1 p-3 fw-bold">
+                        <h5>City {1}</h5>
+                        <p>{item + Math.ceil(Math.random()*item)}k+ properties</p>
+                    </div>
+
+                </div>)}
         </div>
-        
+
+        <nav class="nav gap-1 align-items-center justify-content-center mx-auto mb-4">
+
+            <button class="btn btn-sm rounded-pill">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+            </button>
+
+            <button class="btn btn-sm rounded-pill">
+                <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </button>
+
+            <button class="btn btn-sm rounded-pill">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+            </button>
+
+            <button class="btn btn-sm rounded-pill">
+                <i class="fa fa-dot-circle" aria-hidden="true"></i>
+            </button>
+        </nav>
+
     </section>
 
-    <section class="container mx-auto py-4">
+    <section class="container-fluid bg-body-tertiary mx-auto py-4">
 
-        <h4>Explore Before you chose</h4>
+        <div class="container-sm">
 
-        <div class="nav gap-3 align-items-center justify-content-between">
+            <h4 class="text-center">Explore Before you chose</h4>
 
-            <span>
-                Take a closer look at the thoughtfully designed areas that make The Orchard Living a truly exceptional place
-            </span>
+            <div class="nav gap-3 align-items-center justify-content-between mb-4">
+                <span>
+                    Take a closer look at the thoughtfully designed areas that make The Orchard Living a truly exceptional place
+                </span>
 
-            <a class="btn btn-sm btn-secondary rounded-pill" href="/">
-                Check Our Catalogue today
-            </a>
+                <a class="btn btn-sm btn-secondary rounded-pill" href="/">
+                    Check Our Catalogue today
+                </a>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 mb-3">
+                {defaultEstates?.map( item => <div class="col">
+                    <EstateCard client:only="solid" data={item}  />
+                </div>)}
+            </div>
 
         </div>
 

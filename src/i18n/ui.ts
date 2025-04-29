@@ -38,7 +38,17 @@ export const ui = {
         "bedrooms":"bredrooms",
         "bathrooms":"bathrooms",
         "size":"size",
-        "more":"more details"
+        "more":"more details",
+
+
+        // forms
+        // 1 - newsletter form
+        "newsletter.text1":"Subscribe to our newsletter",
+        "newsletter.text2":"Monthly digest of what's new and exciting from us.",
+
+        // 2-General 
+        "email":"Email address",
+        "email.placeholder":"my.mail.address@mailbox.com",
 
     },
     fr: {
@@ -69,6 +79,16 @@ export const ui = {
         "bedrooms":"chambres",
         "bathrooms":"salles de bains",
         "size":"dimensions",
-        "more":"voir plus"
+        "more":"voir plus",
+
+
+         // forms
+        // 1 - newsletter form
+        "newsletter.text1":"Abonnez-vous à notre newsletter",
+        "newsletter.text2":"Résumé mensuel de nos nouveautés et de nos passions.",
+
+        // 2-General 
+        "email":"Adresse email",
+        "email.placeholder":"mon.adresse.mail@mailbox.com",
     },
 } as const;

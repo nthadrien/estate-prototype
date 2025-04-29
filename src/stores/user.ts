@@ -30,14 +30,14 @@ export const notifications = (msg:messageType) => {
 
     const toaster = document.createElement("aside");
 
-    toaster.className = ` bg-body shadow-lg d-flex gap-3 gap-lg-4  align-items-center justify-content-start p-2 p-lg-3 rounded-3`; 
-    toaster.innerHTML = `<i aria-hidden="true" class="fa fa-${icon} text-${color} fa-2x"></i>  
-        <div>${msg.code && `<b class="fw-bold text-${color}">${msg.code} </b><br/>`} ${msg.message}</div> `;
+    toaster.className = `mytoast bg-body shadow-lg d-flex gap-3 gap-lg-4  align-items-center justify-content-start p-1 px-2 rounded-pill border border-secondary-subtle`; 
+    toaster.innerHTML = `<i aria-hidden="true" class="fs-3 fa fa-${icon} text-${color} fa-2x"></i>  
+        <div>${msg.code && `<b class="fw-bold text-truncate text-${color}">${msg.code} </b><br/>`} ${msg.message}</div> `;
 
     // create the element on DOM:
     notification_wrapper?.appendChild(toaster);
     // remove from DOM:
     setTimeout( () => {
         notification_wrapper?.removeChild(toaster);
-    }, 4000);
+    }, 6000);
 }
