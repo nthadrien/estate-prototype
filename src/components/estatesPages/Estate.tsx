@@ -1,5 +1,5 @@
-import { generateAllData, output } from "src/api/generateDataFxn";
-import { createResource, createSignal, onMount, Show, type JSX } from "solid-js";
+
+import { createResource, createSignal, For, onMount, Show, type JSX } from "solid-js";
 
 
 interface srch {
@@ -20,8 +20,10 @@ const initSrch = {
 
 
 
+
+
 const fetchEstate = async (id:string) => {
-  return (await fetch("http://localhost:8000/estates/"+id)).json();
+  return (await fetch(`http://localhost:8000/estates/${id}?_embed=estateReviews`)).json();
 }
 
 function Estate():JSX.Element {
@@ -30,7 +32,6 @@ function Estate():JSX.Element {
   const [estateInfo] = createResource(estateId,fetchEstate);
  
   onMount(()=>{
-    output();
     const obj:any = new Object(initSrch);
     const parms = window.location.search.split("&");
     parms.forEach( pp => {
@@ -41,9 +42,67 @@ function Estate():JSX.Element {
     if ( obj.id ) setEstateId(obj.id);
   });
 
+
+  const Header = () :JSX.Element => (<header class="nav gap-2 justify-content-between align-items-start py-3">
+
+    <aside class="lh-1">
+      <h3>{estateInfo()?.name}</h3>
+      <p>{estateInfo()?.type} for {estateInfo()?.numOfGuest} guest(s)</p>
+    </aside>
+
+    <aside class="d-flex gap-3 align-items-center">
+      <span class="btn btn-sm btn-primary fw-bold"> {estateInfo()?.estateReviews[0].generalRate.toString().slice(0,3)} </span>
+      <div>
+        {estateInfo()?.estateReviews[0].lastReview} <br/>
+        <strong class="text-success">Fairly Good</strong>
+      </div>
+    </aside>
+
+  </header>);
+
+
+const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-row py-3">
+
+  <div class="col-lg-8">
+    <img style={"min-height:360px"} src="/images/img-2x1.png" class="object-fit-cover rounded w-100" loading="lazy" alt="main-pic" />
+  </div>
+
+  <aside style="max-height:360px" class="col-lg-4 d-flex flex-lg-column overflow-hidden">
+    <For each={[1,2,3,4,5]}>
+      { () => <div class="p-1">
+          <img style={"max-height:240px;max-width:360px;"} src="/images/img-2x1.png" class="object-fit-cover rounded" loading="lazy" alt="main-pic" />
+        </div>}
+    </For>
+  </aside>
+
+</section>); 
+
+  const Navigation = () :JSX.Element => (<ul class="nav nav-underline" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+    </li>
+
+    <li class="nav-item ms-auto">
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+        all reviews
+      </button>
+    </li>
+  </ul>);
+
+
+
   return (
     
-    <main class="container-xl">
+    <main class="container">
 
       <Show when={estateInfo.error}>
           <p>Loading: {estateInfo.loading}</p>
@@ -53,69 +112,22 @@ function Estate():JSX.Element {
       
       <Show when={!estateInfo.loading && !estateInfo.error && estateInfo.state === "ready" }>
 
-        <header class="nav gap-2 justify-content-between align-items-start">
+        <Gallery />
 
-          <div>
-            <h3>{estateInfo()?.name}</h3>
-            <p>{estateInfo()?.type} for {estateInfo()?.numOfGuest} guest(s)</p>
-          </div>
+        <Header />
 
-          <div class="d-flex gap-3 align-items-center">
+        <Navigation />
+        
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+          <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+          <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+        </div>
 
-            <span class="btn btn-sm btn-primary">
-              4.2
-            </span>
+        <section></section>
 
-            <div>
-              Best Room in Yaounde <br/>
-              <strong class="text-success">Fairly Good</strong>
-            </div>
-
-          </div>
-
-        </header>
-
-
-        <section style={"max-height: max(50vh,480px);"} class="row g-1">
-
-          <div class="col-lg-8 position-relative h-100">
-
-            <img class="object-fit-cover w-100 ratio ratio-16x9" src="/images/estates/tropical-2.jpg" alt="showcase" />
-
-            <div class="position-absolute bottom-0 end-0 bg-dark rounded-2 btn-group">
-                <button class="btn btn-dark">
-                  <i class="fa fa-arrow-left"></i>
-                </button>
-                <button class="btn btn-dark">
-                  <i class="fa fa-arrow-right"></i>
-                </button>
-            </div>
-
-          </div>
-
-          <div class="col-lg-4 d-flex gap-1 flex-lg-column overflow-auto">
-            <img class="object-fit-cover flex-shrink-0 w-100 ratio ratio-16x9" src="/images/estates/tropical-3.jpg" alt="showcase" />
-            <img class="object-fit-cover flex-shrink-0 w-100 ratio ratio-16x9" src="/images/estates/tropical-2.jpg" alt="showcase" />
-            <img class="object-fit-cover flex-shrink-0 w-100 ratio ratio-16x9" src="/images/estates/garden-1.jpg" alt="showcase" />
-            <img class="object-fit-cover flex-shrink-0 w-100 ratio ratio-16x9" src="/images/estates/tropical.jpg" alt="showcase" />
-          </div>
-
-        </section>
-
-
-        <nav>
-
-        </nav>
-
-
-        <section>
-
-        </section>
-
-
-        <section>
-
-        </section>
+        <section></section>
 
 
       </Show>
