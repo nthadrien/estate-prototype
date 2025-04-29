@@ -1,6 +1,9 @@
 
-import { createResource, createSignal, For, onMount, Show, type JSX } from "solid-js";
 
+import { createResource, createSignal, For, Match, onMount, Show, Switch, type JSX } from "solid-js";
+
+import { useTranslations } from "src/i18n/utils.ts";
+import { lang } from "src/stores/user.ts";
 
 interface srch {
   type: string;
@@ -28,7 +31,9 @@ const fetchEstate = async (id:string) => {
 
 function Estate():JSX.Element {
 
-  const [estateId, setEstateId ] = createSignal<string>('');
+  const t = useTranslations(lang.get());
+
+  const [estateId, setEstateId ] = createSignal<string>('description');
   const [estateInfo] = createResource(estateId,fetchEstate);
  
   onMount(()=>{
@@ -42,12 +47,24 @@ function Estate():JSX.Element {
     if ( obj.id ) setEstateId(obj.id);
   });
 
+  const leftPages:string[] = ["description","book","plans"];
 
-  const Header = () :JSX.Element => (<header class="nav gap-2 justify-content-between align-items-start py-3">
+  const Header = () :JSX.Element => (<header class="nav gap-2 justify-content-between align-items-start mt-3 p-3">
 
-    <aside class="lh-1">
-      <h3>{estateInfo()?.name}</h3>
-      <p>{estateInfo()?.type} for {estateInfo()?.numOfGuest} guest(s)</p>
+    <aside class="lh-sm">
+      <h4>{estateInfo()?.name}</h4>
+      <p>
+        {estateInfo()?.type} for {estateInfo()?.numOfGuest} guest(s) 
+        
+        <button class="btn">
+          <i class="fa fa-share-alt"></i>
+        </button>
+
+        <button class="btn">
+          <i class="fa fa-bookmark-o"></i>
+        </button> <br/> 
+        <i class="fa fa-map-marker" /> {estateInfo()?.address}
+      </p>
     </aside>
 
     <aside class="d-flex gap-3 align-items-center">
@@ -61,7 +78,7 @@ function Estate():JSX.Element {
   </header>);
 
 
-const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-row py-3">
+const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-row">
 
   <div class="col-lg-8">
     <img style={"min-height:360px"} src="/images/img-2x1.png" class="object-fit-cover rounded w-100" loading="lazy" alt="main-pic" />
@@ -77,32 +94,9 @@ const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-
 
 </section>); 
 
-  const Navigation = () :JSX.Element => (<ul class="nav nav-underline" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-    </li>
-
-    <li class="nav-item ms-auto">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-        all reviews
-      </button>
-    </li>
-  </ul>);
-
-
-
   return (
     
-    <main class="container">
+    <main class="container row mx-auto">
 
       <Show when={estateInfo.error}>
           <p>Loading: {estateInfo.loading}</p>
@@ -114,18 +108,114 @@ const Gallery = () : JSX.Element => (<section class="d-flex flex-column flex-lg-
 
         <Gallery />
         <Header />
-        <Navigation />
-        
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-          <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-          <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
-        </div>
 
-        <section></section>
+        <aside class="col-lg-8 p-2">
 
-        <section></section>
+          <section>
+            <h5 class="text-capitalize fw-bold">Description</h5>
+
+            <p>{estateInfo()?.desc} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti sit, reiciendis nostrum doloremque hic impedit maiores tenetur illum nam suscipit quaerat numquam accusantium perspiciatis delectus ab, exercitationem id voluptates!</p>
+
+            <ul class="row row-cols-2">
+              <li class="col">Size: 12x24 sqm</li>
+              <li class="col">Number Of Rooms: 2</li>
+              <li class="col">Number Of Rooms: 2</li>
+              <li class="col">Number Of Rooms: 2</li>
+            </ul>
+
+            <h6 class="text-capitalize fw-bold">{t("price")}</h6>
+
+            <ul class="nav justify-content-start gap-3 align-items-start my-3">
+              <li>Day : $45</li>
+              <li>Night: $60</li>
+              <li>Hourly: $32 </li>
+            </ul>
+
+            <h6 class="text-capitalize fw-bold">{t("ameni")}</h6>
+
+            <p>{estateInfo()?.amenities.map( (item:string )=> <span class="btn mx-2 btn-sm btn-outline-secondary" title={item}>
+                {item}
+            </span>)}</p>
+
+            <h6>Building details</h6>
+
+
+          </section>
+
+          <section>
+            <h5 class="text-capitalize fw-bold">Visit & Plan</h5>
+
+
+            <aside class="row row-cols-1 row-cols-lg-2 g-2">
+
+              <div class="col">
+                <small> 2d Plan of the "Estate type"</small>
+
+              </div>
+
+              <div class="col">
+                <small>3d visit of "Estate type"</small>
+
+              </div>
+
+
+
+            </aside>
+
+
+          </section>
+
+          <section>
+            <h5 class="text-capitalize fw-bold">Reviews</h5>
+
+
+            <h6>General Stats of 34 reviews</h6>
+
+
+            <ul class="list-unstyled">
+
+              <li>
+                <span>agent</span>
+              </li>
+
+              <li>
+                <span>enviroment</span>
+              </li>
+
+              <li>
+                <span>sanitation</span>
+
+                <div class="progress-bar border border-warning">
+                  <div class="bar"></div>
+                </div>
+
+              </li>
+
+              <li>
+                <span>comparism</span>
+              </li>
+
+            </ul>
+
+
+          </section>
+
+        </aside>
+
+        <aside class="col-lg-4 p-2">
+
+          <h6>Locations</h6>
+
+          <p>Police Station : 12km (Police de Mvoma) </p>
+          <p>Hospitals : 2 (Police de Mvoma & central) </p>
+          <p>Schools : 4  </p>
+          <p>!2m from the main route</p>
+
+          <button class="btn btn-primary">
+            Book Today
+          </button>
+
+        </aside>
 
 
       </Show>

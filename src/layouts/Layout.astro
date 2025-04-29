@@ -35,20 +35,7 @@ const { locale } = Astro.params;
 	</head>
 	<body class="position-relative" data-bs-theme="blue">
 		<slot />
-
-
-		<aside id="notification-area" class="d-flex flex-column gap-3">
-
-			<div class="mytoast bg-body shadow-lg d-flex gap-3 gap-lg-4  align-items-center justify-content-start p-1 px-2 rounded-pill border border-secondary-subtle">
-				<i aria-hidden="true" class="fs-3 fa fa-check-circle text-primary fa-2x"></i>  
-        		<div> 
-					<b class="fw-bold text-primary">400 </b>
-					<br/> small : Deserunt fugiat expedita magnam quasi ea doloribus veniam dolor cum officiis perferendis provident consequuntur maxime assumenda aspernatur atque, esse ipsam quo placeat.
-				</div> 
-			</div>
-	
-		</aside>
-
+		<aside id="notification-area" class="d-flex flex-column gap-3"></aside>
 	</body>
 	<script src="../js/main.ts"></script>	
 </html>

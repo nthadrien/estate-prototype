@@ -39,7 +39,10 @@ export const ui = {
         "bathrooms":"bathrooms",
         "size":"size",
         "more":"more details",
-
+        "desc":"description",
+        "plan":"plans",
+        "reviews":"reviews",
+        "ameni":"amenities",
 
         // forms
         // 1 - newsletter form
@@ -80,6 +83,10 @@ export const ui = {
         "bathrooms":"salles de bains",
         "size":"dimensions",
         "more":"voir plus",
+        "desc":"description",
+        "plan":"plans",
+        "reviews":"avis",
+        "ameni":"équipements",
 
 
          // forms

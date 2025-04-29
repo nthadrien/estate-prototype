@@ -148,15 +148,6 @@ a, .nav-link {
     background-color: inherit;
 }
 
-#notification-area {
-    z-index: 4; 
-    width: 80%;
-    max-width:580px;
-    position: fixed;
-    bottom:3rem;
-    left:3em;
-}
-
 .container-xs {
     max-width: 568px;
     width: 100%;
@@ -221,26 +212,49 @@ a, .nav-link {
     color: white;
 }
 
+// progress-bar
+.progress-bar {
+    display: flex;
+    padding: .2rem;
+    height: 0.4em;
+    min-width: 100px;
+
+    .bar  {
+        width: 100%;
+        background-color: $primary;
+    }
+}
+
+
+// toaster css
+
+#notification-area {
+    z-index: 4; 
+    width: 80vw;
+    position: fixed;
+    bottom:3rem;
+    left:10vw;
+}
+
 .mytoast {
-    width: fit-content;
-    transition: all 0.3s linear;
+    max-width: 4rem;
+    animation: changeWidth 1s linear 0.8s 1 forwards;
 }
 
 .mytoast > div {
-    display: none;
-    width: 0;
-    animation: showingDiv 2s ease-out 0.5s infinite alternate forwards running;
+    transform: translateX(200px);
+    opacity: 0;
+    animation: showingDiv 1s linear 0.3s 1 forwards;
 }
 
 @keyframes showingDiv {
+    from { transform: translateX(200px); }
+    90% {opacity: 0.2;}
+    to {  transform: translateX(0px) ; opacity: 1; }
+}
 
-    from {
-        display: inline-block;
-        width: 100px;
-    }
-
-    to {
-        width: 300px;
-    }
-    
+@keyframes changeWidth {
+    from { max-width: 4rem;}
+    50% { max-width: 9rem;}
+    to {  max-width: fit-content }
 }
