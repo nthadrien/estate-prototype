@@ -1,4 +1,12 @@
+---
+import { useTransition } from "solid-js";
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
 
+const locale = getLangFromUrl(Astro.url);
+
+const t = useTranslations(locale);
+
+---
 
 <section class="offcanvas offcanvas-end mx-lg-auto border" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
@@ -12,25 +20,70 @@
     <div class="offcanvas-body">
 
       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">{t('nav.home')}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Properties
+          </a>
+          <aside style="min-width: min(100%,480px);" class="dropdown-menu shadow-lg">
+            
+            <div class="row row-cols-1 row-cols-lg-3">
+
+              <div>
+                <h5>Categories</h5>
+                cat 1
+                cat 2
+              </div>
+
+              <div>
+                <h5>Number of Guests</h5>
+                gik 
+                jui
+              </div>
+
+              <div>
+                <h5>Best Ratings:</h5>
+              </div>
+
+            </div>
+          </aside>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {t('nav.about')}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
             <li>
-              <hr class="dropdown-divider">
+              <a class="dropdown-item" href={`/${locale}/about-us#services`}>Services</a>
             </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <a class="dropdown-item" href={`/${locale}/about-us#faq`}>F.A.Q</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">{t('nav.about')}</a>
+            </li>
           </ul>
         </li>
+
+        <li class="nav-item text-capitalize">
+          <a class="nav-link" href={`/${locale}/blog`} >{t('nav.blog')}</a>
+        </li>
+
+        <li class="nav-item text-capitalize">
+          <a class="nav-link" href={`/${locale}/pricing`} >{t('nav.pricing')}</a>
+        </li>
+
+        <li class="nav-item text-capitalize">
+          <a href={`/${locale}/contact-us`} class="nav-link">{t('nav.contactus')} </a>
+        </li>
+  
+        <span class="vr" />
+
       </ul>
       <!-- <form class="d-flex mt-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

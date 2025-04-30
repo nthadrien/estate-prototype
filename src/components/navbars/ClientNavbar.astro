@@ -21,18 +21,16 @@ const t = useTranslations(locale);
 
     <OffCanvas/>
 
-    <aside>
+    <aside class="d-flex gap-2 align-items-center">
 
-      <button class="btn ">
-        <i class="bi bi-person"></i>
-      </button>
-  
+      <a class="nav-link" href="/">
+        {t('nav.login')}
+      </a>
+
       <a href={`/${locale}/contact-us`} class="btn btn-primary btn-sm rounded-4"> 
-        <i class="bi bi-telephone-fill small"></i>
-        <span class="d-none d-lg-inline ms-1"> {t('nav.contactus')}</span>
+        <span class="d-none d-lg-inline ms-1"> {t('nav.sign')}</span>
       </a>
       
-
     </aside>
 
   </div>

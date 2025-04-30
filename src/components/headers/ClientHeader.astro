@@ -5,17 +5,17 @@ import ThemeSwitcher from "@components/utils/ThemeSwitcher.astro";
 
 ---
 
-<header data-bs-theme="dark" class="bg-success-subtle text-white container-fluid p-0">
+<header data-bs-theme="dark" class="bg-success-subtle text-white d-none d-md-flex container-fluid p-0">
 
-  <section style="font-size: smaller;" class="container-xl mx-auto navbar justify-content-between align-items-center p-0 px-2">
+  <section style="font-size: smaller;" class="container-xl mx-auto nav justify-content-between align-items-center p-0 px-2">
 
     <div>
-        <i class="fa fa-headphone me-1"></i> +81 345-67-889
-        <span class="vr mx-2" />
-        <i class="fa fa-envelope me-1"></i> estate@mailbox.com
+      +81 345-67-889
+      <span class="vr mx-2" /> 
+      estate@mailbox.com
     </div>
 
-    <div class="nav gap-2 gap-lg-3 align-items-center">
+    <div class="d-flex gap-2 align-items-center">
       <ThemeSwitcher />
       <LanguagePicker />
       <SocialMedia />

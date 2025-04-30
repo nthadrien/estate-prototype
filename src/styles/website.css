@@ -10592,12 +10592,14 @@ a, .nav-link {
 .progress-bar {
   display: flex;
   padding: 0.2rem;
-  height: 0.4em;
+  height: 1.2rem;
   min-width: 100px;
+  outline: 1px solid gray;
 }
 .progress-bar .bar {
-  width: 100%;
-  background-color: #0d6efd;
+  width: 80%;
+  height: 90%;
+  border-radius: inherit;
 }
 
 #notification-area {
