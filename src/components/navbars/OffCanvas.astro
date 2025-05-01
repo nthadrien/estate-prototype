@@ -1,92 +1,94 @@
 ---
-import { useTransition } from "solid-js";
 import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
+import Logo from "@components/navbars/Logo.astro";
 
 const locale = getLangFromUrl(Astro.url);
 
 const t = useTranslations(locale);
 
+const active:string  = (Astro.url.pathname.split("/")[2]);
 ---
 
 <section class="offcanvas offcanvas-end mx-lg-auto border" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-      <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="bi bi-x-lg"></i>
-      </button>
-    </div>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+      <Logo />
+    </h5>
+    <button type="button" class="btn ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
 
-    <div class="offcanvas-body">
+  <div class="offcanvas-body">
 
-      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">{t('nav.home')}</a>
-        </li>
+      <li class="nav-item">
+        <a class={`nav-link linko ${active == "" && 'active'}`} aria-current="page" href={`/${locale}/`}>{t('nav.home')}</a>
+      </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Properties
-          </a>
-          <aside style="min-width: min(100%,480px);" class="dropdown-menu shadow-lg">
-            
-            <div class="row row-cols-1 row-cols-lg-3">
+      <li class="nav-item dropdown">
 
-              <div>
-                <h5>Categories</h5>
-                cat 1
-                cat 2
-              </div>
+        <a class="nav-link linko dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Properties
+        </a>
 
-              <div>
-                <h5>Number of Guests</h5>
-                gik 
-                jui
-              </div>
+        <aside class="dropdown-menu border-expand mx-auto">
+          
+          <div style="width: min(70vw, 500px);" class="nav gap-2 p-2">
 
-              <div>
-                <h5>Best Ratings:</h5>
-              </div>
-
+            <div class="col">
+              <h5>Categories</h5>
+              cat 1
+              cat 2
             </div>
-          </aside>
-        </li>
-       
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {t('nav.about')}
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href={`/${locale}/about-us#services`}>Services</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href={`/${locale}/about-us#faq`}>F.A.Q</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">{t('nav.about')}</a>
-            </li>
-          </ul>
-        </li>
 
-        <li class="nav-item text-capitalize">
-          <a class="nav-link" href={`/${locale}/blog`} >{t('nav.blog')}</a>
-        </li>
+            <div class="col">
+              <h5>Number of Guests</h5>
+              gik 
+              jui
+            </div>
 
-        <li class="nav-item text-capitalize">
-          <a class="nav-link" href={`/${locale}/pricing`} >{t('nav.pricing')}</a>
-        </li>
+            <div class="col">
+              <h5>Best Ratings:</h5>
+            </div>
 
-        <li class="nav-item text-capitalize">
-          <a href={`/${locale}/contact-us`} class="nav-link">{t('nav.contactus')} </a>
-        </li>
-  
-        <span class="vr" />
+          </div>
+        </aside>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class={`nav-link linko dropdown-toggle ${ active == "about-us" && 'active'}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {t('nav.about')}
+        </a>
+        <ul class="dropdown-menu border-expand">
+          <li>
+            <a class="dropdown-item" href={`/${locale}/about-us#services`}>Services</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href={`/${locale}/about-us#faq`}>F.A.Q</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">{t('nav.about')}</a>
+          </li>
+        </ul>
+      </li>
 
-      </ul>
-      <!-- <form class="d-flex mt-3" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-    </section>
+      <li class="nav-item text-capitalize">
+        <a class={`nav-link linko ${active == "blog" && 'active'}`} href={`/${locale}/blog`} >{t('nav.blog')}</a>
+      </li>
+
+      <li class="nav-item text-capitalize">
+        <a class={`nav-link linko ${active == "pricing" && 'active'}`} href={`/${locale}/pricing`} >{t('nav.pricing')}</a>
+      </li>
+
+      <li class="nav-item text-capitalize">
+        <a href={`/${locale}/contact-us`} class={`nav-link linko ${active == "contact-us" && 'active'}`}>{t('nav.contactus')} </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>

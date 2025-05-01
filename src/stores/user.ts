@@ -12,7 +12,7 @@ export type messageType = {
 
 const init_lang = window.location.pathname.includes("/en/")? "en" : "fr";
 
-export const lang = atom<"en"|"fr">(init_lang);
+export const $locale = atom<"en"|"fr">(init_lang);
 
 export const $EstatesList = persistentAtom<EstateType[]>('cart', [], {
   encode: JSON.stringify,

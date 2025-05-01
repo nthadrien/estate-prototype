@@ -3,11 +3,11 @@
 import { useTranslations, getLangFromUrl } from "src/i18n/utils.ts";
 import Logo from "@components/navbars/Logo.astro";
 import OffCanvas from "@components/navbars/OffCanvas.astro";
+import AccountBtn from "./AccountBtn";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
-<!-- -->
 
 <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
 
@@ -18,20 +18,8 @@ const t = useTranslations(locale);
     </button>
 
     <Logo />
-
     <OffCanvas/>
-
-    <aside class="d-flex gap-2 align-items-center">
-
-      <a class="nav-link" href="/">
-        {t('nav.login')}
-      </a>
-
-      <a href={`/${locale}/contact-us`} class="btn btn-primary btn-sm rounded-4"> 
-        <span class="d-none d-lg-inline ms-1"> {t('nav.sign')}</span>
-      </a>
-      
-    </aside>
-
+    <AccountBtn client:only="solid" />
+    
   </div>
 </nav>

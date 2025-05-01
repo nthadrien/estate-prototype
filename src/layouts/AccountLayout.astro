@@ -1,8 +1,7 @@
 ---
-import ClientFooter from "@components/footers/ClientFooter.astro";
 import Layout from "./Layout.astro";
 import BaseFooter from "@components/footers/BaseFooter.astro";
-import ClientNavbar from "@components/navbars/ClientNavbar.astro";
+import ClientHeader from "@components/headers/ClientHeader.astro";
 
 interface Props {
 	title: string;
@@ -23,8 +22,9 @@ const {
     description={description} 
     keywords={keywords}
 >
-    <main class="container-fluid d-flex flex-column justify-content-between align-items-center vh-100 p-0 m-0">
+    <ClientHeader />
+    <main style="min-height: max(50vh,640px);" class="container-fluid d-flex flex-column justify-content-center align-items-center p-0 m-0">
         <slot />
-        <BaseFooter />
     </main>
+    <BaseFooter />
 </Layout>

@@ -67,7 +67,30 @@ body {
 a, .nav-link {
     color: inherit;
     text-decoration: none;
+    position: relative;
 }
+
+.linko::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    transition: all 0.3s linear;
+}
+
+.linko:hover::before {
+    width: max(80%,48px);
+}
+
+.linko.active {
+    font-weight: bold;
+    color: $secondary;
+    border-bottom: 1px solid $secondary;
+}
+
 // theme switcher
 [data-bs-theme="dark"] {
     .sun { display: none;}
@@ -79,7 +102,6 @@ a, .nav-link {
 }
 
 // intersection observer classes:
-
 *[data-iobs] {
     opacity: 0;
     transition: all 0.8s ease-out;
@@ -149,12 +171,13 @@ a, .nav-link {
 }
 
 .container-xs {
-    max-width: 568px;
+    max-width: 768px;
     width: 100%;
 }
 
 .container-sm {
     max-width: 1080px !important;
+    width: 100%;
 }
 
 .form-carousel {
@@ -206,7 +229,6 @@ a, .nav-link {
 }
 
 // bg-overlay
-
 .bg-overlay {
     background: rgba(0, 0, 0, 0.132);
     color: white;
@@ -259,4 +281,16 @@ a, .nav-link {
     from { max-width: 4rem;}
     50% { max-width: 9rem;}
     to {  max-width: fit-content }
+}
+
+// removing border for navbars-drops
+
+.border-expand {
+    border: none;
+}
+
+@include media-breakpoint-up(lg) { 
+    .border-expand {
+        border: 1px solid var(--#{$prefix}border-color);
+    } 
 }

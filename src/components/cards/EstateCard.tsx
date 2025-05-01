@@ -1,7 +1,7 @@
 import { type JSX } from "solid-js";
 import { notifications } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils";
-import { lang } from "src/stores/user";
+import { $locale } from "src/stores/user";
 import { type EstateReviewType, type EstateType } from "src/api/dataTypes.ts";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const EstateCard = (props:Props): JSX.Element => {
 
-    const t = useTranslations(lang.get());
+    const t = useTranslations($locale.get());
 
     const searchParams = new URLSearchParams({
         type: props.data.type,
@@ -122,7 +122,7 @@ const EstateCard = (props:Props): JSX.Element => {
                 
                 <div class="d-flex justify-content-between text-capitalize">
 
-                    <a class="fw-bold text-success" href={"/"+ lang.get()+"/estate/details?"+searchParams}>
+                    <a class="fw-bold text-success" href={"/"+ $locale.get()+"/estate/details?"+searchParams}>
                         {t("more")}
                     </a>
 
