@@ -1,0 +1,329 @@
+[
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇩🇿",
+      "name": "Algeria",
+      "phoneCode": "+213"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇦🇴",
+      "name": "Angola",
+      "phoneCode": "+244"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇧🇯",
+      "name": "Benin",
+      "phoneCode": "+229"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇧🇼",
+      "name": "Botswana",
+      "phoneCode": "+267"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇧🇫",
+      "name": "Burkina Faso",
+      "phoneCode": "+226"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇧🇮",
+      "name": "Burundi",
+      "phoneCode": "+257"
+    },
+    {
+      "citiesOrTowns": [
+        "Yaoundé", "Douala", "Bamenda", "Bafoussam", "Garoua", "Maroua", "Ngaoundéré", "Nkongsamba", "Buea", "Limbe", "Kumba", "Bertoua", "Edéa", "Loum", "Dschang"
+      ],
+      "emoji": "🇨🇲",
+      "name": "Cameroon",
+      "phoneCode": "+237"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇨🇻",
+      "name": "Cape Verde",
+      "phoneCode": "+238"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇨🇫",
+      "name": "Central African Republic",
+      "phoneCode": "+236"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇹🇩",
+      "name": "Chad",
+      "phoneCode": "+235"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇰🇲",
+      "name": "Comoros",
+      "phoneCode": "+269"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇨🇩",
+      "name": "DR Congo",
+      "phoneCode": "+243"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇨🇬",
+      "name": "Republic of the Congo",
+      "phoneCode": "+242"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇩🇯",
+      "name": "Djibouti",
+      "phoneCode": "+253"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇪🇬",
+      "name": "Egypt",
+      "phoneCode": "+20"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇶",
+      "name": "Equatorial Guinea",
+      "phoneCode": "+240"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇪🇷",
+      "name": "Eritrea",
+      "phoneCode": "+291"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇿",
+      "name": "Eswatini",
+      "phoneCode": "+268"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇪🇹",
+      "name": "Ethiopia",
+      "phoneCode": "+251"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇦",
+      "name": "Gabon",
+      "phoneCode": "+241"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇲",
+      "name": "Gambia",
+      "phoneCode": "+220"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇭",
+      "name": "Ghana",
+      "phoneCode": "+233"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇳",
+      "name": "Guinea",
+      "phoneCode": "+224"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇬🇼",
+      "name": "Guinea-Bissau",
+      "phoneCode": "+245"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇨🇮",
+      "name": "Ivory Coast",
+      "phoneCode": "+225"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇰🇪",
+      "name": "Kenya",
+      "phoneCode": "+254"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇱🇸",
+      "name": "Lesotho",
+      "phoneCode": "+266"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇱🇷",
+      "name": "Liberia",
+      "phoneCode": "+231"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇱🇾",
+      "name": "Libya",
+      "phoneCode": "+218"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇬",
+      "name": "Madagascar",
+      "phoneCode": "+261"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇼",
+      "name": "Malawi",
+      "phoneCode": "+265"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇱",
+      "name": "Mali",
+      "phoneCode": "+223"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇷",
+      "name": "Mauritania",
+      "phoneCode": "+222"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇺",
+      "name": "Mauritius",
+      "phoneCode": "+230"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇦",
+      "name": "Morocco",
+      "phoneCode": "+212"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇲🇿",
+      "name": "Mozambique",
+      "phoneCode": "+258"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇳🇦",
+      "name": "Namibia",
+      "phoneCode": "+264"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇳🇪",
+      "name": "Niger",
+      "phoneCode": "+227"
+    },
+    {
+      "citiesOrTowns": [ "Lagos","Kano","Ibadan","Abuja","Port Harcourt","Benin City","Jos","Kaduna","Aba","Maiduguri","Ilorin","Onitsha","Warri","Owerri","Akure"],
+      "emoji": "🇳🇬",
+      "name": "Nigeria",
+      "phoneCode": "+234"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇷🇼",
+      "name": "Rwanda",
+      "phoneCode": "+250"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇹",
+      "name": "Sao Tomé and Principe",
+      "phoneCode": "+239"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇳",
+      "name": "Senegal",
+      "phoneCode": "+221"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇨",
+      "name": "Seychelles",
+      "phoneCode": "+248"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇱",
+      "name": "Sierra Leone",
+      "phoneCode": "+232"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇴",
+      "name": "Somalia",
+      "phoneCode": "+252"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇿🇦",
+      "name": "South Africa",
+      "phoneCode": "+27"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇸",
+      "name": "South Sudan",
+      "phoneCode": "+211"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇸🇩",
+      "name": "Sudan",
+      "phoneCode": "+249"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇹🇿",
+      "name": "Tanzania",
+      "phoneCode": "+255"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇹🇬",
+      "name": "Togo",
+      "phoneCode": "+228"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇹🇳",
+      "name": "Tunisia",
+      "phoneCode": "+216"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇺🇬",
+      "name": "Uganda",
+      "phoneCode": "+256"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇿🇲",
+      "name": "Zambia",
+      "phoneCode": "+260"
+    },
+    {
+      "citiesOrTowns": [],
+      "emoji": "🇿🇼",
+      "name": "Zimbabwe",
+      "phoneCode": "+263"
+    }
+  ]
+  

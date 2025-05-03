@@ -5,6 +5,7 @@ import Layout from "@layouts/AccountLayout.astro";
 import RegisterStepOne from "@components/accounts/RegisterStepOne.astro";
 import RegisterStepTwo from "@components/accounts/RegisterStepTwo.astro";
 import RegisterStepThree from "@components/accounts/RegisterStepThree.astro";
+import { ListFilter } from "src/components/reactiveInputs/locations.tsx";
 
 export const getStaticPaths = (() => {
     
@@ -52,14 +53,12 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
             
         </form>
 
-        <section class="d-flex justify-content-between align-items-center">
-           
-
-        </section>
-
         <input id="nexto1" type="checkbox" class="opacity-0" name="next1"> 
         <input id="nexto2" type="checkbox" class="opacity-0" name="next2"> 
     </main>
+
+
+    <ListFilter />
 
     
 
