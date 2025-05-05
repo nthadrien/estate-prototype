@@ -73,21 +73,17 @@ export type BuildingType = {
   hostId: string;
 }
 
-
 export type UserType = {
-  name: string;
   username: string;
+  gender: "M"|"F";
   hashed: string;
   phoneNumber : string;
-  nid: string;
   role: "host"|"guest";
   email: string;
   lid:string | null ;
   aboutMe:string|null;
-  country: string;
-  city: string;
-  neighbourhood: string;
-  profilPic: string;
+  address: string;
+  profilPic: string ;
   criminalRecord : boolean;
   scammer: boolean;
   acceptedTerms: true;

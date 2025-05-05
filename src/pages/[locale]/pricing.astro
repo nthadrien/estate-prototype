@@ -4,10 +4,9 @@ import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui";
 
 export const getStaticPaths = (() => {
-    
-    return Object.keys(languages).map( locale => ({
-        params: { locale }
-    }))
+  return Object.keys(languages).map( locale => ({
+      params: { locale }
+  }));
 }) satisfies GetStaticPaths; 
 
 
@@ -80,7 +79,6 @@ const pricingPlan = {
 ---
 <ClientLayout title="pricing" description="dscription" keywords={["unknown"]} >
 
-
 <main class="container-sm py-4">
   <!-- plans Tabs switcher -->
   <ul class="nav nav-underline" id="pricingTab" role="tablist">
@@ -129,20 +127,10 @@ const pricingPlan = {
 
     
     </aside>
- 
 
     </section>)}
   </div>
 
 </main>
-
-
-<section class="container p-3 mx-auto">
-
-  
-
-</section>
-
-
 
 </ClientLayout>

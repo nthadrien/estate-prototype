@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { languages } from "src/i18n/ui.ts";;
+import { languages } from "src/i18n/ui.ts";
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
 import Layout from "@layouts/AccountLayout.astro";
 import RegisterStepOne from "@components/accounts/RegisterStepOne.astro";
 import RegisterStepTwo from "@components/accounts/RegisterStepTwo.astro";
 import RegisterStepThree from "@components/accounts/RegisterStepThree.astro";
-import { ListFilter } from "src/components/reactiveInputs/locations.tsx";
 
 export const getStaticPaths = (() => {
     
@@ -15,7 +15,8 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 
-const { locale } = Astro.props;
+const locale = getLangFromUrl(Astro.url);
+const t  = useTranslations(locale);
 const title = () => locale == "en" ? "login": "comptes"; 
 const description = () => locale == "en" ? "description in english":"description en francais";
 const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
@@ -25,8 +26,8 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 
     <main class="container page-wrapper">    
 
-        <h4 class="text-center my-2"> 
-            Register        
+        <h4 class="text-center text-capitalize my-2"> 
+            {t("nav.sign")}        
         </h4>
 
         <section class="py-3">
@@ -56,11 +57,6 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
         <input id="nexto1" type="checkbox" class="opacity-0" name="next1"> 
         <input id="nexto2" type="checkbox" class="opacity-0" name="next2"> 
     </main>
-
-
-    <ListFilter />
-
-    
 
 </Layout>
 

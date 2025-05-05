@@ -254,7 +254,7 @@ a, .nav-link {
 
 #notification-area {
     z-index: 4; 
-    width: 80vw;
+    width: fit-content;
     position: fixed;
     bottom:3rem;
     left:10vw;
@@ -262,25 +262,14 @@ a, .nav-link {
 
 .mytoast {
     max-width: 4rem;
-    animation: changeWidth 1s linear 0.8s 1 forwards;
-}
-
-.mytoast > div {
-    transform: translateX(200px);
-    opacity: 0;
-    animation: showingDiv 1s linear 0.3s 1 forwards;
-}
-
-@keyframes showingDiv {
-    from { transform: translateX(200px); }
-    90% {opacity: 0.2;}
-    to {  transform: translateX(0px) ; opacity: 1; }
+    overflow: hidden;
+    animation: changeWidth 0.7s ease-in 0s 1 forwards;
 }
 
 @keyframes changeWidth {
     from { max-width: 4rem;}
     50% { max-width: 9rem;}
-    to {  max-width: fit-content }
+    to {  max-width: 70vw }
 }
 
 // removing border for navbars-drops
@@ -293,4 +282,49 @@ a, .nav-link {
     .border-expand {
         border: 1px solid var(--#{$prefix}border-color);
     } 
+}
+
+
+// personale floating-form;
+.form-floating {
+    position: relative;
+    width: 100%;
+}
+
+.form-floating input, 
+.form-floating select,
+.form-floating textarea {
+    height: $form-floating-height;
+    min-height: $form-floating-height;
+    line-height: $form-floating-line-height;
+    font-size: medium;
+}
+
+.form-floating .label {
+    position: absolute;
+    top: 32%;
+    left: .48rem;
+    z-index: 2;
+    transition: all 0.2s ease-in;
+    opacity: .65;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    text-transform: capitalize;
+    padding-left: .9rem ;
+}
+
+.form-floating input:not(:placeholder-shown) ~ .label,
+.form-floating select:not(:placeholder-shown) ~ .label,
+.form-floating textarea:not(:placeholder-shown) ~ .label,
+.form-floating input:focus ~ .label, 
+.form-floating select:focus ~ .label,
+.form-floating textarea:focus ~ .label {
+    top: 0.15rem;
+}
+
+.form-floating:has(input:not(:placeholder-shown)) .label {
+    font-size: smaller;
+    opacity: .8;
 }

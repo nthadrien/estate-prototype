@@ -69,23 +69,23 @@ const pageInfo = {
 
         <form class="col-lg-7 row g-3 p-1 lh-lg g-2" action="">
 
-            <div class="form-floating col-12">
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                <label class="ps-4" for="email">Email address</label>
-            </div>
+            <label class="form-floating">
+                <input placeholder=" " name="email" type="email" class="form-control" required/>
+                <span class="label">Email</span>
+            </label>
 
-            <div class="form-floating col-12">
-                <input type="text" class="form-control" id="subject" placeholder="name@example.com">
-                <label class="ps-4" for="subject">Subject</label>
-            </div>
+            <label class="form-floating ">
+                <input placeholder="" type="text" class="form-control" name="subject" required>
+                <span class="label">Subject</span>
+            </label>
 
-            <div class="col-12 form-floating">
-                <textarea style={"height: 100%;"} class="form-control" rows="4" placeholder="Leave a comment" name="message" required></textarea>
-                <label class="ps-4" for="message">Message</label>
-            </div>
+            <label class="form-floating">
+                <textarea style={"height: 100%;"} class="form-control py-4" rows="4" name="message" required></textarea>
+                <span class="label">Message</span>
+            </label>
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-sm btn-secondary">
+            <div class="">
+                <button type="submit" class="btn btn-secondary">
                     <i class="bi bi-send-slash me-1"></i>
                     {t('submit')}
                 </button> 

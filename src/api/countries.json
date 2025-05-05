@@ -1,18 +1,18 @@
 [
     {
-      "citiesOrTowns": [],
+      "citiesOrTowns": ["Algiers","Oran","Constantine","Annaba","Blida","Sétif","Tlemcen","Béjaïa","Batna","Djelfa"],
       "emoji": "🇩🇿",
       "name": "Algeria",
       "phoneCode": "+213"
     },
     {
-      "citiesOrTowns": [],
+      "citiesOrTowns": ["Luanda", "Huambo","Lobito","Benguela","Cabinda","Soyo",  "Ondjiva", "Lubango", "Malanje", "Namibe"],
       "emoji": "🇦🇴",
       "name": "Angola",
       "phoneCode": "+244"
     },
     {
-      "citiesOrTowns": [],
+      "citiesOrTowns": ["Porto-Novo",  "Cotonou", "Parakou", "Djougou","Natitingou","Abomey-Calavi","Bohicon","Kandi","Ouidah","Savalou"],
       "emoji": "🇧🇯",
       "name": "Benin",
       "phoneCode": "+229"

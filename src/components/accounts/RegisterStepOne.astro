@@ -1,18 +1,23 @@
 ---
 
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
 ---
 
 <fieldset id="step-1" class="form-step p-3">
 
     <legend class="mb-4 fs-6 nav align-items-center justify-content-between">
-        <span class="text-start">step 1</span>
-        <span class="text-primary">Personal Info</span>
+        <span class="text-start">{t("step")} 1</span>
+        <span class="text-primary">{t("step1")}</span>
     </legend>
 
-    <div class="form-floating mb-3">
+    <label class="form-floating mb-3">
         <input type="text" class="form-control" id="name" placeholder="name@example.com">
-        <label for="name">Names</label>
-    </div>
+        <span class="label">Username | Business name</span>
+    </label>
 
     <div class="form-floating mb-3">
         <input type="text" default-value="+237" class="form-control" id="phone" placeholder="name@example.com">
@@ -34,14 +39,14 @@
         <label for="city">ID Picture</label>
     </div>
 
-    <div class="form-floating mb-3">
+    <label class="form-floating mb-3">
         <select class="form-select" id="accountType">
             <option selected>Please select</option>
             <option value="host">Host (renting rooms)</option>
             <option value="guest">Guest (Looking for a place)</option>
         </select>
-        <label for="name">Host or Guest?</label>
-    </div>
+        <span class="label">Host or Guest?</span>
+    </label>
 
     <label for="nexto1" class="btn btn-sm btn-primary"> Next </label>
 

@@ -45,6 +45,9 @@ export const ui = {
         "plan":"plans",
         "reviews":"reviews",
         "ameni":"amenities",
+        "click.h":"click here",
+        "or":"or",
+        "accn":"account",
 
         // forms
         // 1 - newsletter form
@@ -54,6 +57,35 @@ export const ui = {
         // 2-General 
         "email":"Email address",
         "email.placeholder":"my.mail.address@mailbox.com",
+        "password":"password",
+
+        // login text:
+        "login.text1":"If you do not have an account",
+        "login.text2":"to get to the register page",
+        "login.text3":"If you have any other problems please",
+        "login.text4":"to get to us",
+
+        // 3-register form
+        "step":"step",
+        "step1":"Personal Info",
+        "step2":"Account Info",
+        "step3":"Last details",
+        "username":"username",
+        "host":"host",
+        "guest":"guest",
+        "host.role":"Display properties",
+        "guesr.role":"looking for properties",
+        "horG": "host or guest",
+        "country":"country",
+        "city":"city",
+        "town":"town",
+        "address":"address",
+        "pnumber":"phone number",
+        "lid" : "licence ID",
+        "id": "CNI",
+        "verified.read":"Did you read the terms and conditions",
+        "verified.accept":"Are you ok with the read terms and conditions",
+        "verified.trueInfo":"All information profided on this form are correct"
 
     },
     fr: {
@@ -91,7 +123,9 @@ export const ui = {
         "plan":"plans",
         "reviews":"avis",
         "ameni":"équipements",
-
+        "click.h":"Cliquez ici",
+        "or":"ou",
+        "accn":"compte",
 
          // forms
         // 1 - newsletter form
@@ -101,5 +135,34 @@ export const ui = {
         // 2-General 
         "email":"Adresse email",
         "email.placeholder":"mon.adresse.mail@mailbox.com",
+        "password":"mot de passe",
+
+         // login text:
+         "login.text1":"Si vous n'avez pas de compte",
+         "login.text2":"pour accéder à la page d'inscription",
+         "login.text3":"Si vous avez d'autres problèmes",
+         "login.text4":"pour nous contacter",
+
+        // 3-register form
+        "step": "étape",
+        "step1": "Informations personnelles",
+        "step2": "Informations du compte",
+        "step3": "Derniers détails",
+        "username": "nom d'utilisateur",
+        "host": "hôte",
+        "guest": "invité",
+        "host.role": "Afficher les propriétés",
+        "guesr.role": "recherche de propriétés",
+        "horG": "hôte ou invité",
+        "country": "pays",
+        "city": "ville",
+        "town": "ville",
+        "address": "adresse",
+        "pnumber": "numéro de téléphone",
+        "lid": "numéro de licence",
+        "id": "CNI",
+        "verified.read": "Avez-vous lu les termes et conditions",
+        "verified.accept": "Êtes-vous d'accord avec les termes et conditions lus",
+        "verified.trueInfo": "Toutes les informations fournies sur ce formulaire sont correctes"
     },
 } as const;

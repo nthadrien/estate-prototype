@@ -30,8 +30,8 @@ export const notifications = (msg:messageType) => {
 
     const toaster = document.createElement("aside");
 
-    toaster.className = `bg-body mytoast shadow-lg d-flex gap-3 align-items-center justify-content-center px-3 py-2 shadow border border-${color}-subtle rounded-4`; 
-    toaster.innerHTML = `<i aria-hidden="true" class="fs-3 fa fa-${icon} text-${color} fa-2x"></i>  
+    toaster.className = `bg-body mytoast shadow-lg d-flex gap-3 align-items-center justify-content-start px-4 py-1 shadow rounded-pill`; 
+    toaster.innerHTML = `<i aria-hidden="true" class="fs-4 fa fa-${icon} rounded-pill p-1 text-bg-${color} fa-2x text-white"></i>  
         <div class="text-truncate">${msg.code && `<b class="fw-bold text-truncate text-${color}">${msg.code} </b><br/>`} ${msg.message}</div> `;
 
     // create the element on DOM:
