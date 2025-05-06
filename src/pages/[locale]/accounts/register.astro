@@ -60,12 +60,10 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 
 </Layout>
 
-<!-- <script src="src/js/register.ts"></script> -->
+<script src="src/js/register.ts"></script>
 
 <style>
-
     .page-wrapper {
-
         & #bar {
             width: 10%;
             transition: all .5s linear;
@@ -76,37 +74,18 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
             color: white;
         }
 
-        & .btn-1 {
-            background-color: var(--bs-primary);
-        }
+        & .btn-1 { background-color: var(--bs-primary); }
         
         &:has( input[name="next1"]:checked ) {
-            & .form-carousel {
-                transform: translateX(-100%);
-            }
-
-            & #bar {
-                width: 58%;
-            }
-
-            & .btn-1, .btn-2 {
-                background-color: var(--bs-primary);
-            }
+            & .form-carousel { transform: translateX(-100%); }
+            & #bar {  width: 58%; }
+            & .btn-1, .btn-2 { background-color: var(--bs-primary); }
         }
 
         &:has( input[name="next1"]:checked ~ input[name="next2"]:checked ) {
-            & .form-carousel {
-                transform: translateX(-200%);
-            } 
-            
-            & #bar {
-                width: 100%;
-            }
-
-            & .btn-3 {
-                background-color: var(--bs-primary);
-            }
+            & .form-carousel { transform: translateX(-200%); } 
+            & #bar { width: 100%; }
+            & .btn-3 { background-color: var(--bs-primary);}
         }
     }
-
 </style>

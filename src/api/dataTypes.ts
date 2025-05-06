@@ -74,6 +74,7 @@ export type BuildingType = {
 }
 
 export type UserType = {
+  name:string;
   username: string;
   gender: "M"|"F";
   hashed: string;
@@ -81,9 +82,14 @@ export type UserType = {
   role: "host"|"guest";
   email: string;
   lid:string | null ;
+  cni:string|null;
+  lidPic: string|null;
+  cniPic:string|null;
   aboutMe:string|null;
   address: string;
   profilPic: string ;
+  reasons: string;
+  plan: string;
   criminalRecord : boolean;
   scammer: boolean;
   acceptedTerms: true;
@@ -91,8 +97,6 @@ export type UserType = {
   verifiedEmail: boolean;
   verifiedLid : boolean;
   verifiedNid: boolean;
-  reasons: string;
-  plan: string;
   hostProperties: string[];
 }
 

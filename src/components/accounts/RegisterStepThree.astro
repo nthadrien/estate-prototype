@@ -1,65 +1,60 @@
 ---
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
-<fieldset id="step-1" class="form-step p-3">
+<fieldset id="step-3" class="form-step p-3">
 
     <legend class="mb-4 fs-6 nav align-items-center justify-content-between">
-        <span class="text-start">step 3</span>
-        <span class="text-primary">Last details</span>
+        <span class="text-start text-capitalize">{t("step")} 3</span>
+        <span class="text-primary">{t("step3")}</span>
     </legend>
 
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="profilPic" placeholder="name@example.com">
-        <label for="profilPic">Profile Pic</label>
+    <div class="mb-3 mt-4">
+        <p class="fw-bolder">{t("verified.record")}</p> 
+        <input class="form-check-input mx-2" type="radio" id="ciminalRecord" value="yes" required>
+        <label class="form-check-label" for="inlineRadio1">{t("y")}</label>
+        <input class="form-check-input mx-2" type="radio" id="ciminalRecord" value="no">
+        <label class="form-check-label" for="inlineRadio1">{t("n")}</label>
     </div>
 
-    <div class="form-floating mb-3">
-        <textarea class="form-control" id="desc"></textarea>
-        <label for="name">Prefered Payment</label>
-    </div>
-
-    <hr/>
-
-    <div class=" mb-3">
-        <span>Any Criminal records: </span> 
-        <input class="form-check-input" type="radio" id="ciminalRecord" value="yes" required>
+    <div class="mb-3">
+        <p class="fw-bolder">{t("verified.scam")}? </p> 
+        <input class="form-check-input mx-2" type="radio" id="scam" value="yes" required>
         <label class="form-check-label" for="inlineRadio1">Yes</label>
-        <input class="form-check-input" type="radio" id="ciminalRecord" value="no">
+        <input class="form-check-input mx-2" type="radio" id="scam" value="no">
         <label class="form-check-label" for="inlineRadio1">No</label>
     </div>
 
-    <div class=" mb-3">
-        <span>Are you here to scam people ? </span> 
-        <input class="form-check-input" type="radio" id="scam" value="yes" required>
-        <label class="form-check-label" for="inlineRadio1">Yes</label>
-        <input class="form-check-input" type="radio" id="scam" value="no">
-        <label class="form-check-label" for="inlineRadio1">No</label>
-    </div>
+    <h6 class="my-3">Finish Line: Almost there </h6>
 
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="truth" value="accept" required>
-        <label class="form-check-label" for="truth">Yes all the information given here correct?</label>
+        <label class="form-check-label" for="truth">{t("verified.trueInfo")}?</label>
     </div>
 
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="acceptTerms" value="accept" required>
-        <label class="form-check-label" for="acceptTerms">Yes I have read the terms & Conditions of use</label>
+        <label class="form-check-label" for="acceptTerms">{t("verified.accept")}?</label>
     </div>
 
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="readTerms" value="read">
-        <label class="form-check-label" for="readTerms">Yes I accept the terms & Conditions of use</label>
+        <input class="form-check-input" type="checkbox" id="readTerms" value="read" required>
+        <label class="form-check-label" for="readTerms">{t("verified.read")}?</label>
     </div>
 
-    <div class="my-3 nav justify-content-between align-items-center">
+    <div class="my-3 nav justify-content-between align-items-center text-capitalize">
 
         <label for="nexto2" class="btn btn-sm"> 
-            back 
+            <i class="fa fa-long-arrow-left me-1"></i>
+            {t("prev")} 
         </label>
 
         <button type="submit" class="btn btn-sm btn-primary">
-            <i class="bi bi-person-add"></i>
-            <span> Create Account</span>
+            <i class="fa fa-user me-1"></i>
+            <span>{t("create.acn")}</span>
         </button>
     </div>
     

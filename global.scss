@@ -284,7 +284,6 @@ a, .nav-link {
     } 
 }
 
-
 // personale floating-form;
 .form-floating {
     position: relative;
@@ -297,13 +296,12 @@ a, .nav-link {
     height: $form-floating-height;
     min-height: $form-floating-height;
     line-height: $form-floating-line-height;
-    font-size: medium;
+    padding-left: .9rem;
 }
 
 .form-floating .label {
     position: absolute;
     top: 32%;
-    left: .48rem;
     z-index: 2;
     transition: all 0.2s ease-in;
     opacity: .65;
@@ -326,5 +324,5 @@ a, .nav-link {
 
 .form-floating:has(input:not(:placeholder-shown)) .label {
     font-size: smaller;
-    opacity: .8;
+    opacity: 1;
 }

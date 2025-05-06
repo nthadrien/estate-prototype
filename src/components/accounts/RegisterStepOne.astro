@@ -1,53 +1,59 @@
 ---
-
+import { AddrInput , PhoneNumberInput } from "@components/reactiveInputs/locations";
 import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
-
 ---
 
 <fieldset id="step-1" class="form-step p-3">
 
-    <legend class="mb-4 fs-6 nav align-items-center justify-content-between">
+    <legend class="mb-4 fs-6 nav align-items-center justify-content-between text-capitalize">
         <span class="text-start">{t("step")} 1</span>
         <span class="text-primary">{t("step1")}</span>
     </legend>
 
     <label class="form-floating mb-3">
-        <input type="text" class="form-control" id="name" placeholder="name@example.com">
-        <span class="label">Username | Business name</span>
+        <select name="gender" class="form-control" required>
+            <option value="M">Male </option>
+            <option value="F">Female </option>
+        </select>
+        <span class="label">{t("gender")} </span>
     </label>
 
-    <div class="form-floating mb-3">
-        <input type="text" default-value="+237" class="form-control" id="phone" placeholder="name@example.com">
-        <label for="phone">Phone Number(please add country code) </label>
+    <label class="form-floating mb-3">
+        <input type="text" class="form-control" name="name" placeholder=" " required>
+        <span class="label">{t("name")} </span>
+    </label>
+
+    <label class="form-floating mb-3">
+        <input type="text" class="form-control" name="id" placeholder=" " required>
+        <span class="label"> {t("id")} # </span>
+    </label>
+
+    <div class="mb-3">
+        <PhoneNumberInput client:only="solid" />
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="country" placeholder="name@example.com">
-        <label for="country">Country</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="city" placeholder="name@example.com">
-        <label for="city">City / Town</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="city" placeholder="name@example.com">
-        <label for="city">ID Picture</label>
+        <AddrInput client:only="solid" />
     </div>
 
     <label class="form-floating mb-3">
-        <select class="form-select" id="accountType">
-            <option selected>Please select</option>
-            <option value="host">Host (renting rooms)</option>
-            <option value="guest">Guest (Looking for a place)</option>
+        <select class="form-select" name="accountType" required>
+            <option> Please chose {t("horG")}</option>
+            <option value="host">
+                {t("host")} ~ {t("host.role")}
+            </option>
+            <option value="guest"> 
+                {t("guest")} ~ {t("guest.role")}
+            </option>
         </select>
-        <span class="label">Host or Guest?</span>
+        <span class="label">{t("horG")}?</span>
     </label>
 
-    <label for="nexto1" class="btn btn-sm btn-primary"> Next </label>
+    <label for="nexto1" class="btn btn-primary my-3 text-capitalize">  
+        {t("nxt")}
+    </label>
 
 </fieldset>

@@ -10583,13 +10583,12 @@ a, .nav-link {
   height: calc(3.5rem + calc(var(--bs-border-width) * 2));
   min-height: calc(3.5rem + calc(var(--bs-border-width) * 2));
   line-height: 1.25;
-  font-size: medium;
+  padding-left: 0.9rem;
 }
 
 .form-floating .label {
   position: absolute;
   top: 32%;
-  left: 0.48rem;
   z-index: 2;
   transition: all 0.2s ease-in;
   opacity: 0.65;
@@ -10612,7 +10611,7 @@ a, .nav-link {
 
 .form-floating:has(input:not(:placeholder-shown)) .label {
   font-size: smaller;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=website.css.map */

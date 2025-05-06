@@ -1,4 +1,7 @@
+import { useStore } from "@nanostores/solid";
 import { createMemo, createSignal, For, type JSX, Show } from "solid-js";
+import { $locale } from "src/stores/user.ts";
+import { useTranslations } from "src/i18n/utils.ts";
 
 import countiries from "src/api/countries.json";
 
@@ -15,6 +18,9 @@ export function Countries() : JSX.Element {
 
 export function AddrInput () : JSX.Element {
 
+    const locale = useStore($locale);
+    const t  = useTranslations(locale());
+
     const [ country , setCountry] = createSignal<string>("");
     const filterTowns = () => {
         return countiries.filter( item => item.name.includes(country()) )[0]?.citiesOrTowns
@@ -24,22 +30,20 @@ export function AddrInput () : JSX.Element {
     }
 
     return (
-        <div class="input-group">
-{/* 
-            <div class="form-floating">
-                <label for="country">Country</label>
-                <select onChange={changeCountry} class="form-select border-0" id="country">
+        <div class=" border d-flex rounded">
+            <label class="form-floating">
+                <select onChange={changeCountry} class="form-control border-0" name="country">
                     <For each={countiries}>
                         { item => <option value={item.name}>
                             {item.name}
                         </option>}
                     </For>
                 </select>
-            </div>
+                <span class="label">{t("country")}</span>
+            </label>
 
-            <div class="form-floating">
-                <label for="city">City / Town </label>
-                <select class="form-select border-0" id="city" required>
+            <label class="form-floating">
+                <select aria-placeholder="city" class="form-select border-0" name="cityOrTown" required>
                     <Show when={filterTowns().length < 1}>
                         <option>This country is not yet catalogue </option>
                     </Show>
@@ -49,11 +53,12 @@ export function AddrInput () : JSX.Element {
                         </option>}
                     </For>
                 </select>
-            </div> */}
+                <span class="label">{t("city")} | {t("town")} </span>
+            </label>
 
             <label class="form-floating">
+                <input placeholder=" " name="neighbourHood" type="text" class="form-control border-0" disabled={filterTowns()[0] ? false: true} required/>
                 <span class="label">Neighbour hood</span>
-                <input placeholder="" id="neighbourHood" type="text" class="form-control" required/>
             </label>
 
         </div>
@@ -70,18 +75,13 @@ export function GPS (): JSX.Element {
 
 export function PhoneNumberInput () : JSX.Element {
 
-    const [ query , setQuery ] = createSignal<string>("");
-    let btnElement!: HTMLInputElement; 
-
-    const changeQry: JSX.EventHandler<HTMLInputElement, InputEvent> = (event) => setQuery(event.currentTarget.value);
-
-    const changeValue = (a:string) => {
-        if (btnElement) btnElement.value = a;
-    }
+    const [ query , setQuery ] = createSignal();
+    const changeQry: JSX.ChangeEventHandler<HTMLSelectElement, Event> = (event) => setQuery(event.currentTarget.value);
 
     return (<section class="input-group rounded border">
-        <div class="form-floating">
-            <select id="phoneCode" class="form-select border-0" required>
+        <label class="form-floating">
+            <select onChange={changeQry} id="phoneCode" class="form-control border-0" required>
+                <option>Phone number</option>
                 <For each={countiries}>
                     { item => <option value={item.phoneCode}>
                         {item.emoji} {item.phoneCode} 
@@ -89,11 +89,11 @@ export function PhoneNumberInput () : JSX.Element {
                 </For>
             </select>
             <span class="label">Phone Number</span>
-        </div>
-        <div class="form-floating">
-            <input name="phoneNumber" type="phone" class="form-control border-0" required/>
-            <label for="phoneNumber">57-XX</label>
-        </div>
+        </label>
+        <label class="form-floating">
+            <input name="phoneNumber" placeholder="" type="phone" class="form-control border-0" disabled={query()? false:true} required/>
+            <span class="label">57-XX</span>
+        </label>
     </section>);
 }
 
