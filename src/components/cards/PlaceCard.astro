@@ -1,0 +1,49 @@
+---
+import { getLangFromUrl, useTranslations } from 'src/i18n/utils.ts';
+
+interface Props {
+   data: { 
+        city: string;
+        country: string;
+        img:string;
+        numberOfProperties: number;
+   }
+}
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const { 
+    data
+ } = Astro.props;
+---
+
+<aside class="w-100 h-100 position-relative">
+
+    <img class="h-100 w-100 object-fit-cover rounded-2" src={`/images/estates/${data.img}`} alt="city" />
+    
+    <div class="bg-overlay h-100 w-100 position-absolute top-0 start-0 p-3 nav flex-column justify-content-between">
+
+        <div class="nav justify-content-between align-items-center">
+
+            <span class="fs-5 fw-bolder text-capitalize">{data.country}</span>
+
+            <small>
+                {data.numberOfProperties + Math.ceil(Math.random()*data.numberOfProperties)}k+ properties
+                <i class="fa fa-chevron-right"></i>
+            </small>
+            
+        </div>
+        
+        <section class="nav justify-content-between align-items-center">
+
+            <strong>{data.city}</strong>
+
+            <a class="btn btn-sm btn-primary rounded-pill" href={`/${locale}/estate`}>
+                {t("more")}    
+            </a>
+            
+        </section>
+    </div>
+
+</aside>

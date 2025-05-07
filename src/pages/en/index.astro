@@ -2,6 +2,7 @@
 import EstateCard from "@components/cards/EstateCard";
 import type { EstateType } from "src/api/dataTypes.ts";
 import ClientLayout from "@layouts/ClientLayout.astro";
+import PlaceCard from "@components/cards/PlaceCard.astro";
 
 const headerInfo = {
     title:"home",
@@ -257,6 +258,14 @@ hostId: ""
 }
 ];
 
+const places = [
+  { city:"Abidjan",  country:"cote d'ivoire",  numberOfProperties: 12,  img:"garden-2.jpg" },
+  { city:"Yaounde",  country:"cameroon",  numberOfProperties: 4,  img:"garden.jpg" },
+  { city:"Abidjan",  country:"benin",  numberOfProperties: 2000,  img:"tropical-3.jpg" },
+  { city:"Abidjan",  country:"South Africa",  numberOfProperties: 2000,  img:"tropical.jpg" },
+  { city:"Johanan",  country:"South Africa",  numberOfProperties: 2000,  img:"tropical-2.jpg" }
+];
+
 ---
 
 
@@ -270,25 +279,18 @@ hostId: ""
     </header>
 
 
-    <section class="container py-4 mx-auto">
+    <section class="container-sm py-4 mx-auto">
 
         <h4 class="text-center">FInd Properties in the Most Amazing Places</h4>
         <p class="text-center text-secondary mb-4">Odio, Laborum, eligendi? Debitis, voluptates.</p>
 
 
-        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 align-items-center justify-content-center g-1 mb-3">
+        <div class="row align-items-center justify-content-center g-2 mb-3">
 
-            {[1,2,3].map( item => 
-                <div style="height: 280px;" class="position-relative rounded-3 overflow-hidden">
-
-                    <img class="h-100 w-100 object-fit-fill" src="/images/estates/tropical-2.jpg" alt="city" />
-
-                    <div class="bg-overlay h-100 w-100 position-absolute top-0 start-0 lh-1 p-3 fw-bold">
-                        <h5>City {1}</h5>
-                        <p>{item + Math.ceil(Math.random()*item)}k+ properties</p>
-                    </div>
-
-                </div>)}
+          {places.map( (item,i) => 
+            <div style="height: 280px;" class={` ${i<2? "col-lg-6" : "col-lg-4"}`}>
+            <PlaceCard data={ item } />
+          </div>)}
         </div>
 
         <nav class="nav gap-1 align-items-center justify-content-center mx-auto mb-4">

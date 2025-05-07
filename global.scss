@@ -41,7 +41,7 @@ $accordion-button-padding-x:       1rem;
 // @import "./node_modules/bootstrap/scss/pagination";
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/alert";
-@import "./node_modules/bootstrap/scss/progress";
+// @import "./node_modules/bootstrap/scss/progress";
 // @import "./node_modules/bootstrap/scss/list-group";
 // @import "./node_modules/bootstrap/scss/close";
 @import "./node_modules/bootstrap/scss/toasts";
@@ -237,8 +237,8 @@ a, .nav-link {
 // progress-bar
 .progress-bar {
     display: flex;
-    padding: .2rem;
-    height: 1.2rem;
+    padding: .1rem;
+    height: 1rem;
     min-width: 100px;
     outline: 1px solid gray;
 
@@ -248,7 +248,6 @@ a, .nav-link {
         border-radius: inherit;
     }
 }
-
 
 // toaster css
 

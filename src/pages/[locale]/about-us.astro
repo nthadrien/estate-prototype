@@ -6,6 +6,7 @@ import NeedHelp from "@components/reusables/NeedHelp.astro";
 
 import ClientLayout from "@layouts/ClientLayout.astro";
 import { languages } from "../../i18n/ui.ts";
+import AboutUsHeader from "@components/headers/AboutUsHeader.astro";
 
 export const getStaticPaths = (() => {
     const langs = Object.keys(languages);
@@ -71,6 +72,9 @@ const heading = {
 ---
 
 <ClientLayout title={heading.title} description={heading.description} keywords={heading.keywords} >
+
+
+    <AboutUsHeader />
     
     <main
         class="container-fluid p-0 bg-body-tertiary d-flex flex-column gap-4 align-items-center"
