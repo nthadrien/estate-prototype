@@ -53,6 +53,7 @@ export const ui = {
         "create.acn":"Create Acount",
         "y":"yes",
         "n":"non",
+        "msg":"message",
 
         // forms
         // 1 - newsletter form
@@ -97,6 +98,19 @@ export const ui = {
         "verified.trueInfo":"All information provided on this form are correct",
         "verified.scam":"Are you aiming to scam using our services",
         "verified.record":"Do you have any Criminal records:",
+
+        // Dashboard
+        "dashb.name":"dashboard",
+        "dashb.set":"settings",
+        "dashb.profil":"profil",
+        "dashb.rep":"report",
+        "dashb.stat":"statistics",
+        "dashb.props":"properties",
+        "dashb.resv":"reservations",
+        "dashb.notf":"notification",
+        "dashb.home":"home",
+        "dashb.ib":"inbox",
+        "dashb.accSet":"account settings",
 
     },
     fr: {
@@ -186,5 +200,18 @@ export const ui = {
         "verified.trueInfo": "Toutes les informations fournies sur ce formulaire sont correctes",
         "verified.scam":"Cherchez-vous à frauder ou anarquer en utilisant nos services",
         "verified.record":"Avez-vous un casier judiciaire :",
+
+        // Dashboard
+        "dashb.name": "tableau de bord",
+        "dashb.set": "paramètres",
+        "dashb.profil": "profil",
+        "dashb.rep": "rapport",
+        "dashb.stat": "statistiques",
+        "dashb.props": "propriétés",
+        "dashb.resv": "réservations",
+        "dashb.notf": "notification",
+        "dashb.home": "accueil",
+        "dashb.ib": "boîte de réception",
+        "dashb.accSet":"paramètres du compte",
     },
 } as const;

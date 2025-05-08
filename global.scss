@@ -4,7 +4,6 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "./node_modules/bootstrap/scss/functions";
 // 2. Include any default variable overrides here
-
 $accordion-icon-width:  .8rem;
 $accordion-button-active-bg:  none;
 $accordion-button-padding-y:   .7em;
@@ -61,7 +60,7 @@ $accordion-button-padding-x:       1rem;
 
 // 8. Add additional custom code here
 body {
-    font-size: 13px;
+    font-size: 11px;
 }
 
 a, .nav-link {
@@ -324,4 +323,13 @@ a, .nav-link {
 .form-floating:has(input:not(:placeholder-shown)) .label {
     font-size: smaller;
     opacity: 1;
+}
+
+.txt-small {
+    font-size: small;
+}
+
+.btn-check:checked ~ label.db-link {
+    background: var(--bs-primary) ;
+    color: white ;
 }

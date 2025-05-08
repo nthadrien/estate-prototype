@@ -5,7 +5,8 @@ import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui";
 
 import IndexPage from "./_indexPage.tsx";
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layouts/DashboardLayout.astro";
+import { getLangFromUrl , useTranslations } from "src/i18n/utils.ts";
 
 export const getStaticPaths = (() => {
     
@@ -14,7 +15,8 @@ export const getStaticPaths = (() => {
     );
 }) satisfies GetStaticPaths;
 
-const {locale} = Astro.params;
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 const pageInfo = {
 	title : "host board",
@@ -22,16 +24,36 @@ const pageInfo = {
 	keywords : ["rent","booking","rent houses","book room","villa","appartment"],
 }
 
-const tableFields:string[] = ["name","status","price","date","exp"];
-
-const btnOpts = [
-    { name:'modify', icon:'folder-plus'},
-    { name:'taken', icon:'journal-bookmark-fill'},
-    { name:'available', icon:'house-check'},
-    { name:'add', icon:'archive'}
+const hostpages = [
+    {
+        name: t("dashb.home"),
+        location: `#/home`,
+        icon: "file-o"
+    },
+    {
+        name: t("dashb.props"),
+        location: `#/estates`,
+        icon: "home"
+    },
+    {
+        name: t("dashb.resv"),
+        location: `#/bookings`,
+        icon: "calendar"
+    },
+    {
+        name: t("dashb.rep"),
+        location: `#reports`,
+        icon: "list"
+    },
+    {
+        name: t("dashb.ib"),
+        location: `#/inbox`,
+        icon: "comments"
+    },
 ];
 
 ---
-<Layout title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
-    <IndexPage client:only="solid" lang={locale} />
+<Layout pages={hostpages} title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
+    <IndexPage client:only="solid" lang={locale} pages={hostpages} />
 </Layout>
+
