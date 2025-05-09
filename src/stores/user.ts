@@ -20,7 +20,6 @@ export const $EstatesList = persistentAtom<EstateType[]>('cart', [], {
 });
 
 // toaster updated
-
 export const notifications = (msg:messageType) => {
 
     const notification_wrapper: HTMLElement | null = document.querySelector("#notification-area");
@@ -41,3 +40,15 @@ export const notifications = (msg:messageType) => {
         notification_wrapper?.removeChild(toaster);
     }, 6000);
 }
+
+
+// user details and credentials:
+export type UserType = {
+    id:string;
+    role: string;
+}
+
+export const $user = persistentAtom<UserType>('user', { id:"n/a" , role:"n/a"}, {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+});

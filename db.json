@@ -5863,5 +5863,25 @@
                 "comparism": 1
             }
         }
+    ],
+    "users":[
+        {
+            "id":"34TR7GH09",
+            "username":"Alice",
+            "hash":"host1",
+            "email":"alice@host1.com",
+            "gender":"F",
+            "role":"H-o",
+            "plan":"basic"
+        },
+        {
+            "id":"34TR7GH09",
+            "username":"Alice",
+            "hash":"host1",
+            "email":"alice@host1.com",
+            "gender":"F",
+            "role":"G-s",
+            "plan":"basic"
+        }
     ]
 }

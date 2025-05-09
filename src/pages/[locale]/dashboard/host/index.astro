@@ -3,8 +3,7 @@ export const prerender = false;
 
 import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui";
-
-import IndexPage from "./_indexPage.tsx";
+import HostIndexPage from "@components/dashboardPages/_HostIndexPage.tsx";
 import Layout from "@layouts/DashboardLayout.astro";
 import { getLangFromUrl , useTranslations } from "src/i18n/utils.ts";
 
@@ -32,7 +31,7 @@ const hostpages = [
     },
     {
         name: t("dashb.props"),
-        location: `#/estates`,
+        location: `#/properties`,
         icon: "home"
     },
     {
@@ -54,6 +53,6 @@ const hostpages = [
 
 ---
 <Layout pages={hostpages} title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
-    <IndexPage client:only="solid" lang={locale} pages={hostpages} />
+    <HostIndexPage client:only="solid" lang={locale} pages={hostpages} />
 </Layout>
 

@@ -1,14 +1,13 @@
 
-import { type JSX, For } from "solid-js";
+import { type JSX, For, useContext } from "solid-js";
 import InfoBox from "@components/dashboardComponents/InfoBox";
 
 
 
 function HostPage() : JSX.Element {
+
   return (
     <div class="row g-3">
-
-      <h4>WelcomeMr /Mme User </h4>
 
       <For each={[3,4]}>
         { item => <div class="col col-lg-6">
@@ -43,16 +42,9 @@ function HostPage() : JSX.Element {
 
       </section>
 
-
-      
       <section class="col-12 col-lg-6">
         <h5>Notifications</h5>
       </section>
-
-
-
-      
-      
       
     </div>
   )
