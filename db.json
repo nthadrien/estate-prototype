@@ -5867,7 +5867,7 @@
     "users":[
         {
             "id":"34TR7GH09",
-            "username":"Alice",
+            "username":"Alice J.G.",
             "hash":"host1",
             "email":"alice@host1.com",
             "gender":"F",
@@ -5876,9 +5876,9 @@
         },
         {
             "id":"34TR7GH09",
-            "username":"Alice",
+            "username":"Boris M",
             "hash":"host1",
-            "email":"alice@host1.com",
+            "email":"boris@host2.com",
             "gender":"F",
             "role":"G-s",
             "plan":"basic"

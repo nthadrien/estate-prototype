@@ -20,19 +20,19 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 
 <Layout title={title()} description={description()} keywords={keywords()}>
 
-    <form style="max-width: 568px;" class="p-3 mt-4">
+    <form id="subs" style="max-width: 568px;" class="p-3 mt-4">
 
         <h3 class="mb-4 text-capitalize">{t("accn")}</h3>
 
         <div class="mb-3">
             <label for="email" class="form-label text-capitalize">{t("email")}</label>
-            <input type="email" class="form-control" placeholder={t("email.placeholder")} id="email" aria-describedby="emailHelp" required/>
+            <input type="email" class="form-control" autocomplete="email" placeholder={t("email.placeholder")} id="email" name="mail" aria-describedby="emailHelp" value="mail@box.dom"  required/>
         </div>
 
         <div class="mb-3">
             <label for="password" class="form-label text-capitalize">{t("password")}</label>
-            <input type="email" class="form-control" id="password" minlength="3" placeholder="*****" aria-describedby="passwordHelp" required/>
-        </div>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" value="mail@box.dom" minlength="3" placeholder="*****" aria-describedby="passwordHelp" required/>
+        </div> 
 
         <p class="mb-4">
             {t("login.text1")} <a class="fw-semibold text-primary" href={`/${locale}/accounts/register`}>{t("click.h")}</a> {t("login.text2")} .
@@ -66,4 +66,36 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
     </section> -->
 
 </Layout>
+
+<script>
+    import { $locale , $user, notifications, type UserType, isHost, isClient } from "src/stores/user.ts";
+
+    const form : HTMLFormElement | null = document.querySelector("#subs");
+    
+    form?.addEventListener("submit", async (event:SubmitEvent) => {
+        event.preventDefault();
+        const formData = new FormData(event.target as HTMLFormElement );
+        const formDataEntries = Array.from(formData.entries());
+        const formDataObject = Object.fromEntries(formDataEntries);
+        const resp = await fetch(`http://localhost:8000/users?hash=${formDataObject?.password}&email=${formDataObject?.mail}`);
+        if(resp.ok) {
+            const results : UserType[] = await resp.json();
+            $user.set({ ...results[0]});
+            implicitRedirects()
+        } else notifications({
+            code:404,
+            message:"Wriong crendentials",
+            type:"error"
+        })
+    });
+
+    const implicitRedirects = () => {
+        if ( isHost() ) window.location.assign(`/${$locale.get()}/dashboard/host#home`);
+        if( isClient() ) window.location.assign(`/${$locale.get()}/dashboard/host#home`);
+        else throw new Error ("OOOOpppopopopopop ")
+    }
+
+    if( $user.get().id !== "n/a" && $user.get().id !== "none" && $user.get().role && $user.get().role != "n/a" ) implicitRedirects();
+    
+</script>
 

@@ -10,6 +10,7 @@ export type messageType = {
     type:"success"|"warning"|"error";
 }
 
+
 const init_lang = window.location.pathname.includes("/en/")? "en" : "fr";
 
 export const $locale = atom<"en"|"fr">(init_lang);
@@ -43,12 +44,35 @@ export const notifications = (msg:messageType) => {
 
 
 // user details and credentials:
+
 export type UserType = {
-    id:string;
-    role: string;
+    id: string;
+    username: string;
+    hash    :  string;
+    email   :  string;
+    gender  :   "M"|"F";
+    role    :   string;
+    plan    :   string ;
 }
 
-export const $user = persistentAtom<UserType>('user', { id:"n/a" , role:"n/a"}, {
-    encode: JSON.stringify,
-    decode: JSON.parse,
-});
+const userInit:UserType =  { 
+    id:"n/a" , 
+    username: "n/a",
+    hash    :  "n/a",
+    email   :  "n/a",
+    gender  :  "M",
+    role    :   "n/a",
+    plan    :   "n/a"
+};
+
+export const $user = persistentAtom<UserType>('user', userInit
+    , {
+        encode: JSON.stringify,
+        decode: JSON.parse,
+    }
+);
+
+export const logoutUserLocally = () => $user.set(userInit);
+
+export const isHost = ():boolean => true;
+export const isClient = ():boolean => true;
