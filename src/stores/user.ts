@@ -1,7 +1,7 @@
 
 import { atom } from "nanostores";
 
-import { persistentAtom } from '@nanostores/persistent'
+import { persistentAtom, persistentMap } from '@nanostores/persistent'
 import type { EstateType } from "src/api/dataTypes.ts";
 
 export type messageType = {
@@ -55,7 +55,7 @@ export type UserType = {
     plan    :   string ;
 }
 
-const userInit:UserType =  { 
+export const userInit:UserType =  { 
     id:"n/a" , 
     username: "n/a",
     hash    :  "n/a",
@@ -72,7 +72,10 @@ export const $user = persistentAtom<UserType>('user', userInit
     }
 );
 
-export const logoutUserLocally = () => $user.set(userInit);
+export const logoutUserLocally = () => {
+    $user.set(userInit);
+    window.location.assign(`/${$locale.get()}/accounts/login`);
+}
 
 export const isHost = ():boolean => true;
 export const isClient = ():boolean => true;

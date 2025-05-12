@@ -55,8 +55,6 @@ export default function HostIndexPage (props:Props):JSX.Element {
 
     return (<section class="w-100 p-3 p-xl-4">
 
-        <h4 class="text-capitalize">{pageName()?.name}</h4>
-
         <AuthProvider>
             <Switch>
                 <Match when={currentPage() == "#/home" }>

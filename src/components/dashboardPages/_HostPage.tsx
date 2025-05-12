@@ -1,13 +1,25 @@
 
 import { type JSX, For, useContext } from "solid-js";
 import InfoBox from "@components/dashboardComponents/InfoBox";
-
+import { $locale } from "src/stores/user.ts";
+import { useTranslations } from "src/i18n/utils.ts";
+import { useStore } from "@nanostores/solid";
+import { useAuthCtx } from "src/context/authContext.tsx";
 
 
 function HostPage() : JSX.Element {
 
+  const locale = useStore($locale)
+  const t = useTranslations(locale());
+
+  const {user} = useAuthCtx();
+
   return (
     <div class="row g-3">
+
+      <h4 class="text-capitalize">
+        Welocome Mr, MMe 
+      </h4>
 
       <For each={[3,4]}>
         { item => <div class="col col-lg-6">
