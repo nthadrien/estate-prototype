@@ -4,7 +4,8 @@ import Layout from "./Layout.astro";
 import BaseFooter from "@components/footers/BaseFooter.astro";
 import ClientNavbar from "@components/navbars/ClientNavbar.astro";
 import ClientHeader from "@components/headers/ClientHeader.astro";
-import BreadCrumb from "@components/headers/BreadCrumb.astro";
+import BreadCrumb from "@components/utils/BreadCrumb.tsx";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
 
 interface Props {
 	title: string;
@@ -27,7 +28,11 @@ const {
 >
     <ClientHeader/>
     <ClientNavbar />
-    <BreadCrumb />
+    <div class="container mx-auto">
+        <BreadCrumb  client:only="solid-js" >
+            <i slot="fallback" class="fa fa-circle-o-notch fa-spin"></i>
+        </BreadCrumb>
+    </div>
     <slot />
     <ClientFooter />
     <BaseFooter />

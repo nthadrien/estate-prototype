@@ -7,6 +7,7 @@ import  type { EstateType , BuildingType } from "src/api/dataTypes.ts";
 
 
 export const USER_INIT = userInit;
+const PROPERTIES_INIT:BuildingType[] = [];
 
 const INITIAL_CTX_SETTER = {
   addEstate: () => {},
@@ -14,7 +15,10 @@ const INITIAL_CTX_SETTER = {
 };
 
 export const AuthContext = createContext({
-    user: USER_INIT, ...INITIAL_CTX_SETTER
+    user: USER_INIT, 
+    properties: PROPERTIES_INIT,
+
+    ...INITIAL_CTX_SETTER
 });
 
 interface Props {
@@ -46,10 +50,6 @@ const Loading = () : JSX.Element=> {
 export function AuthProvider(props:Props) {
 
     const user = useStore($user);
-    
-    //   const [bookings] = createResource();
-    //   const [transactions] =createResource();
-    //   const [notifications] = createResource();
 
     createEffect(() => {
         // if ( user().id == "none" && user().id == "n/a" ) window.location.assign("/"+$locale+"/accounts/login");
@@ -58,13 +58,14 @@ export function AuthProvider(props:Props) {
     });
 
     const [account] = createResource(user().id,getAccountDetails);
-    const [propertiesList] = createResource(user().id, getProperties);
-    const [notifications] = createResource( user().id ,getMessages);
+    const [propertiesList,{ ...propRest }] = createResource(user().id, getProperties);
+    const [notifications,{ ...notifRest }] = createResource( user().id ,getMessages);
     const isFinished = ():boolean => account.state == "ready" && propertiesList.state == "ready" && notifications.state == "ready";
-    const isError = () :boolean => account.state == "ready" && propertiesList.state == "ready" && notifications.state == "ready";
+    const isError = () :boolean => account.error && propertiesList.error && notifications.error;
     
     const counter = {
         user: user(),
+        properties: propertiesList(),
         addEstate() {},
         addBuilding() {}
     };
@@ -75,13 +76,22 @@ export function AuthProvider(props:Props) {
     //     {props.children}
     // </AuthContext.Provider>);
 
-    return (
-        <Suspense fallback={<Loading/>}>
+    return (<Switch>
+        <Match when={isError() }>
+            <h3 class="text-warning">Please Refrexccccchhh</h3>
+        </Match>
+
+        <Match when={!isFinished() }>
+            <Loading />
+        </Match>
+
+        <Match when={isFinished() }>
             <AuthContext.Provider value={counter}>
                 {props.children}
             </AuthContext.Provider>
-        </Suspense>
-    );
+        </Match>
+
+        </Switch>);
     
 }
 

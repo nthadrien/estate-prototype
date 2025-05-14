@@ -42,7 +42,7 @@ const hostpages = [
     {
         name: t("dashb.rep"),
         location: `#reports`,
-        icon: "list"
+        icon: "files-o"
     },
     {
         name: t("dashb.ib"),
@@ -53,6 +53,15 @@ const hostpages = [
 
 ---
 <Layout pages={hostpages} title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
-    <HostIndexPage client:only="solid" lang={locale} pages={hostpages} />
+    <HostIndexPage client:only="solid-js" lang={locale} pages={hostpages}>
+        <div slot="fallback">
+            <h3>Please Loading .... </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Modi facilis sunt odit ratione distinctio, odio ipsum illum consequuntur, 
+                magni voluptatibus quia autem est esse quas incidunt magnam exercitationem enim maiores.
+            </p>
+        </div>
+    </HostIndexPage>
 </Layout>
 

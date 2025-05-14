@@ -78,7 +78,7 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
         const formDataEntries = Array.from(formData.entries());
         const formDataObject = Object.fromEntries(formDataEntries);
         // const resp = await fetch(`http://localhost:8000/users?hash=${formDataObject?.password}&email=${formDataObject?.mail}`);
-        const resp =  await fetch(`http://localhost:8000/users?email=boris@host2.com&hash=host1`);
+        const resp =  await fetch(`http://localhost:8000/users?email=alice@host1.com&hash=host1`);
         if(resp.ok) {
             const results : UserType[] = await resp.json();
             console.log(results);

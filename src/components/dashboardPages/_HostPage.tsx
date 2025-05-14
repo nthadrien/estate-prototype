@@ -1,5 +1,5 @@
 
-import { type JSX, For, useContext } from "solid-js";
+import { type JSX, createMemo, For, useContext } from "solid-js";
 import InfoBox from "@components/dashboardComponents/InfoBox";
 import { $locale } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils.ts";
@@ -9,32 +9,57 @@ import { useAuthCtx } from "src/context/authContext.tsx";
 
 function HostPage() : JSX.Element {
 
+  return (<h1>
+    Host Pagie
+  </h1>)
+
   const locale = useStore($locale)
   const t = useTranslations(locale());
 
-  const {user} = useAuthCtx();
+  const {user, properties } = useAuthCtx();
+
+  const statistics = createMemo(() => {
+
+    const networth:number = 302.99;
+    let assets:number = 0;
+    let recentlyAdded = 0;
+
+    for(let property of properties) {
+      assets += property.estates.length;
+    }
+
+    // return {
+    //   assets,
+    //   recentlyAdded,
+    //   networth,
+    //   properties: properties.length,
+    // }
+
+    return [
+      {
+        name: "",
+        description: "",
+        value: "",
+        unit: ""
+      },
+    ]
+  });
 
   return (
     <div class="row g-3">
 
-      <h4 class="text-capitalize">
-        Welocome Mr, MMe 
-      </h4>
+      <div class="nav justify-content-between text-capitalize">
+        <p class="fs-5">Welcome {user.gender == "F" ? "Mme" : "Mr"} {user.username}</p>
+        <p class="fs-6 fw-bold">{t("dashb.name")}</p>
+      </div>
 
-      <For each={[3,4]}>
+      <For each={statistics()}>
         { item => <div class="col col-lg-6">
           <InfoBox />  
         </div>}
       </For>
 
       <h4>Month Overview</h4>
-
-      <For each={[1,2,3,4]}>
-        { item => <div class="col col-md-6 col-lg-3">
-          <InfoBox />  
-        </div>}
-      </For>
-
       <section class="col-12 col-lg-6">
 
         <nav class="nav gap-2 align-items-center justify-content-between mb-2">

@@ -19,7 +19,9 @@ const t = useTranslations(locale);
 
     <Logo />
     <OffCanvas/>
-    <AccountBtn client:only="solid" />
+    <AccountBtn client:only="solid-js" >
+      <i slot="fallback" class="fa fa-circle-o-notch fa-spin text-primary"></i>
+    </AccountBtn>
     
   </div>
 </nav>

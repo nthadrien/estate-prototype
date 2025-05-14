@@ -8,6 +8,7 @@ $accordion-icon-width:  .8rem;
 $accordion-button-active-bg:  none;
 $accordion-button-padding-y:   .7em;
 $accordion-button-padding-x:       1rem;
+$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/></svg>");
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "./node_modules/bootstrap/scss/variables";
@@ -50,7 +51,7 @@ $accordion-button-padding-x:       1rem;
 @import "./node_modules/bootstrap/scss/carousel";
 // @import "./node_modules/bootstrap/scss/spinners";
 @import "./node_modules/bootstrap/scss/offcanvas";
-// @import "./node_modules/bootstrap/scss/placeholders";
+@import "./node_modules/bootstrap/scss/placeholders";
 
 // Helpers
 @import "./node_modules/bootstrap/scss/helpers";
@@ -270,17 +271,57 @@ a, .nav-link {
     to {  max-width: 70vw }
 }
 
-// removing border for navbars-drops
+// removing border for navbars-drops and dashboard styles
+
+.dashwrapper {
+    display: grid;
+    grid-template-columns: 0px 1fr;
+}
+
+.dash-link {
+    display: block;
+    /* font-size: medium; */
+    padding: .25em .5em;
+    margin: .25rem auto;
+    border-radius: var(--bs-border-radius);
+    color: var(--bs-secondary-color);
+    cursor: pointer;
+    transition: color 0.2s linear;
+    font-size: small;
+}
+
+.dash-link:has(input:checked) {
+    background: var(--bs-border-color);
+    border: 1px solid var(--bs-border-color);
+    color: inherit
+}
 
 .border-expand {
     border: none;
 }
 
-@include media-breakpoint-up(lg) { 
+// @include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { 
+    .dashwrapper {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .dashwrapper {
+        grid-template-columns: minmax(280px,290px) 1fr;
+    }
+    
     .border-expand {
         border: 1px solid var(--#{$prefix}border-color);
-    } 
+   } 
 }
+
+@include media-breakpoint-up(xl) {
+    .dash-link {
+        font-size: medium;
+    }
+ }
 
 // personale floating-form;
 .form-floating {
