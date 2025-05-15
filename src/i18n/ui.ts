@@ -112,6 +112,11 @@ export const ui = {
         "dashb.ib":"inbox",
         "dashb.accSet":"account settings",
 
+        // timeline 
+        "timeline.weekly":"weekly",
+        "timeline.yearly":"yearly",
+        "timeline.overall":"overall",
+
     },
     fr: {
         'lang':'Français',
@@ -213,5 +218,11 @@ export const ui = {
         "dashb.home": "accueil",
         "dashb.ib": "boîte de réception",
         "dashb.accSet":"paramètres du compte",
+
+
+        // timeline 
+        "timeline.weekly":"hebdomadaire",
+        "timeline.yearly":"annuel",
+        "timeline.overall":"global",
     },
 } as const;

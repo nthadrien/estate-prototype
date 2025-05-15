@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { languages } from "src/i18n/ui.ts";
 import ClientLayout from "@layouts/ClientLayout.astro";
 import Estate from "@components/estatesPages/Estate";
+import PagePlaceHolder from "@components/placeholders/PagePlaceHolder.astro";
 
 export const prerender = false;
 
@@ -20,5 +21,7 @@ const pageInfo = {
 }
 ---
 <ClientLayout {...pageInfo}>
-    <Estate client:only="solid"/>
+    <Estate client:only="solid-js">
+        <PagePlaceHolder slot="fallback" />
+    </Estate>
 </ClientLayout>

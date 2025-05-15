@@ -47,10 +47,8 @@ export default function HostIndexPage (props:Props):JSX.Element {
     })
 
 
-    return (<section class="w-100 p-3 p-xl-4">
-
+    return (<section class="w-100 p-3">
         <AuthContextProvider>
-            <h3 class="text-warning">Hey let me render</h3>
             <Switch>
                 <Match when={currentPage() == "#/home" }>
                     <Home />

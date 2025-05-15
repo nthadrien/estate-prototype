@@ -10586,11 +10586,6 @@ a, .nav-link {
     border: 1px solid var(--bs-border-color);
   }
 }
-@media (min-width: 1200px) {
-  .dash-link {
-    font-size: medium;
-  }
-}
 .form-floating {
   position: relative;
   width: 100%;
