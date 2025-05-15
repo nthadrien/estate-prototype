@@ -1,0 +1,75 @@
+---
+import ThemeSwitcher from "@components/utils/ThemeSwitcher.astro";
+import { getLangFromUrl , useTranslations } from "src/i18n/utils.ts";
+import LocaleSwitcher from "@components/utils/LocaleSwitcher";
+import BreadCrumb from "@components/utils/BreadCrumb";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<header class="bg-body  sticky-top d-flex justify-content-between align-items-center gap-2 px-2">
+
+    <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
+        <i class="fa fa-bars" aria-hidden="true" />
+    </button>
+
+    <section class="d-none d-md-flex align-items-center justify-content-between gap-3">
+
+        <LocaleSwitcher client:only="solid-js" >
+            <BtnPlaceholder slot="fallback" />
+        </LocaleSwitcher>
+
+        <BreadCrumb client:only="solid-js" >
+            <BtnPlaceholder slot="fallback" />
+        </BreadCrumb>
+
+    </section>
+
+
+    <section class="d-flex gap-1">
+        <ThemeSwitcher> 
+            <BtnPlaceholder slot="fallback" />
+        </ThemeSwitcher>
+
+        <div class="dropdown">
+            <button title={t("dashb.notf")} class="btn rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-bell-o" aria-hidden="true" />
+              <small style="height: 24px;width:24px;" class="position-absolute bg-danger text-white start-50 top-50 rounded-circle"> 2</small>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-1 txt-small">
+                <li>
+                    <a class="dropdown-item d-flex gap-2" href="#">
+                        <i class="fa fa-error me-2" />
+                        <p class="text-truncate">
+                            Messaage <br/>
+                            bref description
+                        </p>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">{t("more")} </a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-user-circle-o" aria-hidden="true" />
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-1 txt-small text-capitalize">
+                <li><a class="dropdown-item fw-bolder" href="#">{t("accn")}</a></li>
+                <li> <hr class="dropdown-divider"> </li>
+                <li><a class="dropdown-item" href="#/profil">{t("dashb.profil")}</a></li>
+                <li>
+                    <a class="dropdown-item" href="#/settings">{t("dashb.set")}</a>
+                </li>
+                <li> <hr class="dropdown-divider"> </li>
+                <li>
+                    <button id="logoutBtn" class="dropdown-item">Logout </button>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+</header>

@@ -4,6 +4,7 @@ import { useTranslations, getLangFromUrl } from "src/i18n/utils.ts";
 import Logo from "@components/navbars/Logo.astro";
 import OffCanvas from "@components/navbars/OffCanvas.astro";
 import AccountBtn from "./AccountBtn";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -20,7 +21,7 @@ const t = useTranslations(locale);
     <Logo />
     <OffCanvas/>
     <AccountBtn client:only="solid-js" >
-      <i slot="fallback" class="fa fa-circle-o-notch fa-spin text-primary"></i>
+      <BtnPlaceholder slot="fallback" clr="text-primary" />
     </AccountBtn>
     
   </div>

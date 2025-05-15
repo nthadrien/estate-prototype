@@ -9,14 +9,10 @@ import { useAuthCtx } from "src/context/authContext.tsx";
 
 function HostPage() : JSX.Element {
 
-  return (<h1>
-    Host Pagie
-  </h1>)
-
   const locale = useStore($locale)
   const t = useTranslations(locale());
 
-  const {user, properties } = useAuthCtx();
+  const [{ user , properties }] = useAuthCtx();
 
   const statistics = createMemo(() => {
 
@@ -24,15 +20,8 @@ function HostPage() : JSX.Element {
     let assets:number = 0;
     let recentlyAdded = 0;
 
-    for(let property of properties) {
-      assets += property.estates.length;
-    }
-
-    // return {
-    //   assets,
-    //   recentlyAdded,
-    //   networth,
-    //   properties: properties.length,
+    // for(let property of properties) {
+    //   assets += property.estates.length;
     // }
 
     return [
@@ -49,7 +38,7 @@ function HostPage() : JSX.Element {
     <div class="row g-3">
 
       <div class="nav justify-content-between text-capitalize">
-        <p class="fs-5">Welcome {user.gender == "F" ? "Mme" : "Mr"} {user.username}</p>
+        <p class="fs-5">Welcome {user().gender == "F" ? "Mme" : "Mr"} {user().username}</p>
         <p class="fs-6 fw-bold">{t("dashb.name")}</p>
       </div>
 

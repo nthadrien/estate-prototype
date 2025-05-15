@@ -76,7 +76,7 @@ export default function BreadCrumb():JSX.Element {
     });
 
     return (
-    <ol aria-label="breadcrumb" class="breadcrumb text-capitalize">
+    <ol aria-label="breadcrumb" class="breadcrumb text-capitalize m-auto">
         <li class="breadcrumb-item">
            <a href="#">
             <i class="fa fa-home me-2" />

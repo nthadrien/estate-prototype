@@ -6,6 +6,7 @@ import { languages } from "src/i18n/ui";
 import HostIndexPage from "@components/dashboardPages/_HostIndexPage.tsx";
 import Layout from "@layouts/DashboardLayout.astro";
 import { getLangFromUrl , useTranslations } from "src/i18n/utils.ts";
+import PagePlaceHolder from "@components/placeholders/PagePlaceHolder.astro";
 
 export const getStaticPaths = (() => {
     
@@ -53,15 +54,8 @@ const hostpages = [
 
 ---
 <Layout pages={hostpages} title={pageInfo.title} description={pageInfo.description} keywords={pageInfo.keywords}>
-    <HostIndexPage client:only="solid-js" lang={locale} pages={hostpages}>
-        <div slot="fallback">
-            <h3>Please Loading .... </h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Modi facilis sunt odit ratione distinctio, odio ipsum illum consequuntur, 
-                magni voluptatibus quia autem est esse quas incidunt magnam exercitationem enim maiores.
-            </p>
-        </div>
+    <HostIndexPage client:only="solid-js" lang={locale} pages={hostpages}> 
+        <PagePlaceHolder slot="fallback" />
     </HostIndexPage>
-</Layout>
+</Layout> 
 

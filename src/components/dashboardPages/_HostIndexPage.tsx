@@ -2,10 +2,8 @@
 import { createEffect, createSignal, For, lazy, Match, onCleanup, onMount, Suspense, Switch, type JSX } from "solid-js";
 
 import ErrorPage from "@components/redirects/ErrorPage";
-import { useStore } from "@nanostores/solid";
-import { $locale } from "src/stores/user.ts";
 
-import { AuthProvider } from "src/context/authContext.tsx";
+import { AuthContextProvider, useAuthCtx } from "src/context/authContext.tsx";
 import Home from "@components/dashboardPages/_HostPage"
 
 // pages:
@@ -29,16 +27,12 @@ interface Props {
 
 export default function HostIndexPage (props:Props):JSX.Element {
 
-    const locale = useStore($locale);
-    const [ currentPage , setCurrentPage ] = createSignal(props.pages[0]? props.pages[0].location : "#/home")
+    const [ currentPage , setCurrentPage ] = createSignal(props.pages[0]? props.pages[0].location : "#/home");
 
     const changeHash = (e:HashChangeEvent) => {
         const linked = new URL(e.newURL);
         let para = linked.searchParams;
         let loca = linked.hash;
-        console.log("search",para);
-        console.log("hash",loca);
-        // setCurrentPage(e.h)4
         setCurrentPage(loca);
     }
 
@@ -55,7 +49,8 @@ export default function HostIndexPage (props:Props):JSX.Element {
 
     return (<section class="w-100 p-3 p-xl-4">
 
-        <AuthProvider>
+        <AuthContextProvider>
+            <h3 class="text-warning">Hey let me render</h3>
             <Switch>
                 <Match when={currentPage() == "#/home" }>
                     <Home />
@@ -73,6 +68,6 @@ export default function HostIndexPage (props:Props):JSX.Element {
                     <Inbox />
                 </Match>
             </Switch>
-        </AuthProvider>
+        </AuthContextProvider>
     </section>);
 }

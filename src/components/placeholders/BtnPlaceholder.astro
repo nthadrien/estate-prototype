@@ -1,7 +1,10 @@
 ---
 
+interface Props  {
+    clr?: string;
+}
+
+const { clr = "" } = Astro.props;
 ---
 
-<div class="placeholder-glow">
-
-</div>
+<i class=`fa fa-circle-o-notch fa-spin ${clr}`></i>
