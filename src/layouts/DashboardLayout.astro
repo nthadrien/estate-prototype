@@ -30,13 +30,24 @@ const advancedPages = [
         location: `#/inbox`,
         icon: "user-o"
     },
-]
+    {
+        name: t("nav.help"),
+        location: `/${locale}/contact-us`,
+        icon: "question-circle-o"
+    },
+    {
+        name: t("nav.logout"),
+        location: `/logout`,
+        icon: "sign-out"
+    }
+    
+];
 
 const {
     pages = [],
 	title = "estate-develop",
 	description="page description",
-	keywords = ["rent","booking","rent houses","book room","villa","appartment"]
+	keywords = ["rent","booking","rent houses","book room","villa","appartment"],
 } = Astro.props
 ---
 

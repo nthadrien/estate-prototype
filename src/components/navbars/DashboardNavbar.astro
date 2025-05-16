@@ -30,12 +30,12 @@ const { pages , advancedPages } = Astro.props;
         <div>
             <h5 class="mb-4 fw-bold text-uppercase">
                 <i class="fa fa-cube me-1" />
-                <span class="d-md-none d-lg-inline">{t("dashb.name")}</span>
+                <span class="d-md-none d-lg-inline ms-2">{t("dashb.name")}</span>
             </h5>
             {pages.map( (item,index)  =>  <label class="dash-link" >
                 <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index}`} checked={index === 0} autocomplete="off" />
-               <i class={`fa fa-${item.icon} me-lg-2 me-1`} aria-hidden="true"/>
-               <span class="d-md-none d-lg-inline">{item.name}</span>
+               <i class={`fa fa-${item.icon}`} aria-hidden="true"/>
+               <span class="d-md-none d-lg-inline ms-2">{item.name}</span>
            </label>)}
         </div>
 
@@ -46,9 +46,9 @@ const { pages , advancedPages } = Astro.props;
             </h6>
 
             {advancedPages.map( (item,index)  =>  <label class="dash-link" >
-                <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index}`} autocomplete="off" />
-                <i class={`fa fa-${item.icon} me-lg-2 me-1`} aria-hidden="true"/>
-                <span class="d-md-none d-lg-inline">{item.name}</span>
+                <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index+20}`} autocomplete="off" />
+                <i class={`fa fa-${item.icon}`} aria-hidden="true"/>
+                <span class="d-md-none d-lg-inline ms-2">{item.name}</span>
            </label>)}
         </div>
         

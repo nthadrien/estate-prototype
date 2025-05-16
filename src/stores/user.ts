@@ -79,3 +79,4 @@ export const logoutUserLocally = () => {
 
 export const isHost = ():boolean => true;
 export const isClient = ():boolean => true;
+export const isAuthorize = ():boolean => !["n/a","none","null"].includes($user.get().email) && !["n/a","none","null"].includes($user.get().id) && !["n/a","none","null"].includes($user.get().plan); 

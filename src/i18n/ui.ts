@@ -16,9 +16,11 @@ export const ui = {
         'nav.contactus':'Contact Us',
         'nav.sign':"sign up",
         'nav.login':"login",
+        'nav.logout':"sign out",
         'nav.t&cons':'terms and conditions',
         'nav.privacy':'privacy policy',
         'nav.help':'Need Help?',
+        'nav.booked':"bookmarked",
         'base.footer': 'Company, Inc. All rights reserved Designed and Coded By nthadrien',
         'contacts':'Contacts',
         
@@ -126,9 +128,11 @@ export const ui = {
         'nav.contactus':'Contactez Nous',
         'nav.sign':"s'inscrire",
         'nav.login':'se connecter',
+        'nav.logout':"se déconnecter",
         'nav.t&cons':'termes et conditions',
         'nav.privacy':'politique de confidentialité',
         'nav.help': "Besoin d'aide?",
+        'nav.booked':"mis en signet",
         "base.footer": 'Company, Inc. Tous droits réservés Conçu et codé par nthadrien',
         // pages :
         'contact.desc':"Cette page est destinée à offrir un moyen simplifié de poser des questions, de donner votre avis et d'obtenir l'assistance dont vous avez besoin.",

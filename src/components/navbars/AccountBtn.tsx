@@ -1,31 +1,62 @@
-import { $locale } from "src/stores/user.ts";
+import { $locale, isAuthorize, $user } from "src/stores/user.ts";
 import { useStore } from "@nanostores/solid";
-import { useTranslations, getLangFromUrl } from "src/i18n/utils.ts";
+import { Show } from "solid-js";
+import { useTranslations } from "src/i18n/utils.ts";
 
 
 
 function AccountBtn() {
 
-    const t = useTranslations($locale.get());
+    const locale = useStore($locale);
+    const user = useStore($user);
+    const t = useTranslations(locale());
 
-    return (<>
+    const Fallback = (<>
+        <a class="nav-link p-2" href={`/${$locale.get()}/accounts/login`}>
+            {t('nav.login')}
+        </a>
+        <span class="vr"/>
+        <a href={`/${$locale.get()}/accounts/register`} class="nav-link p-2"> 
+            {t('nav.sign')}
+        </a>
+    </>);
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAccountContent" aria-controls="navbarAccountContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-user"></span>
-        </button>
+    return (<Show when={isAuthorize()} fallback={Fallback}>
 
-        <aside class="collapse navbar-collapse gap-2 justify-content-center justify-content-lg-end bg-body p-2" id="navbarAccountContent">
-
-            <a class="nav-link" href={`/${$locale.get()}/accounts/login`}>
-                {t('nav.login')}
-            </a>
-
-            <a href={`/${$locale.get()}/accounts/register`} class="btn btn-primary btn-sm rounded-4 mx-1"> 
-                 {t('nav.sign')}
-            </a>
-        
-        </aside>
-    </>)
+        <div class="nav-item dropdown text-capitalize">
+            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                 {user().username.slice(0,8)} <i aria-hidden="true" class="fa fa-user ms-2"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end border-expand txt-small">
+                <li>
+                    <a class="dropdown-item" href={`/${locale()}/book`} type="button">
+                        <i aria-hidden="true" class="fa fa-cube me-2" /> {t('dashb.name')}
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li>
+                    <a class="dropdown-item" href={`/${locale()}/book`} type="button">
+                        <i aria-hidden="true" class="fa fa-bookmark me-2" /> {t('nav.booked')}
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href={`/${locale()}/book`} type="button">
+                        <i aria-hidden="true" class="fa fa-question-circle-o me-2" /> {t("nav.help")}
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li>
+                    <a class="dropdown-item" href={`/${locale()}/book`} type="button">
+                        <i aria-hidden="true" class="fa fa-sign-out" /> {t("nav.logout")}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </Show>)
 }
 
 export default AccountBtn;

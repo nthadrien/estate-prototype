@@ -1,13 +1,6 @@
 ---
-
-import { useTranslations, getLangFromUrl } from "src/i18n/utils.ts";
 import Logo from "@components/navbars/Logo.astro";
 import OffCanvas from "@components/navbars/OffCanvas.astro";
-import AccountBtn from "./AccountBtn";
-import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
-
-const locale = getLangFromUrl(Astro.url);
-const t = useTranslations(locale);
 ---
 
 <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
@@ -19,10 +12,8 @@ const t = useTranslations(locale);
     </button>
 
     <Logo />
+    
     <OffCanvas/>
-    <AccountBtn client:only="solid-js" >
-      <BtnPlaceholder slot="fallback" clr="text-primary" />
-    </AccountBtn>
     
   </div>
 </nav>

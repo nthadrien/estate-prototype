@@ -85,10 +85,10 @@ a, .nav-link {
     width: max(80%,48px);
 }
 
-.linko.active {
+.linko.active::before {
     font-weight: bold;
-    color: $secondary;
-    border-bottom: 1px solid $secondary;
+    background-color: $secondary;
+    width: 50%;
 }
 
 // theme switcher
