@@ -374,3 +374,8 @@ a, .nav-link {
     background: var(--bs-primary) ;
     color: white ;
 }
+
+// tables
+table td {
+    min-width: 90px;
+}

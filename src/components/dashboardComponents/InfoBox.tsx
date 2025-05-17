@@ -16,10 +16,10 @@ interface Props {
 
 export default function InfoBox(props : Props ): JSX.Element {
 
-    return (<aside class={`border bg-${props.details.color}-subtle p-2 p-lg-3 rounded-3`}>
+    return (<aside class={`border p-2 p-lg-3 rounded-3`}>
 
         <header class="d-flex gap-2 gap-lg-3 align-items-center">
-            <i class={`fs-3 fa fa-${props.details.icon}`} />
+            <i class={`fs-3 fa fa-${props.details.icon} text-${props.details.color}`} />
             <div class="lh-1 text-truncate">
                 <b class={`text-${props.details.color}`}>{props.details.name} </b> <br/>
                 <small>{props.details.description}</small>

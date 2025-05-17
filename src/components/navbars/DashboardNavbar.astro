@@ -39,11 +39,13 @@ const { pages , advancedPages } = Astro.props;
            </label>)}
         </div>
 
-        <div class="mb-0">
+        <div class="mt-5">
 
-            <h6 class="d-md-none d-lg-block border-bottom pb-2 my-3">
+            <p class="d-md-none d-lg-block text-secondary">
                 {t("dashb.accSet")}
-            </h6>
+            </p>
+
+            <hr class="border border-subtle my-3"/>
 
             {advancedPages.map( (item,index)  =>  <label class="dash-link" >
                 <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index+20}`} autocomplete="off" />

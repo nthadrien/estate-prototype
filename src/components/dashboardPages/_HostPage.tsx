@@ -69,8 +69,8 @@ function HostPage() : JSX.Element {
   return (<section class="row g-3">
 
       <div class="nav justify-content-between text-capitalize">
-        <p class="fs-5">Welcome {user().gender == "F" ? "Mme" : "Mr"} {user().username}</p>
-        <p class="fs-6 fw-bold">{t("dashb.name")}</p>
+        <h5>Welcome {user().gender == "F" ? "Mme" : "Mr"} {user().username}</h5>
+        <h6>{t("dashb.name")}</h6>
       </div>
 
       <ul class="nav gap-2 rounded-3">

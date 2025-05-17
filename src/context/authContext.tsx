@@ -1,8 +1,8 @@
 
 import { useStore } from "@nanostores/solid";
 import { createContext, type JSX, For, createResource, useContext, Match, Switch, createEffect, createMemo, type Accessor, type Resource, createSignal, Suspense, onMount } from "solid-js";
-import { getProperties, getAccountDetails, getMessages } from "src/api/hostRequests.ts";
-import { $user, $locale } from "src/stores/user.ts";
+import { getProperties, getAccountDetails, getMessages, delProperties } from "src/api/hostRequests.ts";
+import { $user, $locale, type LocationSetType, setLocation } from "src/stores/user.ts";
 
 // // --------------------- loading animation trial 
 
@@ -23,6 +23,7 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
 
     const locale = useStore($locale)
     const user = useStore($user);
+
     const [properties, { ...restOfPties}] = createResource(() => user().id , getProperties );
 
     const isLoading = () => properties.loading;
@@ -32,9 +33,20 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
         if( !user() || user().role == "n/a" || user().id == "n/a" ) window.location.assign(`/${locale}/accounts/login`);
     });
 
+    const deteleProperty = async (id:string) => {
+        const b = confirm("sure??");
+        if ( b ) {
+
+        }
+    }
+
+    const updateProperty = async (id:string, a:any) => {}
+
+    const changeLocation = (options:LocationSetType) => setLocation(options);
+
     const value = [  
         { locale, user , properties , isLoading , isError  },
-        {  }
+        { delProperties , changeLocation }
     ] as const;
 
 

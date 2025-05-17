@@ -30,9 +30,9 @@ export const notifications = (msg:messageType) => {
 
     const toaster = document.createElement("aside");
 
-    toaster.className = `bg-body mytoast shadow-lg d-flex gap-3 align-items-center justify-content-start px-4 py-1 shadow rounded-pill`; 
-    toaster.innerHTML = `<i aria-hidden="true" class="fs-4 fa fa-${icon} rounded-pill p-1 text-bg-${color} fa-2x text-white"></i>  
-        <div class="text-truncate">${msg.code && `<b class="fw-bold text-truncate text-${color}">${msg.code} </b><br/>`} ${msg.message}</div> `;
+    toaster.className = `bg-body mytoast d-flex gap-3 align-items-center justify-content-start p-1 px-4 shadow rounded-pill border border-${color}-subtle`; 
+    toaster.innerHTML = `<i aria-hidden="true" style="height:1.6rem;width:1.6rem;" class="nav align-items-center justify-content-center fs-4 fa fa-${icon} rounded-pill bg-${color} fa-2x text-white"></i>  
+        <div class="text-truncate">${msg.code && `<span class="fw-bold text-truncate text-${color}">${msg.code} </span> <br/>`} ${msg.message}</div> `;
 
     // create the element on DOM:
     notification_wrapper?.appendChild(toaster);
@@ -77,6 +77,50 @@ export const logoutUserLocally = () => {
     window.location.assign(`/${$locale.get()}/accounts/login`);
 }
 
+export const isSuper = ():boolean => true;
 export const isHost = ():boolean => true;
 export const isClient = ():boolean => true;
-export const isAuthorize = ():boolean => !["n/a","none","null"].includes($user.get().email) && !["n/a","none","null"].includes($user.get().id) && !["n/a","none","null"].includes($user.get().plan); 
+export const isAuthorize = ():boolean => isHost() || isClient() || isSuper();
+
+
+// a function that is used to change the locations 
+
+export type LocationSetType = { 
+  hash?: string; 
+  searchParams?:any;
+}
+
+export function setLocation(options:LocationSetType) {
+
+  if ( !isAuthorize() ) {
+    notifications({ code: 505 , message : "Unauthorized" , type: "error"});
+    return;
+  }
+  
+  const { hash = undefined, searchParams = undefined } = options;
+  const url = new URL(window.location.href);
+
+  // Modify the hash
+  if (hash !== undefined) {
+    url.hash = hash ? `#${hash}` : ''; // Set with '#' or remove
+  }
+  
+  // Modify the search parameters
+  if (searchParams !== undefined) {
+    for (const [key, value] of Object.entries(searchParams)) {
+      if (value == null) { // null or undefined
+        url.searchParams.delete(key);
+      } else {
+        url.searchParams.set(key, String(value)); // Convert to string
+      }
+    }
+  }
+
+  const b = new HashChangeEvent('hashchange', {
+    oldURL: window.location.href, // Use the *current* URL as oldURL
+    newURL: url.toString() // and the *new* URL
+  });
+
+  // Dispatch the event on the window
+  window.dispatchEvent(b);
+}

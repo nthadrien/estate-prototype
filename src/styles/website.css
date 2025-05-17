@@ -10637,4 +10637,8 @@ a, .nav-link {
   color: white;
 }
 
+table td {
+  min-width: 90px;
+}
+
 /*# sourceMappingURL=website.css.map */

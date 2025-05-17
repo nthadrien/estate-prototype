@@ -119,6 +119,16 @@ export const ui = {
         "timeline.yearly":"yearly",
         "timeline.overall":"overall",
 
+
+        // table options
+        "table.optns.det":"details",
+        "table.optns.del":"delete",
+        "table.optns.mod":"modify",
+        "table.optns":"options",
+
+        // alerts
+        "alert.confirm":"Are you sure you wish to delete?"
+
     },
     fr: {
         'lang':'Français',
@@ -228,5 +238,15 @@ export const ui = {
         "timeline.weekly":"hebdomadaire",
         "timeline.yearly":"annuel",
         "timeline.overall":"global",
+
+
+        // table options
+        "table.optns.det":"détails",
+        "table.optns.del":"supprimer",
+        "table.optns.mod":"modifier",
+
+
+        // alerts
+        "alert.confirm":"Êtes-vous sûr de vouloir supprimer?"
     },
 } as const;
