@@ -1,13 +1,11 @@
 
-import { createEffect, createMemo, createSignal, For, Match, Show, Switch, type JSX } from "solid-js";
-
-
-
+import { createMemo, createSignal, For, Match, Show, Switch, type JSX } from "solid-js";
 
 interface Props {
     list: any[];
     idField: string | number;
     removeFields: any[];
+    tableName: string;
     options: {
         icon: string;
         name: string;
@@ -18,44 +16,31 @@ interface Props {
 interface OptionsProps {
     sendAction: (a:number) => {}
     options: Props["options"]
-
 }
 
 const TableOptionsDropdown = (props:OptionsProps):JSX.Element => {
-    return (
-        <div class="dropdown">
-            <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ...
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end txt-small">
-                <For each={props.options}>
-                    { (item,i) => <li>
-                        <button onClick={ e => props.sendAction(i())} class="dropdown-item text-capitalize">
-                            <i class={`fa fa-${item.icon} me-2`}></i>
-                            <span>{item.name}</span>
-                        </button>
-                    </li>}
-                </For>
-            </ul>
-      </div>
-    );
+    return (<div class="dropdown">
+        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-ellipsis-h" />
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end txt-small">
+            <For each={props.options}>
+            { (item,i) => <li>
+                <button onClick={ e => props.sendAction(i())} class="dropdown-item text-capitalize">
+                    <i class={`fa fa-${item.icon} me-2`}></i>
+                    <span>{item.name}</span>
+                </button>
+            </li>}
+            </For>
+        </ul>
+    </div>);
 }
 
-const Pagination = ():JSX.Element => {
-
-
-    return (<nav>
-
-    </nav>);
-
-}
-  
-
-function ResponsiveTable(props: Props): JSX.Element {
+export default function ResponsiveTable(props: Props): JSX.Element {
 
     const [ sortBy, setSortBy ] = createSignal<string>("");
     const [ sortOrder , setSortOrder ] = createSignal<boolean>(false);
-    const [ itemsPp , setItemsPp ] = createSignal<number>(30);
+    const [ itemsPp , setItemsPp ] = createSignal<number>(8);
     const [ currentP , setCurrentP ] = createSignal<number>(0);
 
     const Headings = createMemo(() => {
@@ -64,13 +49,10 @@ function ResponsiveTable(props: Props): JSX.Element {
         return []
     });
 
-    const list = ():any[]=>{
-        return props.list;
-    };
-
-    createEffect(()=>{
-        // console.log("list of:" , props.list.length + " items")
-    });
+    const sendAction = (a:any,action:number) => {
+        if ( a[props.idField] ) props.sendAction( a[props.idField] , action);
+        else props.sendAction( a?.id , action );
+    }
 
     const changeSorts = ( a: string ):void => {
         if ( a ===  sortBy() )  setSortOrder( prev => !prev )
@@ -112,14 +94,22 @@ function ResponsiveTable(props: Props): JSX.Element {
         <h2>Empty</h2>
     </div>)
 
-    return (<section class="table-responsive">
+    const startAt = createMemo(() => currentP() * itemsPp());
+    const endAt = () => startAt() + itemsPp();
+
+    return (<>
+
+    <div class="text-end p-2"> 
+        {endAt() > sortedList().length ? sortedList().length : endAt() } <span class="vr mx-2" /> {sortedList().length} {props.tableName}
+    </div>
+    
+    <section class="table-responsive">
         <Show when={props.list[0]} fallback={Fallback} >
             <table class="table table-hover table-borderless align-middle ">
                 {/* table headings comes below here: */}
                 <thead>
                     <tr class="text-capitalize">
                         <th>
-                            <input type="checkbox" name="all" class="form-check-input me-2" title="select all visible" />
                             #
                         </th>
                         <For each={Headings()}>
@@ -135,11 +125,9 @@ function ResponsiveTable(props: Props): JSX.Element {
                 </thead>
                 {/* body starts here: */}
                 <tbody>
-                    <For each={sortedList()}>
+                    <For each={sortedList().slice(startAt(),endAt())}>
                         {(row, i) => <tr class="list-item">
-                            <td>
-                                <input type="checkbox" name={i.toString()} class="form-check-input" />
-                            </td>
+                            <td> {(startAt()+ i() + 1)} </td>
                             <For each={Headings()}>
                                 {(cell, index) => <td class={index() < 1 ? "position-sticky start-0":""}>
                                     <Switch>
@@ -155,7 +143,7 @@ function ResponsiveTable(props: Props): JSX.Element {
                             <td>
                                 <TableOptionsDropdown 
                                     options={props.options} 
-                                    sendAction={ async(e) => props.sendAction(row?.id, e)} 
+                                    sendAction={ async(e) => sendAction(row, e)} 
                                 />
                             </td>
                         </tr>}
@@ -164,7 +152,21 @@ function ResponsiveTable(props: Props): JSX.Element {
 
             </table>
         </Show>
-    </section>);
-}
+    </section>
 
-export default ResponsiveTable
+    <footer class="nav align-items-center justify-content-between">
+
+
+        <nav class="txt-small">
+            <For each={[...Array(Math.ceil(sortedList().length/itemsPp())).keys()]}>
+                { item => <button class={`btn btn-sm rounded-pill ${currentP() == item ? "btn-secondary" : ""}`} onClick={_=>setCurrentP(item)}>
+                    <i>{item + 1}</i>
+                </button>}
+            </For>
+        </nav>
+
+
+    </footer>
+    
+    </>);
+}

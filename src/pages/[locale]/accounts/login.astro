@@ -68,7 +68,7 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 </Layout>
 
 <script>
-    import { $locale , $user, notifications, type UserType, isHost, isClient } from "src/stores/user.ts";
+    import { $locale , $user, notifications, type UserType, isHost, isGuest, isSuper } from "src/stores/user.ts";
 
     const form : HTMLFormElement | null = document.querySelector("#subs");
     
@@ -95,7 +95,8 @@ const keywords = () => locale == "en" ? ["one","two"] : ["un","deux"];
 
     const implicitRedirects = () => {
         if ( isHost() ) window.location.assign(`/${$locale.get()}/dashboard/host#home`);
-        if( isClient() ) window.location.assign(`/${$locale.get()}/dashboard/host#home`);
+        if( isGuest() ) window.location.assign(`/${$locale.get()}/dashboard/guest#home`);
+        if( isSuper() ) window.location.assign(`/${$locale.get()}/dashboard/admin#home`);
         else throw new Error ("OOOOpppopopopopop ")
     }
 

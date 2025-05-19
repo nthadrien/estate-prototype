@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/solid";
-import { createMemo, createSignal, For, type JSX, Show } from "solid-js";
+import { createSignal, For, type JSX, Show } from "solid-js";
 import { $locale } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils.ts";
 
@@ -30,7 +30,7 @@ export function AddrInput () : JSX.Element {
     }
 
     return (
-        <div class=" border d-flex rounded">
+        <div class="border d-flex rounded">
             <label class="form-floating">
                 <select onChange={changeCountry} class="form-control border-0" name="country">
                     <For each={countiries}>
@@ -96,5 +96,3 @@ export function PhoneNumberInput () : JSX.Element {
         </label>
     </section>);
 }
-
-type PhoneCodes  = {emoji: string, phoneCode: string }

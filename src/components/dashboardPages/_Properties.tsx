@@ -1,10 +1,13 @@
 import ResponsiveTable from "@components/tables/ResponsiveTable";
-import { type JSX, createMemo , createSignal } from "solid-js";
+import { type JSX, createMemo , createSignal, For } from "solid-js";
 import { useAuthCtx } from "src/context/authContext.tsx";
 import { useTranslations } from "src/i18n/utils.ts";
 
+interface Props {
+  changeSearchParams : (a:{ fid: string; uid:string }) => {}
+}
 
-export default function Properties():JSX.Element {
+export default function Properties(props:Props):JSX.Element {
 
   let Inp !:HTMLInputElement;
 
@@ -12,7 +15,6 @@ export default function Properties():JSX.Element {
   const t = useTranslations(locale());
 
   const [ query , setQuery ] = createSignal<string>("");
-
   const chengeFilter = () => setQuery(Inp.value.toLowerCase());
   
 
@@ -27,20 +29,29 @@ export default function Properties():JSX.Element {
   });
 
   const tableOptions = [
-    { icon: "info" , name: t("table.optns.det")},
-    { icon: "trash-o", name:t("table.optns.del") }
+    
+    { icon: "info" , name: t("table.optns.det") },
+    { icon: "trash" , name: t("table.optns.del")},
+    
+  ]
+
+  const pageOptions = [
+    { icon: "plus" , name: `${t("add")} ${t("dashb.prop")}`},
+    { icon: "print", name:t("table.optns.prin") },
+    { icon: "file-pdf-o", name:t("table.optns.pdf") }
   ]
 
   const handleTableActions = (id:string, a:number) => {
-    if ( a == 0 ) {
-      changeLocation({ hash: "property", searchParams: { id }});
+    if ( a == 0 ) { 
+      props.changeSearchParams({ fid:"id" , uid: id });
+      window.location.hash = "#property"
     }
     if (a == 1) delProperties(id);
   }
 
   return (<section>
 
-    <h5 class="mb-3">Properties</h5>
+    <h5 class="mb-3">{t("dashb.props")}</h5>
 
     <nav class="nav justify-content-between align-items-center gap-2 mb-3">
       
@@ -57,22 +68,20 @@ export default function Properties():JSX.Element {
           Filter
         </button>
         <ul class="dropdown-menu dropdown-menu-end p-1 txt-small text-capitalize">
-          <li><a class="dropdown-item fw-bolder" href="#">{t("accn")}</a></li>
-          <li> <hr class="dropdown-divider" /> </li>
-          <li><a class="dropdown-item" href="#/profil">{t("dashb.profil")}</a></li>
-          <li>
-              <a class="dropdown-item" href="#/settings">{t("dashb.set")}</a>
-          </li>
-          <li> <hr class="dropdown-divider" /> </li>
-          <li>
-              <button id="logoutBtn" class="dropdown-item">Logout </button>
-          </li>
+          <For each={pageOptions}>
+            {(item,i) => <li>
+              <button class="dropdown-item">
+                <i class={`fa fa-${item.icon} me-2`} /> {item.name}
+              </button>
+            </li>}
+          </For>
         </ul>
       </div>
 
     </nav>
         
     <ResponsiveTable
+      tableName={t("dashb.props")}
       list={filteredProps()}
       idField="id"
       removeFields={[ "geoAddress","id","building_amenities"]}

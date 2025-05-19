@@ -77,10 +77,11 @@ export const logoutUserLocally = () => {
     window.location.assign(`/${$locale.get()}/accounts/login`);
 }
 
-export const isSuper = ():boolean => true;
-export const isHost = ():boolean => true;
-export const isClient = ():boolean => true;
-export const isAuthorize = ():boolean => isHost() || isClient() || isSuper();
+export const isSuper = ():boolean => $user.get().role == "S-a" && !["n/a","none","null",undefined,null].includes($user.get().username);
+export const isEmployee = ():boolean => $user.get().role == "E-s" && !["n/a","none","null",undefined,null].includes($user.get().username);
+export const isHost = ():boolean => $user.get().role == "H-o" && !["n/a","none","null",undefined,null].includes($user.get().username);
+export const isGuest = ():boolean => $user.get().role == "G-s" && !["n/a","none","null",undefined,null].includes($user.get().username);
+export const isAuthorize = ():boolean =>  isHost() || isGuest() || isSuper() || isEmployee();
 
 
 // a function that is used to change the locations 

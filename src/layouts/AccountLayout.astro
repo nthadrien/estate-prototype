@@ -2,12 +2,18 @@
 import Layout from "./Layout.astro";
 import BaseFooter from "@components/footers/BaseFooter.astro";
 import ClientHeader from "@components/headers/ClientHeader.astro";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
+import BreadCrumb from "@components/utils/BreadCrumb";
+import { getLangFromUrl, useTranslations } from "src/i18n/utils.ts";
 
 interface Props {
 	title: string;
 	description: string;
 	keywords: string[];
 }
+
+const locale  = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 const {
 	title = "estate-develop",
@@ -23,8 +29,25 @@ const {
     keywords={keywords}
 >
     <ClientHeader />
-    <main style="min-height: max(50vh,640px);" class="container-fluid d-flex flex-column justify-content-center align-items-center p-0 m-0">
+    
+    <main style="min-height: max(50vh,640px);" class="container-fluid d-flex flex-column align-items-center p-0 m-0">
+
+        <div class="container-sm d-flex align-items-center justify-content-between gap-1 mx-auto">
+
+            <a class="btn" href={`/${locale}/`}> 
+                <i class="fa fa-home" /> {t("back")}
+            </a>
+
+            <div>
+                <BreadCrumb client:only="solid-js">
+                    <BtnPlaceholder slot="fallback" />
+                </BreadCrumb>
+            </div>
+
+        </div>
+
         <slot />
+
     </main>
     <BaseFooter />
 </Layout>

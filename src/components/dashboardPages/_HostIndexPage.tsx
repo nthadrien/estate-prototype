@@ -13,13 +13,15 @@ const Inbox = lazy(()=> import("@components/dashboardPages/_InboxPage.tsx"));
 const Reports = lazy(()=> import("@components/dashboardPages/_ReportsPage.tsx"));
 const Bookings = lazy(() => import("@components/dashboardPages/_Bookings"));
 const Properties = lazy(()=>import("@components/dashboardPages/_Properties"));
-const PropertyDetails = lazy(()=> import("@components/dashboardPages/_PropertyDetails"));
+const Property = lazy(()=> import("@components/dashboardPages/_Property"));
 
 export type pageType= {
     name: string;
     location: string;
     icon: string;
 }
+
+type ParamsType = { fid: string; uid:string }
 
 interface Props {
     lang: string;
@@ -29,11 +31,14 @@ interface Props {
 export default function HostIndexPage (props:Props):JSX.Element {
 
     const [ currentPage , setCurrentPage ] = createSignal<string>("");
+    const [ searchP , setSearchP ] = createSignal<ParamsType>({ fid:"", uid:""});
 
     const changeHash = (e:HashChangeEvent) => {
         const linked = new URL(e.newURL)
         setCurrentPage(linked.hash);
     }
+
+    const changeSearchParams = (a:ParamsType) => setSearchP(a);
 
     onMount(()=>{
         const lot:string = window.location.hash;
@@ -54,15 +59,15 @@ export default function HostIndexPage (props:Props):JSX.Element {
                 </Match>
 
                 <Match when={currentPage() == "#properties" }>
-                    <Properties />
+                    <Properties changeSearchParams={changeSearchParams} />
+                </Match>
+
+                <Match when={currentPage() == "#property" }>
+                    <Property data={searchP()} changeSearchParams={changeSearchParams} />
                 </Match>
                 
                 <Match when={currentPage() == "#settings" }>
                     <Settings />
-                </Match>
-
-                <Match when={currentPage().includes("#property") }>
-                    <PropertyDetails />
                 </Match>
 
                 <Match when={currentPage() == "#inbox"}>

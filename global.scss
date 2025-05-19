@@ -15,6 +15,12 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 @import "./node_modules/bootstrap/scss/variables-dark";
 // 4. Include any default map overrides here
 
+
+// Optional: Define a mixin for easier application
+
+// -----------------flag emoji ------------------------ later couldn't find a asolution
+// -----------------flag-emoji ends her --------------------------
+
 // 5. Include remainder of required parts
 @import "./node_modules/bootstrap/scss/maps";
 @import "./node_modules/bootstrap/scss/mixins";
@@ -68,6 +74,10 @@ a, .nav-link {
     color: inherit;
     text-decoration: none;
     position: relative;
+}
+
+.btn , .dropdown-item {
+    text-transform: capitalize;
 }
 
 .linko::before {
@@ -324,29 +334,8 @@ a, .nav-link {
  }
 
 // personale floating-form;
-.form-floating {
-    position: relative;
-    width: 100%;
-}
-
-.form-floating input, 
-.form-floating select,
-.form-floating textarea {
-    height: $form-floating-height;
-    min-height: $form-floating-height;
-    line-height: $form-floating-line-height;
-    padding-left: .9rem;
-}
 
 .form-floating .label {
-    position: absolute;
-    top: 32%;
-    z-index: 2;
-    transition: all 0.2s ease-in;
-    opacity: .65;
-    text-align: start;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     pointer-events: none;
     text-transform: capitalize;
     padding-left: .9rem ;

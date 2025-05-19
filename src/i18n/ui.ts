@@ -30,6 +30,7 @@ export const ui = {
         'contact.working':'We are working from monday - friday from 8 am - 5pm ',
         'contact.get':"We will get to you as soon as possible. Feel free to use other means to contact us.",
         // estate:
+        "estate":"estate",
         "estate.rent":"For Rent",
         "estate.guest":"guest(s)",
         "estate.host":"host(s)",
@@ -56,6 +57,10 @@ export const ui = {
         "y":"yes",
         "n":"non",
         "msg":"message",
+        "add":"add",
+        "back":"back",
+        "edit":"edit",
+        
 
         // forms
         // 1 - newsletter form
@@ -107,6 +112,7 @@ export const ui = {
         "dashb.profil":"profil",
         "dashb.rep":"report",
         "dashb.stat":"statistics",
+        "dashb.prop":"property",
         "dashb.props":"properties",
         "dashb.resv":"reservations",
         "dashb.notf":"notification",
@@ -125,6 +131,8 @@ export const ui = {
         "table.optns.del":"delete",
         "table.optns.mod":"modify",
         "table.optns":"options",
+        "table.optns.prin":"print",
+        "table.optns.pdf":"get a pdf",
 
         // alerts
         "alert.confirm":"Are you sure you wish to delete?"
@@ -150,6 +158,7 @@ export const ui = {
         'contact.working':'Nous travaillons du lundi au vendredi de 8h à 17h',
         'contact.get':"Nous vous répondrons dans les plus brefs délais. N'hésitez pas à utiliser d'autres moyens pour nous contacter.",
         // estate:
+        "estate":"immobilier",
         "estate.rent":"À louer",
         "estate.guest":"guest(s)",
         "estate.host":"hôte(s)",
@@ -175,6 +184,9 @@ export const ui = {
         "create.acn":"créer un compte",
         "y":"oui",
         "n":"non",
+        "add":"add",
+        "back":"retourner",
+        "edit":"modifier",
 
          // forms
         // 1 - newsletter form
@@ -226,6 +238,7 @@ export const ui = {
         "dashb.profil": "profil",
         "dashb.rep": "rapport",
         "dashb.stat": "statistiques",
+        "dashb.prop":"propriété",
         "dashb.props": "propriétés",
         "dashb.resv": "réservations",
         "dashb.notf": "notification",
@@ -244,6 +257,8 @@ export const ui = {
         "table.optns.det":"détails",
         "table.optns.del":"supprimer",
         "table.optns.mod":"modifier",
+        "table.optns.prin":"imprimer",
+        "table.optns.pdf":"obtenir un pdf",
 
 
         // alerts
