@@ -1,4 +1,3 @@
-
 import { createMemo, createSignal, For, Match, Show, Switch, type JSX } from "solid-js";
 
 interface Props {
@@ -99,8 +98,17 @@ export default function ResponsiveTable(props: Props): JSX.Element {
 
     return (<>
 
-    <div class="text-end p-2"> 
-        {endAt() > sortedList().length ? sortedList().length : endAt() } <span class="vr mx-2" /> {sortedList().length} {props.tableName}
+    <div class="d-flex gap-3 justify-content-between p-2"> 
+
+        <select style={"max-width:128px;"} class="form-select form-select-sm border-0" onChange={e => setItemsPp( parseInt(e.target.value))} name="itmPP">
+            <For each={[8,16,24,48]}>
+                {item => <option value={item}>{item} {props.tableName} / page </option>}
+            </For>
+        </select>
+
+        <p>
+            {endAt() > sortedList().length ? sortedList().length : endAt() } <span class="vr mx-2" /> {sortedList().length} {props.tableName}
+        </p>
     </div>
     
     <section class="table-responsive">

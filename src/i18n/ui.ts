@@ -60,6 +60,7 @@ export const ui = {
         "add":"add",
         "back":"back",
         "edit":"edit",
+        "save":"save",
         
 
         // forms
@@ -187,6 +188,7 @@ export const ui = {
         "add":"add",
         "back":"retourner",
         "edit":"modifier",
+        "save":"enrgistrer",
 
          // forms
         // 1 - newsletter form

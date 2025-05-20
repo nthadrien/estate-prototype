@@ -62,9 +62,11 @@ const {
             <DashboardNavbar pages={pages} advancedPages={advancedPages}/>
         </nav>
 
-        <section class="d-flex flex-column gap-1 h-100 overflow-y-auto">
-            <DashboardHeader />
+        <section class="d-flex flex-column justify-content-between gap-3 h-100 overflow-y-auto">
+            <div>
+                <DashboardHeader />
                 <slot/>
+            </div>
             <BaseFooter />
         </section>
 

@@ -51,7 +51,7 @@ export default function Properties(props:Props):JSX.Element {
 
   return (<section>
 
-    <h5 class="mb-3">{t("dashb.props")}</h5>
+    <h5 class="text-capitaliz mb-3">{t("dashb.props")}</h5>
 
     <nav class="nav justify-content-between align-items-center gap-2 mb-3">
       
