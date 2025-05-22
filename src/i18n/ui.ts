@@ -78,11 +78,13 @@ export const ui = {
         "login.text2":"to get to the register page",
         "login.text3":"If you have any other problems please",
         "login.text4":"to get to us",
+        "account.del":"delete my account",
+        "account.upt":"update account",
 
         // 3-register form
         "step":"step",
-        "step1":"Personal Info",
-        "step2":"Account Info",
+        "step1":"Personal Information",
+        "step2":"Account Information",
         "step3":"Last details",
         "name":"name",
         "username":"username",
@@ -205,6 +207,8 @@ export const ui = {
          "login.text2":"pour accéder à la page d'inscription",
          "login.text3":"Si vous avez d'autres problèmes",
          "login.text4":"pour nous contacter",
+         "account.del":"supprimer mon compte",
+         "account.upt":"mettre à jour le compte",
 
         // 3-register form
         "step": "étape",

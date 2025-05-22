@@ -306,6 +306,10 @@ a, .nav-link {
     color: inherit
 }
 
+.dash-link:hover {
+    background-color:  var(--bs-success-bg-subtle);;
+}
+
 .border-expand {
     border: none;
 }

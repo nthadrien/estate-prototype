@@ -3,6 +3,8 @@ import EstateCard from "@components/cards/EstateCard";
 import type { EstateType } from "src/api/dataTypes.ts";
 import ClientLayout from "@layouts/ClientLayout.astro";
 import PlaceCard from "@components/cards/PlaceCard.astro";
+import SearchHeader from "@components/headers/SearchHeader.tsx";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
 
 const headerInfo = {
     title:"home",
@@ -271,15 +273,21 @@ const places = [
 
 <ClientLayout { ...headerInfo} >
 
-    <header style="min-height: max(35vh,400px);" class="container-fluid d-flex p-3 bg-gray-100 border">
+  <header style="min-height: max(55vh,400px);" class="container-fluid d-flex flex-column justify-content-evenly align-items-center p-3 bg-gray-100 border">
+
+    <p class="container-xs text-center">
+      <strong class="fs-3">Find Your dream place </strong> <br/>
+      to settle for a while or for a long time
+    </p>
+
+    <SearchHeader client:only="solid-js" >
+      <BtnPlaceholder slot="fallback" />
+    </SearchHeader>
+
+  </header>
 
 
-
-
-    </header>
-
-
-    <section class="container-sm py-4 mx-auto">
+  <section class="container-sm py-4 mx-auto">
 
         <h4 class="text-center">FInd Properties in the Most Amazing Places</h4>
         <p class="text-center text-secondary mb-4">Odio, Laborum, eligendi? Debitis, voluptates.</p>

@@ -29,7 +29,7 @@ export default function SettingsPage() : JSX.Element {
     <section class="row g-3 g-lg-4 p-lg-3 p-2">
 
       <aside class="col-lg-4 py-2">
-        <h6>Personal Information</h6>
+        <h6>{t("step1")}</h6>
         <p>Information about you. Our Policy rspects your privacy</p>
       </aside>
 
@@ -83,7 +83,7 @@ export default function SettingsPage() : JSX.Element {
         </aside>
 
         <aside class="col-md-4 py-2">
-          <h6>Account Details</h6>
+          <h6>{t("step2")}</h6>
           <p>
             Details about your subscription plan and the othr informations only proper to the type of account you have
           </p>
@@ -163,6 +163,28 @@ export default function SettingsPage() : JSX.Element {
 
         </aside>
 
+        <aside class="col-md-4 py-2">
+
+          <h6>Delete My Account</h6>
+          <p>
+            <strong>NB: </strong>This is a none rversible procedure. 
+            All your data (transactions, reviwews and so on) 
+            and personal information will be lost without restoration and 
+            any subscribe plan still active will be cancelld without refund. 
+            Please read our customrs policy here <a href={`/${locale}/terms-and-conditions`}>{t("more")}</a> 
+          </p>
+
+        </aside>
+
+        <aside class="col-md-8 d-flex flex-column gap-2 gap-lg-3 py-4">
+         
+          <div>
+            <button class="btn btn-sm btn-danger">
+              {t("account.del")}
+            </button>
+          </div>
+
+        </aside>
 
       </section>
     </>

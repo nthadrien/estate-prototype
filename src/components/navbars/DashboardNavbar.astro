@@ -52,6 +52,11 @@ const { pages , advancedPages } = Astro.props;
                 <i class={`fa fa-${item.icon}`} aria-hidden="true"/>
                 <span class="d-md-none d-lg-inline ms-2">{item.name}</span>
            </label>)}
+
+            <a href={`/${locale}`} class="dash-link" id="logoutBtn">
+                <i class="fa fa-sign-out" />
+                <span class="d-md-none d-lg-inline ms-2">{t("nav.logout")}</span>
+            </a>
         </div>
         
     </section>

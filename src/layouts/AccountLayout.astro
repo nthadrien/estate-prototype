@@ -30,12 +30,12 @@ const {
 >
     <ClientHeader />
     
-    <main style="min-height: max(50vh,640px);" class="container-fluid d-flex flex-column align-items-center p-0 m-0">
+    <main style="min-height: 78vh;" class="container-fluid d-flex flex-column justify-content-betwen align-items-center">
 
-        <div class="container-sm d-flex align-items-center justify-content-between gap-1 mx-auto">
+        <nav class="container-sm d-flex align-items-center justify-content-between gap-1 mx-auto p-3">
 
             <a class="btn" href={`/${locale}/`}> 
-                <i class="fa fa-home" /> {t("back")}
+                <i class="fa fa-home" /> {t("nav.home")}
             </a>
 
             <div>
@@ -44,10 +44,15 @@ const {
                 </BreadCrumb>
             </div>
 
-        </div>
+        </nav>
 
         <slot />
 
+
+        
+
     </main>
+
     <BaseFooter />
+    
 </Layout>
