@@ -35,9 +35,12 @@ export default function SettingsPage() : JSX.Element {
 
 
 
-      <aside class="col-lg-8 nav gap-2 gap-lg-3">
+      <aside class="col-lg-8 row g-3">
 
-          <img src="/images/pp/man01.jpg" class="me-3 col-12 col-md-3 col-xxl-2 rounded" height={128} width={128} alt="pp" />
+        <div class="col-12 col-md-6 ">
+          <img src="/images/pp/man01.jpg" class="me-3 rounded" height={128} width={128} alt="pp" />
+        </div>
+          
 
           <label class="form-label col-md-6">
             <input type="file" name="pp" class="opacity-0 form-control" />
@@ -46,25 +49,25 @@ export default function SettingsPage() : JSX.Element {
           </label>
 
         
-        <label class="form-label col-12 col-md-5">
-          {t("name")}(s)
+        <label class="form-floating  col-12 col-md-6">
           <input class="form-control mt-2" type="text" name="name" placeholder=".form-control-sm" required/>
+          <span class="label">{t("name")}(s)</span>
         </label>
 
-        <label class="form-label col-12 col-md-5">
-          {t("gender")}
-          <select name="gender" class="form-control mt-2" required >
+        <label class="form-floating col-12 col-md-6">
+          <select name="gender" class="form-control" required >
               <option value="M">Male </option>
               <option value="F">Female </option>
           </select>
+          <span class="label">{t("gender")}</span>
         </label>
 
-          <label class="form-label col-12 col-md-5">
+          <label class="form-label col-12 col-md-6">
             Phone number
             <input class="form-control mt-2" type="text" name="phone" placeholder="+237 XXXXXXXXX"  required/>
           </label>
 
-          <label class="form-label col-12 col-md-5">
+          <label class="form-label col-12 col-md-6">
             Email
             <input class="form-control mt-2" type="email" placeholder="validEmail@mail.com" required/>
           </label>
@@ -93,23 +96,23 @@ export default function SettingsPage() : JSX.Element {
 
         <aside class="col-md-8 nav gap-2 gap-lg-3">
 
-          <div class="form-label col-12 col-md-5">
+          <div class="form-label col-12 col-md-6">
             Country
             <input class="form-control mt-2" type="email" name="country" placeholder="Your can still be your personal email" required/>
           </div>
 
-          <div class="form-label col-12 col-md-5">
+          <div class="form-label col-12 col-md-6">
             Town / CIty
             <input class="form-control mt-2" type="text" name="town" placeholder="Your can still be your personal email" required/>
           </div>
 
 
-          <div class="form-label col-12 col-md-5">
+          <div class="form-label col-12 col-md-6">
             Government-issued ID for the business owner 
             <input class="form-control mt-2" type="text" name="town" placeholder="Your can still be your personal email" required/>
           </div>
 
-          <label class="form-label col-12 col-md-5">
+          <label class="form-label col-12 col-md-6">
             Business Logo / Picture
             <input class="form-control mt-2" type="file" name="businessLogo" placeholder=".form-control-sm" required/>
           </label>

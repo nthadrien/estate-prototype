@@ -1,46 +1,71 @@
 import { useAuthCtx } from "src/context/authContext.tsx";
-import { onCleanup, onMount, For, type JSX, type Accessor } from "solid-js"
+import { onCleanup, onMount, For, type JSX, type Accessor, createSignal , Show} from "solid-js"
 import { useTranslations } from "src/i18n/utils.ts";
-import { AddrInput } from "@components/reactiveInputs/locations";
+import { AddrInput } from "@components/reactiveInputs/locations.tsx";
 
 import Amenities from "src/api/amenities.json";
 
+function EstatePage () {
+    return (<>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn btn-danger btn-sm me-0" data-bs-dismiss="modal" aria-label="Close"> x </button>
+                </div>
+                
+                <div class="modal-body">
+                    ...
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </>);
+}
 
 interface CardProps {
-    lang: "en" | "fr"
+    optClicked: (a:number) => {}
 }
 
 const EstateEditCard = (props:CardProps):JSX.Element => {
 
-    const t = useTranslations(props.lang);
+    const [ estatePage , setEstatePage] = createSignal<string|null>(null);
+
+    const [{ locale }] = useAuthCtx();
+    const t = useTranslations(locale());
 
     const optns = [
         { name : t("table.optns.det"), icon:"info"},
         { name: t("table.optns.del") , icon: "trash" }
     ];
 
-    const handleClick = (a:number) => {
-        console.log("clicked options");
-    }
+    const handleClick = (a:number) =>  props.optClicked(a)
+    
 
-    return (<aside class="p-2 position-relative">
+    return (<aside class="p-1 position-relative">
 
-        <div style="top:1rem;right:1rem;" class="dropdown position-absolute">
-            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end txt-small">
-                <For each={optns}>
-                    {(opt,i) => <button onClick={_=>handleClick(i())}>
-                        {opt.name} <i class={`fa fa-${opt.icon} ms-2`} />
-                    </button>}
-                </For>
-            </ul>
-        </div>
+        <strong style="top:1rem;left:1rem;" class="text-light position-absolute text-shadow">
+            # ID or Unique name here
+        </strong>
 
         <img style="height:12rem; width:100%;" class="rounded" src="/images/estates/garden-2.jpg" alt="img" />
 
-        <ul style="width:min(70%,400px);bottom:1.5rem;"  class="nav justify-content-between align-items-start rounded-2 position-absolute bg-body start-50 translate-middle-x p-3">
+        <ul style="width:min(76%,280px);bottom:2rem;"  class="nav justify-content-between gap-2 align-items-start rounded-2 position-absolute bg-body start-50 translate-middle-x p-2 p-xl-3">
             <li> 
                 <i class="fa fa-bed me-1" aria-hidden="true" /> 
                 2
@@ -50,18 +75,23 @@ const EstateEditCard = (props:CardProps):JSX.Element => {
                 1
             </li>
             <li>
-                <i class="fa fa-object-ungroup me-1" aria-hidden="true" /> 
+                <i class="fa fa-square me-1" aria-hidden="true" /> 
                 <span class="text-lowercase">4 m² </span>
             </li>
         </ul>
+
+        <div class="d-flex justify-content-between p-2">
+            <For each={optns}>
+                {(opt,i) => <button class="dropdown-item" onClick={_=>handleClick(i())}>
+                    <i class={`fa fa-${opt.icon} me-2`} /> {opt.name} 
+                </button>}
+            </For>
+        </div>
     </aside>);
 }
 
 
-interface Props {
-    data: { fid: string; uid: string; },
-    changeSearchParams : (a:{ fid: string; uid:string }) => {}
-}
+interface Props {}
 
 export default function Property(props:Props) {
 
@@ -70,7 +100,11 @@ export default function Property(props:Props) {
 
 
     onMount( () =>{
-        console.log(props.data);
+        console.log( 
+            "search : " +window.location.search ,
+            "hash : " + window.location.hash , 
+            "rf : " + window.location.href
+        );
     })
 
 
@@ -78,13 +112,15 @@ export default function Property(props:Props) {
 
     });
 
-
+    const estateAction = ( indx:number, act:number )  => {
+        console.log( indx , act );
+    }
 
     return (<section class="w-100">
 
         <header class="nav gap-2 align-items-center justify-content-between mb-3">
 
-            <p class="fs-5 mb-3 text-capitalize">{t("estate")} # : <small>id hrer</small></p>
+            <p class="fs-5 mb-3 text-capitalize">{t("dashb.prop")} # : <small>id hrer</small></p>
 
             <div class="dropdown">
                 <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,25 +168,27 @@ export default function Property(props:Props) {
 
             <AddrInput />
 
-            <section>
+            <section class="py-4">
 
-                <h6 class="text-capitalize my-3">{t("dashb.prop")} {t("ameni")}</h6>
+                <h6 class="text-capitalize mb-4">{t("dashb.prop")} {t("ameni")}</h6>
 
                 <div class="row row-cols-2 row-cols-lg-3 g-2">
-                <For each={Amenities.building}>
+                    <For each={Amenities.building}>
                     { (item, i)  => <label class="col text-truncate">
-                        <input type="checkbox" class="form-check-input" name={`buildingAmenities.${i()}`} />
-                        <i class={`fa fa-${item.icon} mx-2`} aria-hidden="true" />
-                        {item.name}
+                        <input type="checkbox" class="btn-check" id={`buildingAmenities.${i()}`} autocomplete="off"  />
+                        <label class="btn btn-sm txt-small text-truncate" for={`buildingAmenities.${i()}`}  >
+                            <i class={`fa fa-${item.icon} mx-2`} aria-hidden="true" />
+                            { locale() == "en" ? item.en : locale() == "fr" ? item.fr : "n/a"}
+                        </label>
                     </label>}
-                </For>
+                    </For>
                 </div>
 
             </section>
 
             <section class="row g-3">
 
-                <h6 class="text-capitalizemt-3">{t("table.optns.det")}</h6>
+                <h6 class="text-capitalize mt-3">{t("table.optns.det")}</h6>
                 <b class="mb-3 col-12">Distances from:</b>
 
                 <label class="form-floating col-md-6">
@@ -195,24 +233,39 @@ export default function Property(props:Props) {
 
             </section>
 
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    Save
+                </button>
+            </div>
+
         </form>
 
 
-            <aside>
-                <h6>Estates List  (12) </h6>
+        <aside>
+            <h6>Estates List  (12) </h6>
 
 
 
-                <div class="row row-cols-2 row-cols-lg-3">
+            <div class="row row-cols-2 row-cols-lg-3 row-cols-xxl-4">
 
-                    <For each={[0,1,2,3,4,5,6,7,8]}>
-                        { (item) => <div class="col">
-                            <EstateEditCard lang={locale()} />
-                        </div>}
-                    </For>
+                <For each={[0,1,2,3,4,5,6,7,8]}>
+                    { (item) => <div class="col">
+                        <EstateEditCard optClicked={ async (a) => estateAction(item, a)} />
+                    </div>}
+                </For>
 
-                </div>
-            </aside>
+            </div>
+        </aside>
+
+{/* 
+        <Show when={estatePage()}>
+
+        </Show> */}
+
+        <EstatePage />
+
+
         
     </section>);
 }

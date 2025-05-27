@@ -283,9 +283,17 @@ a, .nav-link {
 
 // removing border for navbars-drops and dashboard styles
 
-.dashwrapper {
-    display: grid;
-    grid-template-columns: 0px 1fr;
+.dash-col-1 {
+    width: 0px;
+    height: 97vh;
+    max-height: 98vh;
+}
+
+.dash-col-2 {
+    max-height: 99vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .dash-link {
@@ -316,14 +324,15 @@ a, .nav-link {
 
 // @include media-breakpoint-up(sm) { ... }
 @include media-breakpoint-up(md) { 
-    .dashwrapper {
-        grid-template-columns: auto 1fr;
+    .dash-col-1 {
+        min-width: 4rem;
     }
 }
 
 @include media-breakpoint-up(lg) {
-    .dashwrapper {
-        grid-template-columns: minmax(280px,290px) 1fr;
+    
+    .dash-col-1 {
+        min-width: 16rem;
     }
     
     .border-expand {

@@ -17,7 +17,7 @@ const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 const { pages , advancedPages } = Astro.props;
 ---
-<aside class="offcanvas-md offcanvas-end" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+<aside class="offcanvas-md offcanvas-end h-100" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
 
     <div class="offcanvas-header justify-content-end">
         <button type="button" class="btn " data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close">
@@ -25,13 +25,15 @@ const { pages , advancedPages } = Astro.props;
         </button>
     </div>
 
-    <section class="offcanvas-body flex-column justify-content-between gap-3 p-3 p-xl-4 vh-100 text-capitalize">
+    <section class="h-100 offcanvas-body flex-column justify-content-between gap-3 p-3 text-capitalize">
 
         <div>
-            <h5 class="mb-4 fw-bold text-uppercase">
-                <i class="fa fa-cube me-1" />
+
+            <h6 class="mb-4 fw-bold text-uppercase pb-3 border-bottom">
+                <i class="fa fa-cube" />
                 <span class="d-md-none d-lg-inline ms-2">{t("dashb.name")}</span>
-            </h5>
+            </h6>
+
             {pages.map( (item,index)  =>  <label class="dash-link" >
                 <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index}`} checked={index === 0} autocomplete="off" />
                <i class={`fa fa-${item.icon}`} aria-hidden="true"/>
@@ -41,11 +43,11 @@ const { pages , advancedPages } = Astro.props;
 
         <div class="mt-5">
 
-            <p class="d-md-none d-lg-block text-secondary">
+            <p class="d-md-none d-lg-block text-secondary text-uppercase">
                 {t("dashb.accSet")}
             </p>
 
-            <hr class="border border-subtle my-3"/>
+            <hr class="border border-subtle my-2"/>
 
             {advancedPages.map( (item,index)  =>  <label class="dash-link" >
                 <input type="radio" class="btn-check" name="host-page" value={item.location} id={`page${index+20}`} autocomplete="off" />

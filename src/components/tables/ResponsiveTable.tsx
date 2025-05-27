@@ -98,17 +98,8 @@ export default function ResponsiveTable(props: Props): JSX.Element {
 
     return (<>
 
-    <div class="d-flex gap-3 justify-content-between p-2"> 
-
-        <select style={"max-width:128px;"} class="form-select form-select-sm border-0" onChange={e => setItemsPp( parseInt(e.target.value))} name="itmPP">
-            <For each={[8,16,24,48]}>
-                {item => <option value={item}>{item} {props.tableName} / page </option>}
-            </For>
-        </select>
-
-        <p>
-            {endAt() > sortedList().length ? sortedList().length : endAt() } <span class="vr mx-2" /> {sortedList().length} {props.tableName}
-        </p>
+    <div class="p-2"> 
+        {endAt() > sortedList().length ? sortedList().length : endAt() } <span class="vr mx-2" /> {sortedList().length} {props.tableName}
     </div>
     
     <section class="table-responsive">
@@ -117,7 +108,7 @@ export default function ResponsiveTable(props: Props): JSX.Element {
                 {/* table headings comes below here: */}
                 <thead>
                     <tr class="text-capitalize">
-                        <th>
+                        <th style={"max-width: 42px;"}>
                             #
                         </th>
                         <For each={Headings()}>
@@ -135,7 +126,7 @@ export default function ResponsiveTable(props: Props): JSX.Element {
                 <tbody>
                     <For each={sortedList().slice(startAt(),endAt())}>
                         {(row, i) => <tr class="list-item">
-                            <td> {(startAt()+ i() + 1)} </td>
+                            <td style={"max-width: 42px;"}> {(startAt()+ i() + 1)} </td>
                             <For each={Headings()}>
                                 {(cell, index) => <td class={index() < 1 ? "position-sticky start-0":""}>
                                     <Switch>
@@ -164,15 +155,19 @@ export default function ResponsiveTable(props: Props): JSX.Element {
 
     <footer class="nav align-items-center justify-content-between">
 
+        <select style={"max-width:128px;"} class="form-control form-control-sm border-0 text-small" onChange={e => setItemsPp( parseInt(e.target.value))} name="itmPP">
+            <For each={[8,16,24,48]}>
+                {item => <option value={item}>{item} {props.tableName} / page </option>}
+            </For>
+        </select>
 
         <nav class="txt-small">
             <For each={[...Array(Math.ceil(sortedList().length/itemsPp())).keys()]}>
-                { item => <button class={`btn btn-sm rounded-pill ${currentP() == item ? "btn-secondary" : ""}`} onClick={_=>setCurrentP(item)}>
+                { item => <button class={`btn btn-sm txt-small ${currentP() == item ? "btn-secondary" : ""}`} onClick={_=>setCurrentP(item)}>
                     <i>{item + 1}</i>
                 </button>}
             </For>
         </nav>
-
 
     </footer>
     

@@ -14,6 +14,7 @@ const Reports = lazy(()=> import("@components/dashboardPages/_ReportsPage.tsx"))
 const Bookings = lazy(() => import("@components/dashboardPages/_Bookings"));
 const Properties = lazy(()=>import("@components/dashboardPages/_Properties"));
 const Property = lazy(()=> import("@components/dashboardPages/_Property"));
+const EstatePage = lazy(()=> import("@components/dashboardPages/EstatePage.tsx"));
 
 export type pageType= {
     name: string;
@@ -31,14 +32,11 @@ interface Props {
 export default function HostIndexPage (props:Props):JSX.Element {
 
     const [ currentPage , setCurrentPage ] = createSignal<string>("");
-    const [ searchP , setSearchP ] = createSignal<ParamsType>({ fid:"", uid:""});
 
     const changeHash = (e:HashChangeEvent) => {
         const linked = new URL(e.newURL)
         setCurrentPage(linked.hash);
     }
-
-    const changeSearchParams = (a:ParamsType) => setSearchP(a);
 
     onMount(()=>{
         const lot:string = window.location.hash;
@@ -51,7 +49,7 @@ export default function HostIndexPage (props:Props):JSX.Element {
     })
 
 
-    return (<section class="w-100 p-3">
+    return (<section class="w-100 p-2">
         <AuthContextProvider>
             <Switch>
                 <Match when={currentPage() == "#home" }>
@@ -59,11 +57,15 @@ export default function HostIndexPage (props:Props):JSX.Element {
                 </Match>
 
                 <Match when={currentPage() == "#properties" }>
-                    <Properties changeSearchParams={changeSearchParams} />
+                    <Properties />
                 </Match>
 
                 <Match when={currentPage() == "#property" }>
-                    <Property data={searchP()} changeSearchParams={changeSearchParams} />
+                    <Property />
+                </Match>
+
+                <Match when={currentPage() == "#estate" }>
+                    <EstatePage />
                 </Match>
                 
                 <Match when={currentPage() == "#settings" }>

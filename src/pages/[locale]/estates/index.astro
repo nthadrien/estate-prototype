@@ -4,6 +4,8 @@ import { languages } from "src/i18n/ui.ts";
 import ClientLayout from "@layouts/ClientLayout.astro";
 import Home from "@components/estatesPages/Home";
 import PagePlaceHolder from "@components/placeholders/PagePlaceHolder.astro";
+import SearchHeader from "@components/headers/SearchHeader";
+import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
 
 export const prerender = false;
 
@@ -22,7 +24,14 @@ const pageInfo = {
 ---
 
 <ClientLayout {...pageInfo}>
+    <header style="min-height: fit-content;" class="container-fluid d-flex flex-column justify-content-center align-items-center p-3">
+        <SearchHeader client:only="solid-js"> 
+            <BtnPlaceholder slot="fallback" />
+        </SearchHeader>
+    </header>
     <Home client:only="solid-js">
         <PagePlaceHolder slot="fallback" />
     </Home>
+
+
 </ClientLayout>

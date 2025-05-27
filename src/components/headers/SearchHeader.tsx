@@ -20,7 +20,14 @@ export default function SearchHeader():JSX.Element {
     return countries.filter( (item) => item.name.includes(cntry()) )[0]?.citiesOrTowns
   };
 
-  return (<form class="bg-body bg-opacity-50 container-sm d-flex flex-column flex-md-row gap-2 align-items-center shadow p-2 rounded-4">
+  const handleSearchSubmit  :  JSX.EventHandler<HTMLFormElement, SubmitEvent> =  (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const dataObject = Object.fromEntries(data.entries());
+    window.location.href = `/${locale()}/estates?country=${dataObject?.country}&city=${dataObject?.city}&type=${dataObject?.type}&guests=${dataObject?.guests}#search`
+  }
+
+  return (<form onSubmit={handleSearchSubmit} class="bg-body bg-opacity-50 container-sm d-flex flex-column flex-md-row gap-2 align-items-center shadow p-2 rounded-4">
     
     <label class="input-group border rounded">
       <i class="input-group-text bg-body border-0 text-secondary fa fa-globe fs-4"></i>
@@ -48,9 +55,9 @@ export default function SearchHeader():JSX.Element {
     </label>
     
     <label class="input-group border rounded">
-        <i class="input-group-text bg-body border-0 text-secondary fa fa-clone fs-3"></i>
+        <i class="input-group-text bg-body border-0 text-secondary fa fa-clone fs-4"></i>
         <div class="form-floating">
-          <input type="text" class="form-control border-0" id="floatingInputGroup1" placeholder="Username" />
+          <input type="text" class="form-control border-0" name="type" placeholder="type of estate" />
           <span class="label">Type</span>
         </div>
     </label>

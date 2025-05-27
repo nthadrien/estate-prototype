@@ -34,6 +34,7 @@ export const ui = {
         "estate.rent":"For Rent",
         "estate.guest":"guest(s)",
         "estate.host":"host(s)",
+        "estate.type":"type of estate",
 
         // general
         'subscribe':'subcribe',
@@ -136,10 +137,24 @@ export const ui = {
         "table.optns":"options",
         "table.optns.prin":"print",
         "table.optns.pdf":"get a pdf",
+        "table.head.lastReinnovation":"last reinnovation",
 
         // alerts
-        "alert.confirm":"Are you sure you wish to delete?"
+        "alert.confirm":"Are you sure you wish to delete?",
 
+        // data keys or entries
+        "key.lastReinnovation":"last reinnovation",
+        "key.numOfGuest":"Number of Guests",
+        "key.numOfRooms":"Number of Rooms",
+        "key.numOfBaths":"Number of Baths",
+        "key.numOfKitchens":"Number of Kitchens",
+        "key.pricePerHour":"Price per hour",
+        "key.pricePerDay":"Price per day",
+        "key.pricePerMonth":"Price per month",
+        "key.size":"dimension",
+        "key.amenities":"amenities",
+        "key.pics":"pictures",
+        "key.address":"address",
     },
     fr: {
         'lang':'Français',
@@ -165,6 +180,7 @@ export const ui = {
         "estate.rent":"À louer",
         "estate.guest":"guest(s)",
         "estate.host":"hôte(s)",
+        "estate.type":"type d'immobilier",
 
         // general
         'subscribe':"s'abonner",
@@ -265,9 +281,22 @@ export const ui = {
         "table.optns.mod":"modifier",
         "table.optns.prin":"imprimer",
         "table.optns.pdf":"obtenir un pdf",
-
+        "table.head.lastReinnovation":"dernière réinnovation",
 
         // alerts
-        "alert.confirm":"Êtes-vous sûr de vouloir supprimer?"
+        "alert.confirm":"Êtes-vous sûr de vouloir supprimer?",
+
+        // data keys or entries
+        "key.lastReinnovation":"dernière réinnovation",
+        "key.numOfGuest":"Number of Guests",
+        "key.numOfRooms":"Number of Rooms",
+        "key.numOfBaths":"Number of Baths",
+        "key.numOfKitchens":"Number of Kitchens",
+        "key.pricePerHour":"prix par heure",
+        "key.pricePerDay":"prix par jour",
+        "key.pricePerMonth":"prix par mois",
+        "key.amenities":"équipements",
+        "key.pics":"pictures",
+        "key.address":"addresse",
     },
 } as const;

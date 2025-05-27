@@ -15,10 +15,11 @@ export default function BreadCrumb():JSX.Element {
 
     const locale = useStore($locale)
     const t = useTranslations(locale());
-    const [ goPath, setGOPath ] = createSignal<LinkType[]>([])
+    const [ goPath, setGOPath ] = createSignal<LinkType[]>([]);
 
-    function changedHash(e:HashChangeEvent) {
-        const urlObject = new URL(e.newURL);
+
+
+    function changePaths (urlObject:URL) {
         const breadCrumbs:LinkType[] = [];
         // Split the pathname into sections
         const pathSections = urlObject.pathname.split('/').filter(section => !["","fr","en","host","client","admin"].includes(section));
@@ -44,7 +45,7 @@ export default function BreadCrumb():JSX.Element {
             const queries = new URLSearchParams(urlObject.search);
             queries.forEach((value, key) => {
                 breadCrumbs.push({
-                    name: `${decodeURIComponent(key)}: ${decodeURIComponent(value)}`,
+                    name: `${decodeURIComponent(value)}`,
                     link: urlObject.origin + urlObject.pathname + `?${urlObject.search}`
                 });
             });
@@ -52,19 +53,8 @@ export default function BreadCrumb():JSX.Element {
         setGOPath(breadCrumbs);
     }
 
-    const mountPath = () => {
-        const breadCrumbs:LinkType[] = [];
-        // Split the pathname into sections
-        const pathSections:string[] = window.location.pathname.split('/').filter(section => !["","dashboard","fr","en","host","client","admin"].includes(section));
-        pathSections.forEach((section, index) => {
-            const pathLink = '/' + pathSections.slice(0, index + 1).join('/');
-            breadCrumbs.push({
-                name: decodeURIComponent(section),
-                link: pathLink
-            });
-        });
-        setGOPath(breadCrumbs)
-    }
+    const changedHash = (e:HashChangeEvent) => changePaths(new URL(e.newURL));
+    const mountPath = () => changePaths(new URL(window.location.href));
     
     onMount(()=>{
         mountPath();

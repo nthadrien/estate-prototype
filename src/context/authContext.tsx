@@ -2,15 +2,31 @@
 import { useStore } from "@nanostores/solid";
 import { createContext, type JSX, For, createResource, useContext, Match, Switch, createEffect, createMemo, type Accessor, type Resource, createSignal, Suspense, onMount } from "solid-js";
 import { getProperties, getAccountDetails, getMessages, delProperties } from "src/api/hostRequests.ts";
-import { $user, $locale, type LocationSetType, setLocation } from "src/stores/user.ts";
+import { $user, $locale, type LocationSetType, setLocation, isAuthorize } from "src/stores/user.ts";
 
 // // --------------------- loading animation trial 
 
 const LoadingPlaceholder = () : JSX.Element=> {
-    return (<div style={"min-height:max(30vh, 580px)"} class="d-flex flex-column justify-content-center align-items-center gap-3">
-        <h4> (!-_- )... <small>loading</small></h4>
-        <i class="fs-3 fa fa-circle-o-notch fa-spin text-primary"></i>
-    </div>);
+    return (<aside class="container row g-3 opacity-25 p-3 mx-auto position-relative" >
+
+        <div  class="col-12 placeholder-glow">
+            <div style="min-height: max(200px,30vh);" class="placeholder w-100 rounded-3">
+            </div>
+        </div>
+
+        <div class="position-absolute">
+            A little more please...
+        </div>
+    
+        {[1,2,3,4,5].map( i => <div class="col-6 col-lg-4 placeholder-wave"> 
+            <img height="240px" class="placeholder w-100 rounded-3 mb-3" src="" alt="pholder" />
+            <p class="placeholder placeholder-lg bg-light col-7"></p>
+            <p class="placeholder col-12 mb-3"></p>
+            <p class="placeholder col-12 mb-3"></p>
+            <small class="placeholder col-4"></small>
+        </div>)}
+    
+    </aside>)
 }
 
 export const AuthContext = createContext<any>();
@@ -30,7 +46,7 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
     const isError = () => properties.error;
 
     onMount(()=>{
-        if( !user() || user().role == "n/a" || user().id == "n/a" ) window.location.assign(`/${locale}/accounts/login`);
+        if( !isAuthorize() ) window.location.assign(`/${locale}/accounts/login`);
     });
 
     const deteleProperty = async (id:string) => {
@@ -42,11 +58,9 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
 
     const updateProperty = async (id:string, a:any) => {}
 
-    const changeLocation = (options:LocationSetType) => setLocation(options);
-
     const value = [  
         { locale, user , properties , isLoading , isError  },
-        { delProperties , changeLocation }
+        { delProperties  }
     ] as const;
 
 
@@ -70,7 +84,6 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
 
 export function useAuthCtx() {
     const context = useContext(AuthContext);
-    console.log("Auth use")
     if (!context) throw new Error("can't find AuthContext");
     return context;
 }

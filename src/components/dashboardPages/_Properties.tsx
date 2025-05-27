@@ -3,15 +3,12 @@ import { type JSX, createMemo , createSignal, For } from "solid-js";
 import { useAuthCtx } from "src/context/authContext.tsx";
 import { useTranslations } from "src/i18n/utils.ts";
 
-interface Props {
-  changeSearchParams : (a:{ fid: string; uid:string }) => {}
-}
+interface Props {};
 
 export default function Properties(props:Props):JSX.Element {
 
   let Inp !:HTMLInputElement;
-
-  const [{ user , properties, locale },{ delProperties, changeLocation }] = useAuthCtx();
+  const [{ user , properties, locale },{ delProperties }] = useAuthCtx();
   const t = useTranslations(locale());
 
   const [ query , setQuery ] = createSignal<string>("");
@@ -29,29 +26,24 @@ export default function Properties(props:Props):JSX.Element {
   });
 
   const tableOptions = [
-    
     { icon: "info" , name: t("table.optns.det") },
     { icon: "trash" , name: t("table.optns.del")},
-    
-  ]
+  ];
 
   const pageOptions = [
     { icon: "plus" , name: `${t("add")} ${t("dashb.prop")}`},
     { icon: "print", name:t("table.optns.prin") },
     { icon: "file-pdf-o", name:t("table.optns.pdf") }
-  ]
+  ];
 
   const handleTableActions = (id:string, a:number) => {
-    if ( a == 0 ) { 
-      props.changeSearchParams({ fid:"id" , uid: id });
-      window.location.hash = "#property"
-    }
+    if ( a == 0 ) window.location.assign(`?id=${id}#property`);
     if (a == 1) delProperties(id);
   }
 
   return (<section>
 
-    <h5 class="text-capitaliz mb-3">{t("dashb.props")}</h5>
+    <h5 class="text-capitalize mb-3">{t("dashb.props")}</h5>
 
     <nav class="nav justify-content-between align-items-center gap-2 mb-3">
       

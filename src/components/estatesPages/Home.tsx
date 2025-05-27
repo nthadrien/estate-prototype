@@ -21,70 +21,11 @@ const Home = ():JSX.Element => {
 
     return ( 
     <>
-
-        
-
-        <header style={"background: url('/images/estates/tropical.jpg no-repeat');min-height:30vh;"} class="">
-
-        </header>
-
-        <form class="container d-flex align-items-center gap-2 mx-auto rounded-3">
-
-            <label class="form-float rounded-4 text-secondary">
-                <i class="fa fa-globe fa-2x"></i>
-                <div>
-                    Country /city
-                    <input type="email" class="" id="floatingInput" placeholder="yaounde" />
-                </div>
-            </label>
-
-            <label class="form-float rounded-4 text-secondary">
-                <i class="fa fa-calendar-o fa-2x"></i>
-                <div>
-                    Dates
-                    <input type="email" class="" id="lenght" placeholder="21 May - 26 Sept" />
-                </div>
-            </label>
-
-            <label class="form-float rounded-4 text-secondary">
-                <i class="fa fa-globe fa-2x"></i>
-                <div>
-                    Email address
-                    <input type="email" class="" id="floatingInput" placeholder="name@example.com" />
-                </div>
-            </label>
-
-
-            <button class="btn btn-sm btn-primary rounded-pill">
-                <i class="fa fa-search"></i>
-            </button>
-
-        </form>
-
-        <nav class="container p-3">
-            <ul class="nav nav-underline">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-        </nav>
-
-
-
-        <main class="container-xxl nav gap-2 justify-content-center mx-auto my-4">
+        <main class="container-xxl nav flex-column gap-2 justify-content-center mx-auto my-4">
 
             {/* <section class="col-lg-3 p-2 border rounded-3"> */}
 
-            <section class="col-12 col-lg-3 p-2 accordion border" id="accordionPanelsStayOpenExample">
+            <section class="p-2 accordion border shadow-sm rounded" id="accordionPanelsStayOpenExample">
              
                 <h5 class="p-3">
                     Filter by
@@ -113,7 +54,7 @@ const Home = ():JSX.Element => {
             </Show>
 
             <Suspense fallback="LoAdInG.....">
-                <section class="col-lg-9 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3">
+                <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
                     <For each={data()}>
                         { (item) => <div style={"max-width: 26rem;"} class="col">
                             <EstateCard data={item} />
