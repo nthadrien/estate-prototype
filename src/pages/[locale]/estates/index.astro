@@ -6,6 +6,7 @@ import Home from "@components/estatesPages/Home";
 import PagePlaceHolder from "@components/placeholders/PagePlaceHolder.astro";
 import SearchHeader from "@components/headers/SearchHeader";
 import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
+import SearchForm from "@components/estatesPages/SearchForm";
 
 export const prerender = false;
 
@@ -24,11 +25,21 @@ const pageInfo = {
 ---
 
 <ClientLayout {...pageInfo}>
-    <header style="min-height: fit-content;" class="container-fluid d-flex flex-column justify-content-center align-items-center p-3">
-        <SearchHeader client:only="solid-js"> 
-            <BtnPlaceholder slot="fallback" />
-        </SearchHeader>
+    <header class="container-fluid d-flex flex-column justify-content-center align-items-center bg-body-tertiary border p-3">
+        <div class="container-sm mx-auto py-5 text-center"> 
+            <h1 class="display-6 fw-bold">Look for an Estate ?</h1> 
+            <p class="col-md-8 text-center fs-6 mx-auto">
+                Using a series of utilities, you can create this jumbotron, 
+                just like the one in previous versions of Bootstrap. 
+                Check out the examples below for how you can remix and restyle it to your liking.
+            </p>
+        </div>
     </header>
+
+    <SearchForm client:only="solid-js">
+        <BtnPlaceholder slot="fallback" />
+    </SearchForm>
+
     <Home client:only="solid-js">
         <PagePlaceHolder slot="fallback" />
     </Home>

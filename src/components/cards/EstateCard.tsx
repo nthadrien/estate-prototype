@@ -85,13 +85,13 @@ const EstateCard = (props:Props): JSX.Element => {
                 <ul  class="nav justify-content-between align-items-start">
 
                     <li> 
-                        <strong>{t("bedrooms")}</strong> <br/>
+                        <strong>{t("rooms")}</strong> <br/>
                         <i class="fa fa-bed me-1" aria-hidden="true"></i> 
                         {props.data.numOfRooms}
                     </li>
 
                     <li>
-                        <strong>{t('bathrooms')}</strong> <br/>
+                        <strong>{t('baths')}</strong> <br/>
                         <i class="fa fa-bath me-1" aria-hidden="true"></i>
                         {props.data.numOfBaths}
                     </li>

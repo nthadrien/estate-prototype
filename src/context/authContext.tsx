@@ -3,32 +3,7 @@ import { useStore } from "@nanostores/solid";
 import { createContext, type JSX, For, createResource, useContext, Match, Switch, createEffect, createMemo, type Accessor, type Resource, createSignal, Suspense, onMount } from "solid-js";
 import { getProperties, getAccountDetails, getMessages, delProperties } from "src/api/hostRequests.ts";
 import { $user, $locale, type LocationSetType, setLocation, isAuthorize } from "src/stores/user.ts";
-
-// // --------------------- loading animation trial 
-
-const LoadingPlaceholder = () : JSX.Element=> {
-    return (<aside class="container row g-3 opacity-25 p-3 mx-auto position-relative" >
-
-        <div  class="col-12 placeholder-glow">
-            <div style="min-height: max(200px,30vh);" class="placeholder w-100 rounded-3">
-            </div>
-        </div>
-
-        <div class="position-absolute">
-            A little more please...
-        </div>
-    
-        {[1,2,3,4,5].map( i => <div class="col-6 col-lg-4 placeholder-wave"> 
-            <img height="240px" class="placeholder w-100 rounded-3 mb-3" src="" alt="pholder" />
-            <p class="placeholder placeholder-lg bg-light col-7"></p>
-            <p class="placeholder col-12 mb-3"></p>
-            <p class="placeholder col-12 mb-3"></p>
-            <small class="placeholder col-4"></small>
-        </div>)}
-    
-    </aside>)
-}
-
+import { PageLoadingPlaceholder } from "@components/placeholders/loadingPlaceholders";
 export const AuthContext = createContext<any>();
 
 interface ProviderProps {
@@ -67,10 +42,10 @@ export function AuthContextProvider (props:ProviderProps) : JSX.Element {
     return (<AuthContext.Provider value={value}>
         <Switch>
             <Match when={isLoading()}>
-                <LoadingPlaceholder />
+                <PageLoadingPlaceholder />
             </Match>
             <Match when={!isLoading() && !isError() }>
-                <Suspense fallback={<LoadingPlaceholder />}>
+                <Suspense fallback={<PageLoadingPlaceholder />}>
                     {props.children}
                 </Suspense>
             </Match>

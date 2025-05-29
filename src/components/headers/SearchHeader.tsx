@@ -4,6 +4,7 @@ import { $locale } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils.ts";
 
 import countries from "src/api/countries.json";
+import SearchForm from "@components/estatesPages/SearchForm";
 
 export default function SearchHeader():JSX.Element {
 
@@ -27,7 +28,7 @@ export default function SearchHeader():JSX.Element {
     window.location.href = `/${locale()}/estates?country=${dataObject?.country}&city=${dataObject?.city}&type=${dataObject?.type}&guests=${dataObject?.guests}#search`
   }
 
-  return (<form onSubmit={handleSearchSubmit} class="bg-body bg-opacity-50 container-sm d-flex flex-column flex-md-row gap-2 align-items-center shadow p-2 rounded-4">
+  return (<form onSubmit={handleSearchSubmit} class="bg-body container-sm d-flex flex-column flex-md-row gap-2 align-items-center shadow p-2 rounded-4">
     
     <label class="input-group border rounded">
       <i class="input-group-text bg-body border-0 text-secondary fa fa-globe fs-4"></i>

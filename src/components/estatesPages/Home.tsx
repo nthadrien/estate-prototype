@@ -1,6 +1,13 @@
 import EstateCard from "@components/cards/EstateCard";
+import { $locale } from "src/stores/user.ts";
+import { useTranslations } from "src/i18n/utils.ts";
+import { useStore } from "@nanostores/solid";
 import { createSignal, createResource, For, type JSX, Suspense, Show, onMount} from "solid-js";
 // import { output } from "src/api/generateDataFxn";
+
+
+import PriceRangeSlider from "@components/reactiveInputs/priceRangeSlider";
+import { PageLoadingPlaceholder } from "@components/placeholders/loadingPlaceholders";
 
 
 const fetchData = async(id:string) => {
@@ -8,6 +15,9 @@ const fetchData = async(id:string) => {
 }
 
 const Home = ():JSX.Element => {
+
+    const locale = useStore($locale);
+    const t = useTranslations(locale());
 
     // const data = estates;
     const [query , setQuery ] = createSignal<string>("");
@@ -17,44 +27,16 @@ const Home = ():JSX.Element => {
         // output()
     })
 
-
-
     return ( 
     <>
-        <main class="container-xxl nav flex-column gap-2 justify-content-center mx-auto my-4">
-
-            {/* <section class="col-lg-3 p-2 border rounded-3"> */}
-
-            <section class="p-2 accordion border shadow-sm rounded" id="accordionPanelsStayOpenExample">
-             
-                <h5 class="p-3">
-                    Filter by
-                </h5>
-                
-                <div class="">
-                    <button class="btn border-bottom text-start w-100" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        Accordion Item #1
-                    </button>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
-                        <For each={[1,2,3,4]}>
-                            { (item) => 
-                                <label class="form-check-label d-block p-2">
-                                    <input class="form-check-input me-3" type="checkbox" value="" id="checkDefault"></input>
-                                    Default checkbox
-                                </label>
-                            }
-                        </For>  
-                    </div>
-                </div>
-
-            </section>
+        <main class="container-xl nav flex-column gap-2 justify-content-center mx-auto mb-3">
 
             <Show when={data.error}>
                 <p class="text-danger">Search QUery Error</p>
             </Show>
 
-            <Suspense fallback="LoAdInG.....">
-                <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+            <Suspense fallback={<PageLoadingPlaceholder/>}>
+                <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center justify-content-lg-evenly align-items-center p-2">
                     <For each={data()}>
                         { (item) => <div style={"max-width: 26rem;"} class="col">
                             <EstateCard data={item} />
@@ -62,7 +44,6 @@ const Home = ():JSX.Element => {
                     </For>
                 </section>
             </Suspense>
-
         </main>
 
         <div class="container-sm ">

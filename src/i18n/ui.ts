@@ -41,10 +41,12 @@ export const ui = {
         'send':'Send',
         'submit':'Submit',
         "price":"price",
-        "bedrooms":"bredrooms",
-        "bathrooms":"bathrooms",
+        "rooms":"bed rooms",
+        "baths":"bath rooms",
         "size":"size",
-        "more":"more details",
+        "more":"more",
+        "more.det":"more details",
+        "more.opts":"more options",
         "desc":"description",
         "plan":"plans",
         "reviews":"reviews",
@@ -61,7 +63,9 @@ export const ui = {
         "add":"add",
         "back":"back",
         "edit":"edit",
+        "see.more":"see more",
         "save":"save",
+        "rts":"results",
         
 
         // forms
@@ -187,10 +191,12 @@ export const ui = {
         'send':'Envoyer',
         'submit':'Soumettre',
         "price":"prix",
-        "bedrooms":"chambres",
-        "bathrooms":"salles de bains",
+        "rooms":"chambres",
+        "baths":"salles de bains",
         "size":"dimensions",
-        "more":"voir plus",
+        "more":"plus",
+        "more.det":"plus de détails",
+        "more.opts":"plus d'options",
         "desc":"description",
         "plan":"plans",
         "reviews":"avis",
@@ -206,7 +212,9 @@ export const ui = {
         "add":"add",
         "back":"retourner",
         "edit":"modifier",
+        "see.more":"voir plus",
         "save":"enrgistrer",
+        "rts":"resultats",
 
          // forms
         // 1 - newsletter form

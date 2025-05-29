@@ -6,6 +6,7 @@ import ClientNavbar from "@components/navbars/ClientNavbar.astro";
 import ClientHeader from "@components/headers/ClientHeader.astro";
 import BreadCrumb from "@components/utils/BreadCrumb.tsx";
 import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
+import Adverts from "@components/utils/adverts.tsx";
 
 interface Props {
 	title: string;
@@ -34,6 +35,12 @@ const {
         </BreadCrumb>
     </div>
     <slot />
+    <Adverts client:only="solid-js"> 
+        <div slot="fallback" class="col-12 placeholder-glow">
+            <div style="min-height: max(200px,30vh);" class="placeholder w-100 rounded-3">
+            </div>
+        </div>
+    </Adverts>
     <ClientFooter />
     <BaseFooter />
 </Layout>
