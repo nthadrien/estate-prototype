@@ -22,7 +22,7 @@ export default function BreadCrumb():JSX.Element {
     function changePaths (urlObject:URL) {
         const breadCrumbs:LinkType[] = [];
         // Split the pathname into sections
-        const pathSections = urlObject.pathname.split('/').filter(section => !["","fr","en","host","client","admin"].includes(section));
+        const pathSections = urlObject.pathname.split('/').filter(section => !["","fr","en","host","client","admin","id","guests"].includes(section));
         // Create breadcrumbs for each path section
         pathSections.forEach((section, index) => {
             const pathLink = '/' + pathSections.slice(0, index + 1).join('/');

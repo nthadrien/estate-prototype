@@ -8,10 +8,6 @@ export const PageLoadingPlaceholder = () : JSX.Element=> {
             <div style="min-height: max(200px,30vh);" class="placeholder w-100 rounded-3">
             </div>
         </div>
-
-        <h1 class="position-absolute top-50 start-50 translate-middle fw-bold display-2">
-            A little more please...
-        </h1>
     
         {[1,2,3,4,5].map( i => <div class="col-6 col-lg-4 placeholder-wave"> 
             <img height="240px" class="placeholder w-100 rounded-3 mb-3" src="" alt="pholder" />

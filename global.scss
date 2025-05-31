@@ -4,6 +4,7 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "./node_modules/bootstrap/scss/functions";
 // 2. Include any default variable overrides here
+
 $accordion-icon-width:  .8rem;
 $accordion-button-active-bg:  none;
 $accordion-button-padding-y:   .7em;
@@ -49,7 +50,7 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 // @import "./node_modules/bootstrap/scss/alert";
 // @import "./node_modules/bootstrap/scss/progress";
 // @import "./node_modules/bootstrap/scss/list-group";
-// @import "./node_modules/bootstrap/scss/close";
+@import "./node_modules/bootstrap/scss/close";
 @import "./node_modules/bootstrap/scss/toasts";
 @import "./node_modules/bootstrap/scss/modal";
 // @import "./node_modules/bootstrap/scss/tooltip";

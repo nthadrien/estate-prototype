@@ -29,11 +29,6 @@ const initSrch = {
   specs: "",
 }
 
-
-
-
-
-
 function Estate():JSX.Element {
 
   const locale = useStore($locale)

@@ -36,9 +36,9 @@ const Home = ():JSX.Element => {
             </Show>
 
             <Suspense fallback={<PageLoadingPlaceholder/>}>
-                <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center justify-content-lg-evenly align-items-center p-2">
+                <section class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4  g-3 justify-content-center justify-content-lg-evenly align-items-center p-2">
                     <For each={data()}>
-                        { (item) => <div style={"max-width: 26rem;"} class="col">
+                        { (item) => <div style={"max-width:22rem;"} class="col">
                             <EstateCard data={item} />
                         </div>}
                     </For>

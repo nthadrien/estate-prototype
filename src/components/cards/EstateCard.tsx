@@ -3,6 +3,7 @@ import { notifications } from "src/stores/user.ts";
 import { useTranslations } from "src/i18n/utils";
 import { $locale } from "src/stores/user";
 import { type EstateReviewType, type EstateType } from "src/api/dataTypes.ts";
+import { useStore } from "@nanostores/solid";
 
 interface Props {
     data: EstateType
@@ -10,7 +11,8 @@ interface Props {
 
 const EstateCard = (props:Props): JSX.Element => {
 
-    const t = useTranslations($locale.get());
+    const locale = useStore($locale)
+    const t = useTranslations(locale());
 
     const searchParams = new URLSearchParams({
         type: props.data.type,
@@ -39,99 +41,99 @@ const EstateCard = (props:Props): JSX.Element => {
                     roto?.generalRate < 2 ? 'warning' : 
                     roto?.generalRate < 2.8 ? 'primary' : 
                     'success'; 
-
         }
         return 'secondary';
-
     }
-    return (
-        <div class="text-capitalize">
 
-            <section class="position-relative rounded-4">
+    const arro = ["tropical-2","tropical","tropical-3","garden-2","garden"];
 
-                <div style={"top:.5rem;right:.5rem;z-index:1;font-size:smaller;"} class="position-absolute p-1 text-bg-primary">
-                    {t("estate.rent")}
+    const randImg = arro[Math.floor( Math.random()* arro.length )];
+
+    return (<div class="p-1 shadow rounded">
+
+
+        <aside style={"height:16rem;"} class="bg-dark rounded position-relative">
+
+            <div class="position-absolute nav justify-content-between p-2 w-100">
+
+                <div class="text-bg-success p-1 txt-small shadow">
+                    For Rent
                 </div>
 
-                <img loading="lazy" style="height: 14rem;" src="/images/estates/garden-2.jpg" class="ratio ratio-19x9 w-100 rounded-2"  alt="estate" />
+                <button onClick={handleBookmark} class="btn btn-sm btn-outline-light">
+                    <i class="fa fa-heart" />
+                </button>
 
-                <aside class="position-absolute bottom-0 start-0 px-1 w-100 d-flex justify-content-between align-items-center px-2">
+            </div>
 
-                    <span class="fw-bolder text-white">{props.data.type}</span>
+            <img src={`/images/estates/${randImg}.jpg`} alt={props.data.name} class="object-fit-fill h-100 w-100 rounded" />
 
-                    <span>
-                        <button onClick={handleLiked} class="btn btn-sm text-white">
-                            {props.data.reviews.length}  <i class="fa fa-heart" aria-hidden="true"></i>
-                        </button>
+            <ul class="position-absolute bottom-0 nav justify-content-center text-light p-2 w-100 gap-2">
+                <li><i class="fa fa-circle rounded-circle" /></li>
+                <li><i class="fa fa-dot-circle-o rounded-circle" /></li>
+                <li><i class="fa fa-circle rounded-circle" /></li>
+            </ul>
 
-                        <button onClick={handleBookmark} class="btn btn-sm text-white">
-                            <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                        </button>
-                    </span>
+        </aside>
 
-                </aside>
+        <aside class="row g-2 justify-content-between text-capitalize p-1 p-md-2 lh-0">
 
-            </section>
+            <div class="col-md-10 text-truncate">
+                <span class="fs-6"> {props.data.name}</span><br/>
+                <span class="text-truncate"> <i class="fa fa-map-marker me-1" /> {props.data.address}</span>
+            </div>
 
-            <section class="d-flex flex-column gap-2 p-2">
+            <div class="col-auto col-sm-2 text-md-end">
+                <button class={`btn btn-sm fw-semibold btn-primary`}>
+                    { props.data.estateReviews ? (props.data.estateReviews[0].generalRate).toPrecision(2): 1.0 }
+                </button>
+            </div>
 
-                <div class="fs-6 fw-semibold">{props.data.type} for {props.data.numOfGuest} guests </div>
+            <div class="col-12 d-flex justify-content-between text-secondary">
+                <span>{props.data.type} {t("price")}</span>
+                <div class="fs-6 text-primary">
+                    ${props.data.pricePerDay},  <span class="vr mx-1"></span>
+                    ${props.data.pricePerMonth}, <span class="vr mx-1"></span>
+                    ${props.data.pricePerHour}</div>
+            </div>
 
-                <div class="text-truncate">
-                    <i class="fa fa-map-marker me-2" aria-hidden="true"  /> 
-                    {props.data.address}
-                </div>
+            <div title={t("key.numOfGuest")} class="col-auto ">
+                <span>{t("guest")}s</span> <br/>
+                <i class="fa fa-users mx-2" aria-hidden="true"></i>
+                {props.data.numOfGuest}
+            </div>
 
-                <ul  class="nav justify-content-between align-items-start">
+            <div title={t("key.numOfRooms")}  class="col-auto">
+                <span>{t("rooms")}</span> <br/>
+                <i class="fa fa-bed mx-2" aria-hidden="true"></i> 
+                {props.data.numOfRooms}
+            </div>
 
-                    <li> 
-                        <strong>{t("rooms")}</strong> <br/>
-                        <i class="fa fa-bed me-1" aria-hidden="true"></i> 
-                        {props.data.numOfRooms}
-                    </li>
+            <div title={t("key.numOfBaths")}  class="col-auto ">
+                <span>{t('baths')}</span> <br/>
+                <i class="fa fa-bath mx-2" aria-hidden="true"></i>
+                {props.data.numOfBaths}
+            </div>
 
-                    <li>
-                        <strong>{t('baths')}</strong> <br/>
-                        <i class="fa fa-bath me-1" aria-hidden="true"></i>
-                        {props.data.numOfBaths}
-                    </li>
+            <div title={`${props.data.type} dimensions`} class="col-auto ">
+                <span>{t("size")}</span> <br/>
+                <i class="fa fa-clone mx-1" aria-hidden="true"></i>
+                <span class="text-lowercase">{props.data.size} m² </span>
+            </div>
 
-                    <li>
-                        <strong>{t("size")}</strong> <br/>
-                        <i class="fa fa-square me-1" aria-hidden="true"></i> 
-                        <span class="text-lowercase">{props.data.size} m² </span>
-                    </li>
+            <div class="nav align-items-center justify-content-between text-capitalize col-12 py-1">
 
-                </ul>
+                <span class="fs-6 text-primary"></span>
 
-                <div class="d-flex align-items-center gap-2">
-                    <b class={`btn btn-sm btn-${getColor()} fw-bold`}>
-                        {props.data.estateReviews && props.data.estateReviews[0].generalRate.toPrecision(2)}
-                    </b>
-                    <div class="text-secondary lh-sm">
-                        <span class="text-truncate">{props.data.estateReviews && props.data.estateReviews[0].lastReview} </span> <br/>
-                        <span>{props.data.estateReviews && props.data.estateReviews[0].reviews.length} reviews</span>
-                    </div>
-                </div>
 
-                <div>
-                   {t("price")} : $ {props.data.pricePerHour} / hr 
-                   <span class="vr mx-1" /> $ {props.data.pricePerDay} / jr 
-                   <span class="vr mx-1" /> $ {props.data.pricePerMonth} / mois              
-                </div>
-                
-                <div class="d-flex justify-content-between text-capitalize">
+                <a class="nav-item" href={`/${locale()}/estates/details?`+searchParams}> 
+                    {t("table.optns.det")} <i class="fa fa-long-arrow-right ms-1" />
+                </a>
 
-                    <a class="fw-bold text-success" href={"/"+ $locale.get()+"/estate/details?"+searchParams}>
-                        {t("more")}
-                    </a>
+            </div>
 
-                </div>
-
-            </section>
-        
-        </div>
-  )
+        </aside>
+    </div>);
 }
 
 export default EstateCard;
