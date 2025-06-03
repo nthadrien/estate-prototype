@@ -181,11 +181,11 @@ function Estate():JSX.Element {
             {t("key.amenities")}
           </button>
           
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse row row-cols-2 row-cols-lg-3 g-3 p-3">
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse row row-cols-2 row-cols-xl-3 g-3 p-3">
             <For each={amenities.building}>
               { (item) => <span class={`col ${ true ? "": "text-decoration-line-through" }`}>
-                <input class="form-check-input me-1" type="checkbox" name={item?.icon} checked={true}/>
-                {/* <i class={`fa fa-${item?.icon} me-1`}></i> */}
+                {/* <input class="form-check-input me-1" type="checkbox" name={item?.icon} checked={true}/> */}
+                <i class={`fa fa-${item?.icon} text-primary me-2`}></i>
                 {item[locale()]}
               </span> }
             </For>
