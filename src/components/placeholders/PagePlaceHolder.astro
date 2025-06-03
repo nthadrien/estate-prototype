@@ -1,3 +1,7 @@
+---
+import CardPlaceHolder from "./CardPlaceHolder.astro"
+---
+
 <aside class="container row g-3 opacity-25 p-3 mx-auto" >
 
     <div  class="col-12 placeholder-glow">
@@ -5,12 +9,8 @@
         </div>
     </div>
 
-    {[1,2,3,4,5].map( i => <div class="col-6 col-lg-4 placeholder-wave"> 
-        <img height="240px" class="placeholder w-100 rounded-3 mb-3" src="" alt="pholder" />
-        <p class="placeholder placeholder-lg bg-light col-7"></p>
-        <p class="placeholder col-12 mb-3"></p>
-        <p class="placeholder col-12 mb-3"></p>
-        <small class="placeholder col-4"></small>
+    {[1,2,3,4,5].map( i => <div class="col-6 col-lg-4 ">
+        <CardPlaceHolder />
     </div>)}
 
 </aside>

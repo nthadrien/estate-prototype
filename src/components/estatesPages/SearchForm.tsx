@@ -157,6 +157,11 @@ const SearchForm = ():JSX.Element => {
                 </label>
             </div>
 
+            <div class="col">
+                <p class="form-label text-center w-100">Price Range</p>
+                <PriceRangeSlider />
+            </div>
+
             <div class="col nav gap-2">
 
                 <label>
@@ -173,11 +178,6 @@ const SearchForm = ():JSX.Element => {
 
                 <div></div>
 
-            </div>
-
-            <div class="col">
-                <span class="label">Price Range</span>
-                <PriceRangeSlider />
             </div>
 
             <div class="">

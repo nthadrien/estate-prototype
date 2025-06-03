@@ -36,7 +36,7 @@ export const notifications = (msg:messageType) => {
 					<strong>${msg.code} ${msg.type}</strong> <br/>
 					<span class="text-secondary">${msg.message}</span>
 				</div>
-				<button class="btn-close btn-sm"></button>
+				<button style="font-size:xx-small;" class="btn-close btn-sm"></button>
 			</div>`;
 
     // create the element on DOM:

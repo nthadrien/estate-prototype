@@ -5,6 +5,7 @@ import ClientLayout from "@layouts/ClientLayout.astro";
 import PlaceCard from "@components/cards/PlaceCard.astro";
 import SearchHeader from "@components/headers/SearchHeader.tsx";
 import BtnPlaceholder from "@components/placeholders/BtnPlaceholder.astro";
+import CardPlaceHolder from "@components/placeholders/CardPlaceHolder.astro";
 
 const headerInfo = {
     title:"home",
@@ -338,9 +339,11 @@ const places = [
           </a>
         </p>
 
-        <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 mb-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-3">
             {defaultEstates?.map( item => <div class="col">
-                <EstateCard client:only="solid-js" data={item}  />
+                <EstateCard client:only="solid-js" data={item}  >
+                  <CardPlaceHolder slot="fallback" />
+                </EstateCard>
             </div>)}
         </div>
 

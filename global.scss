@@ -9,6 +9,15 @@ $accordion-icon-width:  .8rem;
 $accordion-button-active-bg:  none;
 $accordion-button-padding-y:   .7em;
 $accordion-button-padding-x:       1rem;
+
+$carousel-control-icon-width:  1.2rem;
+$carousel-indicator-width:     8px;
+$carousel-indicator-height:     8px;
+$carousel-indicator-spacer:     0.3rem;
+$carousel-indicator-opacity:    .5;
+$carousel-indicator-active-bg:  green;
+$carousel-control-color:        cyan;
+
 $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/></svg>");
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
@@ -68,7 +77,7 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 
 // 8. Add additional custom code here
 body {
-    font-size: 11px;
+    font-size: 12px;
 }
 
 a, .nav-link {

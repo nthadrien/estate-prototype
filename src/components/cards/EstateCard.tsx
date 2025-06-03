@@ -49,7 +49,7 @@ const EstateCard = (props:Props): JSX.Element => {
 
     const randImg = arro[Math.floor( Math.random()* arro.length )];
 
-    return (<div class="p-1 shadow rounded">
+    return (<div class="p-1 shadow border rounded">
 
 
         <aside style={"height:16rem;"} class="bg-dark rounded position-relative">
