@@ -35,6 +35,7 @@ export const ui = {
         "estate.guest":"guest(s)",
         "estate.host":"host(s)",
         "estate.type":"type of estate",
+        "estate.purpose":"purpose",
 
         // general
         'subscribe':'subcribe',
@@ -43,6 +44,7 @@ export const ui = {
         "price":"price",
         "rooms":"bedrooms",
         "baths":"bathrooms",
+        "kitchen":"kitchen",
         "size":"size",
         "more":"more",
         "more.det":"more details",
@@ -64,6 +66,7 @@ export const ui = {
         "back":"back",
         "edit":"edit",
         "see.more":"see more",
+        "see.less":"see less",
         "save":"save",
         "rts":"results",
         
@@ -95,6 +98,7 @@ export const ui = {
         "username":"username",
         "host":"host",
         "guest":"guest",
+        "guests.reviews":"guests reviews",
         "host.role":"Display properties",
         "host.details":"host details",
         "guest.role":"looking for properties",
@@ -185,6 +189,7 @@ export const ui = {
         "estate.guest":"guest(s)",
         "estate.host":"hôte(s)",
         "estate.type":"type d'immobilier",
+        "estate.purpose":"le but",
 
         // general
         'subscribe':"s'abonner",
@@ -193,6 +198,7 @@ export const ui = {
         "price":"prix",
         "rooms":"chambres",
         "baths":"salles de bains",
+        "kitchen":"cuisine",
         "size":"dimensions",
         "more":"plus",
         "more.det":"plus de détails",
@@ -213,8 +219,11 @@ export const ui = {
         "back":"retourner",
         "edit":"modifier",
         "see.more":"voir plus",
+        "see.less":"voir moins",
         "save":"enrgistrer",
         "rts":"resultats",
+        
+        
 
          // forms
         // 1 - newsletter form
@@ -243,6 +252,7 @@ export const ui = {
         "username": "nom d'utilisateur",
         "host": "hôte",
         "guest": "invité",
+        "guests.reviews":"avis des clients",
         "host.role": "Afficher les propriétés",
         "host.details":"Détails de l'hôte",
         "guest.role": "recherche de propriétés",

@@ -123,7 +123,13 @@ const EstateCard = (props:Props): JSX.Element => {
 
             <div class="nav align-items-center justify-content-between text-capitalize col-12 py-1">
 
-                <span class="fs-6 text-primary"></span>
+                <i class="text-primary">
+                    <i class="fa fa-check-circle-o"/> verified
+                </i>
+
+                <i class="text-danger">
+                    <i class="fa fa-exclamation-circle"/> not verified
+                </i>
 
 
                 <a class="nav-item" href={`/${locale()}/estates/details?`+searchParams}> 

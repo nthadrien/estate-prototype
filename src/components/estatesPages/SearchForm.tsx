@@ -158,7 +158,7 @@ const SearchForm = ():JSX.Element => {
             </div>
 
             <div class="col">
-                <p class="form-label w-100">Price Range</p>
+                <p class="form-label">Price Range</p>
                 <PriceRangeSlider 
                     min={0}
                     max={500}

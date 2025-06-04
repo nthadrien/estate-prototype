@@ -16,8 +16,8 @@ const rangeSliderStyles = `
 
   .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 20px; /* Size of the thumb */
-    width: 20px;
+    height: .72rem; /* Size of the thumb */
+    width: .72rem;
     border-radius: 50%;
     background: #1D4ED8; /* Tailwind blue-700 */
     cursor: grab;
@@ -27,8 +27,8 @@ const rangeSliderStyles = `
   }
 
   .range-input::-moz-range-thumb {
-    height: 20px;
-    width: 20px;
+    height: .72rem;
+    width: .72rem;
     border-radius: 50%;
     background: #1D4ED8; /* Tailwind blue-700 */
     cursor: grab;

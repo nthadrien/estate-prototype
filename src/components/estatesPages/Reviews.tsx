@@ -1,6 +1,6 @@
 import { $locale } from "src/stores/user.ts";
 import { useStore } from "@nanostores/solid";
-import { createSignal, createResource,Show } from "solid-js";
+import { createSignal, createResource,Show, For } from "solid-js";
 import { useTranslations } from "src/i18n/utils.ts";
 import { fetchReviews } from "src/api/getRequests";
 
@@ -26,9 +26,9 @@ export default function Reviews (props:Props) {
   return (<section class="col-12">
 
     <nav class="nav justify-content-between align-items-center ">
-      <h5 class="text-capitalize fw-bold">Reviews</h5>
+      <h5 class="text-capitalize fw-bold">{t("guests.reviews")}</h5>
       
-      <h6>General Stats of 34 reviews</h6>
+      <h6>Stats  34 {t("reviews")}</h6>
     </nav>
 
     <ul class="list-unstyled row">
@@ -66,8 +66,13 @@ export default function Reviews (props:Props) {
 
     <Show when={showReviews()} fallback={<button onClick={showSome} class="nav-link text-success">Show reviews</button>}>
       <ul>
-        <li> review 1 </li>
-        <li>review 2</li>
+        <For each={[1,2,3,4,5]}>
+          {item => <li>
+            
+            comment
+            </li>}
+
+        </For>
       </ul>
     </Show>
 

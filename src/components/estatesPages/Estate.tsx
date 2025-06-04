@@ -36,6 +36,32 @@ function Estate():JSX.Element {
 
   const [estateId, setEstateId ] = createSignal<string>('description');
   const [estateInfo] = createResource(estateId,fetchEstate);
+  const [showHighlights, setShowHighlights] = createSignal<boolean>(false);
+
+
+  const dets= ():{ name: string; icon: string; value: string;}[] =>{
+    
+    const b = [
+      { name: "ID" , icon: "hashtag" , value: estateInfo().id ?? "23-UX" },
+      { name: t("estate.purpose") , icon:"shopping-cart" , value: estateInfo()?.purpose ?? t("estate.rent")},
+      { name: t("estate.type") , icon:"house" , value: estateInfo()?.purpose ?? t("estate.rent")},
+      { name: "status" , icon:estateInfo()?.verfied ? "check-square" : " exclamation-triangle" , value: estateInfo()?.verfied ?? t("estate.rent")},
+      { name: t("baths") , icon:"bath" , value: estateInfo()?.purpose ?? t("estate.rent")},
+      { name: t("rooms") , icon:"bed" , value: estateInfo()?.purpose ?? t("estate.rent")},
+      { name: t("kitchen") +"s", icon:" cutlery" , value: estateInfo()?.purpose ?? t("estate.rent")},
+      { name: t("guest")+"s" , icon:"users" , value: estateInfo()?.numOfGuests ?? t("estate.rent")}
+    ];
+
+    for(let x of amenities.estate ) {
+      b.push({
+        name: x[locale()],
+        icon: x.icon,
+        value: "available"
+      });
+    }
+
+    return showHighlights() ? b : b.splice(0,8);
+  }
  
   onMount(()=>{
     const obj:any = new Object(initSrch);
@@ -59,6 +85,9 @@ function Estate():JSX.Element {
     <span class="fw-bold fs-3">{estateInfo()?.name}</span>  
 
     <div>
+      <i class="text-primary">
+        <i class="fa fa-check-circle-o" /> verified
+      </i>
       <button class="btn">
         <i class="fa fa-share-alt"></i>
       </button>
@@ -78,94 +107,41 @@ function Estate():JSX.Element {
 
   </aside>);
 
-  const Description = (): JSX.Element => (<aside class="col-lg-8 d-flex flex-column p-1">
+  const Description = (): JSX.Element => (<aside class="col-lg-8 d-flex flex-column gap-2 p-1">
 
-    
-    <h5 class="text-capitalize fw-bolder mb-3">Description</h5>
+    <h5 class="text-capitalize fw-bold">Description</h5>
 
-    <p>{estateInfo()?.desc} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sed nemo non vel eum reprehenderit voluptate facere fugiat distinctio culpa rerum vero omnis vitae voluptatibus aliquid facilis, pariatur, cum iste!</p>
+    <p>{estateInfo()?.desc} Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Laudantium facere obcaecati sapiente! Laboriosam harum sit fugiat asperiores, 
+      iusto temporibus necessitatibus numquam laudantium reiciendis placeat praesentium nihil totam consectetur sunt ex.
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+       Ut sed nemo non vel eum reprehenderit voluptate facere fugiat distinctio culpa rerum vero omnis vitae voluptatibus aliquid facilis, pariatur, cum iste!</p>
 
-    <ul class="nav gap-3 justify-content-between text-capitalize mt-3">
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-5 fa fa-hashtag border rounded p-2 text-secondary" />
-        <div>
-          Property ID <br/>
-          <i>#{estateInfo().id}</i>
-        </div>
-      </li>
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-5 fa fa-hashtag border rounded p-2 text-secondary" />
-        <div>
-          Property ID <br/>
-          <i>#{estateInfo().id}</i>
-        </div>
-      </li>
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-5 fa fa-hashtag border rounded p-2 text-secondary" />
-        <div>
-          Property ID <br/>
-          <i>#{estateInfo().id}</i>
-        </div>
-      </li>
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-5 fa fa-hashtag border rounded p-2 text-secondary" />
-        <div>
-          Property ID <br/>
-          <i>#{estateInfo().id}</i>
-        </div>
-      </li>
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-5 fa fa-hashtag border rounded p-2 text-secondary" />
-        <div>
-          Property ID <br/>
-          <i>#{estateInfo().id}</i>
-        </div>
-      </li>
-
-      <li class="nav gap-2 align-items-center justify-content-start">
-        <i aria-hidden="true" class="fs-4 fa fa-home border rounded p-2" />
-        <div>
-          Purpose <br/>
-          rent
-        </div>
-      </li>
-
-      <li title={t("key.numOfGuest")} class="col-auto ">
-          <span>{t("guest")}s</span> <br/>
-          <i class="fa fa-users me-2" aria-hidden="true"></i>
-          {estateInfo()?.numOfGuest}
-      </li>
-
-      <li title={t("key.numOfRooms")}  class="col-auto">
-          <span>{t("rooms")}</span> <br/>
-          <i class="fa fa-bed me-2" aria-hidden="true"></i> 
-          {estateInfo()?.numOfRooms}
-      </li>
-
-      <li title={t("key.numOfBaths")}  class="col-auto ">
-          <span>{t('baths')}</span> <br/>
-          <i class="fa fa-bath me-2" aria-hidden="true"></i>
-          {estateInfo()?.numOfBaths}
-      </li>
-
-      <li title={`${estateInfo()?.type} dimensions`} class="col-auto ">
-          <span>{t("size")}</span> <br/>
-          <i class="fa fa-clone mx-1" aria-hidden="true"></i>
-          <span class="text-lowercase">{estateInfo()?.size} m² </span>
-      </li>
-    </ul>
-
-    <h6 class="text-capitalize mt-3">{t('price')}</h6>
+    <h6 class="text-capitalize">{t('price')}</h6>
 
     <ul class="nav p-2">
       <li>{t("key.pricePerHour")} : {estateInfo()?.pricePerHour}</li>
       <li>{t("key.pricePerDay")} : {estateInfo()?.pricePerDay}</li>
       <li>{t("key.pricePerMonth")} : {estateInfo()?.pricePerMonth}</li>
+    </ul>
+
+    <h6>Properties Details</h6>
+
+    <ul class="row g-3 g-lg-4 p-2 justify-content-between text-capitalize rounded">
+      <For each={dets()}>
+        { item => <li class="col-6 col-md-4 col-lg-3 d-flex gap-2 align-items-center justify-content-start">
+          <i aria-hidden="true" class={`fs-5 fa fa-${item.icon} border rounded p-2 text-secondary`} />
+          <div>
+            <strong>{item.name}</strong>
+            <br/> {item.value}
+          </div>
+        </li>}
+      </For>
+      <li>
+        <button onClick={()=>setShowHighlights(!showHighlights())} class="btn btn-sm fw-semibold">
+          { showHighlights() ?t("see.less") : t("see.more")}
+        </button>
+      </li>
     </ul>
 
   </aside>);
@@ -177,13 +153,13 @@ function Estate():JSX.Element {
   
         <section class="accordion-item border-0">
           
-          <button class="accordion-button text-capitalize fw-bold fs-6 border-1 border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <button class="nav-link text-start w-100 text-capitalize fw-bold fs-6 border-1 border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
             {t("key.amenities")}
           </button>
           
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse row row-cols-2 row-cols-xl-3 g-3 p-3">
             <For each={amenities.building}>
-              { (item) => <span class={`col ${ true ? "": "text-decoration-line-through" }`}>
+              { (item) => <span class={`col ${ false ? "": "text-decoration-line-through" }`}>
                 {/* <input class="form-check-input me-1" type="checkbox" name={item?.icon} checked={true}/> */}
                 <i class={`fa fa-${item?.icon} text-primary me-2`}></i>
                 {item[locale()]}
