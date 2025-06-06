@@ -186,17 +186,17 @@ function Estate():JSX.Element {
       <ReviewHeader />
       
      
-      <nav class="col-md-8 border-bottom sticky-top bg-body">
+      <nav id="#" class="col-md-8 border-bottom sticky-top bg-body">
         <div class="nav nav-underline" id="nav-tab" role="tablist">
-          <button class="nav-link text-capitalize active" id="nav-desc-tab" data-bs-toggle="tab" data-bs-target="#nav-desc" type="button" role="tab" aria-controls="nav-desc" aria-selected="true">{t("desc")}</button>
+          <button class="nav-link text-capitalize" id="nav-desc-tab" data-bs-toggle="tab" data-bs-target="#nav-desc" type="button" role="tab" aria-controls="nav-desc" aria-selected="true">{t("desc")}</button>
           <button class="nav-link text-capitalize" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false">{t("reviews")}</button>
-          <button class="nav-link text-capitalize" id="nav-plan-tab" data-bs-toggle="tab" data-bs-target="#nav-plan" type="button" role="tab" aria-controls="nav-plan" aria-selected="false"> Virtual visit</button>
+          <button class="nav-link text-capitalize active" id="nav-plan-tab" data-bs-toggle="tab" data-bs-target="#nav-plan" type="button" role="tab" aria-controls="nav-plan" aria-selected="false"> Virtual visit</button>
           <button class="btn btn-sm border-0 ms-auto" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Book</button>
         </div>
       </nav>
 
       <section class="tab-content" id="nav-tabContent">
-        <aside class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab" tabindex="0">
+        <aside class="tab-pane fade" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab" tabindex="0">
          <div class="row g-2">
          <Description />
           <Location />
@@ -204,17 +204,14 @@ function Estate():JSX.Element {
          </div>
         </aside>
         <aside class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
-          <h4>Reviews</h4>
+          <Reviews />
         </aside>
-        <aside class="tab-pane fade" id="nav-plan" role="tabpanel" aria-labelledby="nav-plan-tab" tabindex="0">
-          <h4>@D and 3d plans / visite</h4>
+        <aside class="tab-pane fade show active" id="nav-plan" role="tabpanel" aria-labelledby="nav-plan-tab" tabindex="0">
+          <PlanOVisit />
         </aside>
         <aside class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</aside>
       </section>
-      
-      
-      <PlanOVisit />
-      <Reviews />
+
     </Show>
   </main>);
 }

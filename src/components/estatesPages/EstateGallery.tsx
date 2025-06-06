@@ -14,7 +14,7 @@ export default function EstateGallery (props:Props) :JSX.Element {
     return;
   }
         
-  return (<section class="container-lg row g-1 mx-auto">
+  return (<section id="gallery" class="container-lg row g-1 mx-auto">
 
     <div class="col-lg-8">
       <img ref={mainImg} style={"min-height:360px"} src="/images/img-2x1.png" class="object-fit-cover rounded w-100" loading="lazy" alt="main-pic" />

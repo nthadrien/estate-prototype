@@ -27,6 +27,7 @@ const { locale } = Astro.params;
 		<meta name="description" content={description}>
 		<meta name="keywords" content={keywords.join(",")}>
 		<title> {title} | Prototype Estate </title>
+		<link rel="stylesheet" href="/pannellum/pannellum.css">
 		<!-- <link rel="alternate" hreflang="en" href="https://acme.com/en/about" />
 		<link rel="alternate" hreflang="de" href="https://acme.com/de/ueber-uns" /> -->
 		<!-- {alternateLangs.map((alternate) => (
@@ -37,5 +38,5 @@ const { locale } = Astro.params;
 		<slot />
 		<aside id="notification-area" class="d-flex flex-column gap-3"></aside>
 	</body>
-	<script src="../js/main.ts"></script>	
+	<script src="../js/main.ts"></script>
 </html>

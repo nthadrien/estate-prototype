@@ -14,7 +14,6 @@ import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-
 document.querySelector("#back")?.addEventListener("click", ()=> {
     window.history.go(-1);
 });
@@ -56,4 +55,4 @@ function countryCodeToEmoji(countryCode:string) {
   
 const flagReplace:NodeListOf<HTMLElement> = document.querySelectorAll('[data-flag]');
 // flagReplace.forEach(s => s.innerHTML = s.dataset.flag ? getFlagEmoji(s.dataset.flag) : "")
-flagReplace.forEach(s => s.innerHTML = s.dataset.flag ? countryCodeToEmoji(s.dataset.flag) : "")
+flagReplace.forEach(s => s.innerHTML = s.dataset.flag ? countryCodeToEmoji(s.dataset.flag) : "");

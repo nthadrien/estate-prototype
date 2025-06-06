@@ -23,50 +23,82 @@ export default function Reviews (props:Props) {
         setReviewId("")
     }
 
-  return (<section class="col-lg-10">
+  return (<section class="col-lg-12 row g-3">
 
-    <nav class="nav justify-content-between align-items-center ">
+    
+
+    <ul class="col-lg-8 row g-3">
+
       <h5 class="text-capitalize fw-bold">{t("guests.reviews")}</h5>
-      <b>based 34 {t("reviews")}</b>
-    </nav>
 
-    <ul class="list-unstyled row">
+      <li class="col-12 d-flex gap-4 align-items-center">
+        <div>
+          <span>{t("reviews.tt")}</span>  <br/>
+          <For each={[1,2,3,4,5]}>
+            { item => <i class={`fa fa-star ${ item < 2.5 ? "text-warning": "txt-secondary" }`} />}
+          </For>
+        </div>
+        <div>
+          <span class="fw-semibold fs-2"> 2.5 </span> / 5
+        </div>
 
-      <li class="col-md-6">
-        <b class="text-capitalize">agent</b>
-        <div class="progress-bar rounded-3 my-2">
-          <div class="bar bg-secondary"></div>
+        <span class="ms-auto"> {t("reviews.based")} 34 {t("reviews")}</span>
+      </li>
+
+      <div class="col-12 fw-bolder">
+        General reviews
+      </div>
+
+      <li class="col-md-6 col-lg-4 d-flex align-items-center gap-2">
+        <small class="text-capitalize col-4 col-lg-auto">{t("host")}</small>
+        <div style={{ height: "10px"}} class="progress border w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%"></div>
         </div>
       </li>
 
-      <li class="col-md-6">
-        <b class="text-capitalize">enviroment</b>
-        <div class="progress-bar rounded-3 my-2">
-          <div class="bar bg-secondary"></div>
+      <li class="col-md-6 col-lg-4 d-flex align-items-center gap-2">
+        <small class="text-capitalize col-4 col-lg-auto">{t("host")}</small>
+        <div style={{ height: "10px", "font-size":"xx-small"}} class="progress border w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 50%"> 35%</div>
         </div>
       </li>
 
-      <li class="col-md-6">
-        <b class="text-capitalize">sanitation</b>
-        <div class="progress-bar rounded-3 my-2">
-          <div class="bar bg-secondary"></div>
+      <li class="col-md-6 col-lg-4 d-flex align-items-center gap-2">
+        <small class="text-capitalize col-4 col-lg-auto">{t("host")}</small>
+        <div style={{ height: "10px", "font-size":"xx-small"}} class="progress border w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 50%"> 35%</div>
         </div>
       </li>
 
-      <li class="col-md-6">
-        <b class="text-capitalize">comparism</b>
-        <div class="progress-bar rounded-3 my-2">
-          <div class="bar bg-secondary"></div>
+      <li class="col-md-6 col-lg-4 d-flex align-items-center gap-2">
+        <small class="text-capitalize col-4 col-lg-auto">{t("host")}</small>
+        <div style={{ height: "10px", "font-size":"xx-small"}} class="progress border w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 50%"> 35%</div>
         </div>
       </li>
 
     </ul>
 
+    <aside style={{ top:"20%"}} class="col-lg-4 sticky-lg-top">
+      <h6>NB</h6>
+      <p>
+        The share thoughts exposed here are for guests which were customers of this properties. So please
+        If you’ve used this product, share your thoughts with others who might need to get a genuine reviews on this estate
+      </p>
 
+      <button class="btn btn-sm btn-primary">
+        <i class="fa fa-eye me-2"></i>
+        Share My Thoughts
+      </button>
+    </aside>
+
+
+    <section class="col-md-8">
+      <p class="fw-smibold">{t("reviews")}</p>
     <Show when={true} fallback={<button onClick={showSome} class="nav-link text-success">Show reviews</button>}>
-      <ul class="nav flex- gap-2">
+      <ul class=" nav flex-column gap-3 p-2">
         <For each={[1,2,3,4,5]}>
-          {item => <li class="p-2 border-bottom shadow rounded">
+          {item => <li class="p-1 border-left">
 
             <div class="nav justify-content-between align-items-centers">
               <div>
@@ -87,35 +119,11 @@ export default function Reviews (props:Props) {
               reprehenderit sed error assumenda reiciendis aut?
             </p>
 
-            {/* <ul class="col-auto col-md-6 nav flex-column gap-2">
-
-              <li class="col-auto">
-                agent : 
-                <For each={[1,2,3,4,5]}>
-                  { item => <i class={`fa fa-star ${item < 4 ?"text-warning": "text-secondary" }`}/>}
-                </For>
-              </li>
-
-              <li class="col-auto">
-                sanitation : 
-                <For each={[1,2,3,4,5]}>
-                  { item => <i class={`fa fa-star ${item < 4 ?"text-warning": "text-secondary" }`}/>}
-                </For>
-              </li>
-
-              <li class="col-auto">
-                enviroment : 
-                <For each={[1,2,3,4,5]}>
-                  { item => <i class={`fa fa-star ${item < 3 ?"text-warning": "text-secondary" }`}/>}
-                </For>
-              </li>
-
-            </ul> */}
-
           </li>}
         </For>
       </ul>
     </Show>
+    </section>
 
   </section>);
 }

@@ -1,19 +1,27 @@
 
 
-import { type JSX } from "solid-js";
+import { type JSX, onMount, onCleanup, createEffect } from "solid-js";
+
 
 export default function PlanOVisit (): JSX.Element {
+
+  let viewerRef : HTMLElement ; // Reference to the div where Pannellum will render
+
+  createEffect(() => {
+  });
+
+  onCleanup(() => {
+    // Optional: If Pannellum provides a destroy method, call it here
+    // to clean up resources when the component is unmounted.
+    // window.pannellum.destroy(viewerRef); // This is just an example; check Pannellum docs
+  });
+
+
+
   return (<section class="col-lg-8">
 
     <nav class="nav justify-content-between align-items-center">
-
-        <h5 class="text-capitalize fw-bolder">Visit & Plan</h5>
-
-
-        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlansOVisits" aria-expanded="false" aria-controls="collapsePlansOVisits">
-            Visit
-        </button>
-        
+      <h5 class="text-capitalize fw-bolder">Visit & Plan</h5>  
     </nav>
 
     <aside class="collapse" id="collapsePlansOVisits">
@@ -23,16 +31,28 @@ export default function PlanOVisit (): JSX.Element {
     </aside>
 
 
-    <aside class="row row-cols-1 row-cols-lg-2 g-2">
+    <aside class="row row-cols-1 row-cols-lg-2 g-2 align-items-center justify-content-center">
+        
+        <div>
+          <strong class="col"> 2d Plan of the "Estate type"</strong>
+          <p class="col-auto text-secondary">
+            image caption : Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Corrupti earum est asperiores, mollitia, esse laboriosam fugit cupiditate ea debitis illo unde quidem, 
+            officiis suscipit adipisci qui accusantium odit quibusdam eius?
+          </p>
+        </div>
 
-      <div class="col">
-        <small> 2d Plan of the "Estate type"</small>
-      </div>
+        <img class="col-md-6  rounded-3 shadow-sm" src="/images/estates/2d-plan.jpg" alt="alt" />
+    </aside>
 
-      <div class="col">
-        <small>3d visit of "Estate type"</small>
-      </div>
+    <aside>
+      <a class="btn btn-sm btn-primary" href="#gallery">view 2d gallery</a>
+    </aside>
 
+    <aside class="my-4">
+      <h6 class="fw-bold">Virtual tour / 3d tour</h6>
+
+      <div id="panorama"></div>
     </aside>
 
 

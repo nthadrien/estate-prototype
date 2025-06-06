@@ -57,7 +57,7 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 // @import "./node_modules/bootstrap/scss/pagination";
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/alert";
-// @import "./node_modules/bootstrap/scss/progress";
+@import "./node_modules/bootstrap/scss/progress";
 // @import "./node_modules/bootstrap/scss/list-group";
 @import "./node_modules/bootstrap/scss/close";
 @import "./node_modules/bootstrap/scss/toasts";
@@ -254,23 +254,7 @@ a, .nav-link {
     color: white;
 }
 
-// progress-bar
-.progress-bar {
-    display: flex;
-    padding: .1rem;
-    height: 1rem;
-    min-width: 100px;
-    outline: 1px solid gray;
-
-    .bar  {
-        width: 80%;
-        height: 90%;
-        border-radius: inherit;
-    }
-}
-
 // toaster css
-
 #notification-area {
     z-index: 4; 
     width: fit-content;
