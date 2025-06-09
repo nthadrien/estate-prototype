@@ -33,6 +33,7 @@ const { locale } = Astro.params;
 		<!-- {alternateLangs.map((alternate) => (
 			<link rel="alternate" hreflang={alternate.lang} href={alternate.url} />
 		))} -->
+		<script is:inline src="/pannellum/pannellum.js"></script>
 	</head>
 	<body class="position-relative" data-bs-theme="blue">
 		<slot />
